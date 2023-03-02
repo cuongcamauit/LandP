@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "1aC6ODb7JnUT52t6NnKzIXg/AdNBQpxzqd8eTwkdJxEy95vc998l/rpkIlDLT08k+Ep0NSfmdCkvj6O70iOJRw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\LandPApi\\LandPApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Phu Cuong\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Phu Cuong\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Phu Cuong\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Phu Cuong\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Phu Cuong\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Phu Cuong\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
