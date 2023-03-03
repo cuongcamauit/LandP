@@ -1,6 +1,6 @@
 ﻿namespace LandPApi.Models
 {
-    public class CartDetail
+    public class OrderDetail
     {
     }
 }
