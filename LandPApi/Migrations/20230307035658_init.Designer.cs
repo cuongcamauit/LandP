@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LandPApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230306030936_add-percentsale-orderdetail")]
-    partial class addpercentsaleorderdetail
+    [Migration("20230307035658_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,7 @@ namespace LandPApi.Migrations
 
             modelBuilder.Entity("LandPApi.Models.Address", b =>
                 {
-                    b.Property<Guid>("AddressId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -49,7 +49,7 @@ namespace LandPApi.Migrations
                     b.Property<string>("Ward")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AddressId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
@@ -58,7 +58,7 @@ namespace LandPApi.Migrations
 
             modelBuilder.Entity("LandPApi.Models.Brand", b =>
                 {
-                    b.Property<Guid>("BrandId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -71,9 +71,16 @@ namespace LandPApi.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BrandId");
+                    b.HasKey("Id");
 
                     b.ToTable("Brands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("766f9c4e-e693-48cb-96ea-75e5580d88d0"),
+                            Name = "Samsung"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.CartItem", b =>
@@ -96,7 +103,7 @@ namespace LandPApi.Migrations
 
             modelBuilder.Entity("LandPApi.Models.Category", b =>
                 {
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -109,9 +116,16 @@ namespace LandPApi.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("66c2da0e-ce3b-42b9-80c1-2f3c91e861f4"),
+                            Name = "Test Category"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Customer", b =>
@@ -187,7 +201,7 @@ namespace LandPApi.Migrations
 
             modelBuilder.Entity("LandPApi.Models.HistoryStatus", b =>
                 {
-                    b.Property<Guid>("HistoryStatusId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -201,7 +215,7 @@ namespace LandPApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("HistoryStatusId");
+                    b.HasKey("Id");
 
                     b.HasIndex("OrderId");
 
@@ -210,7 +224,7 @@ namespace LandPApi.Migrations
 
             modelBuilder.Entity("LandPApi.Models.Order", b =>
                 {
-                    b.Property<Guid>("OrderId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -230,7 +244,7 @@ namespace LandPApi.Migrations
                     b.Property<bool>("isPaid")
                         .HasColumnType("bit");
 
-                    b.HasKey("OrderId");
+                    b.HasKey("Id");
 
                     b.HasIndex("AddressId");
 
@@ -265,7 +279,7 @@ namespace LandPApi.Migrations
 
             modelBuilder.Entity("LandPApi.Models.Product", b =>
                 {
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -296,7 +310,7 @@ namespace LandPApi.Migrations
                     b.Property<string>("Unit")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ProductId");
+                    b.HasKey("Id");
 
                     b.HasIndex("BrandId");
 
@@ -345,6 +359,29 @@ namespace LandPApi.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "eef6bfb7-7922-4a64-9778-38d7de94852c",
+                            ConcurrencyStamp = "0",
+                            Name = "SuperAdmin",
+                            NormalizedName = "SuperAdmin"
+                        },
+                        new
+                        {
+                            Id = "5a778e8f-0b92-4a4a-85e1-ce6c96400002",
+                            ConcurrencyStamp = "1",
+                            Name = "Admin",
+                            NormalizedName = "Admin"
+                        },
+                        new
+                        {
+                            Id = "cc4e32c4-4461-4b46-bd8c-97376847e35b",
+                            ConcurrencyStamp = "2",
+                            Name = "User",
+                            NormalizedName = "User"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

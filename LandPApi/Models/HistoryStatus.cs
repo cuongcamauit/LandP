@@ -1,4 +1,6 @@
-﻿namespace LandPApi.Models
+﻿using LandPApi.Base;
+
+namespace LandPApi.Models
 {
     public enum Status
     {
@@ -8,9 +10,9 @@
         Delivered,
         Canceled
     }
-    public class HistoryStatus
+    public class HistoryStatus : IEntityBase
     {
-        public Guid HistoryStatusId { get; set; }
+        public Guid Id { get; set; }
         public Status Status { get; set; }
         public DateTime Date { get; set; }
         public Guid OrderId { get; set; }

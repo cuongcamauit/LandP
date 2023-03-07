@@ -1,8 +1,10 @@
-﻿namespace LandPApi.Models
+﻿using LandPApi.Base;
+
+namespace LandPApi.Models
 {
-    public class Category
+    public class Category : IEntityBase
     {
-        public Guid CategoryId { get; set; }
+        public Guid Id { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
         public string? AvatarUrl { get; set; }

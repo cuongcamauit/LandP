@@ -1,8 +1,10 @@
-﻿namespace LandPApi.Models
+﻿using LandPApi.Base;
+
+namespace LandPApi.Models
 {
-    public class Address
-    {
-        public Guid AddressId { get; set; }
+    public class Address : IEntityBase
+    { 
+        public Guid Id { get; set; }
         public string? Province { get; set; }
         public string? City { get; set; }
         public string? District { get; set; }

@@ -1,6 +1,7 @@
 using LandPApi.Base;
 using LandPApi.Data;
 using LandPApi.IService;
+using LandPApi.Middleware;
 using LandPApi.Models;
 using LandPApi.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace LandPApi
 {
@@ -20,7 +22,8 @@ namespace LandPApi
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -55,6 +58,16 @@ namespace LandPApi
             });
 
             builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IBrandService, BrandService>();
+            builder.Services.AddScoped<IAddressService, AddressService>();
+            builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<ICartItemService, CartItemService>();
+            builder.Services.AddScoped<IViewService, ViewService>();
+            builder.Services.AddScoped<IOrderDetail, OrderDetailService>();
+
+
 
 
 
@@ -82,8 +95,9 @@ namespace LandPApi
 
             app.UseAuthorization();
 
-
             app.MapControllers();
+
+            app.UseMiddleware<CheckAcessMiddleware>();
 
             app.Run();
         }

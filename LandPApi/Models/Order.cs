@@ -1,11 +1,12 @@
 ﻿
+using LandPApi.Base;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LandPApi.Models
 {
-    public class Order
+    public class Order : IEntityBase
     {
-        public Guid OrderId { get; set; }
+        public Guid Id { get; set; }
         public Status Status { get; set; }
         public DateTime Date { get; set; }
         public bool isPaid { get; set; }

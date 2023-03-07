@@ -1,4 +1,5 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using Azure.Core;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
@@ -103,7 +104,7 @@ namespace LandPApi
             var file = request.ResponseBody;
 
             Console.WriteLine("File ID: " + file.Id);
-            return "https://drive.google.com/file/d/" + file.Id + "/view";
+            return "https://drive.google.com/uc?export=view&id="+file.Id;
         }
     }
 }

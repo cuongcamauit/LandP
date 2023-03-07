@@ -1,4 +1,5 @@
 ﻿using LandPApi.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
@@ -26,7 +27,7 @@ namespace LandPApi.Data
             base.OnModelCreating(builder);
             builder.Entity<Address>(entity =>
             {
-                entity.HasKey(o => o.AddressId);
+                entity.HasKey(o => o.Id);
 
                 entity.HasOne(e => e.Customer)
                 .WithMany(o => o.Addresses)
@@ -35,7 +36,7 @@ namespace LandPApi.Data
 
             builder.Entity<Brand>(entity =>
             {
-                entity.HasKey(o => o.BrandId);
+                entity.HasKey(o => o.Id);
 
                 entity.HasMany(o => o.Products)
                         .WithOne(o => o.Brand)
@@ -56,7 +57,7 @@ namespace LandPApi.Data
 
             builder.Entity<Category>(entity =>
             {
-                entity.HasKey(o => o.CategoryId);
+                entity.HasKey(o => o.Id);
 
                 entity.HasMany(o => o.Products)
                         .WithOne(o => o.Category)
@@ -65,7 +66,7 @@ namespace LandPApi.Data
 
             builder.Entity<HistoryStatus>(entity =>
             {
-                entity.HasKey(o => o.HistoryStatusId);
+                entity.HasKey(o => o.Id);
 
                 entity.HasOne(o => o.Order)
                         .WithMany(o => o.HistoryStatuses)
@@ -77,7 +78,7 @@ namespace LandPApi.Data
 
             builder.Entity<Order>(entity =>
             {
-                entity.HasKey(o => o.OrderId);
+                entity.HasKey(o => o.Id);
 
                 entity.Property(o => o.Status)
                          .HasConversion(new EnumToStringConverter<Status>());
@@ -115,7 +116,7 @@ namespace LandPApi.Data
 
             builder.Entity<Product>(entity =>
             {
-                entity.HasKey(o => o.ProductId);
+                entity.HasKey(o => o.Id);
 
                 entity.HasMany(o => o.CartItems)
                         .WithOne(o => o.Product)
@@ -150,6 +151,29 @@ namespace LandPApi.Data
                         .WithMany(o => o.Views)
                         .HasForeignKey(o => o.ProductId);
             });
+            SeedRoles(builder);
+        }
+        private void SeedRoles(ModelBuilder builder)
+        {
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole() { Name = "SuperAdmin", ConcurrencyStamp = "0", NormalizedName = "SuperAdmin" },
+                    new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
+                    new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" }
+                );
+            builder.Entity<Category>().HasData(
+                new Category()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Test Category"
+                }
+            );
+            builder.Entity<Brand>().HasData(
+                new Brand()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Samsung"
+                }
+            );
         }
     }
 }
