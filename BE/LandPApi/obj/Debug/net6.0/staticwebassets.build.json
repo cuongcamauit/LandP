@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "IeNLpntXm6x6mx1Vmte3hNsOdseLc6Ly1ToSebkW/ew=",
+  "Source": "LandPApi",
+  "BasePath": "_content/LandPApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LandPApi\\wwwroot",
+      "Source": "LandPApi",
+      "ContentRoot": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "BasePath": "_content/LandPApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\confirmEmail.html",
+      "SourceId": "LandPApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "BasePath": "_content/LandPApi",
+      "RelativePath": "confirmEmail.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\confirmEmail.html"
+    }
+  ]
+}
