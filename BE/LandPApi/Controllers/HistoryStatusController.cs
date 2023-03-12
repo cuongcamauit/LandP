@@ -19,14 +19,16 @@ namespace LandPApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetHistoryStatuses()
         {
-            return Ok(await _historyStatusService.GetAllAsync(o => o.Order!));
+            var result = await _historyStatusService.GetAllAsync(o => o.Order!);
+            return Ok(result);
         }
 
         // GET: api/HistoryStatus/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetHistoryStatus(Guid id)
         {
-            return Ok(await _historyStatusService.GetByIdAsync(id, o => o.Order!));
+            var result = await _historyStatusService.GetByIdAsync(id, o => o.Order!);
+            return Ok(result);
         }
 
         // PUT: api/HistoryStatus/5
@@ -40,8 +42,8 @@ namespace LandPApi.Controllers
             }
 
             ;
-
-            return Ok(await _historyStatusService.UpdateAsync(historyStatus));
+            var result = await _historyStatusService.UpdateAsync(historyStatus);
+            return Ok(result);
         }
 
         // POST: api/HistoryStatus
@@ -49,14 +51,16 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostHistoryStatus(HistoryStatus historyStatus)
         {
-            return CreatedAtAction("GetHistoryStatus", await _historyStatusService.AddAsync(historyStatus));
+            var result = await _historyStatusService.AddAsync(historyStatus);
+            return Ok(result);
         }
 
         // DELETE: api/HistoryStatus/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHistoryStatus(Guid id)
         {
-            return Ok(await _historyStatusService.DeleteAsync(id));
+            var result = await _historyStatusService.DeleteAsync(id);
+            return Ok(result);
         }
     }
 }

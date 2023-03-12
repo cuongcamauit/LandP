@@ -17,9 +17,11 @@ namespace LandPApi.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public async Task<IActionResult> GetProducts(string? search, double? from, double? to, string? sortBy, int page = 1, Guid? categoryId = null, Guid? brandId = null)
         {
-            return Ok(await _productService.GetAllAsync(o => o.Category!, o => o.Brand!));
+
+            var result = await _productService.GetAllAsync(search, from, to, sortBy, page, categoryId, brandId);
+            return Ok(result);
         }
 
         // GET: api/Products/5
@@ -44,27 +46,27 @@ namespace LandPApi.Controllers
                 return BadRequest();
             }
 
-            await _productService.UpdateAsync(product);
+            var result = await _productService.UpdateAsync(product);
 
-            return NoContent();
+            return Ok(result);
         }
 
         //// POST: api/Products
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<IActionResult> PostProduct(Product product)
         {
-            await _productService.AddAsync(product);
+            var result = await _productService.AddAsync(product);
             
-            return CreatedAtAction("CreateProduct", new { id = product.Id }, product);
+            return Ok(result);
         }
 
         //// DELETE: api/Products/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            await _productService.DeleteAsync(id);
-            return NoContent();
+            var result = await _productService.DeleteAsync(id);
+            return Ok(result);
         }
 
         

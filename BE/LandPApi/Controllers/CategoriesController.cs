@@ -59,8 +59,8 @@ namespace LandPApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            await _categoryService.DeleteAsync(id);
-            return NoContent();
+            var result = await _categoryService.DeleteAsync(id);
+            return Ok(result);
         }
 
     }

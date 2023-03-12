@@ -48,9 +48,9 @@ namespace LandPApi.Controllers
                 return BadRequest();
             }
 
-            await _brandService.UpdateAsync(brand);
+            var result = await _brandService.UpdateAsync(brand);
 
-            return NoContent();
+            return Ok(result);
         }
 
         // POST: api/Brands
@@ -58,17 +58,17 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostBrand(Brand brand)
         {
-            await _brandService.AddAsync(brand);
+            var result = await _brandService.AddAsync(brand);
            
-            return CreatedAtAction("CreateBrand", new { id = brand.Id }, brand);
+            return Ok(result);
         }
 
         // DELETE: api/Brands/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
-            await _brandService.DeleteAsync(id);
-            return NoContent();
+            var result = await _brandService.DeleteAsync(id);
+            return Ok(result);
         }
     }
 }
