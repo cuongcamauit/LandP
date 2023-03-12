@@ -11,12 +11,11 @@ namespace LandPApi.Service
 {
     public class ProductService : BaseRepository<Product>, IProductService
     {
-        public static int PAGE_SIZE { get; set; } = 5;
         public ProductService(ApplicationDbContext context) : base(context)
         {
         }
 
-        public async Task<Response> GetAllAsync(string? search, double? from, double? to, string? sortBy, int page = 1, Guid? categoryId = null, Guid? brandId = null)
+        public async Task<Response> GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int page_size = 5)
         {
             var products = _context.Products.AsQueryable();
             #region Filtering
@@ -60,14 +59,20 @@ namespace LandPApi.Service
             #endregion
 
             #region Paginate
-            var result = PaginatedList<Product>.Create(products, page, PAGE_SIZE);
+            var result = PaginatedList<Product>.Create(products, page, page_size);
 
             return new Response
             {
                 Success = true,
                 Data =
                 new {
-                    result
+                    products = result,
+                    pagination = new
+                    {
+                        current_page = result.PageIndex,
+                        total_page = result.TotalPage,
+                        page_size = page_size
+                    }
                 }
             };
             #endregion

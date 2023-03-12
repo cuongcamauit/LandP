@@ -17,10 +17,10 @@ namespace LandPApi.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<IActionResult> GetProducts(string? search, double? from, double? to, string? sortBy, int page = 1, Guid? categoryId = null, Guid? brandId = null)
+        public async Task<IActionResult> GetProducts(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int page_size = 5)
         {
 
-            var result = await _productService.GetAllAsync(search, from, to, sortBy, page, categoryId, brandId);
+            var result = await _productService.GetAllAsync(search, from, to, sortBy, categoryId, brandId, page, page_size);
             return Ok(result);
         }
 

@@ -6,6 +6,6 @@ namespace LandPApi.IService
 {
     public interface IProductService : IBaseRepository<Product>
     {
-        Task<Response> GetAllAsync(string? search, double? from, double? to, string? sortBy, int page = 1, Guid? categoryId = null, Guid? brandId = null);
+        Task<Response> GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int page_size = 5);
     }
 }
