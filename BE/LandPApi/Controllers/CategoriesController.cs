@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LandPApi.Models;
 using LandPApi.IService;
+using LandPApi.Service;
 
 namespace LandPApi.Controllers
 {
@@ -19,14 +20,16 @@ namespace LandPApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            return Ok(await _categoryService.GetAllAsync(o => o.Products!));
+            var result = await _categoryService.GetAllAsync(o => o.Products!);
+            return Ok(result);
         }
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(Guid id)
         {
-            return Ok(await _categoryService.GetByIdAsync(id, o => o.Products!));
+            var result = await _categoryService.GetByIdAsync(id, o => o.Products!);
+            return Ok(result);
         }
 
         // PUT: api/Categories/5
@@ -38,23 +41,26 @@ namespace LandPApi.Controllers
             {
                 return BadRequest();
             }
-
-            return Ok(await _categoryService.UpdateAsync(category));
+            var result = await _categoryService.UpdateAsync(category);
+            return Ok(result);
         }
 
         // POST: api/Categories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
+        public async Task<IActionResult> PostCategory(Category category)
         {
-            return CreatedAtAction("GetCategory", await _categoryService.AddAsync(category));
+            var result = await _categoryService.AddAsync(category);
+
+            return Ok(result);
         }
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            return Ok(await _categoryService.DeleteAsync(id));
+            await _categoryService.DeleteAsync(id);
+            return NoContent();
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LandPApi.Models;
 using LandPApi.IService;
+using System.Net.WebSockets;
 
 namespace LandPApi.Controllers
 {
@@ -19,7 +20,8 @@ namespace LandPApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAddresses()
         {
-            return Ok(await _addressService.GetAllAsync(o => o.Customer!));
+            var result = await _addressService.GetAllAsync(o => o.Customer!);
+            return Ok(result);
         }
 
         // GET: api/Addresses/5
@@ -45,8 +47,8 @@ namespace LandPApi.Controllers
             {
                 return BadRequest();
             }
-
-            return Ok(await _addressService.UpdateAsync(address));
+            var result = await _addressService.UpdateAsync(address);
+            return Ok(result);
         }
 
         // POST: api/Addresses
@@ -54,6 +56,7 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostAddress(Address address)
         {
+
             return CreatedAtAction("GetAddress", await _addressService.AddAsync(address));
         }
 

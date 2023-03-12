@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LandPApi.Models;
 using LandPApi.IService;
+using System.Net.WebSockets;
+using LandPApi.Service;
 
 namespace LandPApi.Controllers
 {
@@ -19,7 +21,8 @@ namespace LandPApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetBrands()
         {
-            return Ok(await _brandService.GetAllAsync(o => o.Products!));
+            var result = await _brandService.GetAllAsync(o => o.Products!);
+            return Ok(result);
         }
 
         // GET: api/Brands/5
@@ -56,15 +59,16 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> PostBrand(Brand brand)
         {
             await _brandService.AddAsync(brand);
-
-            return CreatedAtAction("GetBrand", new { id = brand.Id }, brand);
+           
+            return CreatedAtAction("CreateBrand", new { id = brand.Id }, brand);
         }
 
         // DELETE: api/Brands/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
-            return Ok(await _brandService.DeleteAsync(id));
+            await _brandService.DeleteAsync(id);
+            return NoContent();
         }
     }
 }

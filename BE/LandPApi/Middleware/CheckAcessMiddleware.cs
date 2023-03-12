@@ -62,8 +62,7 @@ namespace LandPApi.Middleware
             {
                 Success = false,
                 Data = null,
-                Message = exception.Message,
-                Timestamp = DateTime.Now
+                Message = exception.Message
             }));
         }
     }

@@ -56,7 +56,7 @@ namespace LandPApi.Controllers
         {
             await _productService.AddAsync(product);
             
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            return CreatedAtAction("CreateProduct", new { id = product.Id }, product);
         }
 
         //// DELETE: api/Products/5
