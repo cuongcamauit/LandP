@@ -26,14 +26,7 @@ namespace LandPApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetHistoryStatus(Guid id)
         {
-            var historyStatus = await _historyStatusService.GetByIdAsync(id, o => o.Order!);
-
-            if (historyStatus == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(historyStatus);
+            return Ok(await _historyStatusService.GetByIdAsync(id, o => o.Order!));
         }
 
         // PUT: api/HistoryStatus/5
@@ -46,9 +39,9 @@ namespace LandPApi.Controllers
                 return BadRequest();
             }
 
-            await _historyStatusService.UpdateAsync(historyStatus);
+            ;
 
-            return NoContent();
+            return Ok(await _historyStatusService.UpdateAsync(historyStatus));
         }
 
         // POST: api/HistoryStatus
@@ -56,18 +49,14 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostHistoryStatus(HistoryStatus historyStatus)
         {
-            await _historyStatusService.AddAsync(historyStatus);
-
-            return CreatedAtAction("GetHistoryStatus", new { id = historyStatus.Id }, historyStatus);
+            return CreatedAtAction("GetHistoryStatus", await _historyStatusService.AddAsync(historyStatus));
         }
 
         // DELETE: api/HistoryStatus/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHistoryStatus(Guid id)
         {
-            await _historyStatusService.DeleteAsync(id);
-
-            return NoContent();
+            return Ok(await _historyStatusService.DeleteAsync(id));
         }
     }
 }

@@ -21,6 +21,7 @@ namespace LandPApi.Data
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<LandPApi.Models.View> Views { get; set; }
+        public DbSet<Review> Reviews { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -98,6 +99,10 @@ namespace LandPApi.Data
                         .WithOne(o => o.Order)
                         .HasForeignKey(o => o.OrderId);
 
+                entity.HasMany(o => o.Reviews)
+                        .WithOne(o => o.Order)
+                        .HasForeignKey(o => o.OrderId);
+
             });
 
             builder.Entity<OrderDetail>(entity =>
@@ -136,6 +141,26 @@ namespace LandPApi.Data
                 entity.HasOne(o => o.Brand)
                         .WithMany(o => o.Products)
                         .HasForeignKey(o => o.BrandId);
+
+                entity.HasMany(o => o.Reviews)
+                        .WithOne(o => o.Product)
+                        .HasForeignKey(o => o.ProductId);
+            });
+            builder.Entity<Review>(entity =>
+            {
+                entity.HasKey(o => new { o.CustomerId, o.ProductId});
+
+                entity.HasOne(o => o.Customer)
+                        .WithMany(o => o.Reviews)
+                        .HasForeignKey(o => o.CustomerId);
+
+                entity.HasOne(o => o.Product)
+                        .WithMany(o => o.Reviews)
+                        .HasForeignKey(o => o.ProductId);
+
+                entity.HasOne(o => o.Order)
+                        .WithMany(o => o.Reviews)
+                        .HasForeignKey(o => o.OrderId);
             });
 
             builder.Entity<LandPApi.Models.View>(entity =>
@@ -149,6 +174,7 @@ namespace LandPApi.Data
                 entity.HasOne(o => o.Product)
                         .WithMany(o => o.Views)
                         .HasForeignKey(o => o.ProductId);
+
             });
             SeedRoles(builder);
         }

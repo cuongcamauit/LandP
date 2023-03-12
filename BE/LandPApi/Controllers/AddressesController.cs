@@ -46,9 +46,7 @@ namespace LandPApi.Controllers
                 return BadRequest();
             }
 
-            await _addressService.UpdateAsync(address);
-
-            return NoContent();
+            return Ok(await _addressService.UpdateAsync(address));
         }
 
         // POST: api/Addresses
@@ -56,18 +54,14 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostAddress(Address address)
         {
-            await _addressService.AddAsync(address);
-
-            return CreatedAtAction("GetAddress", new { id = address.Id }, address);
+            return CreatedAtAction("GetAddress", await _addressService.AddAsync(address));
         }
 
         // DELETE: api/Addresses/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAddress(Guid id)
         {
-            await _addressService.DeleteAsync(id);
-
-            return NoContent();
+            return Ok(await _addressService.DeleteAsync(id));
         }
     }
 }

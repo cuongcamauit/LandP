@@ -28,9 +28,6 @@ namespace LandPApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CustomerId")
                         .HasColumnType("nvarchar(450)");
 
@@ -75,7 +72,7 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("766f9c4e-e693-48cb-96ea-75e5580d88d0"),
+                            Id = new Guid("ebd78fcc-159a-42a8-b9fe-79902ce36577"),
                             Name = "Samsung"
                         });
                 });
@@ -120,7 +117,7 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("66c2da0e-ce3b-42b9-80c1-2f3c91e861f4"),
+                            Id = new Guid("ec457683-17a3-41ba-9613-939d258855d2"),
                             Name = "Test Category"
                         });
                 });
@@ -316,6 +313,32 @@ namespace LandPApi.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("LandPApi.Models.Review", b =>
+                {
+                    b.Property<string>("CustomerId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.HasKey("CustomerId", "ProductId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("LandPApi.Models.View", b =>
                 {
                     b.Property<string>("CustomerId")
@@ -360,21 +383,21 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "eef6bfb7-7922-4a64-9778-38d7de94852c",
+                            Id = "b3c08f46-a609-4982-8795-3fa49f92bff3",
                             ConcurrencyStamp = "0",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
-                            Id = "5a778e8f-0b92-4a4a-85e1-ce6c96400002",
+                            Id = "2bfe0b1e-117d-4afa-b055-f1d87d77b8eb",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "cc4e32c4-4461-4b46-bd8c-97376847e35b",
+                            Id = "e02e213f-f75c-4214-8f5b-aeee20165626",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
@@ -581,6 +604,33 @@ namespace LandPApi.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("LandPApi.Models.Review", b =>
+                {
+                    b.HasOne("LandPApi.Models.Customer", "Customer")
+                        .WithMany("Reviews")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LandPApi.Models.Order", "Order")
+                        .WithMany("Reviews")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LandPApi.Models.Product", "Product")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("LandPApi.Models.View", b =>
                 {
                     b.HasOne("LandPApi.Models.Customer", "Customer")
@@ -674,6 +724,8 @@ namespace LandPApi.Migrations
 
                     b.Navigation("Orders");
 
+                    b.Navigation("Reviews");
+
                     b.Navigation("Views");
                 });
 
@@ -682,6 +734,8 @@ namespace LandPApi.Migrations
                     b.Navigation("HistoryStatuses");
 
                     b.Navigation("OrderDetails");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("LandPApi.Models.Product", b =>
@@ -689,6 +743,8 @@ namespace LandPApi.Migrations
                     b.Navigation("CartItems");
 
                     b.Navigation("OrderDetails");
+
+                    b.Navigation("Reviews");
 
                     b.Navigation("Views");
                 });

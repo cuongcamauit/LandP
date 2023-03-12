@@ -34,21 +34,7 @@ namespace LandPApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(Guid id)
         {
-            var category = await _categoryService.GetByIdAsync(id, o => o.Products!);
-
-            if (category == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(new Response
-            {
-                IsSuccess = true,
-                Data = category,
-                StatusCode = 200,
-                Timestamp = DateTime.Now,
-                Message = null
-            });
+            return Ok(await _categoryService.GetByIdAsync(id, o => o.Products!));
         }
 
         // PUT: api/Categories/5
@@ -60,10 +46,8 @@ namespace LandPApi.Controllers
             {
                 return BadRequest();
             }
-            
-            await _categoryService.UpdateAsync(category);
 
-            return NoContent();
+            return Ok(await _categoryService.UpdateAsync(category));
         }
 
         // POST: api/Categories
@@ -71,18 +55,14 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-            await _categoryService.AddAsync(category);
-
-            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
+            return CreatedAtAction("GetCategory", await _categoryService.AddAsync(category);
         }
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            await _categoryService.DeleteAsync(id);
-
-            return NoContent();
+            return Ok(await _categoryService.DeleteAsync(id));
         }
 
     }

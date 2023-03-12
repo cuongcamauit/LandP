@@ -16,5 +16,6 @@ namespace LandPApi.Models
         public Address? Address { get; set; }
         public ICollection<HistoryStatus>? HistoryStatuses { get; set; }
         public ICollection<OrderDetail>? OrderDetails { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
     }
 }

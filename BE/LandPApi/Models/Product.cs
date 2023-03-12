@@ -19,5 +19,6 @@ namespace LandPApi.Models
         public ICollection<View>? Views { get; set; }
         public ICollection<CartItem>? CartItems { get; set; }
         public ICollection<OrderDetail>? OrderDetails { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
     }
 }

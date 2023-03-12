@@ -83,6 +83,12 @@ namespace LandPApi
                 options.Limits.MaxRequestBodySize = int.MaxValue; // if don't set default value is: 30 MB
             });
 
+
+            builder.Services.AddCors(p => p.AddPolicy("myCors", build =>
+            {
+                build.WithOrigins("http://localhost:3000");
+            }));
+
             //=================================================//
             var app = builder.Build();
 
@@ -104,6 +110,7 @@ namespace LandPApi
             app.MapRazorPages();
 
             //app.UseMiddleware<CheckAcessMiddleware>();
+            app.UseCors("myCors");
 
             app.Run();
         }

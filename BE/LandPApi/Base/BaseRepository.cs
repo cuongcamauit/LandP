@@ -1,4 +1,5 @@
 ﻿using LandPApi.Data;
+using LandPApi.Dto;
 using LandPApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -15,14 +16,20 @@ namespace LandPApi.Base
             _context = context;
         }
 
-        public async Task AddAsync(T entity)
+        public async Task<Dto.Response> AddAsync(T entity)
         {
             await _context.AddAsync(entity);
             await _context.SaveChangesAsync();
+            return new Response 
+            { 
+                Success = true,
+                Message = "Created a " + entity.GetType().Name,
+                Data = entity
+            };
         }
 
 
-        public async Task DeleteAsync(Guid id)
+        public async Task<Dto.Response> DeleteAsync(Guid id)
         {
             var entity = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
             if (entity != null)
@@ -31,15 +38,25 @@ namespace LandPApi.Base
 
                 await _context.SaveChangesAsync();
             }
+            return new Response 
+            { 
+                Success = false,
+                Message = "Delete a " + entity!.GetType().Name
+            };
 
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<Response> GetAllAsync()
         {
-            return await _context.Set<T>().ToListAsync();
+            return new Response
+            {
+                Success = true,
+                Message = "Get all ",
+                Data = await _context.Set<T>().ToListAsync()
+            };
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
+        public async Task<Response> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
         {
             var query = _context.Set<T>().AsQueryable();
             if (includeProperties != null)
@@ -48,15 +65,25 @@ namespace LandPApi.Base
                     if (include != null)
                         query = query.Include(include);
                 });
-            return await query.ToListAsync();
+            return new Response
+            {
+                Success = true,
+                Message = "Get all",
+                Data = await query.ToListAsync()
+            };
         }
 
-        public async Task<T?> GetByIdAsync(Guid id)
+        public async Task<Response> GetByIdAsync(Guid id)
         {
-            return await _context.Set<T>().FirstOrDefaultAsync(o => o.Id == id);
+            return new Response
+            {
+                Success = true,
+                Message = "Get all ",
+                Data = await _context.Set<T>().FirstOrDefaultAsync(o => o.Id == id)
+            };
         }
 
-        public async Task<T?> GetByIdAsync(Guid id, params Expression<Func<T, object>>[] includeProperties)
+        public async Task<Response> GetByIdAsync(Guid id, params Expression<Func<T, object>>[] includeProperties)
         {
             //IQueryable<T> query = _context.Set<T>();
             //query = includeProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
@@ -69,14 +96,23 @@ namespace LandPApi.Base
                     if (include != null)
                         query = query.Include(include);
                 });
-            return await query.FirstOrDefaultAsync(n => n.Id == id);
+            return new Response
+            {
+                Success = true,
+                Message = "Get all ",
+                Data = await query.FirstOrDefaultAsync(n => n.Id == id)
+            };
         }
 
-        public async Task UpdateAsync(T entity)
+        public async Task<Response> UpdateAsync(T entity)
         {
             _context.UpdateRange(entity);
 
             await _context.SaveChangesAsync();
+            return new Response{
+                Success = true,
+                Message = "Updated successfully"
+            };
         }
     }
 }

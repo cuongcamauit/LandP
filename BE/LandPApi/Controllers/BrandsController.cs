@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LandPApi.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using LandPApi.Models;
 using LandPApi.IService;
 
@@ -31,7 +24,7 @@ namespace LandPApi.Controllers
 
         // GET: api/Brands/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Brand>> GetBrand(Guid id)
+        public async Task<IActionResult> GetBrand(Guid id)
         {
             var brand = await _brandService.GetByIdAsync(id, o => o.Products!);
             if (brand == null)
@@ -39,7 +32,7 @@ namespace LandPApi.Controllers
                 return NotFound();
             }
 
-            return brand;
+            return Ok(brand);
         }
 
         // PUT: api/Brands/5
@@ -71,9 +64,7 @@ namespace LandPApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
-            await _brandService.DeleteAsync(id);    
-
-            return NoContent();
+            return Ok(await _brandService.DeleteAsync(id));
         }
     }
 }

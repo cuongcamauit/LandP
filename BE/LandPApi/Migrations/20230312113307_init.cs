@@ -109,7 +109,6 @@ namespace LandPApi.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Province = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     District = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Ward = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Detail = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -365,25 +364,58 @@ namespace LandPApi.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    CustomerId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Rating = table.Column<int>(type: "int", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => new { x.CustomerId, x.ProductId });
+                    table.ForeignKey(
+                        name: "FK_Reviews_AspNetUsers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5a778e8f-0b92-4a4a-85e1-ce6c96400002", "1", "Admin", "Admin" },
-                    { "cc4e32c4-4461-4b46-bd8c-97376847e35b", "2", "User", "User" },
-                    { "eef6bfb7-7922-4a64-9778-38d7de94852c", "0", "SuperAdmin", "SuperAdmin" }
+                    { "2bfe0b1e-117d-4afa-b055-f1d87d77b8eb", "1", "Admin", "Admin" },
+                    { "b3c08f46-a609-4982-8795-3fa49f92bff3", "0", "SuperAdmin", "SuperAdmin" },
+                    { "e02e213f-f75c-4214-8f5b-aeee20165626", "2", "User", "User" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Brands",
                 columns: new[] { "Id", "Description", "LogoUrl", "Name" },
-                values: new object[] { new Guid("766f9c4e-e693-48cb-96ea-75e5580d88d0"), null, null, "Samsung" });
+                values: new object[] { new Guid("ebd78fcc-159a-42a8-b9fe-79902ce36577"), null, null, "Samsung" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "AvatarUrl", "Description", "Name" },
-                values: new object[] { new Guid("66c2da0e-ce3b-42b9-80c1-2f3c91e861f4"), null, null, "Test Category" });
+                values: new object[] { new Guid("ec457683-17a3-41ba-9613-939d258855d2"), null, null, "Test Category" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Addresses_CustomerId",
@@ -465,6 +497,16 @@ namespace LandPApi.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Reviews_OrderId",
+                table: "Reviews",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_ProductId",
+                table: "Reviews",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Views_ProductId",
                 table: "Views",
                 column: "ProductId");
@@ -496,6 +538,9 @@ namespace LandPApi.Migrations
 
             migrationBuilder.DropTable(
                 name: "OrderDetails");
+
+            migrationBuilder.DropTable(
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "Views");

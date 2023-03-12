@@ -27,7 +27,7 @@ namespace LandPApi
             {
                 var result = await _userService.ResgisterUserAsync(registerViewModel);
 
-                if (result.IsSuccess) 
+                if (result.Success) 
                     return Ok(result);
 
                 return BadRequest(result);
@@ -42,7 +42,7 @@ namespace LandPApi
             if (ModelState.IsValid)
             {
                 var result = await _userService.LoginUserAsync(loginViewModel);
-                if (result.IsSuccess)
+                if (result.Success)
                 {
                         await _mailService.SendEmailAsync(loginViewModel.Email!, "New login", "<h1>Hey! new login to your account</h1><p>New login to your account at " + DateTime.Now + "</p>");
                     return Ok(result);
@@ -62,7 +62,7 @@ namespace LandPApi
                 return NotFound();
             var result = await _userService.ConfirmEmailAsync(userId, token);
 
-            if (result.IsSuccess)
+            if (result.Success)
             {
                 return Redirect($"{_configuration["AppUrl"]}/confirmEmail.html");
             }
@@ -78,7 +78,7 @@ namespace LandPApi
 
             var result = await _userService.ForgetPasswordAsync(email);
 
-            if (result.IsSuccess )
+            if (result.Success )
                 return Ok(result);
 
             return BadRequest(result);
@@ -90,7 +90,7 @@ namespace LandPApi
             if (ModelState.IsValid)
             {
                 var result = await _userService.ResetPasswordAsync(resetPasswordViewModel);
-                if (result.IsSuccess) 
+                if (result.Success) 
                     return Ok(result);
                 
                 return BadRequest(result);

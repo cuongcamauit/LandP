@@ -60,10 +60,9 @@ namespace LandPApi.Middleware
 
             await context.Response.WriteAsync(JsonConvert.SerializeObject(new Dto.Response
             {
-                IsSuccess = false,
+                Success = false,
                 Data = null,
                 Message = exception.Message,
-                StatusCode = context.Response.StatusCode,
                 Timestamp = DateTime.Now
             }));
         }

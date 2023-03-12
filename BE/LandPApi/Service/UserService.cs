@@ -32,7 +32,7 @@ namespace LandPApi.Service
             {
                 return new Response
                 {
-                    IsSuccess = false,
+                    Success = false,
                     Message = "User not found"
                 };
             }
@@ -47,13 +47,13 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "Email confirmed successfully!",
-                    IsSuccess = true
+                    Success = true
                 };
             }
 
             return new Response
             {
-                IsSuccess = false,
+                Success = false,
                 Message = "Email did not confirm",
 
                 Data = result.Errors.Select(e => e.Description)
@@ -66,7 +66,7 @@ namespace LandPApi.Service
             if (user == null)
                 return new Response
                 {
-                    IsSuccess = false,
+                    Success = false,
                     Message = "No user associated with email"
                 };
 
@@ -79,7 +79,7 @@ namespace LandPApi.Service
 
             return new Response
             {
-                IsSuccess = true,
+                Success = true,
                 Message = "Reset password url has been sent to the email successfully"
             };
         }
@@ -93,7 +93,7 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "There are no user with that Email address",
-                    IsSuccess = false,
+                    Success = false,
                 };
             }
 
@@ -104,7 +104,7 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "Invalid Password",
-                    IsSuccess = false
+                    Success = false
                 };
             }
 
@@ -135,9 +135,15 @@ namespace LandPApi.Service
 
             return new Response
             {
-                Message = tokenAsString,
-                IsSuccess = true,
-                Data = token.ValidTo
+                Message = "User logged in successfully",
+                Success = true,
+                Data = new
+                {
+                    user = user,
+                    role = userRoles,
+                    token = tokenAsString,
+                    expire = token.ValidTo
+                }
             };
         }
 
@@ -152,13 +158,13 @@ namespace LandPApi.Service
             if (user == null)
                 return new Response
                 {
-                    IsSuccess = false,
+                    Success = false,
                     Message = "No user associated with email"
                 };
             if (resetPasswordViewModel.NewPassword != resetPasswordViewModel.ConfirmPassword)
                 return new Response
                 {
-                    IsSuccess = false,
+                    Success = false,
                     Message = "Password doesn't math with its confirmation"
                 };
 
@@ -170,12 +176,12 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "Password has been successfully!",
-                    IsSuccess = true
+                    Success = true
                 };
             return new Response
             {
                 Message = "Something went wrong",
-                IsSuccess = false,
+                Success = false,
                 Data = result.Errors.Select(e => e.Description)
             };
         }
@@ -191,7 +197,7 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "Confirm password doesn't match password",
-                    IsSuccess = false,
+                    Success = false,
                 };
             }
             var identityUser = new Customer
@@ -224,15 +230,14 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "User created successfully!",
-                    IsSuccess = true,
+                    Success = true,
                 };
             }
 
             return new Response
             {
                 Message = "User did not create",
-                IsSuccess = false,
-                //Errors = result.Errors.Select(e => e.Description)
+                Success = false,
             };
 
         }
