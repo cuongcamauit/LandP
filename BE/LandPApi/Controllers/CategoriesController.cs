@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LandPApi.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using LandPApi.Models;
 using LandPApi.IService;
-using LandPApi.Dto;
 
 namespace LandPApi.Controllers
 {
@@ -55,7 +47,7 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-            return CreatedAtAction("GetCategory", await _categoryService.AddAsync(category);
+            return CreatedAtAction("GetCategory", await _categoryService.AddAsync(category));
         }
 
         // DELETE: api/Categories/5
