@@ -2,11 +2,14 @@
 using LandPApi.Models;
 using LandPApi.IService;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using System.Drawing.Drawing2D;
 
 namespace LandPApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "User")]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
@@ -22,7 +25,8 @@ namespace LandPApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetOrders()
         {
-            return Ok(await _orderService.GetAllAsync(o => o.Customer!, o => o.Address!, o => o.OrderDetails!, o => o.HistoryStatuses!)) ;
+            var result = await _orderService.GetAllAsync(o => o.Customer!, o => o.Address!, o => o.OrderDetails!, o => o.HistoryStatuses!);
+            return Ok(result) ;
         }
 
         // GET: api/Orders/5

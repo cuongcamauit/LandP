@@ -2,6 +2,8 @@
 using LandPApi.Models;
 using LandPApi.IService;
 using LandPApi.Service;
+using System.Drawing.Drawing2D;
+using LandPApi.Dto;
 
 namespace LandPApi.Controllers
 {
@@ -21,7 +23,11 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> GetCategories()
         {
             var result = await _categoryService.GetAllAsync(o => o.Products!);
-            return Ok(result);
+            return Ok(new Response
+            {
+                Success = true,
+                Data = result
+            });
         }
 
         // GET: api/Categories/5
@@ -29,7 +35,11 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> GetCategory(Guid id)
         {
             var result = await _categoryService.GetByIdAsync(id, o => o.Products!);
-            return Ok(result);
+            return Ok(new Response
+            {
+                Success = true,
+                Data = result
+            });
         }
 
         // PUT: api/Categories/5
@@ -41,8 +51,8 @@ namespace LandPApi.Controllers
             {
                 return BadRequest();
             }
-            var result = await _categoryService.UpdateAsync(category);
-            return Ok(result);
+            await _categoryService.UpdateAsync(category);
+            return NoContent();
         }
 
         // POST: api/Categories
@@ -50,17 +60,17 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostCategory(Category category)
         {
-            var result = await _categoryService.AddAsync(category);
+            await _categoryService.AddAsync(category);
 
-            return Ok(result);
+            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
         }
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            var result = await _categoryService.DeleteAsync(id);
-            return Ok(result);
+            await _categoryService.DeleteAsync(id);
+            return NoContent();
         }
 
     }

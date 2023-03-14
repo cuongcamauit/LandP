@@ -111,8 +111,7 @@ namespace LandPApi.Service
             var claims = new List<Claim>()
             {
                 new Claim("Email", loginViewModel.Email!),
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.Name!)
+                new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
             var userRoles = await _userManager.GetRolesAsync(user);
             foreach (var role in userRoles)

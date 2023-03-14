@@ -3,6 +3,7 @@ using LandPApi.Models;
 using LandPApi.IService;
 using System.Net.WebSockets;
 using LandPApi.Service;
+using LandPApi.Dto;
 
 namespace LandPApi.Controllers
 {
@@ -22,7 +23,12 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> GetBrands()
         {
             var result = await _brandService.GetAllAsync(o => o.Products!);
-            return Ok(result);
+            return Ok(new Response
+            {
+                Success = true,
+                Message = "Get all brands",
+                Data = result,
+            });
         }
 
         // GET: api/Brands/5
@@ -35,7 +41,12 @@ namespace LandPApi.Controllers
                 return NotFound();
             }
 
-            return Ok(brand);
+            return Ok(new Response
+            {
+                Success = true,
+                Message = "Got a brand successfully",
+                Data = brand
+            });
         }
 
         // PUT: api/Brands/5
@@ -45,12 +56,16 @@ namespace LandPApi.Controllers
         {
             if (id != brand.Id)
             {
-                return BadRequest();
+                return BadRequest(new Response
+                {
+                    Success = false,
+                    Message = "Id doesn't match"
+                });
             }
 
-            var result = await _brandService.UpdateAsync(brand);
+            await _brandService.UpdateAsync(brand);
 
-            return Ok(result);
+            return NoContent();
         }
 
         // POST: api/Brands
@@ -58,17 +73,17 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostBrand(Brand brand)
         {
-            var result = await _brandService.AddAsync(brand);
+            await _brandService.AddAsync(brand);
            
-            return Ok(result);
+            return CreatedAtAction("GetBrand", new { id = brand.Id }, brand);
         }
 
         // DELETE: api/Brands/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
-            var result = await _brandService.DeleteAsync(id);
-            return Ok(result);
+            await _brandService.DeleteAsync(id);
+            return NoContent();
         }
     }
 }

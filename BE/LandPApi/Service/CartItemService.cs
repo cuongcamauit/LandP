@@ -31,10 +31,10 @@ namespace LandPApi.Service
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<CartItem> GetAllAsync(string customerId, Guid productId)
+        public async Task<ICollection<CartItem>> GetAllAsync(string customerId, Guid productId)
         {
-            return _context.CartItems
-                .Where(o => o.CustomerId == customerId && o.ProductId == productId);
+            return await _context.CartItems
+                .Where(o => o.CustomerId == customerId && o.ProductId == productId).ToListAsync();
         }
 
         public async Task UpdateAsync(CartItem cartItem)

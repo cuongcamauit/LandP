@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LandPApi.Models;
 using LandPApi.IService;
+using System.Drawing.Drawing2D;
 
 namespace LandPApi.Controllers
 {
@@ -42,8 +43,8 @@ namespace LandPApi.Controllers
             }
 
             ;
-            var result = await _historyStatusService.UpdateAsync(historyStatus);
-            return Ok(result);
+            await _historyStatusService.UpdateAsync(historyStatus);
+            return NoContent();
         }
 
         // POST: api/HistoryStatus
@@ -51,16 +52,16 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostHistoryStatus(HistoryStatus historyStatus)
         {
-            var result = await _historyStatusService.AddAsync(historyStatus);
-            return Ok(result);
+            await _historyStatusService.AddAsync(historyStatus);
+            return CreatedAtAction("GetHistoryStatus", new { id = historyStatus.Id }, historyStatus);
         }
 
         // DELETE: api/HistoryStatus/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHistoryStatus(Guid id)
         {
-            var result = await _historyStatusService.DeleteAsync(id);
-            return Ok(result);
+            await _historyStatusService.DeleteAsync(id);
+            return NoContent();
         }
     }
 }

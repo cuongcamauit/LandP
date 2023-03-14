@@ -6,7 +6,7 @@ namespace LandPApi.IService
 {
     public interface ICartItemService
     {
-        IEnumerable<CartItem> GetAllAsync(string customerId, Guid productId);
+        Task<ICollection<CartItem>> GetAllAsync(string customerId);
         Task AddAsync(CartItem cartItem);
         Task UpdateAsync(CartItem cartItem);
         Task DeleteAsync(string customerId, Guid productId);

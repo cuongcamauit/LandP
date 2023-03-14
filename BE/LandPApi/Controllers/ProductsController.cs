@@ -28,7 +28,7 @@ namespace LandPApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(Guid id)
         {
-            var product = await _productService.GetByIdAsync(id, o => o.Brand!, o => o.Category!);
+            var product = await _productService.GetByIdAsync(id, o => o.Brand!, o => o.Category!, o => o.Reviews!);
             if (product == null)
             {
                 return NotFound();
@@ -46,9 +46,9 @@ namespace LandPApi.Controllers
                 return BadRequest();
             }
 
-            var result = await _productService.UpdateAsync(product);
+            await _productService.UpdateAsync(product);
 
-            return Ok(result);
+            return NoContent();
         }
 
         //// POST: api/Products
@@ -56,17 +56,17 @@ namespace LandPApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostProduct(Product product)
         {
-            var result = await _productService.AddAsync(product);
+            await _productService.AddAsync(product);
             
-            return Ok(result);
+            return Ok(product);
         }
 
         //// DELETE: api/Products/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            var result = await _productService.DeleteAsync(id);
-            return Ok(result);
+           await _productService.DeleteAsync(id);
+            return NoContent();
         }
 
         

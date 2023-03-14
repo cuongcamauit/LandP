@@ -2,6 +2,9 @@
 using LandPApi.Models;
 using LandPApi.IService;
 using System.Net.WebSockets;
+using LandPApi.Dto;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LandPApi.Controllers
 {
@@ -18,10 +21,15 @@ namespace LandPApi.Controllers
 
         // GET: api/Addresses
         [HttpGet]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> GetAddresses()
         {
-            var result = await _addressService.GetAllAsync(o => o.Customer!);
-            return Ok(result);
+            var result = await _addressService.GetUserAddressesAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return Ok(new Response
+            {
+                Success = true,
+                Data = result
+            });
         }
 
         // GET: api/Addresses/5
@@ -35,37 +43,45 @@ namespace LandPApi.Controllers
                 return NotFound();
             }
 
-            return Ok(address);
+            return Ok(new Response
+            {
+                Success = true,
+                Data = address
+            });
         }
 
         // PUT: api/Addresses/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> PutAddress(Guid id, Address address)
         {
             if (id != address.Id)
             {
                 return BadRequest();
             }
-            var result = await _addressService.UpdateAsync(address);
-            return Ok(result);
+            await _addressService.UpdateAsync(address, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return NoContent();
         }
 
         // POST: api/Addresses
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> PostAddress(Address address)
         {
-            var result = await _addressService.AddAsync(address);
-            return Ok(result);
+            address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            await _addressService.AddAsync(address);
+            return CreatedAtAction("GetAddress", new { id = address.Id }, address);
         }
 
         // DELETE: api/Addresses/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> DeleteAddress(Guid id)
         {
-            var result = await _addressService.DeleteAsync(id);
-            return Ok(result);
+            await _addressService.DeleteAsync(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return NoContent();
         }
     }
 }
