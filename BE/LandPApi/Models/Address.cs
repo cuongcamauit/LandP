@@ -1,8 +1,8 @@
-﻿using LandPApi.Base;
+﻿
 
 namespace LandPApi.Models
 {
-    public class Address : IEntityBase
+    public class Address : BaseModel
     { 
         public Guid Id { get; set; }
         public string? Province { get; set; }

@@ -1,45 +1,36 @@
-﻿using LandPApi.Base;
+﻿
+using AutoMapper;
 using LandPApi.Data;
+using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.Repository;
+using LandPApi.View;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
 {
-    public class AddressService : BaseRepository<Address>, IAddressService
+    public class AddressService : GenericService<AddressView, AddressDto, Address>, IAddressService
     {
-        public AddressService(ApplicationDbContext context) : base(context)
+        public AddressService(IRepository<Address> repository, IMapper mapper) : base(repository, mapper)
         {
         }
 
-        public async Task DeleteAsync(Guid id, string customerId)
+        public async Task Delete(Guid id, string customerId)
         {
-            var address = await _context.Addresses.FirstOrDefaultAsync(o => o.Id == id && o.CustomerId == customerId);
+            var address = await _repository.ReadByCondition(o => (o.Id == id && o.CustomerId == customerId)).FirstOrDefaultAsync();
             if (address != null)
             {
-                _context.Remove(address!);
-                await _context.SaveChangesAsync();
+                _repository.Delete(address);
+                _repository.Save();
             }
-            throw new Exception("Not found");
         }
 
-        public async Task<ICollection<Address>> GetUserAddressesAsync(string customerId)
+        public async Task<List<AddressDto>> GetAll(string customerId)
         {
-            var result = await _context.Addresses.Where(o => o.CustomerId == customerId).ToListAsync();
-            return result;
-        }
-
-        public async Task UpdateAsync(Address address, string customerId)
-        {
-            var ad = _context.Addresses.FirstOrDefault(o => o.Id == address.Id && o.CustomerId == customerId);
-
-            if (ad != null)
-            {
-                address.CustomerId = customerId;
-                _context.UpdateRange(address);
-                await _context.SaveChangesAsync();
-            }
+            var addresses = await _repository.ReadByCondition(o => o.CustomerId == customerId).ToListAsync();
+            return _mapper.Map<List<AddressDto>>(addresses);
         }
     }
 }

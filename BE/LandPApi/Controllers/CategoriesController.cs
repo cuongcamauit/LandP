@@ -4,6 +4,7 @@ using LandPApi.IService;
 using LandPApi.Service;
 using System.Drawing.Drawing2D;
 using LandPApi.Dto;
+using LandPApi.View;
 
 namespace LandPApi.Controllers
 {
@@ -22,7 +23,7 @@ namespace LandPApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            var result = await _categoryService.GetAllAsync(o => o.Products!);
+            List<CategoryDto> result = await _categoryService.GetAll();
             return Ok(new Response
             {
                 Success = true,
@@ -34,7 +35,7 @@ namespace LandPApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(Guid id)
         {
-            var result = await _categoryService.GetByIdAsync(id, o => o.Products!);
+            CategoryDto result = await _categoryService.GetById(id);
             return Ok(new Response
             {
                 Success = true,
@@ -45,31 +46,31 @@ namespace LandPApi.Controllers
         // PUT: api/Categories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(Guid id, Category category)
+        public async Task<IActionResult> PutCategory(Guid id, CategoryDto category)
         {
             if (id != category.Id)
             {
                 return BadRequest();
             }
-            await _categoryService.UpdateAsync(category);
+            _categoryService.Update(category);
             return NoContent();
         }
 
         // POST: api/Categories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<IActionResult> PostCategory(Category category)
+        public IActionResult PostCategory(CategoryView category)
         {
-            await _categoryService.AddAsync(category);
+            CategoryDto dto = _categoryService.Create(category);
 
-            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
+            return CreatedAtAction("GetCategory", new { id = dto.Id }, dto);
         }
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
-            await _categoryService.DeleteAsync(id);
+            await _categoryService.Delete(id);
             return NoContent();
         }
 

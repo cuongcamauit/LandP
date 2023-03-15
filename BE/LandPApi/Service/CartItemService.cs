@@ -4,7 +4,7 @@ using LandPApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
-{
+{/*
     public class CartItemService : ICartItemService
     {
         private readonly ApplicationDbContext _context;
@@ -42,5 +42,5 @@ namespace LandPApi.Service
             _context.CartItems.Update(cartItem);
             await _context.SaveChangesAsync();
         }
-    }
+    }*/
 }

@@ -1,9 +1,9 @@
-﻿using LandPApi.Base;
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace LandPApi.Models
 {
-    public class Brand : IEntityBase
+    public class Brand : BaseModel
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }

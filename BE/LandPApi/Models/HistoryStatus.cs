@@ -1,4 +1,4 @@
-﻿using LandPApi.Base;
+﻿
 
 namespace LandPApi.Models
 {
@@ -10,7 +10,7 @@ namespace LandPApi.Models
         Delivered,
         Canceled
     }
-    public class HistoryStatus : IEntityBase
+    public class HistoryStatus
     {
         public Guid Id { get; set; }
         public Status Status { get; set; }

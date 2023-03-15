@@ -1,13 +1,18 @@
-﻿using LandPApi.Base;
+﻿
+using AutoMapper;
 using LandPApi.Data;
+using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.Repository;
+using LandPApi.View;
+using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
 {
-    public class CategoryService : BaseRepository<Category>, ICategoryService
+    public class CategoryService : GenericService<CategoryView, CategoryDto, Category>, ICategoryService
     {
-        public CategoryService(ApplicationDbContext context) : base(context)
+        public CategoryService(IRepository<Category> repository, IMapper mapper) : base(repository, mapper)
         {
         }
     }

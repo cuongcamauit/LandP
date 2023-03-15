@@ -1,8 +1,9 @@
-using LandPApi.Base;
+
 using LandPApi.Data;
 using LandPApi.IService;
 using LandPApi.Middleware;
 using LandPApi.Models;
+using LandPApi.Repository;
 using LandPApi.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -57,17 +58,25 @@ namespace LandPApi
                 };
             });
 
-            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(SqlServerRepository<>));
+            builder.Services.AddScoped(typeof(IGenericService<,,>), typeof(GenericService<,,>));
+
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IBrandService, BrandService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
-            builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
-            builder.Services.AddScoped<IOrderService, OrderService>();
-            builder.Services.AddScoped<ICartItemService, CartItemService>();
-            builder.Services.AddScoped<IViewService, ViewService>();
-            builder.Services.AddScoped<IOrderDetail, OrderDetailService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            //builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
+            //builder.Services.AddScoped<IOrderService, OrderService>();
+            //builder.Services.AddScoped<IViewService, ViewService>();
+            //builder.Services.AddScoped<IOrderDetail, OrderDetailService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IMailService, GmailService>();
+
+
+
+
+
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddRazorPages();
 
 

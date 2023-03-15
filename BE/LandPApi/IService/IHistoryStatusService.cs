@@ -1,9 +1,9 @@
-﻿using LandPApi.Base;
-using LandPApi.Models;
+﻿using LandPApi.Models;
+using LandPApi.Service;
 
 namespace LandPApi.IService
 {
-    public interface IHistoryStatusService : IBaseRepository<HistoryStatus>
+    public interface IHistoryStatusService
     {
     }
 }

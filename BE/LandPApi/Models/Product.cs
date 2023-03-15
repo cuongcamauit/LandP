@@ -1,8 +1,8 @@
-﻿using LandPApi.Base;
+﻿
 
 namespace LandPApi.Models
 {
-    public class Product : IEntityBase
+    public class Product : BaseModel
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }

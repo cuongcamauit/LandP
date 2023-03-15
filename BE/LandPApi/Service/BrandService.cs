@@ -1,13 +1,16 @@
-﻿using LandPApi.Base;
-using LandPApi.Data;
+﻿using AutoMapper;
+using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.Repository;
+using LandPApi.View;
+using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
 {
-    public class BrandService : BaseRepository<Brand>, IBrandService
+    public class BrandService : GenericService<BrandView, BrandDto, Brand>, IBrandService
     {
-        public BrandService(ApplicationDbContext context) : base(context)
+        public BrandService(IRepository<Brand> repository, IMapper mapper) : base(repository, mapper)
         {
         }
     }

@@ -5,6 +5,7 @@ using System.Net.WebSockets;
 using LandPApi.Dto;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using LandPApi.View;
 
 namespace LandPApi.Controllers
 {
@@ -19,12 +20,11 @@ namespace LandPApi.Controllers
             _addressService = addressService;
         }
 
-        // GET: api/Addresses
+        // GET: api/Addresses/
         [HttpGet]
-        [Authorize(Roles = "User")]
         public async Task<IActionResult> GetAddresses()
         {
-            var result = await _addressService.GetUserAddressesAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var result = await _addressService.GetAll(User.FindFirstValue(ClaimTypes.NameIdentifier));
             return Ok(new Response
             {
                 Success = true,
@@ -32,11 +32,24 @@ namespace LandPApi.Controllers
             });
         }
 
+        // GET: api/Addresses/Admin
+        [HttpGet("Admin")]
+        public async Task<IActionResult> GetAddressesAdmin()
+        {
+            var result = await _addressService.GetAll();
+            return Ok(new Response
+            {
+                Success = true,
+                Data = result
+            });
+        }
+
+
         // GET: api/Addresses/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAddress(Guid id)
         {
-            var address = await _addressService.GetByIdAsync(id, o => o.Customer!);
+            var address = await _addressService.GetById(id);
 
             if (address == null)
             {
@@ -54,13 +67,14 @@ namespace LandPApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         [Authorize(Roles = "User")]
-        public async Task<IActionResult> PutAddress(Guid id, Address address)
+        public async Task<IActionResult> PutAddress(Guid id, AddressDto address)
         {
             if (id != address.Id)
             {
                 return BadRequest();
             }
-            await _addressService.UpdateAsync(address, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            _addressService.Update(address);
             return NoContent();
         }
 
@@ -68,11 +82,11 @@ namespace LandPApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Authorize(Roles = "User")]
-        public async Task<IActionResult> PostAddress(Address address)
+        public async Task<IActionResult> PostAddress(AddressView address)
         {
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            await _addressService.AddAsync(address);
-            return CreatedAtAction("GetAddress", new { id = address.Id }, address);
+            var result = _addressService.Create(address);
+            return CreatedAtAction("GetAddresses", new { id = result.Id }, result);
         }
 
         // DELETE: api/Addresses/5
@@ -80,7 +94,7 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public async Task<IActionResult> DeleteAddress(Guid id)
         {
-            await _addressService.DeleteAsync(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            await _addressService.Delete(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
             return NoContent();
         }
     }

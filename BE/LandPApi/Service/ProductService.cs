@@ -1,23 +1,26 @@
-﻿using Google.Apis.Logging;
-using LandPApi.Base;
+﻿using AutoMapper;
+using Google.Apis.Logging;
+
 using LandPApi.Data;
 using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.Repository;
+using LandPApi.View;
 using System.Drawing.Printing;
 using System.Linq;
 
 namespace LandPApi.Service
 {
-    public class ProductService : BaseRepository<Product>, IProductService
+    public class ProductService : GenericService<ProductView, ProductDto, Product>, IProductService
     {
-        public ProductService(ApplicationDbContext context) : base(context)
+        public ProductService(IRepository<Product> repository, IMapper mapper) : base(repository, mapper)
         {
         }
 
-        public async Task<Response> GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int page_size = 5)
+        public object GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int page_size = 5)
         {
-            var products = _context.Products.AsQueryable();
+            var products = _repository.ReadAll();
             #region Filtering
             if (categoryId != null)
             {
@@ -61,7 +64,7 @@ namespace LandPApi.Service
             #region Paginate
             var result = PaginatedList<Product>.Create(products, page, page_size);
 
-            return new Response
+            return new
             {
                 Success = true,
                 Data =
@@ -71,7 +74,7 @@ namespace LandPApi.Service
                     {
                         current_page = result.PageIndex,
                         total_page = result.TotalPage,
-                        page_size = page_size
+                        page_size
                     }
                 }
             };

@@ -4,6 +4,7 @@ using LandPApi.IService;
 using System.Net.WebSockets;
 using LandPApi.Service;
 using LandPApi.Dto;
+using LandPApi.View;
 
 namespace LandPApi.Controllers
 {
@@ -22,7 +23,7 @@ namespace LandPApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetBrands()
         {
-            var result = await _brandService.GetAllAsync(o => o.Products!);
+            var result = await _brandService.GetAll();
             return Ok(new Response
             {
                 Success = true,
@@ -35,7 +36,7 @@ namespace LandPApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBrand(Guid id)
         {
-            var brand = await _brandService.GetByIdAsync(id, o => o.Products!);
+            var brand = await _brandService.GetById(id);
             if (brand == null)
             {
                 return NotFound();
@@ -52,7 +53,7 @@ namespace LandPApi.Controllers
         // PUT: api/Brands/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBrand(Guid id, Brand brand)
+        public IActionResult PutBrand(Guid id, BrandDto brand)
         {
             if (id != brand.Id)
             {
@@ -63,7 +64,7 @@ namespace LandPApi.Controllers
                 });
             }
 
-            await _brandService.UpdateAsync(brand);
+            _brandService.Update(brand);
 
             return NoContent();
         }
@@ -71,18 +72,18 @@ namespace LandPApi.Controllers
         // POST: api/Brands
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<IActionResult> PostBrand(Brand brand)
+        public IActionResult PostBrand(BrandView brand)
         {
-            await _brandService.AddAsync(brand);
-           
-            return CreatedAtAction("GetBrand", new { id = brand.Id }, brand);
+            BrandDto result = _brandService.Create(brand);
+
+            return CreatedAtAction("GetBrands", new { id = result.Id }, result);
         }
 
         // DELETE: api/Brands/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
-            await _brandService.DeleteAsync(id);
+            await _brandService.Delete(id);
             return NoContent();
         }
     }

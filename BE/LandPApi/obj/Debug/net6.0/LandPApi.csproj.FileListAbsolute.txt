@@ -612,3 +612,5 @@ C:\Users\Phu Cuong\OneDrive\C Sharp\LandP\BE\LandPApi\obj\Debug\net6.0\refint\La
 C:\Users\Phu Cuong\OneDrive\C Sharp\LandP\BE\LandPApi\obj\Debug\net6.0\LandPApi.pdb
 C:\Users\Phu Cuong\OneDrive\C Sharp\LandP\BE\LandPApi\obj\Debug\net6.0\LandPApi.genruntimeconfig.cache
 C:\Users\Phu Cuong\OneDrive\C Sharp\LandP\BE\LandPApi\obj\Debug\net6.0\ref\LandPApi.dll
+C:\Users\Phu Cuong\OneDrive\C Sharp\LandP\BE\LandPApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Phu Cuong\OneDrive\C Sharp\LandP\BE\LandPApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
