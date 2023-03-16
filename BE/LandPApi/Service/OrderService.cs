@@ -39,6 +39,7 @@ namespace LandPApi.Service
 
         public async Task<OrderDto?> Add(string customerId, OrderView view)
         {
+            double total = 0;
             var address = await _repoAdd.ReadByCondition(o => o.CustomerId == customerId
                                                         && o.Id == view.AddressId).FirstOrDefaultAsync();
             if (address == null)
@@ -86,11 +87,13 @@ namespace LandPApi.Service
                     ProductId = item,
                     Quantity = entityCart.Quantity
                 });
+                total += (entityPro.Price * (100 - entityPro.PercentSale)) * entityPro.Quantity; 
 
                 entityPro.Quantity -= entityCart.Quantity;
                 _repoPro.Update(entityPro);
                 _repoCart.Delete(entityCart);
             }
+            order.Total = total;
             _repoPro.Save();
             _repoOrder.Save();
             _repoHis.Save();

@@ -1,9 +1,7 @@
-﻿using LandPApi.Models;
-
-namespace LandPApi.IService
+﻿namespace LandPApi.IService
 {
     public interface IViewService
     {
-        Task AddAsync(LandPApi.Models.View view);
+        void Create(string customerId, Guid productId);
     }
 }

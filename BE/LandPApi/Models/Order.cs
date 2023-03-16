@@ -10,6 +10,7 @@ namespace LandPApi.Models
         public Status Status { get; set; }
         public DateTime Date { get; set; }
         public bool isPaid { get; set; }
+        public double Total { get; set; }
         public string? CustomerId { get; set; }
         public Guid AddressId { get; set; }
         public Customer? Customer { get; set; }

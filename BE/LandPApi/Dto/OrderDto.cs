@@ -10,6 +10,7 @@ namespace LandPApi.Dto
         public Status Status { get; set; }
         public DateTime Date { get; set; }
         public bool isPaid { get; set; }
+        public double Total { get; set; }
         public string? CustomerId { get; set; }
     }
 }

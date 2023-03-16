@@ -73,7 +73,6 @@ namespace LandPApi.Controllers
             OrderDto result = await _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
                                                      order);
             return Ok(result);
-            //return CreatedAtAction("GetOrders", new { id = result.Id }, result);
         }
 
         //// DELETE: api/Orders/5

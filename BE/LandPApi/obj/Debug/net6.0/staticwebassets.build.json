@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IeNLpntXm6x6mx1Vmte3hNsOdseLc6Ly1ToSebkW/ew=",
+  "Hash": "3TH5huqpuwQFn4u/WqxiXD5YBv01c0Txq4n27cGgu7E=",
   "Source": "LandPApi",
   "BasePath": "_content/LandPApi",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\confirmEmail.html"
+    },
+    {
+      "Identity": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\resetPassword.html",
+      "SourceId": "LandPApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "BasePath": "_content/LandPApi",
+      "RelativePath": "resetPassword.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resetPassword.html"
     }
   ]
 }

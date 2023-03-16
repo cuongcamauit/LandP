@@ -69,7 +69,7 @@ namespace LandPApi.Service
                 Success = true,
                 Data =
                 new {
-                    products = result,
+                    products = _mapper.Map<List<ProductDto>>(result),
                     pagination = new
                     {
                         current_page = result.PageIndex,

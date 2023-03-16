@@ -72,7 +72,7 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ebd78fcc-159a-42a8-b9fe-79902ce36577"),
+                            Id = new Guid("4328358d-d0bf-4bcf-a8b6-e09fd8a419b8"),
                             Name = "Samsung"
                         });
                 });
@@ -117,7 +117,7 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ec457683-17a3-41ba-9613-939d258855d2"),
+                            Id = new Guid("24fc78b4-b97b-4301-8e60-26fc3ba5a74c"),
                             Name = "Test Category"
                         });
                 });
@@ -234,6 +234,9 @@ namespace LandPApi.Migrations
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("float");
 
                     b.Property<bool>("isPaid")
                         .HasColumnType("bit");
@@ -383,21 +386,21 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b3c08f46-a609-4982-8795-3fa49f92bff3",
+                            Id = "14fd0480-3f83-45b6-9583-779a4dfac211",
                             ConcurrencyStamp = "0",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
-                            Id = "2bfe0b1e-117d-4afa-b055-f1d87d77b8eb",
+                            Id = "025e1ba9-f16e-4e18-ac55-630a6a0f998c",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "e02e213f-f75c-4214-8f5b-aeee20165626",
+                            Id = "cd8375f4-ecb4-4558-8737-884a30008419",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"

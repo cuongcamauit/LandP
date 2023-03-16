@@ -1,21 +1,34 @@
 ﻿using LandPApi.Data;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.Repository;
 
 namespace LandPApi.Service
 {
     public class ViewService : IViewService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IRepository<Models.View> _repoView;
+        private readonly IRepository<Product> _repoPro;
 
-        public ViewService(ApplicationDbContext context)
+        public ViewService(IRepository<Models.View> repoView, IRepository<Product> repoPro)
         {
-            _context = context;
+            _repoView = repoView;
+            _repoPro = repoPro;
         }
-        public async Task AddAsync(LandPApi.Models.View view)
+        public void Create(string customerId, Guid productId)
         {
-            await _context.AddAsync(view);
-            await _context.SaveChangesAsync();
+            var product = _repoPro.ReadByCondition(o => o.Id == productId).FirstOrDefault();
+            var view = _repoView.ReadByCondition(o => o.ProductId == productId && 
+                                                o.CustomerId == customerId).FirstOrDefault();        
+            if (product != null && view == null)
+            {
+                _repoView.Create(new Models.View
+                {
+                    CustomerId = customerId,
+                    ProductId = productId,
+                });
+                _repoView.Save();
+            }
         }
     }
 }

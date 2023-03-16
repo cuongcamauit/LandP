@@ -90,9 +90,9 @@ namespace LandPApi
             if (ModelState.IsValid)
             {
                 var result = await _userService.ResetPasswordAsync(resetPasswordViewModel);
-                if (result.Success) 
-                    return Ok(result);
-                
+                if (result.Success)
+                    return Redirect($"{_configuration["AppUrl"]}/resetPassword.html");
+
                 return BadRequest(result);
             }
 
