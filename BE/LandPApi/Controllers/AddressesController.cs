@@ -22,6 +22,7 @@ namespace LandPApi.Controllers
 
         // GET: api/Addresses/
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAddresses()
         {
             var result = await _addressService.GetAll(User.FindFirstValue(ClaimTypes.NameIdentifier));
@@ -66,7 +67,7 @@ namespace LandPApi.Controllers
         // PUT: api/Addresses/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize(Roles = "User")]
+        [Authorize]
         public async Task<IActionResult> PutAddress(Guid id, AddressDto address)
         {
             if (id != address.Id)
@@ -81,7 +82,7 @@ namespace LandPApi.Controllers
         // POST: api/Addresses
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize]
         public async Task<IActionResult> PostAddress(AddressView address)
         {
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -91,7 +92,7 @@ namespace LandPApi.Controllers
 
         // DELETE: api/Addresses/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "User")]
+        [Authorize]
         public async Task<IActionResult> DeleteAddress(Guid id)
         {
             await _addressService.Delete(id, User.FindFirstValue(ClaimTypes.NameIdentifier));

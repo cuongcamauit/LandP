@@ -4,30 +4,36 @@ using LandPApi.IService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Drawing.Drawing2D;
+using LandPApi.View;
+using LandPApi.Dto;
+using System.Security.Claims;
 
 namespace LandPApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "User")]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
-        private readonly UserManager<Customer> _userManager;
 
-        public OrdersController(IOrderService orderService, UserManager<Customer> userManager)
+        public OrdersController(IOrderService orderService)
         {
             _orderService = orderService;
-            _userManager = userManager;
         }
 
         // GET: api/Orders
-        //[HttpGet]
-        //public async Task<IActionResult> GetOrders()
-        //{
-        //    var result = await _orderService.GetAllAsync(o => o.Customer!, o => o.Address!, o => o.OrderDetails!, o => o.HistoryStatuses!);
-        //    return Ok(result) ;
-        //}
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetOrders()
+        {
+            List<OrderDto> result = await _orderService.GetAll(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return Ok(new Response
+            {
+                Success = true,
+                Message = "Get all order of current user",
+                Data = result
+            });
+        }
 
         //// GET: api/Orders/5
         //[HttpGet("{id}")]
@@ -53,21 +59,22 @@ namespace LandPApi.Controllers
         //        return BadRequest();
         //    }
         //    await _orderService.UpdateAsync(order);
-          
+
         //    return NoContent();
         //}
 
         //// POST: api/Orders
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<IActionResult> PostOrder(Order order)
-        //{
-        //    //var user = await _userManager.GetUserAsync(User);
-            
-        //    await _orderService.AddAsync(order);
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> PostOrder(OrderView order)
+        {
 
-        //    return CreatedAtAction("GetOrder", new { id = order.Id }, order);
-        //}
+            OrderDto result = await _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
+                                                     order);
+            return Ok(result);
+            //return CreatedAtAction("GetOrders", new { id = result.Id }, result);
+        }
 
         //// DELETE: api/Orders/5
         //[HttpDelete("{id}")]

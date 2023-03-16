@@ -1,13 +1,15 @@
 ﻿
 using LandPApi.Models;
+using LandPApi.View;
 using System.Linq.Expressions;
 
 namespace LandPApi.IService
 {
     public interface ICartItemService
     {
-        Task<ICollection<CartItem>> GetAllAsync(string customerId);
-        Task AddAsync(CartItem cartItem);
+        Task<List<CartItemView>> GetAllAsync(string customerId);
+        Task<CartItemView> GetByIdAsync(string customerId, Guid productId);
+        CartItemView Add(string customerId, CartItemView cartItem);
         Task UpdateAsync(CartItem cartItem);
         Task DeleteAsync(string customerId, Guid productId);
     }

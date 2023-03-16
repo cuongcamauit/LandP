@@ -1,21 +1,26 @@
-﻿using LandPApi.Data;
+﻿using AutoMapper;
+using LandPApi.Data;
+using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.Repository;
 
 namespace LandPApi.Service
 {
-    public class OrderDetailService : IOrderDetail
+    public class OrderDetailService : IOrderDetailService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IRepository<OrderDetail> _repository;
+        private readonly IMapper _mapper;
 
-        public OrderDetailService(ApplicationDbContext context)
+        public OrderDetailService(IRepository<OrderDetail> repository, IMapper mapper)
         {
-            _context = context;
+            _repository = repository;
+            _mapper = mapper;
         }
-        public async Task AddAsync(OrderDetail orderDetail)
+        public List<OrderDetailDto> GetAll(Guid orderId)
         {
-            await _context.AddAsync(orderDetail);
-            await _context.SaveChangesAsync();
+            var result = _repository.ReadByCondition(o => o.OrderId == orderId);
+            return _mapper.Map<List<OrderDetailDto>>(result);
         }
     }
 }

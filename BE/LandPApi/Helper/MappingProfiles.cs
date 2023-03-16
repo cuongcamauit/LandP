@@ -20,6 +20,14 @@ namespace LandPApi.Helper
 
             CreateMap<Product, ProductDto>().ReverseMap();
             CreateMap<ProductView, Product>();
+
+            CreateMap<CartItem, CartItemView>();
+
+            CreateMap<Order, OrderDto>();
+
+            CreateMap<OrderDetail, OrderDetailDto>();
+
+            CreateMap<HistoryStatus, HistoryStatusDto>();   
         }
     }   
 }

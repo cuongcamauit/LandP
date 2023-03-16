@@ -65,10 +65,12 @@ namespace LandPApi
             builder.Services.AddScoped<IBrandService, BrandService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
             builder.Services.AddScoped<IProductService, ProductService>();
-            //builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
-            //builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<ICartItemService, CartItemService>();
+            builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
             //builder.Services.AddScoped<IViewService, ViewService>();
-            //builder.Services.AddScoped<IOrderDetail, OrderDetailService>();
+            //builder.Services.AddScoped<IReViewService, ReViewService>();
+            builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IMailService, GmailService>();
 
@@ -120,7 +122,8 @@ namespace LandPApi
 
             app.MapRazorPages();
 
-            //app.UseMiddleware<CheckAcessMiddleware>();
+            app.UseMiddleware<CheckAcessMiddleware>();
+
             app.UseCors("myCors");
 
             app.Run();

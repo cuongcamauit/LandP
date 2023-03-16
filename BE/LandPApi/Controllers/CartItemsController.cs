@@ -2,6 +2,7 @@
 using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.View;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,36 +30,45 @@ namespace LandPApi.Controllers
             return Ok(
                 new Response {
                     Success = true,
-                    Message = "Get all current user's cart item",
+                    Message = "Get all current user's cart items",
                     Data = result 
             });
         }
 
         // GET: api/CartItems/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<CartItem>> GetCartItem(string id)
-        //{
-        //    var cartItem = await _context.CartItems.FindAsync(id);
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<ActionResult<CartItem>> GetCartItem(Guid id)
+        {
+            var cartItem = await _cartItemService.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), id);
 
-        //    if (cartItem == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (cartItem == null)
+            {
+                return NotFound();
+            }
 
-        //    return cartItem;
-        //}
+            return Ok(
+                new Response
+                {
+                    Success = true,
+                    Message = "Get all current user's cart item",
+                    Data = cartItem
+                }) ;
+        }
 
         // PUT: api/CartItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> PutCartItem(Guid id, int soluong)
+        public async Task<IActionResult> PutCartItem(Guid id, CartItemView view)
         {
+            if (id != view.ProductId)
+                return BadRequest();
             var cartItem = new CartItem
             {
                 CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier),
-                Quantity = soluong,
-                ProductId = id
+                Quantity = view.Quantity,
+                ProductId = view.ProductId
             };
             await _cartItemService.UpdateAsync(cartItem);
             return NoContent();
@@ -67,11 +77,12 @@ namespace LandPApi.Controllers
         // POST: api/CartItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CartItem>> PostCartItem(CartItem cartItem)
+        [Authorize]
+        public IActionResult PostCartItem(CartItemView cartItem)
         {
-            await _cartItemService.AddAsync(cartItem);
+            CartItemView result = _cartItemService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem);
 
-            return CreatedAtAction("GetCartItem", new { id = cartItem.CustomerId }, cartItem);
+            return CreatedAtAction("GetCartItems", new { id = cartItem.ProductId }, cartItem);
         }
 
         // DELETE: api/CartItems/5
