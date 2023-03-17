@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LandPApi.Data;
 using LandPApi.Models;
+using LandPApi.IService;
+using LandPApi.Dto;
+using LandPApi.View;
+using System.Security.Claims;
 
 namespace LandPApi.Controllers
 {
@@ -14,76 +18,83 @@ namespace LandPApi.Controllers
     [ApiController]
     public class ReviewsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IReviewService _reviewService;
 
-        public ReviewsController(ApplicationDbContext context)
+        public ReviewsController(IReviewService reviewService)
         {
-            _context = context;
+            _reviewService = reviewService;
         }
 
         // GET: api/Reviews
+        // get all review of a product
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Review>>> GetReviews()
+        public IActionResult GetReviews(Guid productId, int page = 1, int pageSize = 5)
         {
-            return await _context.Reviews.ToListAsync();
+            var result = _reviewService.GetAll(productId, page, pageSize);
+            return Ok(new Response
+            {
+                Success = true,
+                Data = result,
+                Message = "Get all review of product"
+            });
         }
 
         // GET: api/Reviews/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Review>> GetReview(string id)
-        {
-            var review = await _context.Reviews.FindAsync(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Review>> GetReview(string id)
+        //{
+        //    var review = await _context.Reviews.FindAsync(id);
 
-            if (review == null)
-            {
-                return NotFound();
-            }
+        //    if (review == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return review;
-        }
+        //    return review;
+        //}
 
         // PUT: api/Reviews/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutReview(string id, Review review)
-        {
-            if (id != review.CustomerId)
-            {
-                return BadRequest();
-            }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutReview(string id, Review review)
+        //{
+        //    if (id != review.CustomerId)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         // POST: api/Reviews
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Review>> PostReview(Review review)
+        public async Task<ActionResult<Review>> PostReview(ReviewView review)
         {
-            
+            var result = _reviewService.Create(User.FindFirstValue(ClaimTypes.NameIdentifier), review);
 
-            return CreatedAtAction("GetReview", new { id = review.CustomerId }, review);
+            return CreatedAtAction("GetReviews", result);
         }
 
         // DELETE: api/Reviews/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteReview(string id)
-        {
-            var review = await _context.Reviews.FindAsync(id);
-            if (review == null)
-            {
-                return NotFound();
-            }
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteReview(string id)
+        //{
+        //    var review = await _context.Reviews.FindAsync(id);
+        //    if (review == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Reviews.Remove(review);
-            await _context.SaveChangesAsync();
+        //    _context.Reviews.Remove(review);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool ReviewExists(string id)
-        {
-            return _context.Reviews.Any(e => e.CustomerId == id);
-        }
+        //private bool ReviewExists(string id)
+        //{
+        //    return _context.Reviews.Any(e => e.CustomerId == id);
+        //}
     }
 }

@@ -69,13 +69,12 @@ namespace LandPApi
             builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddScoped<IViewService, ViewService>();
-            //builder.Services.AddScoped<IReViewService, ReViewService>();
+            builder.Services.AddScoped<IReviewService, ReviewService>();
             builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IMailService, GmailService>();
-
-
-
+            builder.Services.AddScoped<IDriveService, GGDriveService>();
+            builder.Services.AddScoped<IDocumentService, DocumentService>();
 
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -122,7 +121,7 @@ namespace LandPApi
 
             app.MapRazorPages();
 
-            app.UseMiddleware<CheckAcessMiddleware>();
+            //app.UseMiddleware<CheckAcessMiddleware>();
 
             app.UseCors("myCors");
 

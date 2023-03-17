@@ -4,11 +4,13 @@
     {
         public int PageIndex { get; set; }
         public int TotalPage { get; set; }
+        public int TotalItem { get; set; }
 
         public PaginatedList(List<T> items, int count, int pageIndex, int pageSize)
         {
             PageIndex = pageIndex;
             TotalPage = (int)Math.Ceiling(count / (double)pageSize);
+            TotalItem = count;
             AddRange(items);
         }
 

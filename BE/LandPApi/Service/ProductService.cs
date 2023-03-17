@@ -14,11 +14,22 @@ namespace LandPApi.Service
 {
     public class ProductService : GenericService<ProductView, ProductDto, Product>, IProductService
     {
-        public ProductService(IRepository<Product> repository, IMapper mapper) : base(repository, mapper)
-        {
-        }
+        private readonly IDriveService _driveService;
 
-        public object GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int page_size = 5)
+        public ProductService(IRepository<Product> repository, IMapper mapper, IDriveService driveService) : base(repository, mapper)
+        {
+            _driveService = driveService;
+        }
+        public ProductDto Create(ProductView view)
+        {
+            var entity = _mapper.Map<Product>(view);
+            entity.FolderId = _driveService.AddFolder(view.Name!, "1gvWxcVd3JxyZ7v9FJhb1Pp5jJJyyGaKU");
+
+            _repository.Create(entity);
+            _repository.Save();
+            return _mapper.Map<ProductDto>(entity);
+        }
+        public object GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5)
         {
             var products = _repository.ReadAll();
             #region Filtering
@@ -62,7 +73,7 @@ namespace LandPApi.Service
             #endregion
 
             #region Paginate
-            var result = PaginatedList<Product>.Create(products, page, page_size);
+            var result = PaginatedList<Product>.Create(products, page, pageSize);
 
             return new
             {
@@ -72,9 +83,10 @@ namespace LandPApi.Service
                     products = _mapper.Map<List<ProductDto>>(result),
                     pagination = new
                     {
-                        current_page = result.PageIndex,
-                        total_page = result.TotalPage,
-                        page_size
+                        currentPage = result.PageIndex,
+                        totalPage = result.TotalPage,
+                        pageSize = pageSize,
+                        totalItem = result.TotalItem
                     }
                 }
             };

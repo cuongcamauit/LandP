@@ -22,6 +22,7 @@ namespace LandPApi.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<LandPApi.Models.View> Views { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Document> Documents { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -62,6 +63,15 @@ namespace LandPApi.Data
                 entity.HasMany(o => o.Products)
                         .WithOne(o => o.Category)
                         .HasForeignKey(o => o.CategoryId);
+            });
+
+            builder.Entity<Document>(entity =>
+            {
+                entity.HasKey(o => o.Id);
+
+                entity.HasOne(o => o.Product)
+                        .WithMany(o => o.Documents)
+                        .HasForeignKey(o => o.ProductId);
             });
 
             builder.Entity<HistoryStatus>(entity =>
@@ -145,6 +155,10 @@ namespace LandPApi.Data
                 entity.HasMany(o => o.Reviews)
                         .WithOne(o => o.Product)
                         .HasForeignKey(o => o.ProductId);
+
+                entity.HasMany(o => o.Documents)
+                        .WithOne(o => o.Product)
+                        .HasForeignKey(o => o.ProductId);
             });
             builder.Entity<Review>(entity =>
             {
@@ -189,14 +203,33 @@ namespace LandPApi.Data
                 new Category()
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Test Category"
+                    Name = "Smartphone",
+                    Description = "A smart device",
+                    AvatarUrl = "https://drive.google.com/uc?export=view&id=1VPowiqiVfyuL7Pzntp1mqJV748v34zfb"
+                },
+                new Category()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Laptop",
+                    Description = "A smart device",
+                    AvatarUrl = "https://drive.google.com/uc?export=view&id=15Lo6BabMJo7m9p-VSve4kls1pG2VA1AN"
                 }
             );
             builder.Entity<Brand>().HasData(
                 new Brand()
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Samsung"
+                    Name = "Samsung",
+                    Description = "A branch from korea",
+                    LogoUrl = "https://drive.google.com/uc?export=view&id=1JrfIHh1Fi9aM66IMLd2jdZwurx1As6x0"
+
+                },
+                new Brand()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Iphone",
+                    Description = "A branch from Ameria",
+                    LogoUrl = "https://drive.google.com/uc?export=view&id=1DfzKYG8dsu0C0tNK_5U8GNBM3IE92fsz"
                 }
             );
         }

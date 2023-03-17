@@ -72,8 +72,17 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4328358d-d0bf-4bcf-a8b6-e09fd8a419b8"),
+                            Id = new Guid("358c295a-2b62-4dac-9949-0b0a1212422c"),
+                            Description = "A branch from korea",
+                            LogoUrl = "https://drive.google.com/uc?export=view&id=1JrfIHh1Fi9aM66IMLd2jdZwurx1As6x0",
                             Name = "Samsung"
+                        },
+                        new
+                        {
+                            Id = new Guid("0ce12680-8aeb-4b85-99bb-6d7579b93d87"),
+                            Description = "A branch from Ameria",
+                            LogoUrl = "https://drive.google.com/uc?export=view&id=1DfzKYG8dsu0C0tNK_5U8GNBM3IE92fsz",
+                            Name = "Iphone"
                         });
                 });
 
@@ -117,8 +126,17 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("24fc78b4-b97b-4301-8e60-26fc3ba5a74c"),
-                            Name = "Test Category"
+                            Id = new Guid("e3adbae4-a890-4238-9477-400010e06131"),
+                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1VPowiqiVfyuL7Pzntp1mqJV748v34zfb",
+                            Description = "A smart device",
+                            Name = "Smartphone"
+                        },
+                        new
+                        {
+                            Id = new Guid("1dac054a-9a42-471d-991f-4d0eb158f068"),
+                            AvatarUrl = "https://drive.google.com/uc?export=view&id=15Lo6BabMJo7m9p-VSve4kls1pG2VA1AN",
+                            Description = "A smart device",
+                            Name = "Laptop"
                         });
                 });
 
@@ -191,6 +209,21 @@ namespace LandPApi.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("LandPApi.Models.Document", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Documents");
                 });
 
             modelBuilder.Entity("LandPApi.Models.HistoryStatus", b =>
@@ -280,6 +313,9 @@ namespace LandPApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<double>("AverageRating")
+                        .HasColumnType("float");
+
                     b.Property<Guid>("BrandId")
                         .HasColumnType("uniqueidentifier");
 
@@ -287,6 +323,9 @@ namespace LandPApi.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FolderId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
@@ -303,6 +342,9 @@ namespace LandPApi.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<double>("SoldQuantity")
+                        .HasColumnType("float");
 
                     b.Property<string>("Unit")
                         .HasColumnType("nvarchar(max)");
@@ -386,21 +428,21 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "14fd0480-3f83-45b6-9583-779a4dfac211",
+                            Id = "2d5d9280-dcc9-434b-834a-a1fec31498d2",
                             ConcurrencyStamp = "0",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
-                            Id = "025e1ba9-f16e-4e18-ac55-630a6a0f998c",
+                            Id = "1537a967-584d-45e7-b5ce-b7c852c9319f",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "cd8375f4-ecb4-4558-8737-884a30008419",
+                            Id = "05637849-2dc3-4a9c-97ac-547ec7ae9264",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
@@ -537,6 +579,17 @@ namespace LandPApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Customer");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("LandPApi.Models.Document", b =>
+                {
+                    b.HasOne("LandPApi.Models.Product", "Product")
+                        .WithMany("Documents")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Product");
                 });
@@ -744,6 +797,8 @@ namespace LandPApi.Migrations
             modelBuilder.Entity("LandPApi.Models.Product", b =>
                 {
                     b.Navigation("CartItems");
+
+                    b.Navigation("Documents");
 
                     b.Navigation("OrderDetails");
 

@@ -27,7 +27,9 @@ namespace LandPApi.Helper
 
             CreateMap<OrderDetail, OrderDetailDto>();
 
-            CreateMap<HistoryStatus, HistoryStatusDto>();   
+            CreateMap<HistoryStatus, HistoryStatusDto>();
+
+            CreateMap<Review, ReviewDto>();
         }
     }   
 }
