@@ -44,7 +44,8 @@ namespace LandPApi.Service
             // update average rating
             var created = _repoPro.ReadByCondition(o => o.Id == review.ProductId).FirstOrDefault();
             var productsReviews = _repoReview.ReadByCondition(o => o.ProductId == created!.Id);
-            created!.AverageRating = productsReviews.Sum(o => o.Rating)/ productsReviews.Count();
+            created!.ReviewQuantity += 1;
+            created!.AverageRating = productsReviews.Sum(o => o.Rating);
             _repoPro.Update(created);
             _repoPro.Save();
             return true;

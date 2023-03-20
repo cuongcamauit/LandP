@@ -7,6 +7,7 @@ using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.View;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace LandPApi.Service
 {
@@ -94,8 +95,8 @@ namespace LandPApi.Service
                 _repoCart.Delete(entityCart);
             }
             order.Total = total;
-            _repoPro.Save();
             _repoOrder.Save();
+            _repoPro.Save();
             _repoHis.Save();
             _repoDetail.Save();
             _repoCart.Save();
@@ -107,5 +108,76 @@ namespace LandPApi.Service
             var result = await _repoOrder.ReadByCondition(o => o.CustomerId == customerId).ToListAsync();
             return _mapper.Map<List<OrderDto>>(result);
         }
+
+        public async Task Update(ClaimsPrincipal user, Guid orderId, Status status, bool isPaid)
+        {
+            var order = _repoOrder.ReadByCondition(o => o.Id == orderId);
+            var statusOrder = order.Select(o => o.Status).FirstOrDefault();
+            if (order == null)
+            {
+                return;
+            }
+
+            var claims = ((ClaimsIdentity)user.Identity!).Claims;
+            var roles = claims.Where(o => o.Type == ClaimTypes.Role).Select(o => o.Value);
+            var idUser = claims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)!.Value;
+
+            if (roles.Contains("User") && order.Where(o => o.CustomerId == idUser) != null)
+            {
+                if (statusOrder == Status.New && status == Status.Canceled)
+                {
+                    var historyStatus = new HistoryStatus
+                    {
+                        Status = Status.Canceled,
+                        OrderId = orderId,
+                    };
+                    var updateOrder = order.FirstOrDefault();
+                    updateOrder!.Status = Status.Canceled;
+                    returnProduct(orderId);
+                }
+            }
+
+            if (roles.Contains("Admin") && statusOrder != Status.Canceled)
+            {
+                
+                var historyStatus = new HistoryStatus
+                {
+                    Status = status,
+                    OrderId = orderId,
+                };
+                var updateOrder = order.FirstOrDefault();
+                if (statusOrder != status && status == Status.Canceled)
+                    returnProduct(orderId);
+                if (statusOrder != status && status == Status.Delivered)
+                    updateSoldQuantity(orderId);
+                updateOrder!.isPaid = isPaid;
+                updateOrder.Status = status;
+            }
+            _repoPro.Save();
+            _repoHis.Save();
+            _repoOrder.Save();
+        }
+
+        private void updateSoldQuantity(Guid orderId)
+        {
+            var orderDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId);
+            foreach (var order in orderDetail)
+            {
+                var product = _repoPro.ReadByCondition(o => o.Id == order.ProductId).FirstOrDefault();
+                product!.SoldQuantity += order.Quantity;
+                _repoPro.Update(product);
+            }
+        }
+
+        public void returnProduct(Guid orderId)
+        {
+            var orderDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId);
+            foreach (var order in orderDetail)
+            {
+                var product = _repoPro.ReadByCondition(o => o.Id == order.ProductId).FirstOrDefault();
+                product!.Quantity += order.Quantity;
+                _repoPro.Update(product);
+            }
+        }       
     }
 }

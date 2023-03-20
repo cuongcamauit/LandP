@@ -72,17 +72,17 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("358c295a-2b62-4dac-9949-0b0a1212422c"),
+                            Id = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
                             Description = "A branch from korea",
                             LogoUrl = "https://drive.google.com/uc?export=view&id=1JrfIHh1Fi9aM66IMLd2jdZwurx1As6x0",
                             Name = "Samsung"
                         },
                         new
                         {
-                            Id = new Guid("0ce12680-8aeb-4b85-99bb-6d7579b93d87"),
+                            Id = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             Description = "A branch from Ameria",
                             LogoUrl = "https://drive.google.com/uc?export=view&id=1DfzKYG8dsu0C0tNK_5U8GNBM3IE92fsz",
-                            Name = "Iphone"
+                            Name = "Apple"
                         });
                 });
 
@@ -126,14 +126,14 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e3adbae4-a890-4238-9477-400010e06131"),
+                            Id = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             AvatarUrl = "https://drive.google.com/uc?export=view&id=1VPowiqiVfyuL7Pzntp1mqJV748v34zfb",
                             Description = "A smart device",
                             Name = "Smartphone"
                         },
                         new
                         {
-                            Id = new Guid("1dac054a-9a42-471d-991f-4d0eb158f068"),
+                            Id = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             AvatarUrl = "https://drive.google.com/uc?export=view&id=15Lo6BabMJo7m9p-VSve4kls1pG2VA1AN",
                             Description = "A smart device",
                             Name = "Laptop"
@@ -224,6 +224,33 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Documents");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1IzG911rHzKN2p51Ite3JZqDV1FonTt4d",
+                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1DeA5LM1HQsUEb9tXUHEg27fWqKenJJDG",
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1JgLvP6rxTkkkmdWG7RhyqB4nMnaktLE6",
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1g7NLy-NZE9OTZhH0xctgVXONMNjHpQ4V",
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1JO-t8NpCi9qb9Jx8pmXbdHMvPg8LQAg3",
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.HistoryStatus", b =>
@@ -343,6 +370,9 @@ namespace LandPApi.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<int>("ReviewQuantity")
+                        .HasColumnType("int");
+
                     b.Property<double>("SoldQuantity")
                         .HasColumnType("float");
 
@@ -356,6 +386,42 @@ namespace LandPApi.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Màn hình:\r\n\r\nPLS TFT LCD6.6\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 12\r\nCamera sau:\r\n\r\nChính 50 MP & Phụ 5 MP, 2 MP, 2 MP\r\nCamera trước:\r\n\r\n8 MP\r\nChip:\r\n\r\nSnapdragon 680\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n128 GB\r\nSIM:\r\n\r\n2 Nano SIMHỗ trợ 4G\r\nPin, Sạc:\r\n\r\n5000 mAh25 W",
+                            FolderId = "12oUrvgsYTJhM4WkmXuWd1f8NmbvOe9Gn",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1k0K8y37j9HLnI8C7qYy92mjOzgnY4kSL",
+                            Name = "Samsung Galaxy A23",
+                            PercentSale = 0.0,
+                            Price = 4990000.0,
+                            Quantity = 100,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Màn hình:\r\n\r\nOLED6.1\"Super Retina XDR\r\nHệ điều hành:\r\n\r\niOS 15\r\nCamera sau:\r\n\r\n2 camera 12 MP\r\nCamera trước:\r\n\r\n12 MP\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n64 GB\r\nSIM:\r\n\r\n1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n2815 mAh20 W",
+                            FolderId = "1b9JWfgUruHr6j3U3XalWbAD2UO329_6X",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1yAleLMwDTEfXJNZF_eM8s4vkU8TFm9By",
+                            Name = "Iphone 12",
+                            PercentSale = 20.0,
+                            Price = 15590000.0,
+                            Quantity = 50,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Review", b =>
@@ -368,6 +434,9 @@ namespace LandPApi.Migrations
 
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
@@ -391,6 +460,9 @@ namespace LandPApi.Migrations
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("CustomerId", "ProductId");
 
@@ -428,21 +500,21 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2d5d9280-dcc9-434b-834a-a1fec31498d2",
+                            Id = "e12bf61f-1511-4361-8e45-3e96397c1872",
                             ConcurrencyStamp = "0",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
-                            Id = "1537a967-584d-45e7-b5ce-b7c852c9319f",
+                            Id = "73573d18-516c-443c-9750-7bca17c20829",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "05637849-2dc3-4a9c-97ac-547ec7ae9264",
+                            Id = "d1ecff08-8f07-4f51-8497-02fe45f9533d",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"

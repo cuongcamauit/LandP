@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LandPApi.Models;
 using LandPApi.IService;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
-using System.Drawing.Drawing2D;
 using LandPApi.View;
 using LandPApi.Dto;
 using System.Security.Claims;
@@ -73,6 +71,14 @@ namespace LandPApi.Controllers
             OrderDto result = await _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
                                                      order);
             return Ok(result);
+        }
+
+        [HttpPut]
+        [Authorize]
+        public async Task<IActionResult> PutOrder(Guid orderId, Status status, bool isPaid)
+        {
+            await _orderService.Update(User, orderId, status, isPaid);
+            return NoContent();
         }
 
         //// DELETE: api/Orders/5

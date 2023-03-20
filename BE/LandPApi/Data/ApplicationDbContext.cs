@@ -202,14 +202,14 @@ namespace LandPApi.Data
             builder.Entity<Category>().HasData(
                 new Category()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = Guid.Parse("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                     Name = "Smartphone",
                     Description = "A smart device",
                     AvatarUrl = "https://drive.google.com/uc?export=view&id=1VPowiqiVfyuL7Pzntp1mqJV748v34zfb"
                 },
                 new Category()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = Guid.Parse("3f8d98cb-a695-4334-bec2-09008670c39a"),
                     Name = "Laptop",
                     Description = "A smart device",
                     AvatarUrl = "https://drive.google.com/uc?export=view&id=15Lo6BabMJo7m9p-VSve4kls1pG2VA1AN"
@@ -218,7 +218,7 @@ namespace LandPApi.Data
             builder.Entity<Brand>().HasData(
                 new Brand()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = Guid.Parse("2ef43281-9c42-466e-ad66-483ff6f46326"),
                     Name = "Samsung",
                     Description = "A branch from korea",
                     LogoUrl = "https://drive.google.com/uc?export=view&id=1JrfIHh1Fi9aM66IMLd2jdZwurx1As6x0"
@@ -226,10 +226,69 @@ namespace LandPApi.Data
                 },
                 new Brand()
                 {
-                    Id = Guid.NewGuid(),
-                    Name = "Iphone",
+                    Id = Guid.Parse("36326612-2d44-446f-87cd-d060d14237a6"),
+                    Name = "Apple",
                     Description = "A branch from Ameria",
                     LogoUrl = "https://drive.google.com/uc?export=view&id=1DfzKYG8dsu0C0tNK_5U8GNBM3IE92fsz"
+                }
+            );
+
+            builder.Entity<Product>().HasData(
+                new Product()
+                {
+                    Id = Guid.Parse("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
+                    Name = "Samsung Galaxy A23",
+                    Description = "Màn hình:\r\n\r\nPLS TFT LCD6.6\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 12\r\nCamera sau:\r\n\r\nChính 50 MP & Phụ 5 MP, 2 MP, 2 MP\r\nCamera trước:\r\n\r\n8 MP\r\nChip:\r\n\r\nSnapdragon 680\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n128 GB\r\nSIM:\r\n\r\n2 Nano SIMHỗ trợ 4G\r\nPin, Sạc:\r\n\r\n5000 mAh25 W",
+                    Price = 4990000,
+                    ImageUrl = "https://drive.google.com/uc?export=view&id=1k0K8y37j9HLnI8C7qYy92mjOzgnY4kSL",
+                    Unit = "Unit",
+                    Quantity = 100,
+                    PercentSale = 0,
+                    CategoryId = Guid.Parse("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                    BrandId = Guid.Parse("2ef43281-9c42-466e-ad66-483ff6f46326"),
+                    FolderId = "12oUrvgsYTJhM4WkmXuWd1f8NmbvOe9Gn"
+                }, 
+                new Product()
+                {
+                    Id = Guid.Parse("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                    Name = "Iphone 12",
+                    Description = "Màn hình:\r\n\r\nOLED6.1\"Super Retina XDR\r\nHệ điều hành:\r\n\r\niOS 15\r\nCamera sau:\r\n\r\n2 camera 12 MP\r\nCamera trước:\r\n\r\n12 MP\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n64 GB\r\nSIM:\r\n\r\n1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n2815 mAh20 W",
+                    Price = 15590000,
+                    ImageUrl = "https://drive.google.com/uc?export=view&id=1yAleLMwDTEfXJNZF_eM8s4vkU8TFm9By",
+                    Unit = "Unit",
+                    Quantity = 50,
+                    PercentSale = 20,
+                    CategoryId = Guid.Parse("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                    BrandId = Guid.Parse("36326612-2d44-446f-87cd-d060d14237a6"),
+                    FolderId = "1b9JWfgUruHr6j3U3XalWbAD2UO329_6X"
+                }
+            );
+
+            builder.Entity<Document>().HasData(
+                new Document
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1IzG911rHzKN2p51Ite3JZqDV1FonTt4d",
+                    ProductId = Guid.Parse("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
+                },
+                new Document
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1DeA5LM1HQsUEb9tXUHEg27fWqKenJJDG",
+                    ProductId = Guid.Parse("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                },
+                new Document
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1JgLvP6rxTkkkmdWG7RhyqB4nMnaktLE6",
+                    ProductId = Guid.Parse("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                },
+                new Document
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1g7NLy-NZE9OTZhH0xctgVXONMNjHpQ4V",
+                    ProductId = Guid.Parse("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                },
+                new Document
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1JO-t8NpCi9qb9Jx8pmXbdHMvPg8LQAg3",
+                    ProductId = Guid.Parse("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
                 }
             );
         }

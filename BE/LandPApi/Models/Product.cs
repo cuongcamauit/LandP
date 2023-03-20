@@ -14,6 +14,7 @@ namespace LandPApi.Models
         public int Quantity { get; set; }
         public double PercentSale { get; set; }
         public double AverageRating { get; set; } = 0;
+        public int ReviewQuantity { get; set; } = 0;
         public double SoldQuantity { get; set; } = 0;
         public Guid CategoryId { get; set; }
         public Guid BrandId { get; set; }

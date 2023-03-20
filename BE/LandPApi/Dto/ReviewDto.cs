@@ -8,5 +8,6 @@ namespace LandPApi.Dto
         public string? Comment { get; set; }
         public Guid ProductId { get; set; }
         public Customer? Customer { get; set; }
+        public DateTime Date { get; set; }
     }
 }
