@@ -5,6 +5,7 @@ using System.Net.WebSockets;
 using LandPApi.Service;
 using LandPApi.Dto;
 using LandPApi.View;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LandPApi.Controllers
 {
@@ -22,7 +23,7 @@ namespace LandPApi.Controllers
         // GET: api/Brands
         [HttpGet]
         public async Task<IActionResult> GetBrands()
-        {
+        {            
             var result = await _brandService.GetAll();
             return Ok(new Response
             {
@@ -53,6 +54,7 @@ namespace LandPApi.Controllers
         // PUT: api/Brands/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult PutBrand(Guid id, BrandDto brand)
         {
             if (id != brand.Id)
@@ -72,6 +74,7 @@ namespace LandPApi.Controllers
         // POST: api/Brands
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult PostBrand(BrandView brand)
         {
             BrandDto result = _brandService.Create(brand);
@@ -81,6 +84,7 @@ namespace LandPApi.Controllers
 
         // DELETE: api/Brands/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
             await _brandService.Delete(id);

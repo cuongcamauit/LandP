@@ -1,32 +1,38 @@
 ﻿using AutoMapper;
-using Google.Apis.Logging;
-
-using LandPApi.Data;
 using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.View;
-using System.Drawing.Printing;
-using System.Linq;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
 {
     public class ProductService : GenericService<ProductView, ProductDto, Product>, IProductService
     {
         private readonly IDriveService _driveService;
+        private readonly IRepository<Models.View> _repoView;
+        private readonly UserManager<Customer> _userManager;
 
-        public ProductService(IRepository<Product> repository, IMapper mapper, IDriveService driveService) : base(repository, mapper)
+        public ProductService(IRepository<Product> repository
+                            , IRepository<Models.View> repoView 
+                            , IMapper mapper
+                            , UserManager<Customer> userManager
+                            , IDriveService driveService) : base(repository, mapper)
         {
             _driveService = driveService;
+            _repoView = repoView;
+            _userManager = userManager;
         }
-        public ProductDto Create(ProductView view)
+        public new ProductDto Create(ProductView view)
         {
             var entity = _mapper.Map<Product>(view);
             entity.FolderId = _driveService.AddFolder(view.Name!, "1gvWxcVd3JxyZ7v9FJhb1Pp5jJJyyGaKU");
 
             _repository.Create(entity);
             _repository.Save();
+
             return _mapper.Map<ProductDto>(entity);
         }
         public object GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5)
@@ -91,6 +97,42 @@ namespace LandPApi.Service
                 }
             };
             #endregion
+        }
+
+        public object GetForyou(string userId)
+        {
+            var listProduct = new HashSet<ProductDto>();   
+            var categorys = new HashSet<Guid>();
+
+            var getProductViewed = _repoView.ReadByCondition(o => o.CustomerId == userId).Select(o => o.ProductId).ToList();
+            foreach (var item in getProductViewed)
+            {
+                var category = _repository.ReadByCondition(o => o.Id == item).FirstOrDefault()!.CategoryId;
+                categorys.Add(category);
+
+            }
+            var getUserId = _userManager.Users.Where(o => o.Id != userId).Select(o => o.Id).ToList();
+
+            foreach (var id in getUserId)
+            {
+                var views = _repoView.ReadByCondition(o => o.CustomerId == id).Select(o => o.ProductId);
+                var together = getProductViewed.Concat(views);
+
+                if (((double)together.Count())/getProductViewed.Count()>=0.5)
+                {
+                    var except = views.ToList().Except(getProductViewed);
+                    foreach(var item in except)
+                    {
+                        var product = _repository.ReadByCondition(o => o.Id == item).FirstOrDefault();
+                        if (categorys.Contains(product!.CategoryId))
+                        {
+                            listProduct.Add(_mapper.Map<ProductDto>(product!));
+                        }
+                    }
+                }
+            }
+
+            return listProduct.ToList();
         }
     }
 }

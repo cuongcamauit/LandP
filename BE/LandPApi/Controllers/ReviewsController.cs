@@ -11,6 +11,7 @@ using LandPApi.IService;
 using LandPApi.Dto;
 using LandPApi.View;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LandPApi.Controllers
 {
@@ -69,7 +70,8 @@ namespace LandPApi.Controllers
         // POST: api/Reviews
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Review>> PostReview(ReviewView review)
+        [Authorize(Roles = "User")]
+        public IActionResult PostReview(ReviewView review)
         {
             var result = _reviewService.Create(User.FindFirstValue(ClaimTypes.NameIdentifier), review);
 

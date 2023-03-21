@@ -1,7 +1,10 @@
-﻿namespace LandPApi.View
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LandPApi.View
 {
     public class DocumentView
     {
-        public string Id { get; set; }
+        [Required]
+        public string? Id { get; set; }
     }
 }

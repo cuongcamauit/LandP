@@ -11,7 +11,6 @@ namespace LandPApi.Controllers
     [ApiController]
     public class ViewsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
         private readonly IViewService _viewService;
 
         public ViewsController(IViewService viewService)
@@ -51,8 +50,8 @@ namespace LandPApi.Controllers
         // POST: api/Views
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> PostView(Guid productId)
+        [Authorize(Roles = "User")]
+        public IActionResult PostView(Guid productId)
         {
             _viewService.Create(User.FindFirstValue(ClaimTypes.NameIdentifier), productId);
             return NoContent();

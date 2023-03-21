@@ -4,7 +4,6 @@ namespace LandPApi.Models
 {
     public class Review
     {
-        [Range(0, 5)]
         public int Rating { get; set; }
         public string? Comment { get; set; }
         public Guid ProductId { get; set; }

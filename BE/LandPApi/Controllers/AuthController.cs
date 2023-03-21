@@ -21,7 +21,7 @@ namespace LandPApi
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> RegisterAsync(RegisterViewModel registerViewModel)
+        public async Task<IActionResult> RegisterAsync(RegisterView registerViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -33,6 +33,7 @@ namespace LandPApi
                 return BadRequest(result);
             }
 
+            
             return BadRequest("Some properties are not valid");
         }
 
@@ -85,7 +86,7 @@ namespace LandPApi
         }
 
         [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordViewModel resetPasswordViewModel)
+        public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordView resetPasswordViewModel)
         {
             if (ModelState.IsValid)
             {

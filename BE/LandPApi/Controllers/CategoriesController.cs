@@ -5,6 +5,8 @@ using LandPApi.Service;
 using System.Drawing.Drawing2D;
 using LandPApi.Dto;
 using LandPApi.View;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace LandPApi.Controllers
 {
@@ -46,7 +48,8 @@ namespace LandPApi.Controllers
         // PUT: api/Categories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(Guid id, CategoryDto category)
+        [Authorize(Roles = "Admin")]
+        public IActionResult PutCategory(Guid id, CategoryDto category)
         {
             if (id != category.Id)
             {
@@ -59,6 +62,7 @@ namespace LandPApi.Controllers
         // POST: api/Categories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult PostCategory(CategoryView category)
         {
             CategoryDto dto = _categoryService.Create(category);
@@ -68,6 +72,7 @@ namespace LandPApi.Controllers
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
             await _categoryService.Delete(id);

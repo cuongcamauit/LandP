@@ -107,18 +107,24 @@ namespace LandPApi.Service
                     Success = false
                 };
             }
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            if (userRoles.Contains("User") && !user.EmailConfirmed)
+                return new Response
+                {
+                    Message = "Please comfirm email!",
+                    Success = false
+                };
 
             var claims = new List<Claim>()
             {
                 new Claim("Email", loginViewModel.Email!),
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
-            var userRoles = await _userManager.GetRolesAsync(user);
             foreach (var role in userRoles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
-
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["AuthSettings:Key"]!));
 
@@ -146,12 +152,7 @@ namespace LandPApi.Service
             };
         }
 
-        public Task<Response> LoginWithOtpAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Response> ResetPasswordAsync(ResetPasswordViewModel resetPasswordViewModel)
+        public async Task<Response> ResetPasswordAsync(ResetPasswordView resetPasswordViewModel)
         {
             var user = await _userManager.FindByEmailAsync(resetPasswordViewModel.Email);
             if (user == null)
@@ -185,7 +186,7 @@ namespace LandPApi.Service
             };
         }
 
-        public async Task<Response> ResgisterUserAsync(RegisterViewModel model)
+        public async Task<Response> ResgisterUserAsync(RegisterView model)
         {
             if (model == null)
             {
@@ -238,7 +239,7 @@ namespace LandPApi.Service
                 Message = "User did not create",
                 Success = false,
             };
-
+           
         }
 
     }

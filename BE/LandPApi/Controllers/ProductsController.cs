@@ -3,6 +3,9 @@ using LandPApi.Models;
 using LandPApi.IService;
 using LandPApi.Dto;
 using LandPApi.View;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
+using System.Security.Claims;
 
 namespace LandPApi.Controllers
 {
@@ -17,7 +20,7 @@ namespace LandPApi.Controllers
             _productService = productService;
         }
 
-        //// GET: api/Products
+        // GET: api/Products
         [HttpGet]
         public IActionResult GetProducts(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5)
         {
@@ -30,6 +33,20 @@ namespace LandPApi.Controllers
                 Message = "Get products successfully"
             });
         }
+
+        // GET: api/Products/Foryou
+        [HttpGet("Foryou")]
+        [Authorize(Roles = "User")]
+        public IActionResult GetForyou()
+        {
+            var result = _productService.GetForyou(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return Ok(new Response
+            {
+                Success = true,
+                Data = result
+            });
+        }
+
 
         // GET: api/Products/5
         [HttpGet("{id}")]
@@ -46,6 +63,7 @@ namespace LandPApi.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult PutProduct(Guid id, ProductDto product)
         {
             if (id != product.Id)
@@ -61,6 +79,7 @@ namespace LandPApi.Controllers
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult PostProduct(ProductView product)
         {
             var result = _productService.Create(product);
@@ -70,6 +89,7 @@ namespace LandPApi.Controllers
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             await _productService.Delete(id);

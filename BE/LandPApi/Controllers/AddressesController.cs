@@ -22,7 +22,7 @@ namespace LandPApi.Controllers
 
         // GET: api/Addresses/
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> GetAddresses()
         {
             var result = await _addressService.GetAll(User.FindFirstValue(ClaimTypes.NameIdentifier));
@@ -35,6 +35,7 @@ namespace LandPApi.Controllers
 
         // GET: api/Addresses/Admin
         [HttpGet("Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAddressesAdmin()
         {
             var result = await _addressService.GetAll();
@@ -48,6 +49,7 @@ namespace LandPApi.Controllers
 
         // GET: api/Addresses/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> GetAddress(Guid id)
         {
             var address = await _addressService.GetById(id);
@@ -67,8 +69,8 @@ namespace LandPApi.Controllers
         // PUT: api/Addresses/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize]
-        public async Task<IActionResult> PutAddress(Guid id, AddressDto address)
+        [Authorize(Roles = "User")]
+        public IActionResult PutAddress(Guid id, AddressDto address)
         {
             if (id != address.Id)
             {
@@ -82,8 +84,8 @@ namespace LandPApi.Controllers
         // POST: api/Addresses
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> PostAddress(AddressView address)
+        [Authorize(Roles = "User")]
+        public IActionResult PostAddress(AddressView address)
         {
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var result = _addressService.Create(address);
@@ -92,7 +94,7 @@ namespace LandPApi.Controllers
 
         // DELETE: api/Addresses/5
         [HttpDelete("{id}")]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> DeleteAddress(Guid id)
         {
             await _addressService.Delete(id, User.FindFirstValue(ClaimTypes.NameIdentifier));

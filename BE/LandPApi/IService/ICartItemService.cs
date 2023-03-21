@@ -10,7 +10,7 @@ namespace LandPApi.IService
         Task<List<CartItemView>> GetAllAsync(string customerId);
         Task<CartItemView> GetByIdAsync(string customerId, Guid productId);
         CartItemView Add(string customerId, CartItemView cartItem);
-        Task UpdateAsync(CartItem cartItem);
+        void UpdateAsync(CartItem cartItem);
         Task DeleteAsync(string customerId, Guid productId);
     }
 }

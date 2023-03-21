@@ -1,4 +1,6 @@
-﻿namespace LandPApi.Dto
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LandPApi.Dto
 {
     public class BrandDto
     {

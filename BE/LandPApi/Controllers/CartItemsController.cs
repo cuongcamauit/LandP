@@ -23,7 +23,7 @@ namespace LandPApi.Controllers
 
         // GET: api/CartItems
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> GetCartItems()
         {
             var result = await _cartItemService.GetAllAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
@@ -37,8 +37,8 @@ namespace LandPApi.Controllers
 
         // GET: api/CartItems/5
         [HttpGet("{id}")]
-        [Authorize]
-        public async Task<ActionResult<CartItem>> GetCartItem(Guid id)
+        [Authorize(Roles = "User")]
+        public async Task<IActionResult> GetCartItem(Guid id)
         {
             var cartItem = await _cartItemService.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), id);
 
@@ -59,8 +59,8 @@ namespace LandPApi.Controllers
         // PUT: api/CartItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize]
-        public async Task<IActionResult> PutCartItem(Guid id, CartItemView view)
+        [Authorize(Roles = "User")]
+        public IActionResult PutCartItem(Guid id, CartItemView view)
         {
             if (id != view.ProductId)
                 return BadRequest();
@@ -70,14 +70,14 @@ namespace LandPApi.Controllers
                 Quantity = view.Quantity,
                 ProductId = view.ProductId
             };
-            await _cartItemService.UpdateAsync(cartItem);
+            _cartItemService.UpdateAsync(cartItem);
             return NoContent();
         }
 
         // POST: api/CartItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public IActionResult PostCartItem(CartItemView cartItem)
         {
             CartItemView result = _cartItemService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem);
@@ -87,7 +87,7 @@ namespace LandPApi.Controllers
 
         // DELETE: api/CartItems/5
         [HttpDelete("{id}")]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> DeleteCartItem(Guid id)
         {
             await _cartItemService.DeleteAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), id);

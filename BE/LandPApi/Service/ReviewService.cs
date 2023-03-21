@@ -11,12 +11,17 @@ namespace LandPApi.Service
     public class ReviewService : IReviewService
     {
         private readonly IRepository<Review> _repoReview;
+        private readonly IRepository<OrderDetail> _repoDetail;
         private readonly IRepository<Product> _repoPro;
         private readonly IMapper _mapper;
 
-        public ReviewService(IRepository<Review> repoReview, IRepository<Product> repoPro, IMapper mapper)
+        public ReviewService(IRepository<Review> repoReview
+                            , IRepository<Product> repoPro
+                            , IRepository<OrderDetail> repoDetail
+                            , IMapper mapper)
         {
             _repoReview = repoReview;
+            _repoDetail = repoDetail;
             _repoPro = repoPro;
             _mapper = mapper;
         }
@@ -26,10 +31,13 @@ namespace LandPApi.Service
             var check = _repoReview.ReadByCondition(o => o.CustomerId == customerId 
                                                     && o.OrderId == review.OrderId
                                                     && o.ProductId == review.ProductId).FirstOrDefault();
-            if (check == null)
+            var haveOrder = _repoDetail.ReadByCondition(o => o.OrderId == review.OrderId && o.ProductId == review.ProductId && o.Order!.CustomerId == customerId).FirstOrDefault();
+
+            if (check == null || haveOrder == null)
             {
                 return false;
             }
+
 
             _repoReview.Create(new Review
             {

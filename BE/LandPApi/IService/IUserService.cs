@@ -5,12 +5,11 @@ namespace LandPApi.IService
 {
     public interface IUserService
     {
-        Task<Response> ResgisterUserAsync(RegisterViewModel model);
+        Task<Response> ResgisterUserAsync(RegisterView model);
         Task<Response> LoginUserAsync(LoginViewModel loginViewModel);
-        Task<Response> LoginWithOtpAsync();
         Task<Response> ConfirmEmailAsync(string userId, string token);
         Task<Response> ForgetPasswordAsync(string email);
-        Task<Response> ResetPasswordAsync(ResetPasswordViewModel resetPasswordViewModel);
+        Task<Response> ResetPasswordAsync(ResetPasswordView resetPasswordViewModel);
 
     }
 }

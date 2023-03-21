@@ -27,8 +27,8 @@ namespace LandPApi.Controllers
 
         // GET: api/OrderDetails
         [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> GetOrderDetails(Guid orderId)
+        [Authorize(Roles = "User")]
+        public IActionResult GetOrderDetails(Guid orderId)
         {
             List<OrderDetailDto> result = _orderDetailService.GetAll(orderId);
             return Ok(new Response

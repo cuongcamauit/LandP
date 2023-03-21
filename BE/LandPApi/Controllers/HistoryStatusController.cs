@@ -3,6 +3,7 @@ using LandPApi.Models;
 using LandPApi.IService;
 using System.Drawing.Drawing2D;
 using LandPApi.Dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LandPApi.Controllers
 {
@@ -19,7 +20,8 @@ namespace LandPApi.Controllers
 
         // GET: api/HistoryStatus
         [HttpGet]
-        public async Task<IActionResult> GetHistoryStatuses(Guid orderId)
+        [Authorize]
+        public IActionResult GetHistoryStatuses(Guid orderId)
         {
             List<HistoryStatusDto> result = _historyStatusService.GetAll(orderId);
             return Ok(new Response

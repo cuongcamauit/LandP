@@ -1,6 +1,4 @@
-﻿
-using AutoMapper;
-using LandPApi.Data;
+﻿using AutoMapper;
 using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
@@ -38,10 +36,10 @@ namespace LandPApi.Service
             _mapper = mapper;
         }
 
-        public async Task<OrderDto?> Add(string customerId, OrderView view)
+        public OrderDto? Add(string customerId, OrderView view)
         {
             double total = 0;
-            var address = await _repoAdd.ReadByCondition(o => o.CustomerId == customerId
+            var address = _repoAdd.ReadByCondition(o => o.CustomerId == customerId
                                                         && o.Id == view.AddressId).FirstOrDefaultAsync();
             if (address == null)
             {
@@ -61,12 +59,12 @@ namespace LandPApi.Service
             var cartItem = _repoCart.ReadByCondition(o => o.CustomerId == customerId).ToList();
             foreach (var item in cartItem)
             {
-                if (!view.productIds.Contains(item.ProductId) ||
+                if (!view.productIds!.Contains(item.ProductId) ||
                     item.Quantity > _repoPro.ReadByCondition(e => e.Id == item.ProductId).FirstOrDefault()!.Quantity)
                     cartItem.Remove(item);
             }
                 
-            if (cartItem.Count() != view.productIds.Count())
+            if (cartItem.Count() != view.productIds!.Count())
                 return null;
 
             // everything is fine
@@ -76,7 +74,7 @@ namespace LandPApi.Service
                 OrderId = order.Id
             });
 
-            foreach (var item in view.productIds)
+            foreach (var item in view.productIds!)
             {
                 var entityCart = _repoCart.ReadByCondition(o => o.CustomerId == customerId && o.ProductId == item).FirstOrDefault()!;
                 var entityPro = _repoPro.ReadByCondition(o => o.Id == item).FirstOrDefault()!;
@@ -109,7 +107,7 @@ namespace LandPApi.Service
             return _mapper.Map<List<OrderDto>>(result);
         }
 
-        public async Task Update(ClaimsPrincipal user, Guid orderId, Status status, bool isPaid)
+        public void Update(ClaimsPrincipal user, Guid orderId, Status status, bool isPaid)
         {
             var order = _repoOrder.ReadByCondition(o => o.Id == orderId);
             var statusOrder = order.Select(o => o.Status).FirstOrDefault();

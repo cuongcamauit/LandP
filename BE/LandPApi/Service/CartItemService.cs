@@ -18,7 +18,7 @@ namespace LandPApi.Service
             _repository = repository;
             _mapper = mapper;
         }
-        public async Task AddAsync(CartItem cartItem)
+        public void AddAsync(CartItem cartItem)
         {
             _repository.Create(cartItem);
             _repository.Save();
@@ -62,7 +62,7 @@ namespace LandPApi.Service
             return _mapper.Map<CartItemView>(cartItem);
         }
 
-        public async Task UpdateAsync(CartItem cartItem)
+        public void UpdateAsync(CartItem cartItem)
         {
             _repository.Update(cartItem);
             _repository.Save();

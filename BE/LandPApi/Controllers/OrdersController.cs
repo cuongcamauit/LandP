@@ -64,20 +64,20 @@ namespace LandPApi.Controllers
         //// POST: api/Orders
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> PostOrder(OrderView order)
+        [Authorize(Roles = "User")]
+        public IActionResult PostOrder(OrderView order)
         {
 
-            OrderDto result = await _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
+            OrderDto? result = _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
                                                      order);
             return Ok(result);
         }
 
         [HttpPut]
         [Authorize]
-        public async Task<IActionResult> PutOrder(Guid orderId, Status status, bool isPaid)
+        public IActionResult PutOrder(Guid orderId, Status status, bool isPaid)
         {
-            await _orderService.Update(User, orderId, status, isPaid);
+            _orderService.Update(User, orderId, status, isPaid);
             return NoContent();
         }
 
