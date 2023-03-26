@@ -1,4 +1,3 @@
-
 using LandPApi.Data;
 using LandPApi.IService;
 using LandPApi.Middleware;
@@ -90,8 +89,12 @@ namespace LandPApi
 
             builder.Services.AddCors(p => p.AddPolicy("myCors", build =>
             {
-                build.WithOrigins("http://localhost:3000");
+                build.WithOrigins("https://*:8080", "https://*.3000");
             }));
+            builder.WebHost.UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls("https://*:7051")
+                .UseIISIntegration();
 
             //=================================================//
             var app = builder.Build();
@@ -117,7 +120,7 @@ namespace LandPApi
 
             //app.UseMiddleware<CheckAcessMiddleware>();
 
-            app.UseCors("myCors");
+            //app.UseCors("myCors");
 
             app.Run();
         }

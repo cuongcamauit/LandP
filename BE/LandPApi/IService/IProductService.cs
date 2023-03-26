@@ -9,6 +9,6 @@ namespace LandPApi.IService
     public interface IProductService : IGenericService<ProductView, ProductDto, Product>
     {
         object GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5);
-        object GetForyou(string userId);
+        object GetForyou(string userId, double rate = 50);
     }
 }

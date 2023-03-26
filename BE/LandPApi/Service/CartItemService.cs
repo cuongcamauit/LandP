@@ -18,12 +18,7 @@ namespace LandPApi.Service
             _repository = repository;
             _mapper = mapper;
         }
-        public void AddAsync(CartItem cartItem)
-        {
-            _repository.Create(cartItem);
-            _repository.Save();
-        }
-
+        
         public CartItemView Add(string customerId, CartItemView cartItem)
         {
             var cart = 

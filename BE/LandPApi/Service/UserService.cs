@@ -239,8 +239,6 @@ namespace LandPApi.Service
                 Message = "User did not create",
                 Success = false,
             };
-           
         }
-
     }
 }

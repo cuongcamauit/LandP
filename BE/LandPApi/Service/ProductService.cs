@@ -99,7 +99,7 @@ namespace LandPApi.Service
             #endregion
         }
 
-        public object GetForyou(string userId)
+        public object GetForyou(string userId, double rate = 50)
         {
             var listProduct = new HashSet<ProductDto>();   
             var categorys = new HashSet<Guid>();
@@ -118,7 +118,7 @@ namespace LandPApi.Service
                 var views = _repoView.ReadByCondition(o => o.CustomerId == id).Select(o => o.ProductId);
                 var together = getProductViewed.Concat(views);
 
-                if (((double)together.Count())/getProductViewed.Count()>=0.5)
+                if (((double)together.Count())/getProductViewed.Count()>=(rate/100.0))
                 {
                     var except = views.ToList().Except(getProductViewed);
                     foreach(var item in except)
