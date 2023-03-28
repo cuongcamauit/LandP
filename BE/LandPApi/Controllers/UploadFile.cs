@@ -1,4 +1,5 @@
-﻿using LandPApi.IService;
+﻿using LandPApi.Dto;
+using LandPApi.IService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
@@ -29,7 +30,12 @@ namespace LandPApi.Controllers
                     await file.CopyToAsync(stream);
                 }
             }
-            return Ok(_driveService.AddFile(filePath, ex));
+            var link = _driveService.AddFile(filePath, ex);
+            return Ok(new Response
+            {
+                Message = "Uploaded an image",
+                Data = link
+            });
         }
         //[HttpDelete("{id}")]
         //public async Task<IActionResult> RemoveFile(string id)

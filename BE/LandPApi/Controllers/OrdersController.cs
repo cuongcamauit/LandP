@@ -70,7 +70,12 @@ namespace LandPApi.Controllers
 
             OrderDto? result = _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
                                                      order);
-            return Ok(result);
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Data = result,
+                Message = "Created successful!"
+            });
         }
 
         [HttpPut]
@@ -78,7 +83,11 @@ namespace LandPApi.Controllers
         public IActionResult PutOrder(Guid orderId, Status status, bool isPaid)
         {
             _orderService.Update(User, orderId, status, isPaid);
-            return NoContent();
+            return Ok(new Response
+            {
+                Message = "Updated successful!",
+                Success = true
+            });
         }
 
         //// DELETE: api/Orders/5

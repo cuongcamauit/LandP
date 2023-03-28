@@ -43,7 +43,8 @@ namespace LandPApi.Controllers
             return Ok(new Response
             {
                 Success = true,
-                Data = result
+                Data = result,
+                Message = "Product recommended for you!"
             });
         }
 
@@ -55,9 +56,19 @@ namespace LandPApi.Controllers
             var product = await _productService.GetById(id);
             if (product == null)
             {
-                return NotFound();
+                return Ok(new Response
+                {
+                    StatusCode = 404,
+                    Success = false,
+                    Message = "Product doesn't exists"
+                });
             }
-            return Ok(product);
+            return Ok(new Response
+            {
+                Success = true,
+                Data = product,
+                Message = "Get a product"
+            });
         }
 
         // PUT: api/Products/5
@@ -73,7 +84,12 @@ namespace LandPApi.Controllers
 
             _productService.Update(product);
 
-            return NoContent();
+            return Ok(new Response
+            {
+                Message = "Updated successful!",
+                Data = product,
+                Success = true
+            });
         }
 
         // POST: api/Products
@@ -84,7 +100,12 @@ namespace LandPApi.Controllers
         {
             var result = _productService.Create(product);
 
-            return CreatedAtAction("GetProducts", new { id = result.Id }, result);
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Data = result,
+                Message = "Created successful!"
+            });
         }
 
         // DELETE: api/Products/5
@@ -93,7 +114,11 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             await _productService.Delete(id);
-            return NoContent();
+
+            return Ok(new Response
+            {
+                Message = "Deleted successful!"
+            });
         }
     }
 }

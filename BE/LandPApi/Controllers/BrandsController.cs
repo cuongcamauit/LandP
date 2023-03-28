@@ -40,7 +40,12 @@ namespace LandPApi.Controllers
             var brand = await _brandService.GetById(id);
             if (brand == null)
             {
-                return NotFound();
+                return Ok(new Response
+                {
+                    StatusCode = 404,
+                    Success = false,
+                    Message = "Brand not exists"
+                });
             }
 
             return Ok(new Response
@@ -68,7 +73,12 @@ namespace LandPApi.Controllers
 
             _brandService.Update(brand);
 
-            return NoContent();
+            return Ok(new Response
+            {
+                Message = "Updated successful!",
+                Data = brand,
+                Success = true
+            });
         }
 
         // POST: api/Brands
@@ -79,7 +89,12 @@ namespace LandPApi.Controllers
         {
             BrandDto result = _brandService.Create(brand);
 
-            return CreatedAtAction("GetBrands", new { id = result.Id }, result);
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Data = result,
+                Message = "Created successful!"
+            });
         }
 
         // DELETE: api/Brands/5
@@ -88,7 +103,11 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
             await _brandService.Delete(id);
-            return NoContent();
+
+            return Ok(new Response
+            {
+                Message = "Deleted successful!"
+            });
         }
     }
 }

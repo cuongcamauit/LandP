@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LandPApi.Data;
 using LandPApi.IService;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using LandPApi.Dto;
 
 namespace LandPApi.Controllers
 {
@@ -54,7 +53,11 @@ namespace LandPApi.Controllers
         public IActionResult PostView(Guid productId)
         {
             _viewService.Create(User.FindFirstValue(ClaimTypes.NameIdentifier), productId);
-            return NoContent();
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Message = "Created successful!"
+            });
         }
     }
 }

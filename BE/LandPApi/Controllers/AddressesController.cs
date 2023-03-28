@@ -6,6 +6,7 @@ using LandPApi.Dto;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using LandPApi.View;
+using NuGet.Protocol.Plugins;
 
 namespace LandPApi.Controllers
 {
@@ -56,7 +57,12 @@ namespace LandPApi.Controllers
 
             if (address == null)
             {
-                return NotFound();
+                return Ok(new Response
+                {
+                    StatusCode = 404,
+                    Success = false,
+                    Message = "Address not exists"
+                });
             }
 
             return Ok(new Response
@@ -74,11 +80,21 @@ namespace LandPApi.Controllers
         {
             if (id != address.Id)
             {
-                return BadRequest();
+                return Ok(new
+                {
+                    Success = false,
+                    Message = "Id doesn't match with id's address",
+                    StatusCode = 400
+                });
             }
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             _addressService.Update(address);
-            return NoContent();
+            return Ok(new Response
+            {
+                Message = "Updated successful!",
+                Data = address,
+                Success = true
+            });
         }
 
         // POST: api/Addresses
@@ -89,7 +105,12 @@ namespace LandPApi.Controllers
         {
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var result = _addressService.Create(address);
-            return CreatedAtAction("GetAddresses", new { id = result.Id }, result);
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Data = result,
+                Message = "Created successful!"
+            });
         }
 
         // DELETE: api/Addresses/5
@@ -98,7 +119,10 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> DeleteAddress(Guid id)
         {
             await _addressService.Delete(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
-            return NoContent();
+            return Ok(new Response
+            {
+                Message = "Deleted successful!"
+            });
         }
     }
 }

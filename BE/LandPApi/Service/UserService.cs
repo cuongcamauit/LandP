@@ -33,7 +33,8 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Success = false,
-                    Message = "User not found"
+                    Message = "User not found",
+                    StatusCode = 404
                 };
             }
 
@@ -47,7 +48,7 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "Email confirmed successfully!",
-                    Success = true
+                    Success = true,
                 };
             }
 
@@ -55,8 +56,8 @@ namespace LandPApi.Service
             {
                 Success = false,
                 Message = "Email did not confirm",
-
-                Data = result.Errors.Select(e => e.Description)
+                StatusCode = 400,
+                Data = result.Errors.ToList()
             };
         }
 
@@ -66,6 +67,7 @@ namespace LandPApi.Service
             if (user == null)
                 return new Response
                 {
+                    StatusCode = 404,
                     Success = false,
                     Message = "No user associated with email"
                 };
@@ -94,6 +96,7 @@ namespace LandPApi.Service
                 {
                     Message = "There are no user with that Email address",
                     Success = false,
+                    StatusCode = 404,
                 };
             }
 
@@ -104,7 +107,8 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "Invalid Password",
-                    Success = false
+                    Success = false,
+                    StatusCode = 400,
                 };
             }
             var userRoles = await _userManager.GetRolesAsync(user);
@@ -113,7 +117,8 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Message = "Please comfirm email!",
-                    Success = false
+                    Success = false,
+                    StatusCode = 401
                 };
 
             var claims = new List<Claim>()
@@ -159,13 +164,15 @@ namespace LandPApi.Service
                 return new Response
                 {
                     Success = false,
-                    Message = "No user associated with email"
+                    Message = "No user associated with email",
+                    StatusCode = 404
                 };
             if (resetPasswordViewModel.NewPassword != resetPasswordViewModel.ConfirmPassword)
                 return new Response
                 {
                     Success = false,
-                    Message = "Password doesn't math with its confirmation"
+                    Message = "Password doesn't math with its confirmation",
+                    StatusCode = 400
                 };
 
             var decodedToken = WebEncoders.Base64UrlDecode(resetPasswordViewModel.Token!);
@@ -182,7 +189,8 @@ namespace LandPApi.Service
             {
                 Message = "Something went wrong",
                 Success = false,
-                Data = result.Errors.Select(e => e.Description)
+                Data = result.Errors.ToList(),
+                StatusCode = 404
             };
         }
 
@@ -198,6 +206,7 @@ namespace LandPApi.Service
                 {
                     Message = "Confirm password doesn't match password",
                     Success = false,
+                    StatusCode = 403
                 };
             }
             var identityUser = new Customer
@@ -229,8 +238,9 @@ namespace LandPApi.Service
                 await _mailService.SendEmailAsync(identityUser.Email!, "Confirm your email", "<h1>Welcome to Auth</h1>" + $"<p>Please confirm your email by <a href='{url}'>Clicking here</a></p>");
                 return new Response
                 {
-                    Message = "User created successfully!",
+                    Message = "User created successfully! Please comfirm Email!",
                     Success = true,
+                    StatusCode = 201
                 };
             }
 
@@ -238,6 +248,8 @@ namespace LandPApi.Service
             {
                 Message = "User did not create",
                 Success = false,
+                Data = result.Errors.ToList(),
+                StatusCode = 400
             };
         }
     }

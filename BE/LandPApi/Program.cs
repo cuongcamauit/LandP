@@ -1,4 +1,4 @@
-using LandPApi.Data;
+﻿using LandPApi.Data;
 using LandPApi.IService;
 using LandPApi.Middleware;
 using LandPApi.Models;
@@ -6,9 +6,11 @@ using LandPApi.Repository;
 using LandPApi.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Configuration;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -35,11 +37,8 @@ namespace LandPApi
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            builder.Services.AddAuthentication(auth =>
-            {
-                auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options =>
+            builder.Services.AddAuthentication()
+            .AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                 {
@@ -52,6 +51,17 @@ namespace LandPApi
                     ValidateIssuerSigningKey = true
                 };
             });
+            //.AddGoogle(googleOptions =>
+            //{
+            //    // Đọc thông tin Authentication:Google từ appsettings.json
+            //    IConfigurationSection googleAuthNSection = builder.Configuration.GetSection("Authentication:Google");
+
+            //    // Thiết lập ClientID và ClientSecret để truy cập API google
+            //    googleOptions.ClientId = googleAuthNSection["ClientId"];
+            //    googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
+            //    // Cấu hình Url callback lại từ Google (không thiết lập thì mặc định là /signin-google)
+            //    googleOptions.CallbackPath = "/dang-nhap-tu-google";
+            //});
 
             builder.Services.AddScoped(typeof(IRepository<>), typeof(SqlServerRepository<>));
             builder.Services.AddScoped(typeof(IGenericService<,,>), typeof(GenericService<,,>));
@@ -89,7 +99,7 @@ namespace LandPApi
 
             builder.Services.AddCors(p => p.AddPolicy("myCors", build =>
             {
-                build.WithOrigins("https://*.3000")
+                build.AllowAnyOrigin()
                         .AllowAnyHeader()
                         .AllowAnyMethod();
             }));
@@ -97,6 +107,10 @@ namespace LandPApi
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseUrls("https://*:7051")
                 .UseIISIntegration();
+            builder.Services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
 
             //=================================================//
             var app = builder.Build();

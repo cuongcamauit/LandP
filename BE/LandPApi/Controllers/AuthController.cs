@@ -1,4 +1,5 @@
-﻿using LandPApi.IService;
+﻿using LandPApi.Dto;
+using LandPApi.IService;
 using LandPApi.View;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,15 +27,20 @@ namespace LandPApi
             if (ModelState.IsValid)
             {
                 var result = await _userService.ResgisterUserAsync(registerViewModel);
-
-                if (result.Success) 
-                    return Ok(result);
-
-                return BadRequest(result);
+                
+                return Ok(result);
             }
 
-            
-            return BadRequest("Some properties are not valid");
+            var errors = ModelState.Select(x => x.Value.Errors)
+                       .Where(y => y.Count > 0)
+                       .ToList();
+            return Ok(new Response
+            {
+                Success = false,
+                Message = "Some properties is wrong",
+                Data = errors,
+                StatusCode = 422
+            });
         }
 
         [HttpPost("Login")]
@@ -45,14 +51,22 @@ namespace LandPApi
                 var result = await _userService.LoginUserAsync(loginViewModel);
                 if (result.Success)
                 {
-                        await _mailService.SendEmailAsync(loginViewModel.Email!, "New login", "<h1>Hey! new login to your account</h1><p>New login to your account at " + DateTime.Now + "</p>");
-                    return Ok(result);
+                    await _mailService.SendEmailAsync(loginViewModel.Email!, "New login", "<h1>Hey! new login to your account</h1><p>New login to your account at " + DateTime.Now + "</p>");
                 }
 
-                return BadRequest(result);
+                return Ok(result);
             }
 
-            return BadRequest("Some properties are not valid");
+            var errors = ModelState.Select(x => x.Value.Errors)
+                       .Where(y => y.Count > 0)
+                       .ToList();
+            return Ok(new Response
+            {
+                Success = false,
+                Message = "Some properties is wrong",
+                Data = errors,
+                StatusCode = 422
+            });
         }
 
         // api/auth/confirmemail?userid&token
@@ -68,7 +82,7 @@ namespace LandPApi
                 return Redirect($"{_configuration["AppUrl"]}/confirmEmail.html");
             }
 
-            return BadRequest(result);
+            return Ok(result);
         }
 
         [HttpPost("ForgetPassword")]
@@ -78,11 +92,8 @@ namespace LandPApi
                 return NotFound();
 
             var result = await _userService.ForgetPasswordAsync(email);
-
-            if (result.Success )
-                return Ok(result);
-
-            return BadRequest(result);
+        
+            return Ok(result);
         }
 
         [HttpPost("ResetPassword")]
@@ -97,7 +108,16 @@ namespace LandPApi
                 return BadRequest(result);
             }
 
-            return BadRequest("Some properties are not valid");
+            var errors = ModelState.Select(x => x.Value.Errors)
+                       .Where(y => y.Count > 0)
+                       .ToList();
+            return Ok(new Response
+            {
+                Success = false,
+                Message = "Some properties is wrong",
+                Data = errors,
+                StatusCode = 422
+            });
         }
     }
 }

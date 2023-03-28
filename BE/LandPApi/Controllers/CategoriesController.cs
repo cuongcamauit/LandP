@@ -38,6 +38,15 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> GetCategory(Guid id)
         {
             CategoryDto result = await _categoryService.GetById(id);
+            if (result == null)
+            {
+                return Ok(new Response
+                {
+                    StatusCode = 404,
+                    Success = false,
+                    Message = "Category doesn't exists"
+                });
+            }
             return Ok(new Response
             {
                 Success = true,
@@ -53,10 +62,21 @@ namespace LandPApi.Controllers
         {
             if (id != category.Id)
             {
-                return BadRequest();
+                return Ok(new
+                {
+                    Success = false,
+                    Message = "Id doesn't match with id's category",
+                    StatusCode = 400
+                });
             }
             _categoryService.Update(category);
-            return NoContent();
+            return Ok(new Response
+            {
+                Success = true,
+                StatusCode = 201,
+                Data = category,
+                Message = "Updated successful!"
+            });
         }
 
         // POST: api/Categories
@@ -65,9 +85,14 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult PostCategory(CategoryView category)
         {
-            CategoryDto dto = _categoryService.Create(category);
+            CategoryDto result = _categoryService.Create(category);
 
-            return CreatedAtAction("GetCategory", new { id = dto.Id }, dto);
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Data = result,
+                Message = "Created successful!"
+            });
         }
 
         // DELETE: api/Categories/5
@@ -76,7 +101,11 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
             await _categoryService.Delete(id);
-            return NoContent();
+
+            return Ok(new Response
+            {
+                Message = "Deleted successful!"
+            });
         }
 
     }

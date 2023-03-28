@@ -44,14 +44,19 @@ namespace LandPApi.Controllers
 
             if (cartItem == null)
             {
-                return NotFound();
+                return Ok(new Response
+                {
+                    StatusCode = 404,
+                    Success = false,
+                    Message = "Cartitem not exists"
+                });
             }
 
             return Ok(
                 new Response
                 {
                     Success = true,
-                    Message = "Get all current user's cart item",
+                    Message = "Get an user's cart item",
                     Data = cartItem
                 }) ;
         }
@@ -63,7 +68,12 @@ namespace LandPApi.Controllers
         public IActionResult PutCartItem(Guid id, CartItemView view)
         {
             if (id != view.ProductId)
-                return BadRequest();
+                return Ok(new
+                {
+                    Success = false,
+                    Message = "Id doesn't match with id's cartitem",
+                    StatusCode = 400
+                });
             var cartItem = new CartItem
             {
                 CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier),
@@ -71,7 +81,13 @@ namespace LandPApi.Controllers
                 ProductId = view.ProductId
             };
             _cartItemService.UpdateAsync(cartItem);
-            return NoContent();
+
+            return Ok(new Response
+            {
+                Message = "Updated successful!",
+                Data = view,
+                Success = true
+            });
         }
 
         // POST: api/CartItems
@@ -92,7 +108,10 @@ namespace LandPApi.Controllers
         {
             await _cartItemService.DeleteAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), id);
 
-            return NoContent();
+            return Ok(new Response
+            {
+                Message = "Deleted successful!"
+            });
         }
 
 
