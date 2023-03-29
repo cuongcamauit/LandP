@@ -1,7 +1,10 @@
 ﻿using LandPApi.Dto;
 using LandPApi.IService;
+using LandPApi.Models;
 using LandPApi.View;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace LandPApi
 {
@@ -95,6 +98,15 @@ namespace LandPApi
         
             return Ok(result);
         }
+        [HttpPut("Profile")]
+        [Authorize]
+        public async Task<IActionResult> UpdateProfile(UpdateProfileView updateProfileView)
+        {
+            var customerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var result = await _userService.UpdateProfile(customerId, updateProfileView);
+            return Ok(result);
+        }
+
 
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordView resetPasswordViewModel)

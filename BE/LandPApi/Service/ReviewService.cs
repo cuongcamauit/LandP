@@ -4,6 +4,7 @@ using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.View;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
@@ -14,16 +15,19 @@ namespace LandPApi.Service
         private readonly IRepository<OrderDetail> _repoDetail;
         private readonly IRepository<Product> _repoPro;
         private readonly IMapper _mapper;
+        private readonly UserManager<Customer> _userManager;
 
         public ReviewService(IRepository<Review> repoReview
                             , IRepository<Product> repoPro
                             , IRepository<OrderDetail> repoDetail
-                            , IMapper mapper)
+                            , IMapper mapper
+                            , UserManager<Customer> userManager)
         {
             _repoReview = repoReview;
             _repoDetail = repoDetail;
             _repoPro = repoPro;
             _mapper = mapper;
+            _userManager = userManager;
         }
 
         public object Create(string customerId, ReviewView review)
@@ -35,7 +39,11 @@ namespace LandPApi.Service
 
             if (check == null || haveOrder == null)
             {
-                return false;
+                return new Response
+                {
+                    StatusCode = 404,
+                    Message = "Doesn't have order",
+                };
             }
 
 
@@ -45,7 +53,8 @@ namespace LandPApi.Service
                 ProductId = review.ProductId,
                 OrderId = review.OrderId,
                 Comment = review.Comment,
-                Rating = review.Rating
+                Rating = review.Rating,
+                Name = _userManager.FindByIdAsync(customerId).Result.Name
             });
             _repoReview.Save();
 
@@ -56,7 +65,11 @@ namespace LandPApi.Service
             created!.AverageRating = productsReviews.Sum(o => o.Rating);
             _repoPro.Update(created);
             _repoPro.Save();
-            return true;
+            return new Response 
+            { 
+                StatusCode = 201,
+                Message = "Created review successful!"
+            };
         }
 
         public object GetAll(Guid productId, int page, int pageSize)
@@ -66,8 +79,10 @@ namespace LandPApi.Service
             var result = PaginatedList<Review>.Create(reviews, page, pageSize);
             #endregion
 
-            return new
+            return new Response
             {
+                StatusCode = 200,
+                Message = "Get all reviews",
                 Success = true,
                 Data =
                 new

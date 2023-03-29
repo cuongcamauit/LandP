@@ -155,6 +155,9 @@ namespace LandPApi.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -193,6 +196,9 @@ namespace LandPApi.Migrations
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
@@ -438,6 +444,9 @@ namespace LandPApi.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
@@ -500,21 +509,21 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e12bf61f-1511-4361-8e45-3e96397c1872",
+                            Id = "b42dc603-f062-4c02-9969-dc31562648a1",
                             ConcurrencyStamp = "0",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
-                            Id = "73573d18-516c-443c-9750-7bca17c20829",
+                            Id = "e6529471-36cd-4f89-b7a2-9e5e48d5832e",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "d1ecff08-8f07-4f51-8497-02fe45f9533d",
+                            Id = "bf45a692-b16e-4d1e-99f4-09ff6b3b9018",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"

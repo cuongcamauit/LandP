@@ -6,6 +6,8 @@ namespace LandPApi.Models
     {
         public string? Name { get; set; }
         public DateTime BirthDay { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
         public ICollection<Address>? Addresses { get; set; }
         public ICollection<Order>? Orders { get; set; }
         public ICollection<CartItem>? CartItems { get; set; }

@@ -10,6 +10,7 @@ namespace LandPApi.Models
         public string? CustomerId { get; set; }
         public Guid OrderId { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
+        public string? Name { get; set; }
         public Customer? Customer { get; set; }
         public Product? Product { get; set; }
         public Order? Order { get; set; }

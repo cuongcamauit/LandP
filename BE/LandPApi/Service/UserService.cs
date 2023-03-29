@@ -219,7 +219,9 @@ namespace LandPApi.Service
                 Email = model.Email,
                 UserName = model.Email,
                 BirthDay = model.BirthDay,
-                PhoneNumber = model.Phone
+                PhoneNumber = model.Phone,
+                CreateDate = DateTime.Now,
+                UpdateDate = DateTime.Now
             };
 
             var result = await _userManager.CreateAsync(identityUser, model.Password);
@@ -255,6 +257,47 @@ namespace LandPApi.Service
                 Success = false,
                 Data = message,
                 StatusCode = 400
+            };
+        }
+
+        public async Task<Response> UpdateProfile(string customerId, UpdateProfileView updateProfileView)
+        {
+            Customer user = await _userManager.FindByIdAsync(customerId);
+            user.Name = updateProfileView.Name;
+            user.BirthDay = updateProfileView.BirthDay;
+            user.UpdateDate = DateTime.Now;
+            var resultUpdate = await _userManager.UpdateAsync(user);
+            if (!resultUpdate.Succeeded)
+            {
+                var message = string.Join(" | ", resultUpdate.Errors.Select(o => o.Description));
+                return new Response
+                {
+                    Message = "User did not update",
+                    Success = false,
+                    Data = message,
+                    StatusCode = 400
+                };
+            }
+            if (updateProfileView.NewPassword != null && updateProfileView.CurrentPassword != null)
+            {
+                var result = await _userManager.ChangePasswordAsync(user, updateProfileView.CurrentPassword, updateProfileView.NewPassword);
+                if (!result.Succeeded)
+                {
+                    var message = string.Join(" | ", result.Errors.Select(o => o.Description));
+                    return new Response
+                    {
+                        Message = "User did not update",
+                        Success = false,
+                        Data = message,
+                        StatusCode = 400
+                    };
+                }
+            }
+            return new Response
+            {
+                Message = "User updated successfully!",
+                Success = true,
+                StatusCode = 204
             };
         }
     }

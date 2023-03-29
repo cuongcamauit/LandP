@@ -134,7 +134,7 @@ namespace LandPApi
 
             app.MapRazorPages();
 
-            app.UseMiddleware<CheckAcessMiddleware>();
+            //app.UseMiddleware<CheckAcessMiddleware>();
 
             app.UseCors("myCors");
 
