@@ -19,6 +19,19 @@ namespace LandPApi.Controllers
         [HttpPost("File")]
         public async Task<IActionResult> UpFile(IFormFile file)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             string[] s = file.FileName.Split('.');
             string ex = "."+s[s.Length - 1];
             Console.Write(file.FileName);

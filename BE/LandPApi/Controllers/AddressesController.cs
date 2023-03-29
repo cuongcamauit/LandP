@@ -78,6 +78,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PutAddress(Guid id, AddressDto address)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             if (id != address.Id)
             {
                 return Ok(new
@@ -103,6 +116,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PostAddress(AddressView address)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var result = _addressService.Create(address);
             return Ok(new Response

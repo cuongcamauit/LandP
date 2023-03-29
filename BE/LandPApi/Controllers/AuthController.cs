@@ -31,14 +31,14 @@ namespace LandPApi
                 return Ok(result);
             }
 
-            var errors = ModelState.Select(x => x.Value.Errors)
-                       .Where(y => y.Count > 0)
-                       .ToList();
+            var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
             return Ok(new Response
             {
                 Success = false,
                 Message = "Some properties is wrong",
-                Data = errors,
+                Data = message,
                 StatusCode = 422
             });
         }
@@ -57,14 +57,14 @@ namespace LandPApi
                 return Ok(result);
             }
 
-            var errors = ModelState.Select(x => x.Value.Errors)
-                       .Where(y => y.Count > 0)
-                       .ToList();
+            var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
             return Ok(new Response
             {
                 Success = false,
                 Message = "Some properties is wrong",
-                Data = errors,
+                Data = message,
                 StatusCode = 422
             });
         }
@@ -108,14 +108,14 @@ namespace LandPApi
                 return BadRequest(result);
             }
 
-            var errors = ModelState.Select(x => x.Value.Errors)
-                       .Where(y => y.Count > 0)
-                       .ToList();
+            var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
             return Ok(new Response
             {
                 Success = false,
                 Message = "Some properties is wrong",
-                Data = errors,
+                Data = message,
                 StatusCode = 422
             });
         }

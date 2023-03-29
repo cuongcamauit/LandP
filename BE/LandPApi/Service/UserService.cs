@@ -51,13 +51,14 @@ namespace LandPApi.Service
                     Success = true,
                 };
             }
+            var message = string.Join(" | ", result.Errors.Select(o => o.Description));
 
             return new Response
             {
                 Success = false,
                 Message = "Email did not confirm",
                 StatusCode = 400,
-                Data = result.Errors.ToList()
+                Data = message
             };
         }
 
@@ -185,12 +186,15 @@ namespace LandPApi.Service
                     Message = "Password has been successfully!",
                     Success = true
                 };
+
+            var message = string.Join(" | ", result.Errors.Select(o => o.Description));
+
             return new Response
             {
                 Message = "Something went wrong",
                 Success = false,
-                Data = result.Errors.ToList(),
-                StatusCode = 404
+                Data = message,
+                StatusCode = 400
             };
         }
 
@@ -244,11 +248,12 @@ namespace LandPApi.Service
                 };
             }
 
+            var message = string.Join(" | ", result.Errors.Select(o => o.Description));
             return new Response
             {
                 Message = "User did not create",
                 Success = false,
-                Data = result.Errors.ToList(),
+                Data = message,
                 StatusCode = 400
             };
         }

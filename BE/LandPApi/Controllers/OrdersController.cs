@@ -67,7 +67,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PostOrder(OrderView order)
         {
-
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             OrderDto? result = _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
                                                      order);
             return Ok(new Response
@@ -82,6 +94,19 @@ namespace LandPApi.Controllers
         [Authorize]
         public IActionResult PutOrder(Guid orderId, Status status, bool isPaid)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             _orderService.Update(User, orderId, status, isPaid);
             return Ok(new Response
             {

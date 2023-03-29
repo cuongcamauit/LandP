@@ -60,6 +60,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult PutCategory(Guid id, CategoryDto category)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             if (id != category.Id)
             {
                 return Ok(new
@@ -85,6 +98,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult PostCategory(CategoryView category)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             CategoryDto result = _categoryService.Create(category);
 
             return Ok(new Response

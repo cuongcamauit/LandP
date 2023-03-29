@@ -62,6 +62,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult PutBrand(Guid id, BrandDto brand)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             if (id != brand.Id)
             {
                 return BadRequest(new Response
@@ -87,6 +100,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult PostBrand(BrandView brand)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             BrandDto result = _brandService.Create(brand);
 
             return Ok(new Response

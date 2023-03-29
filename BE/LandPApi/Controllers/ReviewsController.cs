@@ -72,6 +72,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PostReview(ReviewView review)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             var result = _reviewService.Create(User.FindFirstValue(ClaimTypes.NameIdentifier), review);
 
             return Ok(new Response

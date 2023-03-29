@@ -21,6 +21,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Post(DocumentDto documentDto)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             _documentService.AddFile(documentDto);
             return Ok();
         }
@@ -29,7 +42,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PostFile(IFormFile file, Guid productId)
         {
-            
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             return Ok(await _documentService.PostDrive(file, productId));
         }
 

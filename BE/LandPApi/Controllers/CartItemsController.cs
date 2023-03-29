@@ -67,6 +67,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PutCartItem(Guid id, CartItemView view)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             if (id != view.ProductId)
                 return Ok(new
                 {
@@ -96,6 +109,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PostCartItem(CartItemView cartItem)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             CartItemView result = _cartItemService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem);
 
             return CreatedAtAction("GetCartItems", new { id = cartItem.ProductId }, cartItem);

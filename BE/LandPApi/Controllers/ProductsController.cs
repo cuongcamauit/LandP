@@ -77,6 +77,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult PutProduct(Guid id, ProductDto product)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             if (id != product.Id)
             {
                 return BadRequest();
@@ -98,6 +111,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult PostProduct(ProductView product)
         {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
             var result = _productService.Create(product);
 
             return Ok(new Response
