@@ -266,6 +266,7 @@ namespace LandPApi.Service
             user.Name = updateProfileView.Name;
             user.BirthDay = updateProfileView.BirthDay;
             user.UpdateDate = DateTime.Now;
+            user.PhoneNumber = updateProfileView.Phone;
             var resultUpdate = await _userManager.UpdateAsync(user);
             if (!resultUpdate.Succeeded)
             {

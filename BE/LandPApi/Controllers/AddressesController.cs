@@ -6,7 +6,6 @@ using LandPApi.Dto;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using LandPApi.View;
-using NuGet.Protocol.Plugins;
 
 namespace LandPApi.Controllers
 {
@@ -116,19 +115,19 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PostAddress(AddressView address)
         {
-            if (!ModelState.IsValid)
-            {
-                var message = string.Join(" | ", ModelState.Values
-                            .SelectMany(v => v.Errors)
-                            .Select(e => e.ErrorMessage));
-                return Ok(new Response
-                {
-                    Success = false,
-                    Message = "Some properties is wrong",
-                    Data = message,
-                    StatusCode = 422
-                });
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    var message = string.Join(" | ", ModelState.Values
+            //                .SelectMany(v => v.Errors)
+            //                .Select(e => e.ErrorMessage));
+            //    return Ok(new Response
+            //    {
+            //        Success = false,
+            //        Message = "Some properties is wrong",
+            //        Data = message,
+            //        StatusCode = 422
+            //    });
+            //}
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var result = _addressService.Create(address);
             return Ok(new Response

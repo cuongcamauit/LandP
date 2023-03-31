@@ -37,7 +37,11 @@ namespace LandPApi
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            builder.Services.AddAuthentication()
+            builder.Services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
             .AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
@@ -50,18 +54,18 @@ namespace LandPApi
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AuthSettings:Key"])),
                     ValidateIssuerSigningKey = true
                 };
-            });
-            //.AddGoogle(googleOptions =>
-            //{
-            //    // Đọc thông tin Authentication:Google từ appsettings.json
-            //    IConfigurationSection googleAuthNSection = builder.Configuration.GetSection("Authentication:Google");
+            })
+            .AddGoogle(googleOptions =>
+            {
+                // Đọc thông tin Authentication:Google từ appsettings.json
+                IConfigurationSection googleAuthNSection = builder.Configuration.GetSection("Authentication:Google");
 
-            //    // Thiết lập ClientID và ClientSecret để truy cập API google
-            //    googleOptions.ClientId = googleAuthNSection["ClientId"];
-            //    googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
-            //    // Cấu hình Url callback lại từ Google (không thiết lập thì mặc định là /signin-google)
-            //    googleOptions.CallbackPath = "/dang-nhap-tu-google";
-            //});
+                // Thiết lập ClientID và ClientSecret để truy cập API google
+                googleOptions.ClientId = googleAuthNSection["ClientId"];
+                googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
+                // Cấu hình Url callback lại từ Google (không thiết lập thì mặc định là /signin-google)
+                googleOptions.CallbackPath = "/dang-nhap-tu-google";
+            });
 
             builder.Services.AddScoped(typeof(IRepository<>), typeof(SqlServerRepository<>));
             builder.Services.AddScoped(typeof(IGenericService<,,>), typeof(GenericService<,,>));
@@ -103,10 +107,10 @@ namespace LandPApi
                         .AllowAnyHeader()
                         .AllowAnyMethod();
             }));
-            builder.WebHost.UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("https://*:7051")
-                .UseIISIntegration();
+            //builder.WebHost.UseKestrel()
+            //    .UseContentRoot(Directory.GetCurrentDirectory())
+            //    .UseUrls("https://*:7051")
+            //    .UseIISIntegration();
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;

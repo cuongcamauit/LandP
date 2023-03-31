@@ -8,6 +8,7 @@ namespace LandPApi.View
         [Required]
         public string Name { get; set; }
         public DateTime BirthDay { get; set; }
+        public string? Phone { get; set; }
         public string? CurrentPassword { get; set; }
         public string? NewPassword { get; set; }
         [Compare("NewPassword")]
