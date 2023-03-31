@@ -11,5 +11,6 @@ namespace LandPApi.IService
         Task<Response> ForgetPasswordAsync(string email);
         Task<Response> ResetPasswordAsync(ResetPasswordView resetPasswordViewModel);
         Task<Response> UpdateProfile(string customerId, UpdateProfileView updateProfileView);
+        Task<Response> GetProfile(string customerId);
     }
 }

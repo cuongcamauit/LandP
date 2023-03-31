@@ -107,6 +107,15 @@ namespace LandPApi
             return Ok(result);
         }
 
+        [HttpGet("Profile")]
+        [Authorize]
+        public async Task<IActionResult> GetProfile()
+        {
+            var customerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            Response result = await _userService.GetProfile(customerId);
+            return Ok(result);
+        }
+
 
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordView resetPasswordViewModel)

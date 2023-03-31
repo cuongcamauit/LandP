@@ -1,4 +1,5 @@
-﻿using LandPApi.Dto;
+﻿using AutoMapper;
+using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.View;
@@ -17,13 +18,19 @@ namespace LandPApi.Service
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
         private readonly IMailService _mailService;
+        private readonly IMapper _mapper;
 
-        public UserService(UserManager<Customer> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IMailService mailService)
+        public UserService(UserManager<Customer> userManager, 
+            RoleManager<IdentityRole> roleManager, 
+            IConfiguration configuration, 
+            IMailService mailService,
+            IMapper mapper)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
             _mailService = mailService;
+            _mapper = mapper;
         }
         public async Task<Response> ConfirmEmailAsync(string userId, string token)
         {
@@ -84,6 +91,26 @@ namespace LandPApi.Service
             {
                 Success = true,
                 Message = "Reset password url has been sent to the email successfully"
+            };
+        }
+
+        public async Task<Response> GetProfile(string customerId)
+        {
+            Customer customer = await _userManager.FindByIdAsync(customerId);
+            if (customer != null)
+            {
+                return new Response
+                {
+                    StatusCode = 200,
+                    Message = "Get profile user successful!",
+                    Data = _mapper.Map<CustomerDto>(customer)
+                };
+            }
+            return new Response
+            {
+                Success = false,
+                StatusCode = 404,
+                Message = "Not found user!"
             };
         }
 
@@ -150,7 +177,7 @@ namespace LandPApi.Service
                 Success = true,
                 Data = new
                 {
-                    user = user,
+                    user = _mapper.Map<CustomerDto>(user),
                     role = userRoles,
                     token = tokenAsString,
                     expire = token.ValidTo

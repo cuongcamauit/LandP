@@ -6,6 +6,7 @@ using LandPApi.Dto;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using LandPApi.View;
+using Microsoft.AspNetCore.Authentication.Google;
 
 namespace LandPApi.Controllers
 {

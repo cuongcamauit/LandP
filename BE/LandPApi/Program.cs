@@ -64,7 +64,7 @@ namespace LandPApi
                 googleOptions.ClientId = googleAuthNSection["ClientId"];
                 googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
                 // Cấu hình Url callback lại từ Google (không thiết lập thì mặc định là /signin-google)
-                googleOptions.CallbackPath = "/dang-nhap-tu-google";
+                //googleOptions.CallbackPath = "/dang-nhap-tu-google";
             });
 
             builder.Services.AddScoped(typeof(IRepository<>), typeof(SqlServerRepository<>));
@@ -107,10 +107,10 @@ namespace LandPApi
                         .AllowAnyHeader()
                         .AllowAnyMethod();
             }));
-            //builder.WebHost.UseKestrel()
-            //    .UseContentRoot(Directory.GetCurrentDirectory())
-            //    .UseUrls("https://*:7051")
-            //    .UseIISIntegration();
+            builder.WebHost.UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls("https://*:7051")
+                .UseIISIntegration();
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
@@ -128,6 +128,8 @@ namespace LandPApi
 
             app.UseHttpsRedirection();
 
+            app.UseCors("myCors");
+
             app.UseAuthentication();
 
             app.UseAuthorization();
@@ -140,7 +142,7 @@ namespace LandPApi
 
             //app.UseMiddleware<CheckAcessMiddleware>();
 
-            app.UseCors("myCors");
+            
 
             app.Run();
         }

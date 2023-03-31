@@ -30,6 +30,8 @@ namespace LandPApi.Helper
             CreateMap<HistoryStatus, HistoryStatusDto>();
 
             CreateMap<Review, ReviewDto>();
+
+            CreateMap<Customer, CustomerDto>();
         }
     }   
 }
