@@ -6,6 +6,7 @@ using LandPApi.View;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Claims;
 
 namespace LandPApi.Controllers
@@ -107,7 +108,7 @@ namespace LandPApi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Authorize(Roles = "User")]
-        public IActionResult PostCartItem(CartItemView cartItem)
+        public async Task<IActionResult> PostCartItem(CartItemView cartItem)
         {
             if (!ModelState.IsValid)
             {
@@ -122,14 +123,23 @@ namespace LandPApi.Controllers
                     StatusCode = 422
                 });
             }
-            var check = _cartItemService.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem.ProductId);
+            var check = await _cartItemService.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem.ProductId);
             if (check != null)
+            {
+                var newCartItem = new CartItem
+                {
+                    CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+                    Quantity = check.Quantity + cartItem.Quantity,
+                    ProductId = cartItem.ProductId
+                };
+                _cartItemService.UpdateAsync(newCartItem);
                 return Ok(new Response
                 {
-                    StatusCode = 409,
-                    Message = "Cartitem existed!",
+                    StatusCode = 204,
+                    Message = "Add to cart successful!",
                     Success = false
                 });
+            }
 
 
             CartItemView result = _cartItemService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem);
@@ -137,7 +147,7 @@ namespace LandPApi.Controllers
             return Ok(new Response
             {
                 StatusCode = 201,
-                Message = "Created cartitem successful!",
+                Message = "Add to cart successful!",
                 Data = cartItem
             });
         }

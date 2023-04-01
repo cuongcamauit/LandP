@@ -325,7 +325,8 @@ namespace LandPApi.Service
             {
                 Message = "User updated successfully!",
                 Success = true,
-                StatusCode = 204
+                StatusCode = 204,
+                Data = _mapper.Map<CustomerDto>(user)
             };
         }
     }
