@@ -35,7 +35,12 @@ namespace LandPApi.Controllers
                 });
             }
             _documentService.AddFile(documentDto);
-            return Ok();
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Message = "Add link successful!",
+
+            });
         }
 
         [HttpPost("ProductFile")]
@@ -55,7 +60,12 @@ namespace LandPApi.Controllers
                     StatusCode = 422
                 });
             }
-            return Ok(await _documentService.PostDrive(file, productId));
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Message = "Upload file successful!",
+                Data = await _documentService.PostDrive(file, productId)
+            });
         }
 
         [HttpGet]

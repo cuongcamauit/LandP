@@ -36,10 +36,10 @@ namespace LandPApi.Service
             _mapper = mapper;
         }
 
-        public OrderDto? Add(string customerId, OrderView view)
+        public async Task<OrderDto?> Add(string customerId, OrderView view)
         {
             double total = 0;
-            var address = _repoAdd.ReadByCondition(o => o.CustomerId == customerId
+            var address = await _repoAdd.ReadByCondition(o => o.CustomerId == customerId
                                                         && o.Id == view.AddressId).FirstOrDefaultAsync();
             if (address == null)
             {
@@ -60,7 +60,7 @@ namespace LandPApi.Service
             foreach (var item in cartItem)
             {
                 if (!view.productIds!.Contains(item.ProductId) ||
-                    item.Quantity > _repoPro.ReadByCondition(e => e.Id == item.ProductId).FirstOrDefault()!.Quantity)
+                    item.Quantity > (await _repoPro.ReadByCondition(e => e.Id == item.ProductId).FirstOrDefaultAsync())!.Quantity)
                     cartItem.Remove(item);
             }
                 
@@ -76,8 +76,8 @@ namespace LandPApi.Service
 
             foreach (var item in view.productIds!)
             {
-                var entityCart = _repoCart.ReadByCondition(o => o.CustomerId == customerId && o.ProductId == item).FirstOrDefault()!;
-                var entityPro = _repoPro.ReadByCondition(o => o.Id == item).FirstOrDefault()!;
+                var entityCart = await _repoCart.ReadByCondition(o => o.CustomerId == customerId && o.ProductId == item).FirstOrDefaultAsync()!;
+                var entityPro = await _repoPro.ReadByCondition(o => o.Id == item).FirstOrDefaultAsync()!;
                 _repoDetail.Create(new OrderDetail
                 {
                     OrderId = order.Id,

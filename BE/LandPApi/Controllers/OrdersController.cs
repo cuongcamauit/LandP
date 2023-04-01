@@ -65,7 +65,7 @@ namespace LandPApi.Controllers
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Authorize(Roles = "User")]
-        public IActionResult PostOrder(OrderView order)
+        public async Task<IActionResult> PostOrder(OrderView order)
         {
             if (!ModelState.IsValid)
             {
@@ -80,8 +80,17 @@ namespace LandPApi.Controllers
                     StatusCode = 422
                 });
             }
-            OrderDto? result = _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
+            OrderDto? result = await _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
                                                      order);
+            if (result == null)
+            {
+                return Ok(new Response 
+                { 
+                    StatusCode = 400,
+                    Message = "No item in cart!",
+                    Success = false
+                });
+            }
             return Ok(new Response
             {
                 StatusCode = 201,

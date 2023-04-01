@@ -124,7 +124,12 @@ namespace LandPApi.Controllers
             }
             CartItemView result = _cartItemService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem);
 
-            return CreatedAtAction("GetCartItems", new { id = cartItem.ProductId }, cartItem);
+            return Ok(new Response
+            {
+                StatusCode = 201,
+                Message = "Created cartitem successful!",
+                Data = cartItem
+            });
         }
 
         // DELETE: api/CartItems/5
