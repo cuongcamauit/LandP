@@ -49,7 +49,18 @@ namespace LandPApi.Service
         public async Task<List<CartItemDto>> GetAllAsync(string customerId)
         {
             var cartItems = await _repository.ReadByCondition(o => o.CustomerId == customerId).Include(o => o.Product).ToListAsync();
-            return _mapper.Map<List<CartItemDto>>(cartItems);
+            var cartItemDtos = new List<CartItemDto>();
+            cartItems.ForEach((item) =>
+            {
+                cartItemDtos.Add(new CartItemDto()
+                {
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Product = _mapper.Map<ProductDto>(item.Product)
+                });
+            });
+
+            return cartItemDtos;
         }
 
         public async Task<CartItemView> GetByIdAsync(string customerId, Guid productId)
