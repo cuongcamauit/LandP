@@ -122,6 +122,16 @@ namespace LandPApi.Controllers
                     StatusCode = 422
                 });
             }
+            var check = _cartItemService.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem.ProductId);
+            if (check != null)
+                return Ok(new Response
+                {
+                    StatusCode = 409,
+                    Message = "Cartitem existed!",
+                    Success = false
+                });
+
+
             CartItemView result = _cartItemService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem);
 
             return Ok(new Response
