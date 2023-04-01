@@ -136,8 +136,7 @@ namespace LandPApi.Controllers
                 return Ok(new Response
                 {
                     StatusCode = 204,
-                    Message = "Add to cart successful!",
-                    Success = false
+                    Message = "Add to cart successful!"
                 });
             }
 

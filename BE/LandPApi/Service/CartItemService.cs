@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LandPApi.Data;
+using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
@@ -45,10 +46,10 @@ namespace LandPApi.Service
 
         }
 
-        public async Task<List<CartItemView>> GetAllAsync(string customerId)
+        public async Task<List<CartItemDto>> GetAllAsync(string customerId)
         {
-            var cartItems = await _repository.ReadByCondition(o => o.CustomerId == customerId).ToListAsync();
-            return _mapper.Map<List<CartItemView>>(cartItems);
+            var cartItems = await _repository.ReadByCondition(o => o.CustomerId == customerId).Include(o => o.Product).ToListAsync();
+            return _mapper.Map<List<CartItemDto>>(cartItems);
         }
 
         public async Task<CartItemView> GetByIdAsync(string customerId, Guid productId)

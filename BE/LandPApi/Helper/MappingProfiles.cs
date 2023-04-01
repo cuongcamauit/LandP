@@ -22,6 +22,7 @@ namespace LandPApi.Helper
             CreateMap<ProductView, Product>();
 
             CreateMap<CartItem, CartItemView>();
+            CreateMap<CartItem, CartItemDto>();
 
             CreateMap<Order, OrderDto>();
 
