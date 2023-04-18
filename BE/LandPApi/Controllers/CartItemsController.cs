@@ -160,7 +160,8 @@ namespace LandPApi.Controllers
 
             return Ok(new Response
             {
-                Message = "Deleted successful!"
+                Message = "Deleted successful!",
+                Data = id
             });
         }
 

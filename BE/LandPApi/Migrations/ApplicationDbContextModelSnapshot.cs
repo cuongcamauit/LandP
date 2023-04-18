@@ -215,6 +215,46 @@ namespace LandPApi.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "289f6c6a783e4d89b25c847d1ffa4833",
+                            AccessFailedCount = 0,
+                            BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ConcurrencyStamp = "e932b7b8-7509-47c1-b99e-a3cef7a34b17",
+                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "landpsupadmika@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Super Admin",
+                            NormalizedEmail = "landpsupadmika@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH4mW+KFNw8LQslKgY3H3sI5niZY3ctTtlkXOdzf85aa8GADly5DFHrvTDY0tybYdQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "e9a27313-a8d7-48de-a734-ea4078a02eb5",
+                            TwoFactorEnabled = false,
+                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserName = "landpsupadmika@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
+                            AccessFailedCount = 0,
+                            BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ConcurrencyStamp = "57336945-9e4c-40c2-add6-319e3acafe53",
+                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "landpadmika@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Admin",
+                            NormalizedEmail = "landpadmika@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOp9BwozX9c17DzMTKhTND8Hz/YBkqK8VgHJJtu9Ceyl94TcOeTXji5JaET0w8a2Eg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "9d6e30a7-a6e3-42db-8740-e0cdf350edfd",
+                            TwoFactorEnabled = false,
+                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserName = "landpadmika@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Document", b =>
@@ -509,21 +549,21 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b42dc603-f062-4c02-9969-dc31562648a1",
+                            Id = "289f6c6a783e4d89b25c847d1ffa4833",
                             ConcurrencyStamp = "0",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
-                            Id = "e6529471-36cd-4f89-b7a2-9e5e48d5832e",
+                            Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "bf45a692-b16e-4d1e-99f4-09ff6b3b9018",
+                            Id = "04be0c35-571e-425c-992e-15a7227286de",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
@@ -615,6 +655,18 @@ namespace LandPApi.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "289f6c6a783e4d89b25c847d1ffa4833",
+                            RoleId = "289f6c6a783e4d89b25c847d1ffa4833"
+                        },
+                        new
+                        {
+                            UserId = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
+                            RoleId = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

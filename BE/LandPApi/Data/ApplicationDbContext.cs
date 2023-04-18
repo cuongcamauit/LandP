@@ -1,4 +1,6 @@
-﻿using LandPApi.Models;
+﻿using LandPApi.IService;
+using LandPApi.Models;
+using LandPApi.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -8,9 +10,9 @@ namespace LandPApi.Data
 {
     public class ApplicationDbContext : IdentityDbContext<Customer>
     {
+
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
-
         }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Brand> Brands { get; set; }
@@ -194,11 +196,30 @@ namespace LandPApi.Data
         }
         private void SeedRoles(ModelBuilder builder)
         {
+            var superId = "289f6c6a783e4d89b25c847d1ffa4833";
+            var adminId = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571";
+            var userId = "04be0c35-571e-425c-992e-15a7227286de";
+            var hasher = new PasswordHasher<Customer>();
+
             builder.Entity<IdentityRole>().HasData(
-                new IdentityRole() { Name = "SuperAdmin", ConcurrencyStamp = "0", NormalizedName = "SuperAdmin" },
-                    new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
-                    new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" }
-                );
+                new IdentityRole() { Id = superId, Name = "SuperAdmin", ConcurrencyStamp = "0", NormalizedName = "SuperAdmin" },
+                new IdentityRole() { Id = adminId, Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
+                new IdentityRole() { Id = userId, Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" }
+            );
+
+            builder.Entity<Customer>().HasData(
+                new Customer { Id = superId, Name = "Super Admin", UserName = "landpsupadmika@gmail.com", PasswordHash = hasher.HashPassword(null, "Superadmin.123"), EmailConfirmed = true, Email = "landpsupadmika@gmail.com", NormalizedEmail = "landpsupadmika@gmail.com" },
+                new Customer { Id = adminId, Name = "Admin", UserName = "landpadmika@gmail.com", PasswordHash = hasher.HashPassword(null, "Admin.123"), EmailConfirmed = true, Email = "landpadmika@gmail.com", NormalizedEmail = "landpadmika@gmail.com" },
+                new Customer { Id = userId, Name = "User", UserName = "danhitclub6@gmail.com", NormalizedEmail = "danhitclub6@gmail.com", EmailConfirmed = true, Email = "danhitclub6@gmail.com", PasswordHash = hasher.HashPassword(null, "Admin.123") }
+            );
+
+            builder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string> { RoleId = superId, UserId = superId },
+                new IdentityUserRole<string> { RoleId = adminId, UserId = adminId},
+                new IdentityUserRole<string> { RoleId = userId, UserId = userId},
+                
+            );
+
             builder.Entity<Category>().HasData(
                 new Category()
                 {
@@ -291,6 +312,7 @@ namespace LandPApi.Data
                     ProductId = Guid.Parse("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
                 }
             );
+
         }
     }
 }

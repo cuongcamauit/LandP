@@ -116,6 +116,7 @@ namespace LandPApi.Service
 
         public async Task<Response> LoginUserAsync(LoginViewModel loginViewModel)
         {
+            var userlist = _userManager.Users;
             var user = await _userManager.FindByEmailAsync(loginViewModel.Email);
 
             if (user == null)
@@ -225,6 +226,33 @@ namespace LandPApi.Service
             };
         }
 
+        public async Task<string> RegisterAdmin()
+        {
+            var identityUser = new Customer
+            {
+                Name = "Admin",
+                Email = "admin@landp.com",
+                UserName = "admin@landp.com",
+                BirthDay = DateTime.Now,
+                PhoneNumber = "123456789",
+                CreateDate = DateTime.Now,
+                UpdateDate = DateTime.Now
+            };
+
+            var result = await _userManager.CreateAsync(identityUser, "admin.123");
+
+            if (result.Succeeded)
+            {
+
+                // assign role
+                if (await _roleManager.RoleExistsAsync("Admin"))
+                    await _userManager.AddToRoleAsync(identityUser, "admin");
+
+                return identityUser.Id;
+            }
+            return null;
+        }
+
         public async Task<Response> ResgisterUserAsync(RegisterView model)
         {
             if (model == null)
@@ -329,5 +357,6 @@ namespace LandPApi.Service
                 Data = _mapper.Map<CustomerDto>(user)
             };
         }
+
     }
 }
