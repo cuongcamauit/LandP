@@ -10,7 +10,7 @@ namespace LandPApi.Models
         public double Price { get; set; }
         public string? ImageUrl { get; set; }
         public string? FolderId { get; set; }
-        public string? Unit { get; set; }
+        public string? Unit { get; set; } = "Unit";
         public int Quantity { get; set; }
         public double PercentSale { get; set; }
         public double AverageRating { get; set; } = 0;

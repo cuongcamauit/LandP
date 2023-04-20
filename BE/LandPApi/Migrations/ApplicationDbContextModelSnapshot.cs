@@ -83,6 +83,41 @@ namespace LandPApi.Migrations
                             Description = "A branch from Ameria",
                             LogoUrl = "https://drive.google.com/uc?export=view&id=1DfzKYG8dsu0C0tNK_5U8GNBM3IE92fsz",
                             Name = "Apple"
+                        },
+                        new
+                        {
+                            Id = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
+                            Description = "A branch from China",
+                            LogoUrl = "https://drive.google.com/uc?export=view&id=1WGo9ev5XnfDETamxPvTVaJJuAYr892Nf",
+                            Name = "Xiaomi"
+                        },
+                        new
+                        {
+                            Id = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
+                            Description = "A branch from China",
+                            LogoUrl = "https://drive.google.com/uc?export=view&id=1CYKkazDIXzIw_q6ioPB8NlgZTjnhor-N",
+                            Name = "Assus"
+                        },
+                        new
+                        {
+                            Id = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            Description = "A branch from China",
+                            LogoUrl = "https://drive.google.com/uc?export=view&id=1Q0u1RB9SfYkxXXmF2s9CPyTXKVY4IN1A",
+                            Name = "Dell"
+                        },
+                        new
+                        {
+                            Id = new Guid("2d750aa2-ea06-47ea-916c-abb6661f9781"),
+                            Description = "A branch from China",
+                            LogoUrl = "https://drive.google.com/uc?export=view&id=1T3galDlqvff5zyZd8kf19McJK9V7iAvL",
+                            Name = "Suunto"
+                        },
+                        new
+                        {
+                            Id = new Guid("fc1a0ff3-92d8-4a16-adb5-8c901bbe48f2"),
+                            Description = "A branch from China",
+                            LogoUrl = "https://drive.google.com/uc?export=view&id=1F9Sn87qp9kkJbbANHNKSXoE6pYwLPVz-",
+                            Name = "Logitech"
                         });
                 });
 
@@ -137,6 +172,27 @@ namespace LandPApi.Migrations
                             AvatarUrl = "https://drive.google.com/uc?export=view&id=15Lo6BabMJo7m9p-VSve4kls1pG2VA1AN",
                             Description = "A smart device",
                             Name = "Laptop"
+                        },
+                        new
+                        {
+                            Id = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
+                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1EHDwKK-pKe78N_-Ns3RhID7Wg3S2nmDP",
+                            Description = "A smart device",
+                            Name = "Tablet"
+                        },
+                        new
+                        {
+                            Id = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
+                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1y_ap3ooVR_djmamFvklsm0tx-d9Zrt3V",
+                            Description = "A smart device",
+                            Name = "Smartwatch"
+                        },
+                        new
+                        {
+                            Id = new Guid("76f4c144-6e3f-44bf-a292-8dd21a461b5d"),
+                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1N6u8HMtyTtdXWGBxz5AFRzk2KbvB6aVc",
+                            Description = "A smart device",
+                            Name = "Mouse"
                         });
                 });
 
@@ -222,16 +278,16 @@ namespace LandPApi.Migrations
                             Id = "289f6c6a783e4d89b25c847d1ffa4833",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "e932b7b8-7509-47c1-b99e-a3cef7a34b17",
+                            ConcurrencyStamp = "ba38df52-3c78-4693-a044-9bb64c071807",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpsupadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Super Admin",
                             NormalizedEmail = "landpsupadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH4mW+KFNw8LQslKgY3H3sI5niZY3ctTtlkXOdzf85aa8GADly5DFHrvTDY0tybYdQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIgvtWoUyM9brKHsPz8bPLD/zCgA9gnN/0eN63Nd2/ZE8ycTaG9139Uh51haqRjcDQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e9a27313-a8d7-48de-a734-ea4078a02eb5",
+                            SecurityStamp = "e500338d-4e2a-4f34-a623-d1d969a9f818",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpsupadmika@gmail.com"
@@ -241,19 +297,38 @@ namespace LandPApi.Migrations
                             Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "57336945-9e4c-40c2-add6-319e3acafe53",
+                            ConcurrencyStamp = "bd83eaba-6bf5-4a1f-abc1-b98d8cb108e9",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "landpadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOp9BwozX9c17DzMTKhTND8Hz/YBkqK8VgHJJtu9Ceyl94TcOeTXji5JaET0w8a2Eg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFgPeKvwPWlDwPOPyVOQi76EJbZD6UgyPBZsc+8WcFJkg28a3lZKgeyEJ/ZmVRMBHA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9d6e30a7-a6e3-42db-8740-e0cdf350edfd",
+                            SecurityStamp = "05b76746-ec7a-4d14-8181-cf8ce5a549bf",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpadmika@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "04be0c35-571e-425c-992e-15a7227286de",
+                            AccessFailedCount = 0,
+                            BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ConcurrencyStamp = "ef75c148-e367-427b-a36d-5721959ab7d3",
+                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "danhitclub6@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "User",
+                            NormalizedEmail = "danhitclub6@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAECbsZiTlu7+FFq6Hpxz5TX4+61E0NiCN/xc1SsMZWXcVdsZ3FE86l2sjkUMxkBkgiQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "93c75e6a-fbbe-4f11-ae49-eaaa9a8c0b1d",
+                            TwoFactorEnabled = false,
+                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserName = "danhitclub6@gmail.com"
                         });
                 });
 
@@ -455,7 +530,7 @@ namespace LandPApi.Migrations
                         {
                             Id = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
                             AverageRating = 0.0,
-                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Màn hình:\r\n\r\nOLED6.1\"Super Retina XDR\r\nHệ điều hành:\r\n\r\niOS 15\r\nCamera sau:\r\n\r\n2 camera 12 MP\r\nCamera trước:\r\n\r\n12 MP\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n64 GB\r\nSIM:\r\n\r\n1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n2815 mAh20 W",
                             FolderId = "1b9JWfgUruHr6j3U3XalWbAD2UO329_6X",
@@ -464,6 +539,159 @@ namespace LandPApi.Migrations
                             PercentSale = 20.0,
                             Price = 15590000.0,
                             Quantity = 50,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Xiaomi Redmi Note 12 Pro 5G là mẫu điện thoại thuộc dòng Redmi Note được chính thức ra mắt trong năm 2023, máy mang trên mình những cải tiến vượt trội về thiết kế, camera và hiệu năng, đáp ứng mượt mà hầu hết các nhu cầu khác nhau của người dùng.",
+                            FolderId = "1gBdpMXybH0HOxSKI6g9AdmisL9IUMfPq",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=190zjmRvUnsTZdB4iDizNBjqKI_fk5L3a",
+                            Name = "Xiaomi Redmi Note 12 Pro 5G",
+                            PercentSale = 2.0,
+                            Price = 9960000.0,
+                            Quantity = 50,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Xiaomi 12T series đã ra mắt trong sự kiện của Xiaomi vào ngày 4/10, trong đó có Xiaomi 12T 5G 128GB - máy sở hữu nhiều công nghệ hàng đầu trong giới smartphone tiêu biểu như: Chipset mạnh mẽ đến từ MediaTek, camera 108 MP sắc nét cùng khả năng sạc 120 W siêu nhanh.",
+                            FolderId = "1RvQvCVJ2wk72oMqDuYfeuTBHSIHNhplS",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=165CbvBDjo8PPjxn2MPHVe2YrZPZ1oCwd",
+                            Name = "Xiaomi 12T 5G 128GB",
+                            PercentSale = 0.0,
+                            Price = 9890000.0,
+                            Quantity = 3,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("5d7beeaf-f51e-44bb-ae26-aadb1bdc0276"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Nếu bạn đang tìm kiếm một chiếc laptop gaming nhưng vẫn sở hữu một mức giá phải chăng thì laptop Asus TUF Gaming F15 FX506LHB i5 (HN188W) sẽ là sự lựa chọn đáng cân nhắc với card đồ họa rời NVIDIA GeForce GTX mạnh mẽ cùng phong cách thiết kế cứng cáp, độc đáo. ",
+                            FolderId = "1504cqv26tU1E4JAWix9Ajxwh3XCH8tOv",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1s_UzQewLQ4zb7cX25cwUYAlVa3CpuCP9",
+                            Name = "TUF Gaming F15",
+                            PercentSale = 0.0,
+                            Price = 16990000.0,
+                            Quantity = 50,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("d5682976-7d8c-4549-884c-e85f73ddbed3"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Laptop Dell Vostro 3510 i5 (P112F002BBL) sở hữu cấu hình mạnh mẽ, đa nhiệm mượt mà trên sức mạnh của bộ vi xử lý Intel thế hệ 11, cùng một thiết kế đơn giản mà sang đẹp, sẽ là lựa chọn đắt giá đáp ứng nhu cầu học tập, làm việc hay giải trí của bạn.",
+                            FolderId = "1R9qzBw6zNwBARHF8aGu2_qJYlil161yl",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1ELd9fd2dk2meSyxz-hVnsIp8_gFrnHxp",
+                            Name = "Dell Vostro 3510",
+                            PercentSale = 20.0,
+                            Price = 179900000.0,
+                            Quantity = 10,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("3e9d9046-0534-44cf-a0fa-746a31acad9f"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
+                            Description = "Sau thành công của iPad 8, Apple cho đã cho ra mắt máy tính bảng iPad 9 WiFi 64GB - phiên bản tiếp theo của dòng iPad 10.2 inch, về cơ bản nó kế thừa những điểm mạnh từ các phiên bản trước đó và được cải tiến thêm hiệu suất, trải nghiệm người dùng nhằm giúp nhu cầu sử dụng giải trí và làm việc tiện lợi, linh hoạt hơn",
+                            FolderId = "1SZ3o96HmpNycsXIeOzuXBDF3dgh6v85o",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1IK5bpXd3iGWJbMDOS5c_zG5Zk5th3hhl",
+                            Name = "iPad 9",
+                            PercentSale = 0.0,
+                            Price = 7990000.0,
+                            Quantity = 10,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
+                            Description = "Sau khi trình làng hàng loạt mẫu iPhone vào tháng 09/2022 thì Apple cũng đã tiếp tục giới thiệu series iPad mới cho năm 2022. Trong đó iPad 10 WiFi 64GB là cái tên được hãng chú trọng khá nhiều về việc tối ưu giá thành nhằm giúp người dùng có thể dễ dàng tiếp cận. Máy hỗ trợ hệ điều hành iPadOS 16 cùng con chip Apple A14 Bionic giúp mang lại hiệu năng vượt trội.",
+                            FolderId = "18kx0xh8gVJAJllf-4ZVeFZFfkJHI1zkX",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1PjgSj70e2Oc1GC-DJBiVkzs77mAdEokF",
+                            Name = "iPad 10",
+                            PercentSale = 2.0,
+                            Price = 11190000.0,
+                            Quantity = 10,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("2d750aa2-ea06-47ea-916c-abb6661f9781"),
+                            CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
+                            Description = "Đồng hồ thông minh Suunto 7 Dây silicone phiên bản màu đen trang bị mặt kính cường lực chống va đập, màn hình AMOLED 1.97 inch (454 x 454 pixels) cùng độ sáng lên tới 1000 nits, vì thế có thể hiển thị sắc nét ngay cả khi ở điều kiện có ánh sáng mặt trời. Đặc biệt, với thiết kế dây đeo silicone tạo cảm giác mềm mại và dễ chịu khi đeo trong thời gian dài.",
+                            FolderId = "15B4NY2lAFY9DXr1Z40hwoQNjI5ZjnpZ4",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1-nQviihO_G_HGipaWd72aRUURK4zkm6S",
+                            Name = "Suunto 7",
+                            PercentSale = 0.0,
+                            Price = 7250000.0,
+                            Quantity = 5,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("777ffbe5-1f43-4b6c-80d3-6b3cffbcb721"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
+                            CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
+                            Description = "Sau thành công của dòng Galaxy Watch4, tháng 8/2022 ông lớn công nghệ Samsung đã cho ra mắt thế hệ smartwatch tiếp theo của hãng mang tên Samsung Galaxy Watch5 40 mm.",
+                            FolderId = "1v5XPVE3A_7XnX4yUf8OekLE54mHXr_CZ",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=17uBw10YiFMD2ET9pw_wiXkznPsQrAhr0",
+                            Name = "Samsung Galaxy Watch5",
+                            PercentSale = 0.0,
+                            Price = 5490000.0,
+                            Quantity = 10,
+                            ReviewQuantity = 0,
+                            SoldQuantity = 0.0,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("61a1dce1-164c-4a2f-a6e1-6397c5033bfb"),
+                            AverageRating = 0.0,
+                            BrandId = new Guid("fc1a0ff3-92d8-4a16-adb5-8c901bbe48f2"),
+                            CategoryId = new Guid("76f4c144-6e3f-44bf-a292-8dd21a461b5d"),
+                            Description = "Chuột Không dây Bluetooth Silent Logitech Signature M650 sở hữu kiểu dáng công thái học cùng độ phân giải lớn, đáp ứng tốt gần như mọi nhu cầu từ sử dụng cơ bản tới những tác vụ chuyên nghiệp của người dùng.",
+                            FolderId = "1M0-dUHbo7g_pkLPbQu9NMTPc9tnGkwr7",
+                            ImageUrl = "https://drive.google.com/uc?export=view&id=1ukyWOlXUIJzxVzjmNN5hPlrnHN0yET7b",
+                            Name = "Bluetooth Silent Logitech Signature M650",
+                            PercentSale = 0.0,
+                            Price = 765000.0,
+                            Quantity = 10,
                             ReviewQuantity = 0,
                             SoldQuantity = 0.0,
                             Unit = "Unit"
@@ -666,6 +894,11 @@ namespace LandPApi.Migrations
                         {
                             UserId = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             RoleId = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571"
+                        },
+                        new
+                        {
+                            UserId = "04be0c35-571e-425c-992e-15a7227286de",
+                            RoleId = "04be0c35-571e-425c-992e-15a7227286de"
                         });
                 });
 
