@@ -13,11 +13,12 @@ namespace LandPApi.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
-
-        public OrdersController(IOrderService orderService)
+        private readonly IConfiguration _configuration;
+        public OrdersController(IOrderService orderService, IConfiguration configuration)
         {
             _orderService = orderService;
-        }
+            _configuration = configuration;
+        }   
 
         // GET: api/Orders
         [HttpGet]
@@ -122,6 +123,31 @@ namespace LandPApi.Controllers
                 Message = "Updated successful!",
                 Success = true
             });
+        }
+
+        [HttpPost("PaypalCheckout/{orderId}")]
+        [Authorize]
+        public IActionResult PaypalCheckout(Guid orderId)
+        {
+            if (ModelState.IsValid)
+            {
+                var url = _orderService.PaypalCheckout(orderId);
+                if (url != null)
+                    return Redirect(url);
+            }
+            return Ok();
+        }
+
+        [HttpGet("CheckoutSuccess")]
+        public IActionResult CheckoutSuccess()
+        {
+            return Redirect($"{_configuration["AppUrl"]}/checkoutsuccess.html");
+        }
+
+        [HttpGet("CheckoutFail")]
+        public IActionResult CheckoutFail()
+        {
+            return Redirect($"{_configuration["AppUrl"]}/checkoutfail.html");
         }
 
         //// DELETE: api/Orders/5

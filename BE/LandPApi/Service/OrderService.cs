@@ -3,30 +3,37 @@ using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
+using LandPApi.Utils;
 using LandPApi.View;
 using Microsoft.EntityFrameworkCore;
+using PayPal.Api;
+using System.Configuration;
 using System.Security.Claims;
 
 namespace LandPApi.Service
 {
     public class OrderService : IOrderService
     {
-        private readonly IRepository<Order> _repoOrder;
+        private readonly IConfiguration _configuration;
+        private readonly IRepository<Models.Order> _repoOrder;
         private readonly IRepository<CartItem> _repoCart;
         private readonly IRepository<OrderDetail> _repoDetail;
         private readonly IRepository<HistoryStatus> _repoHis;
-        private readonly IRepository<Address> _repoAdd;
+        private readonly IRepository<Models.Address> _repoAdd;
         private readonly IRepository<Product> _repoPro;
         private readonly IMapper _mapper;
+        private readonly double exchangeRate = 23000;
 
-        public OrderService(IRepository<Order> repoOrder, 
+        public OrderService(IRepository<Models.Order> repoOrder, 
                             IRepository<CartItem> repoCart, 
                             IRepository<OrderDetail> repoDetail, 
                             IRepository<HistoryStatus> repoHis,
-                            IRepository<Address> repoAdd,
+                            IRepository<Models.Address> repoAdd,
                             IRepository<Product> repoPro,
-                            IMapper mapper)
+                            IMapper mapper,
+                            IConfiguration configuration)
         {
+            _configuration = configuration;
             _repoOrder = repoOrder;
             _repoCart = repoCart;
             _repoDetail = repoDetail;
@@ -45,7 +52,7 @@ namespace LandPApi.Service
             {
                 return null;
             }
-            var order = new Order
+            var order = new Models.Order
             {
                 CustomerId = customerId,
                 isPaid = view.isPaid,
@@ -56,15 +63,16 @@ namespace LandPApi.Service
 
             _repoOrder.Create(order);
 
+            int d = 0;
             var cartItem = _repoCart.ReadByCondition(o => o.CustomerId == customerId).ToList();
             foreach (var item in cartItem)
             {
                 if (!view.productIds!.Contains(item.ProductId) ||
                     item.Quantity > (await _repoPro.ReadByCondition(e => e.Id == item.ProductId).FirstOrDefaultAsync())!.Quantity)
-                    cartItem.Remove(item);
+                    d++;
             }
                 
-            if (cartItem.Count() != view.productIds!.Count())
+            if (cartItem.Count()-d != view.productIds!.Count())
                 return null;
 
             // everything is fine
@@ -81,10 +89,10 @@ namespace LandPApi.Service
                 _repoDetail.Create(new OrderDetail
                 {
                     OrderId = order.Id,
-                    Price = entityPro.Price,
+                    Price = entityPro!.Price,
                     PercentSale = entityPro.PercentSale,
                     ProductId = item,
-                    Quantity = entityCart.Quantity
+                    Quantity = entityCart!.Quantity
                 });
                 total += (entityPro.Price * (100 - entityPro.PercentSale)) * entityPro.Quantity; 
 
@@ -176,6 +184,88 @@ namespace LandPApi.Service
                 product!.Quantity += order.Quantity;
                 _repoPro.Update(product);
             }
-        }       
+        }
+
+        public string PaypalCheckout(Guid orderId)
+        {
+            var apiContext = PaymentUtils.GetApiContext(_configuration);
+
+
+
+            var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
+            var total = Math.Round(listDetail.Sum(o => o.Price * o.Quantity) / exchangeRate, 2);
+
+            var itemList = new ItemList()
+            {
+                items = new List<Item>()
+            };
+            foreach (var item in listDetail)
+            {
+                itemList.items.Add(new Item()
+                {
+                    name = item.Product!.Name,
+                    currency = "USD",
+                    price = Math.Round(item.Price / exchangeRate, 2).ToString(),
+                    quantity = item.Quantity.ToString(),
+                    sku = "sku",
+                    tax = "0"
+                });
+            }
+
+
+            // Create a new payment object
+            var paypalOrderId = DateTime.Now.Ticks;
+            var payment = new Payment
+            {
+                intent = "sale",
+                payer = new Payer
+                {
+                    payment_method = "paypal"
+                },
+                transactions = new List<Transaction>
+                    {
+                        new Transaction
+                        {
+                            
+                            amount = new Amount
+                            {
+                                currency = "USD",
+                                total = total.ToString(),
+                                details = new Details
+                                {
+                                    tax = "0",
+                                    shipping = "0",
+                                    subtotal = total.ToString()
+                                }
+                            },
+                            item_list = itemList,
+                            description = $"Invoice #{paypalOrderId}",
+                            invoice_number = paypalOrderId.ToString()
+                        },
+
+                    },
+                redirect_urls = new RedirectUrls
+                {
+                    return_url = _configuration["AppUrl"]+@"/api/Orders/CheckoutSuccess",
+                    cancel_url = _configuration["AppUrl"]+@"/api/Orders/CheckoutFail"
+                }
+            };
+
+            // Send the payment to PayPal
+            var createdPayment = payment.Create(apiContext);
+
+            //// Save a reference to the paypal payment
+            //paymentEntity.PaymentServiceReference = createdPayment.id;
+            //_paymentRepository.Add(paymentEntity);
+            //_paymentRepository.SaveAll();
+
+            // Find the Approval URL to send our user to
+            var approvalUrl =
+                createdPayment.links.FirstOrDefault(
+                    x => x.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase));
+
+            // Send the user to PayPal to approve the payment
+            return approvalUrl!.href;
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3TH5huqpuwQFn4u/WqxiXD5YBv01c0Txq4n27cGgu7E=",
+  "Hash": "4ht+q+Y/ckeb/8gTqK0Lc5MpMaIk6NmQ9XkWK4JgL48=",
   "Source": "LandPApi",
   "BasePath": "_content/LandPApi",
   "Mode": "Default",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\checkoutfail.html",
+      "SourceId": "LandPApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "BasePath": "_content/LandPApi",
+      "RelativePath": "checkoutfail.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\checkoutfail.html"
+    },
+    {
+      "Identity": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\checkoutsuccess.html",
+      "SourceId": "LandPApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "BasePath": "_content/LandPApi",
+      "RelativePath": "checkoutsuccess.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\checkoutsuccess.html"
+    },
     {
       "Identity": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\confirmEmail.html",
       "SourceId": "LandPApi",

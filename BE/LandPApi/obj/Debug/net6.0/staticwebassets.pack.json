@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\checkoutfail.html",
+      "PackagePath": "staticwebassets\\checkoutfail.html"
+    },
+    {
+      "Id": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\checkoutsuccess.html",
+      "PackagePath": "staticwebassets\\checkoutsuccess.html"
+    },
+    {
       "Id": "C:\\Users\\Phu Cuong\\OneDrive\\C Sharp\\LandP\\BE\\LandPApi\\wwwroot\\confirmEmail.html",
       "PackagePath": "staticwebassets\\confirmEmail.html"
     },

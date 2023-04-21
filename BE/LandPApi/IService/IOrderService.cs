@@ -10,6 +10,7 @@ namespace LandPApi.IService
     {
         Task<OrderDto?> Add(string customerId, OrderView view);
         Task<List<OrderDto>> GetAll(string customerId);
+        string PaypalCheckout(Guid orderId);
         void Update(ClaimsPrincipal user, Guid orderId, Status status, bool isPaid);
     }
 }

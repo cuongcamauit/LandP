@@ -17,6 +17,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
+          "PayPal": "1.9.1",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -1725,6 +1726,17 @@
           }
         }
       },
+      "PayPal/1.9.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "lib/net451/PayPal.dll": {
+            "assemblyVersion": "1.9.1.0",
+            "fileVersion": "1.9.1.0"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -3353,6 +3365,13 @@
       "sha512": "sha512-T/igBDLXCd+pH3YTWgGVNvYSOwbwaT30NyyM9ONjvlHlmaUjKBJpr9kH0AeL+Ado4EJsBhU3qxXVc6lyrpRcMw==",
       "path": "nuget.versioning/6.3.1",
       "hashPath": "nuget.versioning.6.3.1.nupkg.sha512"
+    },
+    "PayPal/1.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b3vq6Lc9CwSooCX2tsZ02zb7E/K/cA6EILCoMynue+ZeVuitJNqt0YwxPnp7uN0Pccob02oDlpAjRLH+GRCRxA==",
+      "path": "paypal/1.9.1",
+      "hashPath": "paypal.1.9.1.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",

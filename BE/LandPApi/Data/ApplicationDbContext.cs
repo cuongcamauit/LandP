@@ -199,6 +199,7 @@ namespace LandPApi.Data
             var superId = "289f6c6a783e4d89b25c847d1ffa4833";
             var adminId = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571";
             var userId = "04be0c35-571e-425c-992e-15a7227286de";
+            var user1Id = "1b0b163d-032f-4e19-9e64-d89bf02f1751";
             var hasher = new PasswordHasher<Customer>();
 
             builder.Entity<IdentityRole>().HasData(
@@ -208,15 +209,23 @@ namespace LandPApi.Data
             );
 
             builder.Entity<Customer>().HasData(
-                new Customer { Id = superId, Name = "Super Admin", UserName = "landpsupadmika@gmail.com", PasswordHash = hasher.HashPassword(null, "Superadmin.123"), EmailConfirmed = true, Email = "landpsupadmika@gmail.com", NormalizedEmail = "landpsupadmika@gmail.com" },
-                new Customer { Id = adminId, Name = "Admin", UserName = "landpadmika@gmail.com", PasswordHash = hasher.HashPassword(null, "Admin.123"), EmailConfirmed = true, Email = "landpadmika@gmail.com", NormalizedEmail = "landpadmika@gmail.com" },
-                new Customer { Id = userId, Name = "User", UserName = "danhitclub6@gmail.com", NormalizedEmail = "danhitclub6@gmail.com", EmailConfirmed = true, Email = "danhitclub6@gmail.com", PasswordHash = hasher.HashPassword(null, "Admin.123") }
+                new Customer { Id = superId, Name = "Super Admin", UserName = "landpsupadmika@gmail.com", PasswordHash = hasher.HashPassword(null!, "Superadmin.123"), EmailConfirmed = true, Email = "landpsupadmika@gmail.com", NormalizedEmail = "landpsupadmika@gmail.com" },
+                new Customer { Id = adminId, Name = "Admin"      , UserName = "landpadmika@gmail.com"   , PasswordHash = hasher.HashPassword(null!, "Admin.123")     , EmailConfirmed = true, Email = "landpadmika@gmail.com"   , NormalizedEmail = "landpadmika@gmail.com" },
+                new Customer { Id = userId , Name = "User"       , UserName = "landpuserdemo@gmail.com" , PasswordHash = hasher.HashPassword(null!, "Userdemo.123")  , EmailConfirmed = true, Email = "landpuserdemo@gmail.com" , NormalizedEmail = "landpuserdemo@gmail.com" },
+                new Customer { Id = user1Id, Name = "User1"      , UserName = "landpuserdemo1@gmail.com", PasswordHash = hasher.HashPassword(null!, "Userdemo1.123") , EmailConfirmed = true, Email = "landpuserdemo1@gmail.com", NormalizedEmail = "landpuserdemo1@gmail.com"}
             );
 
             builder.Entity<IdentityUserRole<string>>().HasData(
                 new IdentityUserRole<string> { RoleId = superId, UserId = superId },
                 new IdentityUserRole<string> { RoleId = adminId, UserId = adminId},
-                new IdentityUserRole<string> { RoleId = userId, UserId = userId}                
+                new IdentityUserRole<string> { RoleId = userId, UserId = userId},
+                new IdentityUserRole<string> { RoleId = userId, UserId = user1Id}
+            );
+            var addresuserId = Guid.Parse("0750d8d3-bfff-45f2-b081-2a86ffe91bfd");
+            var addresuser1Id = Guid.Parse("3fd64b58-5ded-40ed-876c-027bcc759a75");
+            builder.Entity<Address>().HasData(
+                new Address { Id = addresuserId, CustomerId = userId, Province = "Cà Mau", District = "Thành phố Cà Mau", Ward = "8", Detail = "5"},    
+                new Address { Id = addresuser1Id, CustomerId = user1Id, Province = "Thành phố Hồ Chí Minh", District = "12", Ward = "Tân Chánh Hiệp", Detail = "Tô Ký"}    
             );
             //----------------------------------------------------------//
             var smartphoneId = Guid.Parse("bc17dda5-9e53-434d-ab30-32452bfc7d35");
