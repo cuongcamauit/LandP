@@ -30,7 +30,7 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult GetOrderDetails(Guid orderId)
         {
-            List<OrderDetailDto> result = _orderDetailService.GetAll(orderId);
+            object result = _orderDetailService.GetAll(orderId);
             return Ok(new Response
             {
                 Success = true,

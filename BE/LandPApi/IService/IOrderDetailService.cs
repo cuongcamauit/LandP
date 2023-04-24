@@ -5,6 +5,6 @@ namespace LandPApi.IService
 {
     public interface IOrderDetailService
     {
-        List<OrderDetailDto> GetAll(Guid orderId);
+        object GetAll(Guid orderId);
     }
 }

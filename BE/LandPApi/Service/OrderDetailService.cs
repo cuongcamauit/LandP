@@ -4,6 +4,7 @@ using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
 {
@@ -17,10 +18,13 @@ namespace LandPApi.Service
             _repository = repository;
             _mapper = mapper;
         }
-        public List<OrderDetailDto> GetAll(Guid orderId)
+        public object GetAll(Guid orderId)
         {
-            var result = _repository.ReadByCondition(o => o.OrderId == orderId);
-            return _mapper.Map<List<OrderDetailDto>>(result);
+            var result = _repository.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
+            return new {
+                orderId,
+                CartItems = _mapper.Map<List<OrderDetailDto>>(result)
+            };
         }
     }
 }
