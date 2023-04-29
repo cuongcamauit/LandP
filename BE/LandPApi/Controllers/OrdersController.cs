@@ -34,6 +34,45 @@ namespace LandPApi.Controllers
             });
         }
 
+
+        // GET: api/Orders
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<IActionResult> GetOrderById(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
+            OrderDto result = await _orderService.GetById(User.FindFirstValue(ClaimTypes.NameIdentifier), id);
+
+            if (result == null)
+            {
+                return Ok(new Response
+                {
+                    Success = false,
+                    StatusCode = 404,
+                    Message = "Not found",
+                });
+            }
+            return Ok(new Response
+            {
+                Success = true,
+                StatusCode = 200,
+                Message = "Get all order of current user",
+                Data = result
+            });
+        }
+
         //// GET: api/Orders/5
         //[HttpGet("{id}")]
         //public async Task<IActionResult> GetOrder(Guid id)
@@ -125,30 +164,41 @@ namespace LandPApi.Controllers
             });
         }
 
-        [HttpPost("PaypalCheckout/{orderId}")]
+        [HttpPut("PaypalCheckout/{orderId}")]
         [Authorize]
         public IActionResult PaypalCheckout(Guid orderId)
         {
             if (ModelState.IsValid)
             {
-                var url = _orderService.PaypalCheckout(orderId);
-                if (url != null)
-                    return Redirect(url);
+                _orderService.PaypalCheckout(orderId);
+                return Ok(new Response
+                {
+                    StatusCode = 201
+                });
             }
-            return Ok();
+            var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+            return Ok(new Response
+            {
+                Success = false,
+                Message = "Some properties is wrong",
+                Data = message,
+                StatusCode = 422
+            });
         }
 
-        [HttpGet("CheckoutSuccess")]
-        public IActionResult CheckoutSuccess()
-        {
-            return Redirect($"{_configuration["AppUrl"]}/checkoutsuccess.html");
-        }
+        //[HttpGet("CheckoutSuccess")]
+        //public IActionResult CheckoutSuccess()
+        //{
+        //    return Redirect($"{_configuration["AppUrl"]}/checkoutsuccess.html");
+        //}
 
-        [HttpGet("CheckoutFail")]
-        public IActionResult CheckoutFail()
-        {
-            return Redirect($"{_configuration["AppUrl"]}/checkoutfail.html");
-        }
+        //[HttpGet("CheckoutFail")]
+        //public IActionResult CheckoutFail()
+        //{
+        //    return Redirect($"{_configuration["AppUrl"]}/checkoutfail.html");
+        //}
 
         //// DELETE: api/Orders/5
         //[HttpDelete("{id}")]

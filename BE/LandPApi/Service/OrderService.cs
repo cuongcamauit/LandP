@@ -55,7 +55,6 @@ namespace LandPApi.Service
             var order = new Models.Order
             {
                 CustomerId = customerId,
-                isPaid = view.isPaid,
                 Status = Status.New,
                 Date = DateTime.Now,
                 AddressId = view.AddressId
@@ -186,86 +185,101 @@ namespace LandPApi.Service
             }
         }
 
-        public string PaypalCheckout(Guid orderId)
+        public void PaypalCheckout(Guid orderId)
         {
-            var apiContext = PaymentUtils.GetApiContext(_configuration);
-
-
-
-            var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
-            var total = Math.Round(listDetail.Sum(o => o.Price * o.Quantity) / exchangeRate, 2);
-
-            var itemList = new ItemList()
+            var order = _repoOrder.ReadByCondition(o => o.Id == orderId).SingleOrDefault();
+            if (order != null)
             {
-                items = new List<Item>()
-            };
-            foreach (var item in listDetail)
-            {
-                itemList.items.Add(new Item()
-                {
-                    name = item.Product!.Name,
-                    currency = "USD",
-                    price = Math.Round(item.Price / exchangeRate, 2).ToString(),
-                    quantity = item.Quantity.ToString(),
-                    sku = "sku",
-                    tax = "0"
-                });
+                order.isPaid = true;
             }
+            _repoOrder.Update(order!);
+            _repoOrder.Save();
+            
+
+            //var apiContext = PaymentUtils.GetApiContext(_configuration);
 
 
-            // Create a new payment object
-            var paypalOrderId = DateTime.Now.Ticks;
-            var payment = new Payment
-            {
-                intent = "sale",
-                payer = new Payer
-                {
-                    payment_method = "paypal"
-                },
-                transactions = new List<Transaction>
-                    {
-                        new Transaction
-                        {
+
+            //var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
+            //var total = Math.Round(listDetail.Sum(o => o.Price * o.Quantity) / exchangeRate, 2);
+
+            //var itemList = new ItemList()
+            //{
+            //    items = new List<Item>()
+            //};
+            //foreach (var item in listDetail)
+            //{
+            //    itemList.items.Add(new Item()
+            //    {
+            //        name = item.Product!.Name,
+            //        currency = "USD",
+            //        price = Math.Round(item.Price / exchangeRate, 2).ToString(),
+            //        quantity = item.Quantity.ToString(),
+            //        sku = "sku",
+            //        tax = "0"
+            //    });
+            //}
+
+
+            //// Create a new payment object
+            //var paypalOrderId = DateTime.Now.Ticks;
+            //var payment = new Payment
+            //{
+            //    intent = "sale",
+            //    payer = new Payer
+            //    {
+            //        payment_method = "paypal"
+            //    },
+            //    transactions = new List<Transaction>
+            //        {
+            //            new Transaction
+            //            {
                             
-                            amount = new Amount
-                            {
-                                currency = "USD",
-                                total = total.ToString(),
-                                details = new Details
-                                {
-                                    tax = "0",
-                                    shipping = "0",
-                                    subtotal = total.ToString()
-                                }
-                            },
-                            item_list = itemList,
-                            description = $"Invoice #{paypalOrderId}",
-                            invoice_number = paypalOrderId.ToString()
-                        },
+            //                amount = new Amount
+            //                {
+            //                    currency = "USD",
+            //                    total = total.ToString(),
+            //                    details = new Details
+            //                    {
+            //                        tax = "0",
+            //                        shipping = "0",
+            //                        subtotal = total.ToString()
+            //                    }
+            //                },
+            //                item_list = itemList,
+            //                description = $"Invoice #{paypalOrderId}",
+            //                invoice_number = paypalOrderId.ToString()
+            //            },
 
-                    },
-                redirect_urls = new RedirectUrls
-                {
-                    return_url = _configuration["AppUrl"]+@"/api/Orders/CheckoutSuccess",
-                    cancel_url = _configuration["AppUrl"]+@"/api/Orders/CheckoutFail"
-                }
-            };
+            //        },
+            //    redirect_urls = new RedirectUrls
+            //    {
+            //        return_url = _configuration["AppUrl"]+@"/api/Orders/CheckoutSuccess",
+            //        cancel_url = _configuration["AppUrl"]+@"/api/Orders/CheckoutFail"
+            //    }
+            //};
 
-            // Send the payment to PayPal
-            var createdPayment = payment.Create(apiContext);
+            //// Send the payment to PayPal
+            //var createdPayment = payment.Create(apiContext);
 
-            //// Save a reference to the paypal payment
-            //paymentEntity.PaymentServiceReference = createdPayment.id;
-            //_paymentRepository.Add(paymentEntity);
-            //_paymentRepository.SaveAll();
+            ////// Save a reference to the paypal payment
+            ////paymentEntity.PaymentServiceReference = createdPayment.id;
+            ////_paymentRepository.Add(paymentEntity);
+            ////_paymentRepository.SaveAll();
 
-            // Find the Approval URL to send our user to
-            var approvalUrl =
-                createdPayment.links.FirstOrDefault(
-                    x => x.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase));
+            //// Find the Approval URL to send our user to
+            //var approvalUrl =
+            //    createdPayment.links.FirstOrDefault(
+            //        x => x.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase));
 
-            // Send the user to PayPal to approve the payment
-            return approvalUrl!.href;
+            //// Send the user to PayPal to approve the payment
+            //return approvalUrl!.href;
+        }
+
+        public async Task<OrderDto> GetById(string customerId, Guid id)
+        {
+            var result = await _repoOrder.ReadByCondition(o => o.CustomerId == customerId && o.Id == id).SingleOrDefaultAsync();
+            return _mapper.Map<OrderDto>(result);
         }
     }
 }
