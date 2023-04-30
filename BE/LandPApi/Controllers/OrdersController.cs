@@ -194,13 +194,15 @@ namespace LandPApi.Controllers
         {
             // xu ly thanh true
             _orderService.isPaid(orderId);
-            return Redirect($"{_configuration["UIUrl"]}/order/orderId");
+            return Content("<script>window.close();</script>", "text/html");
+            //return Redirect($"{_configuration["UIUrl"]}/order/orderId");
         }
 
         [HttpGet("CheckoutFail")]
         public IActionResult CheckoutFail()
         {
-            return Redirect($"{_configuration["UIUrl"]}/order/orderId");
+            return Content("<script>window.close();</script>", "text/html");
+            //return Redirect($"{_configuration["UIUrl"]}/order/orderId");
         }
 
         //// DELETE: api/Orders/5
