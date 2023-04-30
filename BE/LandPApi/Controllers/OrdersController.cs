@@ -170,10 +170,11 @@ namespace LandPApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                _orderService.PaypalCheckout(orderId);
+                string link = _orderService.PaypalCheckout(orderId);
                 return Ok(new Response
                 {
-                    StatusCode = 201
+                    StatusCode = 202,
+                    Data = link
                 });
             }
             var message = string.Join(" | ", ModelState.Values
@@ -188,17 +189,19 @@ namespace LandPApi.Controllers
             });
         }
 
-        //[HttpGet("CheckoutSuccess")]
-        //public IActionResult CheckoutSuccess()
-        //{
-        //    return Redirect($"{_configuration["AppUrl"]}/checkoutsuccess.html");
-        //}
+        [HttpGet("CheckoutSuccess")]
+        public IActionResult CheckoutSuccess(Guid orderId)
+        {
+            // xu ly thanh true
+            _orderService.isPaid(orderId);
+            return Redirect($"{_configuration["UIUrl"]}/order/orderId");
+        }
 
-        //[HttpGet("CheckoutFail")]
-        //public IActionResult CheckoutFail()
-        //{
-        //    return Redirect($"{_configuration["AppUrl"]}/checkoutfail.html");
-        //}
+        [HttpGet("CheckoutFail")]
+        public IActionResult CheckoutFail()
+        {
+            return Redirect($"{_configuration["UIUrl"]}/order/orderId");
+        }
 
         //// DELETE: api/Orders/5
         //[HttpDelete("{id}")]

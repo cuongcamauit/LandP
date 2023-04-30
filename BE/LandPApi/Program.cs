@@ -103,14 +103,14 @@ namespace LandPApi
 
             builder.Services.AddCors(p => p.AddPolicy("myCors", build =>
             {
-                build.AllowAnyOrigin()
+                build.WithOrigins("http://localhost:3000/")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
             }));
-            builder.WebHost.UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("https://*:7051")
-                .UseIISIntegration();
+            //builder.WebHost.UseKestrel()
+            //    .UseContentRoot(Directory.GetCurrentDirectory())
+            //    .UseUrls("https://*:7051")
+            //    .UseIISIntegration();
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
@@ -141,9 +141,7 @@ namespace LandPApi
             app.MapRazorPages();
 
             //app.UseMiddleware<CheckAcessMiddleware>();
-
             
-
             app.Run();
         }
     }
