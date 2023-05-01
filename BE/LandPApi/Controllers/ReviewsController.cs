@@ -32,11 +32,7 @@ namespace LandPApi.Controllers
         public IActionResult GetReviews(Guid productId, int page = 1, int pageSize = 5)
         {
             var result = _reviewService.GetAll(productId, page, pageSize);
-            return Ok(new Response
-            {
-                Data = result,
-                Message = "Get all review of product"
-            });
+            return Ok(result);
         }
 
         // GET: api/Reviews/5
@@ -87,12 +83,7 @@ namespace LandPApi.Controllers
             }
             var result = _reviewService.Create(User.FindFirstValue(ClaimTypes.NameIdentifier), review);
 
-            return Ok(new Response
-            {
-                StatusCode = 201,
-                Data = result,
-                Message = "Created successful!"
-            });
+            return Ok(result);
         }
 
         // DELETE: api/Reviews/5

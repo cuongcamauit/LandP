@@ -155,7 +155,8 @@ namespace LandPApi.Service
                     returnProduct(orderId);
                 if (statusOrder != status && status == Status.Delivered)
                     updateSoldQuantity(orderId);
-                updateOrder!.isPaid = isPaid;
+                //updateOrder!.isPaid = isPaid;
+                updateOrder!.PaidAt = DateTime.Now;
                 updateOrder.Status = status;
             }
             _repoPro.Save();
@@ -287,7 +288,8 @@ namespace LandPApi.Service
             var order = _repoOrder.ReadByCondition(o => o.Id == orderId).SingleOrDefault();
             if (order == null)
                 return;
-            order!.isPaid = true;
+            //order!.isPaid = true;
+            order!.PaidAt = DateTime.Now;
             _repoOrder.Update(order);
             _repoOrder.Save();
         }

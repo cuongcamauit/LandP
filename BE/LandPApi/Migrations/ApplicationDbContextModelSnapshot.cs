@@ -298,16 +298,16 @@ namespace LandPApi.Migrations
                             Id = "289f6c6a783e4d89b25c847d1ffa4833",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "463ea198-91ac-4d45-91a6-e36ff3522209",
+                            ConcurrencyStamp = "25c212d5-2930-4af5-8be9-2052cd25b8cf",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpsupadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Super Admin",
                             NormalizedEmail = "landpsupadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMhsybSyWmC21QPK4HRfC6AeZaDC6Uvunjoo/+jUMc4mgNDjemmTyS1iS9Xkk5s4yg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGGhgdGVbtII2Fx1E2NYXrrbvvpLcAvYSp0U00N4ardAa45GmOdiKbyeZwJu4BK10g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b04da200-a575-4b03-883a-1301817da0e8",
+                            SecurityStamp = "ebe7477f-b85c-4b72-8b3b-9d391f749569",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpsupadmika@gmail.com"
@@ -317,16 +317,16 @@ namespace LandPApi.Migrations
                             Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "f1a357a7-fb0f-42f1-a0a8-6b8df52cdd0a",
+                            ConcurrencyStamp = "17c3f94c-4ad7-44c5-a55e-738d6cef0897",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "landpadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ1uX7Ol0KAkd+aN5uqBIQhhIhwz0tInTZnJedtx0p/fiBRmuBJjLMWU5lPwKOCl/w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGnSDTYPquRwk0B6E6DftQyVlGZUHcSZ9SvKbMCGgfvgapMItiuLd9VxmGmER81Gpw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7fb2b91d-5b7e-4c3d-b637-b7630e942a1c",
+                            SecurityStamp = "de7a41f4-cbc7-4b49-bfc3-01aaba30eda4",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpadmika@gmail.com"
@@ -336,16 +336,16 @@ namespace LandPApi.Migrations
                             Id = "04be0c35-571e-425c-992e-15a7227286de",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "d0a1518f-0838-4388-b17b-913f539f528a",
+                            ConcurrencyStamp = "0ece1de1-15b6-4a3d-bd08-a0267108bb68",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User",
                             NormalizedEmail = "landpuserdemo@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAENNXn/EFfCPqxVZ1GAnA8nggBA23mlYQt5/kSTd/F3jCtyIvf8NPeqB6hvpumlb3AA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIJs4tZ7CwmCNtDnDjaAuomFw3EQmZfKfhLyPfHU2ZAbbG/CBNeKEl/xKkzBrJhcPQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9f26319f-dbbd-441e-9c5b-27d4073f847a",
+                            SecurityStamp = "ea4e494b-a481-4d81-9e4c-cfab7f8a1f91",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo@gmail.com"
@@ -355,16 +355,16 @@ namespace LandPApi.Migrations
                             Id = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "db2081eb-eb1b-4c4d-9c0f-dc61b7714626",
+                            ConcurrencyStamp = "9916e831-4028-4b14-b96e-83296874acba",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo1@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User1",
                             NormalizedEmail = "landpuserdemo1@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMxs7H1DyBVAFyKgDhOnLqtuGSArFrM7vNyBVRD/7OtJqo70iAoHHl3j6BIuYna7qA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKwpeXWXIPbuVXIQfSE/7HfC8GMt0uJN5nywUDqBlqLQBYFk4Ubod/Z15pFJuSQP3g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fdc9d718-348e-4ca9-a945-b64207171899",
+                            SecurityStamp = "084d4e26-e520-430b-b4a5-d427024603d9",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo1@gmail.com"
@@ -451,15 +451,15 @@ namespace LandPApi.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("PaidAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Total")
                         .HasColumnType("float");
-
-                    b.Property<bool>("isPaid")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

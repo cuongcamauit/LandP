@@ -30,19 +30,31 @@ namespace LandPApi.Service
             _userManager = userManager;
         }
 
-        public object Create(string customerId, ReviewView review)
+        public Response Create(string customerId, ReviewView review)
         {
             var check = _repoReview.ReadByCondition(o => o.CustomerId == customerId 
                                                     && o.OrderId == review.OrderId
                                                     && o.ProductId == review.ProductId).FirstOrDefault();
             var haveOrder = _repoDetail.ReadByCondition(o => o.OrderId == review.OrderId && o.ProductId == review.ProductId && o.Order!.CustomerId == customerId).FirstOrDefault();
 
-            if (check == null || haveOrder == null)
+            if (haveOrder == null)
             {
                 return new Response
                 {
+                    Success = false,
                     StatusCode = 404,
                     Message = "Doesn't have order",
+                };
+            }
+
+            if (check != null)
+            {
+                return new Response
+                {
+                    Success = false,
+                    StatusCode = 409,
+                    Message = "You reviewed this product",
+                    
                 };
             }
 
@@ -72,7 +84,7 @@ namespace LandPApi.Service
             };
         }
 
-        public object GetAll(Guid productId, int page, int pageSize)
+        public Response GetAll(Guid productId, int page, int pageSize)
         {
             var reviews = _repoReview.ReadByCondition(o => o.ProductId == productId).Include(review => review.Customer);
             #region Paginate
