@@ -201,7 +201,7 @@ namespace LandPApi.Service
 
 
             var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
-            var total = Math.Round(listDetail.Sum(o => o.realPrice() * o.Quantity) / exchangeRate, 2);
+            var total = Math.Round(listDetail.Sum(o => (o.Price - (o.Price * o.PercentSale / 100)) * o.Quantity) / exchangeRate, 2);
 
             var itemList = new ItemList()
             {
@@ -213,7 +213,7 @@ namespace LandPApi.Service
                 {
                     name = item.Product!.Name,
                     currency = "USD",
-                    price = Math.Round(item.realPrice() / exchangeRate, 2).ToString(),
+                    price = Math.Round((item.Price - (item.Price * item.PercentSale / 100)) / exchangeRate, 2).ToString(),
                     quantity = item.Quantity.ToString(),
                     sku = "sku",
                     tax = "0"

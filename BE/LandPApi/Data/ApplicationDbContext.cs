@@ -422,7 +422,7 @@ namespace LandPApi.Data
                     Id = vostro3510Id,
                     Name = "Dell Vostro 3510",
                     Description = "Laptop Dell Vostro 3510 i5 (P112F002BBL) sở hữu cấu hình mạnh mẽ, đa nhiệm mượt mà trên sức mạnh của bộ vi xử lý Intel thế hệ 11, cùng một thiết kế đơn giản mà sang đẹp, sẽ là lựa chọn đắt giá đáp ứng nhu cầu học tập, làm việc hay giải trí của bạn.",
-                    Price = 179900000,
+                    Price = 17990000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1ELd9fd2dk2meSyxz-hVnsIp8_gFrnHxp",
                     
                     Quantity = 10,
