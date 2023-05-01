@@ -298,16 +298,16 @@ namespace LandPApi.Migrations
                             Id = "289f6c6a783e4d89b25c847d1ffa4833",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "25c212d5-2930-4af5-8be9-2052cd25b8cf",
+                            ConcurrencyStamp = "f19ce246-dfd0-4e26-a67e-bbc9e76f2049",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpsupadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Super Admin",
                             NormalizedEmail = "landpsupadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGGhgdGVbtII2Fx1E2NYXrrbvvpLcAvYSp0U00N4ardAa45GmOdiKbyeZwJu4BK10g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENwRIhtuhWNMvabl71Bt4/wAhJwhtPLI6oRYv0SWqsEyGHQ461Wx53p8udV5bKE7qA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ebe7477f-b85c-4b72-8b3b-9d391f749569",
+                            SecurityStamp = "369e7459-d3ea-404e-ae2a-73ccc03fff99",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpsupadmika@gmail.com"
@@ -317,16 +317,16 @@ namespace LandPApi.Migrations
                             Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "17c3f94c-4ad7-44c5-a55e-738d6cef0897",
+                            ConcurrencyStamp = "aab791eb-e17c-4282-9460-f80482731881",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "landpadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGnSDTYPquRwk0B6E6DftQyVlGZUHcSZ9SvKbMCGgfvgapMItiuLd9VxmGmER81Gpw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFjFIl2vGEb/ZxuvkDYaiK9bVSBjwCyR2Hrva6slAhruJrOqLjDGiDDhQ4JB5Momxw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "de7a41f4-cbc7-4b49-bfc3-01aaba30eda4",
+                            SecurityStamp = "bd246bb7-f36d-423a-9712-f8dfaffb9cd3",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpadmika@gmail.com"
@@ -336,16 +336,16 @@ namespace LandPApi.Migrations
                             Id = "04be0c35-571e-425c-992e-15a7227286de",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "0ece1de1-15b6-4a3d-bd08-a0267108bb68",
+                            ConcurrencyStamp = "31b2cf83-d597-4964-b65b-84c9c09b3574",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User",
                             NormalizedEmail = "landpuserdemo@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIJs4tZ7CwmCNtDnDjaAuomFw3EQmZfKfhLyPfHU2ZAbbG/CBNeKEl/xKkzBrJhcPQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENo8SoMwhFOCh+VaOENsJVB1UMshQWMCkM4tfblJFEuvlpZfEAWy5Q0QTI+Uz2zxbw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ea4e494b-a481-4d81-9e4c-cfab7f8a1f91",
+                            SecurityStamp = "b74e7226-51e7-4689-82c8-feed61033c14",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo@gmail.com"
@@ -355,16 +355,16 @@ namespace LandPApi.Migrations
                             Id = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "9916e831-4028-4b14-b96e-83296874acba",
+                            ConcurrencyStamp = "e517687b-99d1-4771-80f9-bb4486fb4caf",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo1@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User1",
                             NormalizedEmail = "landpuserdemo1@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKwpeXWXIPbuVXIQfSE/7HfC8GMt0uJN5nywUDqBlqLQBYFk4Ubod/Z15pFJuSQP3g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMZPrhHQZwf8e6EYkFhER4UTbVEudSaViWD8yH1XXKM91K+eKSGTbpk6zCEuCRpsJw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "084d4e26-e520-430b-b4a5-d427024603d9",
+                            SecurityStamp = "5e4e9d40-26b5-4e1c-8b24-156be2e5e9fa",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo1@gmail.com"
@@ -785,6 +785,44 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Views");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
+                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8157)
+                        },
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
+                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8168)
+                        },
+                        new
+                        {
+                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
+                            ProductId = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
+                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8169)
+                        },
+                        new
+                        {
+                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
+                            ProductId = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
+                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8170)
+                        },
+                        new
+                        {
+                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
+                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8171)
+                        },
+                        new
+                        {
+                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
+                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
+                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8171)
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

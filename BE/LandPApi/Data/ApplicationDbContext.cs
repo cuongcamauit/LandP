@@ -498,6 +498,39 @@ namespace LandPApi.Data
                 }
             );
 
+            builder.Entity<LandPApi.Models.View>().HasData(
+                new Models.View
+                {
+                    CustomerId = userId,
+                    ProductId = xiaomi12t5gId
+                },
+                new Models.View
+                {
+                    CustomerId = userId,
+                    ProductId = xiaominote12pro5gId
+                }, 
+                new Models.View
+                {
+                    CustomerId = user1Id,
+                    ProductId = xiaomi12t5gId
+                }, 
+                new Models.View
+                {
+                    CustomerId = user1Id,
+                    ProductId = xiaominote12pro5gId
+                }, 
+                new Models.View
+                {
+                    CustomerId = user1Id,
+                    ProductId = suunto7Id
+                },
+                new Models.View
+                {
+                    CustomerId = user1Id,
+                    ProductId = ssa23Id
+                }
+            );
+
             builder.Entity<Document>().HasData(
                 new Document
                 {

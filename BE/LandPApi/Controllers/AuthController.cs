@@ -4,6 +4,7 @@ using LandPApi.Models;
 using LandPApi.View;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 
 namespace LandPApi
@@ -49,6 +50,23 @@ namespace LandPApi
         [HttpPost("Login")]
         public async Task<IActionResult> LoginAsync(LoginViewModel loginViewModel)
         {
+            //using (var client = new HttpClient())
+            //{
+            //    client.BaseAddress = new Uri("https://api.currencyapi/");
+            //    //GET Method
+            //    HttpResponseMessage response = await client.GetAsync("v3/latest?apikey=seaoyCIdGMxekEbdE5Mgl8jCGbOwqgtoZxInJBxP&currencies=VND");
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        object t = response.Content;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Internal server Error");
+            //    }
+            //}
+
+
+
             if (ModelState.IsValid)
             {
                 var result = await _userService.LoginUserAsync(loginViewModel);

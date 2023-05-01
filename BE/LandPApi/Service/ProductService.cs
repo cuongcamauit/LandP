@@ -109,7 +109,6 @@ namespace LandPApi.Service
             {
                 var category = _repository.ReadByCondition(o => o.Id == item).FirstOrDefault()!.CategoryId;
                 categorys.Add(category);
-
             }
             var getUserId = _userManager.Users.Where(o => o.Id != userId).Select(o => o.Id).ToList();
 
