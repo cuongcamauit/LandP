@@ -138,7 +138,8 @@ namespace LandPApi.Service
                     };
                     var updateOrder = order.FirstOrDefault();
                     updateOrder!.Status = Status.Canceled;
-                    returnProduct(orderId);
+                    //returnProduct(orderId);
+                    _repoOrder.Update(updateOrder);
                 }
             }
 
@@ -158,6 +159,7 @@ namespace LandPApi.Service
                 //updateOrder!.isPaid = isPaid;
                 updateOrder!.PaidAt = DateTime.Now;
                 updateOrder.Status = status;
+                _repoOrder.Update(updateOrder);
             }
             _repoPro.Save();
             _repoHis.Save();

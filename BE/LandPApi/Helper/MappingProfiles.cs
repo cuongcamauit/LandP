@@ -21,7 +21,7 @@ namespace LandPApi.Helper
 
             CreateMap<Product, ProductDto>()
                 .ForMember(dest => dest.AverageRating, act => act.MapFrom(scr => (scr.Reviews!.Count==0)?0:
-                                                                                 (scr.Reviews!.Sum(o => o.Rating) / scr.Reviews!.Count)))
+                                                                                 (scr.Reviews!.Sum(o => o.Rating)*1.0 / scr.Reviews!.Count*1.0)))
                 .ForMember(dest => dest.ReviewQuantity, act => act.MapFrom(scr => scr.Reviews!.Count))
                 .ForMember(dest => dest.SoldQuantity, act => act.MapFrom(scr => scr.OrderDetails!.Sum(o => o.Quantity)))
                 .ReverseMap();

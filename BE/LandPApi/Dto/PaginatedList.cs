@@ -14,7 +14,7 @@
             AddRange(items);
         }
 
-        public static PaginatedList<T> Create(IQueryable<T> source, int pageIndex, int pageSize)
+        public static PaginatedList<T> Create(IQueryable<T> source, int pageIndex = 1, int pageSize = 5)
         {
             var count = source.Count();
             var items = source.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();

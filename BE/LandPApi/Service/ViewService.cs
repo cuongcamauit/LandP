@@ -26,9 +26,15 @@ namespace LandPApi.Service
                 {
                     CustomerId = customerId,
                     ProductId = productId,
+                    Quantity = 1
                 });
-                _repoView.Save();
             }
+            if (view != null) 
+            {
+                view.Quantity += 1;
+                _repoView.Update(view);
+            }
+            _repoView.Save();
         }
     }
 }
