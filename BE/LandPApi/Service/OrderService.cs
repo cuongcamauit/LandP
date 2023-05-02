@@ -153,8 +153,8 @@ namespace LandPApi.Service
                 var updateOrder = order.FirstOrDefault();
                 if (statusOrder != status && status == Status.Canceled)
                     returnProduct(orderId);
-                if (statusOrder != status && status == Status.Delivered)
-                    updateSoldQuantity(orderId);
+                //if (statusOrder != status && status == Status.Delivered)
+                //    updateSoldQuantity(orderId);
                 //updateOrder!.isPaid = isPaid;
                 updateOrder!.PaidAt = DateTime.Now;
                 updateOrder.Status = status;
@@ -170,7 +170,7 @@ namespace LandPApi.Service
             foreach (var order in orderDetail)
             {
                 var product = _repoPro.ReadByCondition(o => o.Id == order.ProductId).FirstOrDefault();
-                product!.SoldQuantity += order.Quantity;
+                //product!.SoldQuantity += order.Quantity;
                 _repoPro.Update(product);
             }
         }

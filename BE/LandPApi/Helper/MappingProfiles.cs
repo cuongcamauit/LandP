@@ -2,6 +2,7 @@
 using LandPApi.Dto;
 using LandPApi.Models;
 using LandPApi.View;
+using System.Security.Cryptography;
 
 namespace LandPApi.Helper
 {
@@ -18,7 +19,12 @@ namespace LandPApi.Helper
             CreateMap<Address, AddressDto>().ReverseMap();
             CreateMap<AddressView, Address>();
 
-            CreateMap<Product, ProductDto>().ReverseMap();
+            CreateMap<Product, ProductDto>()
+                .ForMember(dest => dest.AverageRating, act => act.MapFrom(scr => (scr.Reviews!.Count==0)?0:
+                                                                                 (scr.Reviews!.Sum(o => o.Rating) / scr.Reviews!.Count)))
+                .ForMember(dest => dest.ReviewQuantity, act => act.MapFrom(scr => scr.Reviews!.Count))
+                .ForMember(dest => dest.SoldQuantity, act => act.MapFrom(scr => scr.OrderDetails!.Sum(o => o.Quantity)))
+                .ReverseMap();
             CreateMap<ProductView, Product>();
 
             CreateMap<CartItem, CartItemView>();
@@ -30,7 +36,8 @@ namespace LandPApi.Helper
 
             CreateMap<HistoryStatus, HistoryStatusDto>();
 
-            CreateMap<Review, ReviewDto>();
+            CreateMap<Review, ReviewDto>()
+                .ForMember(dest => dest.Name, act => act.MapFrom(scr => scr.Customer!.Name));
 
             CreateMap<Customer, CustomerDto>();
         }

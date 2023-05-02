@@ -164,7 +164,7 @@ namespace LandPApi.Data
             });
             builder.Entity<Review>(entity =>
             {
-                entity.HasKey(o => new { o.CustomerId, o.ProductId});
+                entity.HasKey(o => new { o.CustomerId, o.ProductId, o.OrderId});
 
                 entity.HasOne(o => o.Customer)
                         .WithMany(o => o.Reviews)
@@ -530,6 +530,266 @@ namespace LandPApi.Data
                     ProductId = ssa23Id
                 }
             );
+
+            var order1 = Guid.Parse("cd9218db-08c0-4af8-9058-0ac6cf7d58b9");
+            var order2 = Guid.Parse("6925f34b-4021-4fe9-9155-88b9e0df0678");
+            var order3 = Guid.Parse("5470e410-d659-4cdc-b84b-bb174a67a2bf");
+            builder.Entity<Order>().HasData(
+                new Order
+                {
+                    Id = order1,
+                    CustomerId = userId,
+                    AddressId = addresuserId,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 67640200,
+                },
+                new Order
+                {
+                    Id = order2,
+                    CustomerId = userId,
+                    AddressId = addresuserId,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 56154400,
+                },
+                new Order
+                {
+                    Id = order3,
+                    CustomerId = user1Id,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 58364800,
+                }
+            );
+
+            builder.Entity<OrderDetail>().HasData(
+                new OrderDetail
+                {
+                    OrderId = order1,
+                    ProductId = ssa23Id,
+                    Quantity = 2,
+                    Price = 4990000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order1,
+                    ProductId = ip12Id,
+                    Quantity = 2,
+                    Price = 15590000,
+                    PercentSale = 20
+                },
+                new OrderDetail
+                {
+                    OrderId = order1,
+                    ProductId = ipad10Id,
+                    Quantity = 1,
+                    Price = 11190000,
+                    PercentSale = 2
+                },
+                new OrderDetail
+                {
+                    OrderId = order1,
+                    ProductId = suunto7Id,
+                    Quantity = 3,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+
+                //----------------------------//
+                new OrderDetail
+                {
+                    OrderId = order2,
+                    ProductId = ip12Id,
+                    Quantity = 1,
+                    Price = 15590000,
+                    PercentSale = 20
+                },
+                new OrderDetail
+                {
+                    OrderId = order2,
+                    ProductId = ipad10Id,
+                    Quantity = 2,
+                    Price = 11190000,
+                    PercentSale = 2
+                },
+                new OrderDetail
+                {
+                    OrderId = order2,
+                    ProductId = suunto7Id,
+                    Quantity = 3,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+
+                //-----------------//
+                new OrderDetail
+                {
+                    OrderId = order3,
+                    ProductId = ipad10Id,
+                    Quantity = 4,
+                    Price = 11190000,
+                    PercentSale = 2
+                },
+                new OrderDetail
+                {
+                    OrderId = order3,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                }
+            );
+
+            builder.Entity<HistoryStatus>().HasData(
+                new HistoryStatus
+                {
+                    OrderId = order1,
+                    Id = Guid.NewGuid(),
+                    Status = Status.New,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order1,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Processing,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order1,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Shipping,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order1,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Delivered,
+                },
+                //--------//
+                new HistoryStatus
+                {
+                    OrderId = order2,
+                    Id = Guid.NewGuid(),
+                    Status = Status.New,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order2,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Processing,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order2,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Shipping,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order2,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Delivered,
+                },
+                //-----//
+                new HistoryStatus
+                {
+                    OrderId = order3,
+                    Id = Guid.NewGuid(),
+                    Status = Status.New,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order3,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Processing,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order3,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Shipping,
+                },
+                new HistoryStatus
+                {
+                    OrderId = order3,
+                    Id = Guid.NewGuid(),
+                    Status = Status.Delivered,
+                }
+            );
+
+            builder.Entity<Review>().HasData(
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order1,
+                    ProductId = ssa23Id,
+                    Comment = "Good",
+                    Rating = 5                    
+                },
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order1,
+                    ProductId = ipad10Id,
+                    Comment = "More than expected!",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order1,
+                    ProductId = suunto7Id,
+                    Comment = "Wonderful",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order1,
+                    ProductId = ip12Id,
+                    Comment = "Ok",
+                    Rating = 4
+                },
+
+                //-------//
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order2,
+                    ProductId = ipad10Id,
+                    Comment = "More than expected!",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order2,
+                    ProductId = suunto7Id,
+                    Comment = "Wonderful",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order2,
+                    ProductId = ip12Id,
+                    Comment = "Ok",
+                    Rating = 4
+                },
+                //---//
+                new Review
+                {
+                    CustomerId = user1Id,
+                    OrderId = order3,
+                    ProductId = suunto7Id,
+                    Comment = "Wonderful",
+                    Rating = 5
+                }
+            );
+
 
             builder.Entity<Document>().HasData(
                 new Document

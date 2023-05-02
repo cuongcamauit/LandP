@@ -20,6 +20,7 @@ namespace LandPApi.IService
         Task Delete(Guid id);
         Task<D> GetById(Guid Id);
         Task<List<D>> GetAll();
+        Task<List<D>> GetAll(params Expression<Func<E, object>>[] includeProperties);
         void Update(D dto);
     }
 }

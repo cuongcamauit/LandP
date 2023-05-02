@@ -3,6 +3,7 @@ using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace LandPApi.Service
 {
@@ -38,6 +39,16 @@ namespace LandPApi.Service
         {
             var result = await _repository.ReadAll().ToListAsync();
             return _mapper.Map<List<D>>(result); 
+        }
+
+        public async Task<List<D>> GetAll(params Expression<Func<E, object>>[] includeProperties)
+        {
+            var result = _repository.ReadAll();
+            foreach (var item in includeProperties)
+            {
+                result = result.Include(item);
+            }
+            return _mapper.Map<List<D>>(await result.ToListAsync());
         }
 
         public async Task<D> GetById(Guid id)

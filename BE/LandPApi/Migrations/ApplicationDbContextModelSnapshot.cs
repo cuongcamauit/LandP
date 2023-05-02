@@ -298,16 +298,16 @@ namespace LandPApi.Migrations
                             Id = "289f6c6a783e4d89b25c847d1ffa4833",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "f19ce246-dfd0-4e26-a67e-bbc9e76f2049",
+                            ConcurrencyStamp = "f063e9f4-3be4-4ba3-a611-b6cf0d587fad",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpsupadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Super Admin",
                             NormalizedEmail = "landpsupadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAENwRIhtuhWNMvabl71Bt4/wAhJwhtPLI6oRYv0SWqsEyGHQ461Wx53p8udV5bKE7qA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKUIe6bil4VjV2M15apPqRhWhNQjQvW4yp4lYH3ueZfN7RcvKsECiwkWk6W3EJwu4A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "369e7459-d3ea-404e-ae2a-73ccc03fff99",
+                            SecurityStamp = "34a83a86-d6a3-42ad-a929-66f0a1c2b403",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpsupadmika@gmail.com"
@@ -317,16 +317,16 @@ namespace LandPApi.Migrations
                             Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "aab791eb-e17c-4282-9460-f80482731881",
+                            ConcurrencyStamp = "a846ad0f-3bfe-45ee-a093-6841c895ae08",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "landpadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFjFIl2vGEb/ZxuvkDYaiK9bVSBjwCyR2Hrva6slAhruJrOqLjDGiDDhQ4JB5Momxw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMIBUk0cZUcqCs2yF1qu580/Xt7GiNDaImlzFZ4gaPqjJOHTeddsuFsvW2IFJ0l02w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bd246bb7-f36d-423a-9712-f8dfaffb9cd3",
+                            SecurityStamp = "db4fa872-c039-435f-bc1e-4a626413a6f8",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpadmika@gmail.com"
@@ -336,16 +336,16 @@ namespace LandPApi.Migrations
                             Id = "04be0c35-571e-425c-992e-15a7227286de",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "31b2cf83-d597-4964-b65b-84c9c09b3574",
+                            ConcurrencyStamp = "733405a6-2831-409d-af9e-fda4482bf1b4",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User",
                             NormalizedEmail = "landpuserdemo@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAENo8SoMwhFOCh+VaOENsJVB1UMshQWMCkM4tfblJFEuvlpZfEAWy5Q0QTI+Uz2zxbw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFNTWZCk8LwFZwKcu3QNx87BcTUpQuJeyD7wHdLOGw0mvp/MMp1jj9qs0QSR0uuFjQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b74e7226-51e7-4689-82c8-feed61033c14",
+                            SecurityStamp = "8bbbede7-b0a5-428a-9e00-511bcab6f8cf",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo@gmail.com"
@@ -355,16 +355,16 @@ namespace LandPApi.Migrations
                             Id = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "e517687b-99d1-4771-80f9-bb4486fb4caf",
+                            ConcurrencyStamp = "1287e7ed-143f-4444-8d4d-73272254e210",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo1@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User1",
                             NormalizedEmail = "landpuserdemo1@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMZPrhHQZwf8e6EYkFhER4UTbVEudSaViWD8yH1XXKM91K+eKSGTbpk6zCEuCRpsJw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMIKQT22a7WefbHmv7h+BptOkfSBgo6JXlo3MU32zSJvpsBKxHJ4SDm1SEWDukNRyw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5e4e9d40-26b5-4e1c-8b24-156be2e5e9fa",
+                            SecurityStamp = "a5e79b67-17eb-4990-99d5-d48607f06f2a",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo1@gmail.com"
@@ -434,6 +434,92 @@ namespace LandPApi.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("HistoryStatuses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("854cb2ce-a93a-471c-8a29-f06843766612"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8342),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Status = "New"
+                        },
+                        new
+                        {
+                            Id = new Guid("f5113cb8-a5b1-41a0-b0c9-c150f325399d"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8355),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Status = "Processing"
+                        },
+                        new
+                        {
+                            Id = new Guid("92119b84-e7d4-43dc-99a7-e674bd92f907"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8356),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Status = "Shipping"
+                        },
+                        new
+                        {
+                            Id = new Guid("e255dadb-b8e4-4908-a6be-c81dfc21d2c4"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8358),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Status = "Delivered"
+                        },
+                        new
+                        {
+                            Id = new Guid("849285e7-02a0-4e38-b99b-35ca475b0a13"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8360),
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            Status = "New"
+                        },
+                        new
+                        {
+                            Id = new Guid("07614b9b-bf2d-4bad-a16b-a0a41bcf67e3"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8361),
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            Status = "Processing"
+                        },
+                        new
+                        {
+                            Id = new Guid("99538a16-efbf-4027-9b91-15cf0d1e767e"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8362),
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            Status = "Shipping"
+                        },
+                        new
+                        {
+                            Id = new Guid("a4799b06-f321-42c2-a202-8225890471a0"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8376),
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            Status = "Delivered"
+                        },
+                        new
+                        {
+                            Id = new Guid("d2f3e875-6211-4f38-a24e-597f68955b91"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8377),
+                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            Status = "New"
+                        },
+                        new
+                        {
+                            Id = new Guid("955bb84a-8ad9-448a-b17f-65548aa21145"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8379),
+                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            Status = "Processing"
+                        },
+                        new
+                        {
+                            Id = new Guid("d3a77831-89d9-4644-a7d0-7a4eca5d3c32"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8380),
+                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            Status = "Shipping"
+                        },
+                        new
+                        {
+                            Id = new Guid("9f9e0ef6-8abb-436d-9bf4-a555b8e68717"),
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8382),
+                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            Status = "Delivered"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Order", b =>
@@ -468,6 +554,38 @@ namespace LandPApi.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            AddressId = new Guid("0750d8d3-bfff-45f2-b081-2a86ffe91bfd"),
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8232),
+                            PaidAt = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8234),
+                            Status = "Delivered",
+                            Total = 67640200.0
+                        },
+                        new
+                        {
+                            Id = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            AddressId = new Guid("0750d8d3-bfff-45f2-b081-2a86ffe91bfd"),
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8237),
+                            PaidAt = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8238),
+                            Status = "Delivered",
+                            Total = 56154400.0
+                        },
+                        new
+                        {
+                            Id = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
+                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8240),
+                            PaidAt = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8240),
+                            Status = "Delivered",
+                            Total = 58364800.0
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.OrderDetail", b =>
@@ -492,6 +610,80 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("OrderDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
+                            PercentSale = 0.0,
+                            Price = 4990000.0,
+                            Quantity = 2
+                        },
+                        new
+                        {
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                            PercentSale = 20.0,
+                            Price = 15590000.0,
+                            Quantity = 2
+                        },
+                        new
+                        {
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
+                            PercentSale = 2.0,
+                            Price = 11190000.0,
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            PercentSale = 0.0,
+                            Price = 7250000.0,
+                            Quantity = 3
+                        },
+                        new
+                        {
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                            PercentSale = 20.0,
+                            Price = 15590000.0,
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
+                            PercentSale = 2.0,
+                            Price = 11190000.0,
+                            Quantity = 2
+                        },
+                        new
+                        {
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            PercentSale = 0.0,
+                            Price = 7250000.0,
+                            Quantity = 3
+                        },
+                        new
+                        {
+                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
+                            PercentSale = 2.0,
+                            Price = 11190000.0,
+                            Quantity = 4
+                        },
+                        new
+                        {
+                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            PercentSale = 0.0,
+                            Price = 7250000.0,
+                            Quantity = 2
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Product", b =>
@@ -499,9 +691,6 @@ namespace LandPApi.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("AverageRating")
-                        .HasColumnType("float");
 
                     b.Property<Guid>("BrandId")
                         .HasColumnType("uniqueidentifier");
@@ -530,12 +719,6 @@ namespace LandPApi.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReviewQuantity")
-                        .HasColumnType("int");
-
-                    b.Property<double>("SoldQuantity")
-                        .HasColumnType("float");
-
                     b.Property<string>("Unit")
                         .HasColumnType("nvarchar(max)");
 
@@ -551,7 +734,6 @@ namespace LandPApi.Migrations
                         new
                         {
                             Id = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Màn hình:\r\n\r\nPLS TFT LCD6.6\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 12\r\nCamera sau:\r\n\r\nChính 50 MP & Phụ 5 MP, 2 MP, 2 MP\r\nCamera trước:\r\n\r\n8 MP\r\nChip:\r\n\r\nSnapdragon 680\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n128 GB\r\nSIM:\r\n\r\n2 Nano SIMHỗ trợ 4G\r\nPin, Sạc:\r\n\r\n5000 mAh25 W",
@@ -561,14 +743,11 @@ namespace LandPApi.Migrations
                             PercentSale = 0.0,
                             Price = 4990000.0,
                             Quantity = 100,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Màn hình:\r\n\r\nOLED6.1\"Super Retina XDR\r\nHệ điều hành:\r\n\r\niOS 15\r\nCamera sau:\r\n\r\n2 camera 12 MP\r\nCamera trước:\r\n\r\n12 MP\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n64 GB\r\nSIM:\r\n\r\n1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n2815 mAh20 W",
@@ -578,14 +757,11 @@ namespace LandPApi.Migrations
                             PercentSale = 20.0,
                             Price = 15590000.0,
                             Quantity = 50,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Xiaomi Redmi Note 12 Pro 5G là mẫu điện thoại thuộc dòng Redmi Note được chính thức ra mắt trong năm 2023, máy mang trên mình những cải tiến vượt trội về thiết kế, camera và hiệu năng, đáp ứng mượt mà hầu hết các nhu cầu khác nhau của người dùng.",
@@ -595,14 +771,11 @@ namespace LandPApi.Migrations
                             PercentSale = 2.0,
                             Price = 9960000.0,
                             Quantity = 50,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Xiaomi 12T series đã ra mắt trong sự kiện của Xiaomi vào ngày 4/10, trong đó có Xiaomi 12T 5G 128GB - máy sở hữu nhiều công nghệ hàng đầu trong giới smartphone tiêu biểu như: Chipset mạnh mẽ đến từ MediaTek, camera 108 MP sắc nét cùng khả năng sạc 120 W siêu nhanh.",
@@ -612,14 +785,11 @@ namespace LandPApi.Migrations
                             PercentSale = 0.0,
                             Price = 9890000.0,
                             Quantity = 3,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("5d7beeaf-f51e-44bb-ae26-aadb1bdc0276"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Nếu bạn đang tìm kiếm một chiếc laptop gaming nhưng vẫn sở hữu một mức giá phải chăng thì laptop Asus TUF Gaming F15 FX506LHB i5 (HN188W) sẽ là sự lựa chọn đáng cân nhắc với card đồ họa rời NVIDIA GeForce GTX mạnh mẽ cùng phong cách thiết kế cứng cáp, độc đáo. ",
@@ -629,14 +799,11 @@ namespace LandPApi.Migrations
                             PercentSale = 0.0,
                             Price = 16990000.0,
                             Quantity = 50,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("d5682976-7d8c-4549-884c-e85f73ddbed3"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Laptop Dell Vostro 3510 i5 (P112F002BBL) sở hữu cấu hình mạnh mẽ, đa nhiệm mượt mà trên sức mạnh của bộ vi xử lý Intel thế hệ 11, cùng một thiết kế đơn giản mà sang đẹp, sẽ là lựa chọn đắt giá đáp ứng nhu cầu học tập, làm việc hay giải trí của bạn.",
@@ -646,14 +813,11 @@ namespace LandPApi.Migrations
                             PercentSale = 20.0,
                             Price = 17990000.0,
                             Quantity = 10,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("3e9d9046-0534-44cf-a0fa-746a31acad9f"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
                             Description = "Sau thành công của iPad 8, Apple cho đã cho ra mắt máy tính bảng iPad 9 WiFi 64GB - phiên bản tiếp theo của dòng iPad 10.2 inch, về cơ bản nó kế thừa những điểm mạnh từ các phiên bản trước đó và được cải tiến thêm hiệu suất, trải nghiệm người dùng nhằm giúp nhu cầu sử dụng giải trí và làm việc tiện lợi, linh hoạt hơn",
@@ -663,14 +827,11 @@ namespace LandPApi.Migrations
                             PercentSale = 0.0,
                             Price = 7990000.0,
                             Quantity = 10,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
                             Description = "Sau khi trình làng hàng loạt mẫu iPhone vào tháng 09/2022 thì Apple cũng đã tiếp tục giới thiệu series iPad mới cho năm 2022. Trong đó iPad 10 WiFi 64GB là cái tên được hãng chú trọng khá nhiều về việc tối ưu giá thành nhằm giúp người dùng có thể dễ dàng tiếp cận. Máy hỗ trợ hệ điều hành iPadOS 16 cùng con chip Apple A14 Bionic giúp mang lại hiệu năng vượt trội.",
@@ -680,14 +841,11 @@ namespace LandPApi.Migrations
                             PercentSale = 2.0,
                             Price = 11190000.0,
                             Quantity = 10,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("2d750aa2-ea06-47ea-916c-abb6661f9781"),
                             CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
                             Description = "Đồng hồ thông minh Suunto 7 Dây silicone phiên bản màu đen trang bị mặt kính cường lực chống va đập, màn hình AMOLED 1.97 inch (454 x 454 pixels) cùng độ sáng lên tới 1000 nits, vì thế có thể hiển thị sắc nét ngay cả khi ở điều kiện có ánh sáng mặt trời. Đặc biệt, với thiết kế dây đeo silicone tạo cảm giác mềm mại và dễ chịu khi đeo trong thời gian dài.",
@@ -697,14 +855,11 @@ namespace LandPApi.Migrations
                             PercentSale = 0.0,
                             Price = 7250000.0,
                             Quantity = 5,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("777ffbe5-1f43-4b6c-80d3-6b3cffbcb721"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
                             CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
                             Description = "Sau thành công của dòng Galaxy Watch4, tháng 8/2022 ông lớn công nghệ Samsung đã cho ra mắt thế hệ smartwatch tiếp theo của hãng mang tên Samsung Galaxy Watch5 40 mm.",
@@ -714,14 +869,11 @@ namespace LandPApi.Migrations
                             PercentSale = 0.0,
                             Price = 5490000.0,
                             Quantity = 10,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         },
                         new
                         {
                             Id = new Guid("61a1dce1-164c-4a2f-a6e1-6397c5033bfb"),
-                            AverageRating = 0.0,
                             BrandId = new Guid("fc1a0ff3-92d8-4a16-adb5-8c901bbe48f2"),
                             CategoryId = new Guid("76f4c144-6e3f-44bf-a292-8dd21a461b5d"),
                             Description = "Chuột Không dây Bluetooth Silent Logitech Signature M650 sở hữu kiểu dáng công thái học cùng độ phân giải lớn, đáp ứng tốt gần như mọi nhu cầu từ sử dụng cơ bản tới những tác vụ chuyên nghiệp của người dùng.",
@@ -731,8 +883,6 @@ namespace LandPApi.Migrations
                             PercentSale = 0.0,
                             Price = 765000.0,
                             Quantity = 10,
-                            ReviewQuantity = 0,
-                            SoldQuantity = 0.0,
                             Unit = "Unit"
                         });
                 });
@@ -745,28 +895,99 @@ namespace LandPApi.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.HasKey("CustomerId", "ProductId");
+                    b.HasKey("CustomerId", "ProductId", "OrderId");
 
                     b.HasIndex("OrderId");
 
                     b.HasIndex("ProductId");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Comment = "Good",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8406),
+                            Rating = 5
+                        },
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Comment = "More than expected!",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8408),
+                            Rating = 5
+                        },
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Comment = "Wonderful",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8409),
+                            Rating = 5
+                        },
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
+                            Comment = "Ok",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8410),
+                            Rating = 4
+                        },
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            Comment = "More than expected!",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8411),
+                            Rating = 5
+                        },
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            Comment = "Wonderful",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8412),
+                            Rating = 5
+                        },
+                        new
+                        {
+                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
+                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
+                            Comment = "Ok",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8413),
+                            Rating = 4
+                        },
+                        new
+                        {
+                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
+                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
+                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
+                            Comment = "Wonderful",
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8414),
+                            Rating = 5
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.View", b =>
@@ -791,37 +1012,37 @@ namespace LandPApi.Migrations
                         {
                             CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
                             ProductId = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
-                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8157)
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8179)
                         },
                         new
                         {
                             CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
                             ProductId = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
-                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8168)
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8195)
                         },
                         new
                         {
                             CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             ProductId = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
-                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8169)
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8196)
                         },
                         new
                         {
                             CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             ProductId = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
-                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8170)
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8197)
                         },
                         new
                         {
                             CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8171)
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8201)
                         },
                         new
                         {
                             CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
-                            Date = new DateTime(2023, 5, 1, 21, 36, 17, 92, DateTimeKind.Local).AddTicks(8171)
+                            Date = new DateTime(2023, 5, 2, 17, 13, 41, 424, DateTimeKind.Local).AddTicks(8202)
                         });
                 });
 

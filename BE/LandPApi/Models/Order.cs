@@ -8,7 +8,7 @@ namespace LandPApi.Models
     {
         public Guid Id { get; set; }
         public Status Status { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
         //public bool isPaid { get; set; } = false;
         public DateTime? PaidAt { get; set; } = null;
         public double Total { get; set; }

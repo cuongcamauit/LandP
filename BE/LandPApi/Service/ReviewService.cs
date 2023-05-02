@@ -30,6 +30,18 @@ namespace LandPApi.Service
             _userManager = userManager;
         }
 
+        public bool Check(string customerId, Guid orderId, Guid productId)
+        {
+            var check = _repoReview.ReadByCondition(o => o.CustomerId == customerId
+                                                    && o.OrderId == orderId
+                                                    && o.ProductId == productId).FirstOrDefault();
+            if (check != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public Response Create(string customerId, ReviewView review)
         {
             var check = _repoReview.ReadByCondition(o => o.CustomerId == customerId 
@@ -65,17 +77,16 @@ namespace LandPApi.Service
                 ProductId = review.ProductId,
                 OrderId = review.OrderId,
                 Comment = review.Comment,
-                Rating = review.Rating,
-                Name = _userManager.FindByIdAsync(customerId).Result.Name
+                Rating = review.Rating
             });
             _repoReview.Save();
 
             // update average rating
-            var created = _repoPro.ReadByCondition(o => o.Id == review.ProductId).FirstOrDefault();
-            var productsReviews = _repoReview.ReadByCondition(o => o.ProductId == created!.Id);
-            created!.ReviewQuantity += 1;
-            created!.AverageRating = productsReviews.Sum(o => o.Rating);
-            _repoPro.Update(created);
+            //var created = _repoPro.ReadByCondition(o => o.Id == review.ProductId).FirstOrDefault();
+            //var productsReviews = _repoReview.ReadByCondition(o => o.ProductId == created!.Id);
+            //created!.ReviewQuantity += 1;
+            //created!.AverageRating = productsReviews.Sum(o => o.Rating);
+            //_repoPro.Update(created);
             _repoPro.Save();
             return new Response 
             { 

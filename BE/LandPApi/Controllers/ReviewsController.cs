@@ -86,6 +86,31 @@ namespace LandPApi.Controllers
             return Ok(result);
         }
 
+        [HttpPost("IsReviewed")]
+        [Authorize(Roles = "User")]
+        public IActionResult CheckReview(Guid orderId, Guid productId)
+        {
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
+            bool result = _reviewService.Check(User.FindFirstValue(ClaimTypes.NameIdentifier), orderId, productId);
+            
+            return Ok(new Response
+            {
+                Data = result,
+            });
+        }
+
         // DELETE: api/Reviews/5
         //[HttpDelete("{id}")]
         //public async Task<IActionResult> DeleteReview(string id)
