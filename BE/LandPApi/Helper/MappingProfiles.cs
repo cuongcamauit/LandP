@@ -24,6 +24,7 @@ namespace LandPApi.Helper
                                                                                  (scr.Reviews!.Sum(o => o.Rating)*1.0 / scr.Reviews!.Count*1.0)))
                 .ForMember(dest => dest.ReviewQuantity, act => act.MapFrom(scr => scr.Reviews!.Count))
                 .ForMember(dest => dest.SoldQuantity, act => act.MapFrom(scr => scr.OrderDetails!.Sum(o => o.Quantity)))
+                //.ForMember(dest => dest.ReviewQuantity, act => act.MapFrom(scr => scr.Reviews!.Count))
                 .ReverseMap();
             CreateMap<ProductView, Product>();
 

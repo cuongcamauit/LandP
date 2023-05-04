@@ -51,9 +51,9 @@ namespace LandPApi.Controllers
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(Guid id)
+        public IActionResult GetProduct(Guid id)
         {
-            var product = await _productService.GetById(id);
+            var product = _productService.GetProduct(id);
             if (product == null)
             {
                 return Ok(new Response

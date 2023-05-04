@@ -140,5 +140,11 @@ namespace LandPApi.Service
 
             return _mapper.Map<List<ProductDto>>(sorted);
         }
+
+        public ProductDto GetProduct(Guid id)
+        {
+            var product = _repository.ReadByCondition(o => o.Id == id).Include(o => o.Reviews).Include(o => o.OrderDetails).FirstOrDefault();
+            return _mapper.Map<ProductDto>(product);
+        }
     }
 }
