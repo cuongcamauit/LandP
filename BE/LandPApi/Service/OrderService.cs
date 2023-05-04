@@ -117,11 +117,12 @@ namespace LandPApi.Service
         public void Update(ClaimsPrincipal user, Guid orderId, Status status, bool isPaid)
         {
             var order = _repoOrder.ReadByCondition(o => o.Id == orderId);
-            var statusOrder = order.Select(o => o.Status).FirstOrDefault();
+            
             if (order == null)
             {
                 return;
             }
+            var statusOrder = order.Select(o => o.Status).FirstOrDefault();
 
             var claims = ((ClaimsIdentity)user.Identity!).Claims;
             var roles = claims.Where(o => o.Type == ClaimTypes.Role).Select(o => o.Value);
@@ -157,8 +158,9 @@ namespace LandPApi.Service
                 //if (statusOrder != status && status == Status.Delivered)
                 //    updateSoldQuantity(orderId);
                 //updateOrder!.isPaid = isPaid;
-                updateOrder!.PaidAt = DateTime.Now;
-                updateOrder.Status = status;
+                if (isPaid)
+                    updateOrder!.PaidAt = DateTime.Now;
+                updateOrder!.Status = status;
                 _repoOrder.Update(updateOrder);
             }
             _repoPro.Save();
@@ -179,7 +181,7 @@ namespace LandPApi.Service
 
         public void returnProduct(Guid orderId)
         {
-            var orderDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId);
+            var orderDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).ToList();
             foreach (var order in orderDetail)
             {
                 var product = _repoPro.ReadByCondition(o => o.Id == order.ProductId).FirstOrDefault();
