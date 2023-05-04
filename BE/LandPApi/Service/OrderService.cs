@@ -110,7 +110,7 @@ namespace LandPApi.Service
 
         public async Task<List<OrderDto>> GetAll(string customerId)
         {
-            var result = await _repoOrder.ReadByCondition(o => o.CustomerId == customerId).ToListAsync();
+            var result = await _repoOrder.ReadByCondition(o => o.CustomerId == customerId).Include(o => o.Address).ToListAsync();
             return _mapper.Map<List<OrderDto>>(result);
         }
 
@@ -283,7 +283,7 @@ namespace LandPApi.Service
 
         public async Task<OrderDto> GetById(string customerId, Guid id)
         {
-            var result = await _repoOrder.ReadByCondition(o => o.CustomerId == customerId && o.Id == id).SingleOrDefaultAsync();
+            var result = await _repoOrder.ReadByCondition(o => o.CustomerId == customerId && o.Id == id).Include(o => o.Address).SingleOrDefaultAsync();
             return _mapper.Map<OrderDto>(result);
         }
 

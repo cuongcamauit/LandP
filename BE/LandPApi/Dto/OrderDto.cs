@@ -9,6 +9,7 @@ namespace LandPApi.Dto
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public Status Status { get; set; }
         public DateTime Date { get; set; }
+        public AddressDto? Address { get; set; }
         //public bool isPaid { get; set; }
         public DateTime? PaidAt { get; set; }
         public double Total { get; set; }
