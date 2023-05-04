@@ -495,7 +495,237 @@ namespace LandPApi.Data
                     BrandId = logitechId,
                     CategoryId = mouseId,
                     FolderId = "1M0-dUHbo7g_pkLPbQu9NMTPc9tnGkwr7"
+                },
+                ///--------------------------------------//
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Laptop Asus Gaming ROG Strix G15",
+                    Description = " Laptop Asus Gaming ROG Strix G15 G513IH R7 (HN015W) là một trợ thủ đắc lực cho mọi game thủ chuyên nghiệp với phong cách thiết kế vô cùng độc đáo, ấn tượng chuẩn gaming cùng bộ cấu hình đầy mạnh mẽ. " ,
+                    Price = 22990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/270031/Slider/vi-vn-asus-rog-strix-gaming-g513ih-r7-hn015w-1.jpg",
+                    Quantity = 50,
+                    PercentSale = 10,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Asus Gaming ROG Strix SCAR 15 G533ZM ",
+                    Description = " Laptop Asus Gaming ROG Strix SCAR 15 G533ZM i7 (LN2210W) chinh phục mọi chiến trường ảo với bộ vi xử lý Intel Core i7 thế hệ 12 cùng đồ hoạ NVIDIA GeForce RTX 3060. Giảm tối đa thời gian chờ đợi nhờ ổ SSD PCIe thế hệ 4 và bộ nhớ RAM DDR5 tốc độ cao, luôn sẵn sàng cùng bạn chiến thắng trong mọi cuộc chiến.",
+                    Price = 37490000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/299060/Slider/vi-vn-asus-rog-strix-scar-15-g533z-i7-ln2210w-ac-1.jpg",
+                    Quantity = 40,
+                    PercentSale = 20,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Asus Gaming ROG Strix SCAR 17 G733PZ ",
+                    Description = " Laptop Asus Gaming ROG Strix SCAR 17 G733PZ R9 7945HX (LL980W) được thiết kế để mang đến trải nghiệm chơi game tốt nhất, cung cấp hiệu suất mạnh mẽ với cấu hình ấn tượng, chắc chắn sẽ làm hài lòng những game thủ khó tính nhất." ,
+                    Price = 84000000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/305745/asus-gaming-rog-strix-scar-17-g733pz-r9-ll980w-5.jpg",
+                    Quantity = 10,
+                    PercentSale = 10,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Asus Zenbook 14 Flip OLED UP3404VA ",
+                    Description = " Thêm một siêu phẩm được trang bị bộ vi xử lý Intel thế hệ 13 hoàn toàn mới có mặt tại Thế Giới Di Động đó chính là laptop Asus Zenbook 14 Flip OLED UP3404VA i7 (KN039W) với những thông số hết sức ấn tượng.                   ",
+                    Price = 31990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304259/asus-zenbook-14-flip-oled-up3404va-i7-kn039w-ab-glr-15.jpg",
+                    Quantity = 10,
+                    PercentSale = 5,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Asus Vivobook S 14 Flip TP3402VA ",
+                    Description = " Laptop Asus Vivobook S 14 Flip TP3402VA i5 (LZ031W) được thiết kế với sự cân bằng tuyệt vời giữa sức mạnh và tính di động, một chiếc laptop cao cấp được tích hợp nhiều tính năng và cấu hình tiên tiến, sẵn sàng đáp ứng mọi nhu cầu sử dụng của bạn." ,
+                    Price = 20990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304869/Slider/vi-vn-asus-vivobook-s-14-flip-tp3402va-i5-lz031w--(3).jpg",
+                    Quantity = 20,
+                    PercentSale = 5,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " Dell Inspiron 16 5620",
+                    Description = " Khi nhắc đến dòng laptop học tập - văn phòng thì bạn không thể nào bỏ qua laptop Dell Inspiron 16 5620 i7 (N6I7110W1) với hiệu năng vượt trội, thiết kế hiện đại và gọn nhẹ phù hợp với nhu cầu sử dụng của sinh viên và nhân viên văn phòng cần phải di chuyển thường xuyên." ,
+                    Price = 21990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/292396/Slider/vi-vn-dell-inspiron-16-5620-i7-n6i7110w1-1.jpg",
+                    Quantity = 20,
+                    PercentSale = 5,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Dell Gaming Alienware m15 R6 ",
+                    Description = "Nhắc đến dòng laptop gaming, nhà Dell cũng đã sở hữu cho mình một siêu phẩm không thể bỏ qua là chiếc laptop Dell Alienware m15 R6 i7 (P109F001DBL) với card đồ hoạ RTX 3060 6 GB mạnh mẽ sẵn sàng cùng bạn chinh phục mọi thử thách chiến game." ,
+                    Price = 47490000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/271545/Slider/vi-vn-dell-gaming-alienware-m15-r6-i7-p109f001dbl-1.jpg",
+                    Quantity = 20,
+                    PercentSale = 10,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Dell Gaming G15 5511 ",
+                    Description = " Không những mang đến cho người dùng hiệu năng ấn tượng nhờ con chip Intel thế hệ 11 tân tiến cùng card rời RTX 30 series, laptop Dell Gaming G15 5511 i5 11400H (70266676) còn sở hữu thiết kế thời thượng, lôi cuốn, hứa hẹn sẽ là người cộng sự lý tưởng cùng bạn chinh phục mọi chiến trường." ,
+                    Price = 21990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264354/Slider/dell-gaming-g15-5511-i5-70266676-fix-ab-01-1020x570-2.jpg",
+                    Quantity = 30,
+                    PercentSale = 2,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " Dell Inspiron 15 5515",
+                    Description = " Laptop Dell Inspiron 15 5515 R7 (N5R75700U104W1) sẽ là một ứng cử viên sáng giá trong phân khúc laptop học tập - văn phòng bởi lối thiết kế tao nhã, tối giản cùng những thông số kỹ thuật ấn tượng, đáp ứng tốt mọi nhu cầu cơ bản hằng ngày phục vụ cho mọi đối tượng người dùng đặc biệt là học sinh, sinh viên và dân văn phòng." ,
+                    Price = 17990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/267558/Slider/vi-vn-dell-inspiron-15-5515-r7-n5r75700u104w1-1.jpg",
+                    Quantity = 10,
+                    PercentSale = 3,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " Dell Inspiron 15 3520",
+                    Description = " Laptop Dell Inspiron 15 3520 i5 1235U (i5U085W11BLU) là phiên bản laptop học tập - văn phòng của nhà Dell khi sở hữu phong cách thiết kế tối giản nhưng không kém phần trẻ trung, bộ vi xử lý Intel Gen 12 và bộ Office bản quyền vĩnh viễn đáp ứng đầy đủ mọi nhu cầu học tập, văn phòng của người dùng." ,
+                    Price = 16990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/296921/Slider/vi-vn-dell-inspiron-15-3520-i5u085w11blu-1.jpg",
+                    Quantity = 30,
+                    PercentSale = 5,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " Dell Inspiron 15 3511",
+                    Description = " Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên." ,
+                    Price = 12690000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
+                    Quantity = 10,
+                    PercentSale = 5,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " Dell Inspiron 15 3511",
+                    Description = " Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên." ,
+                    Price = 12690000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
+                    Quantity = 10,
+                    PercentSale = 5,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " Dell Inspiron 15 3511",
+                    Description = " Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên." ,
+                    Price = 12690000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
+                    Quantity = 10,
+                    PercentSale = 5,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " iPhone 14 Pro Max 1TB",
+                    Description = "iPhone 14 Pro Max 1TB là phiên bản điện thoại cao cấp nhất mà Apple đã cho ra mắt tại sự kiện giới thiệu sản phẩm mới cho năm 2022. Được thừa hưởng mọi công nghệ hàng đầu thế giới nên máy hứa hẹn sẽ mang lại trải nghiệm sử dụng tốt nhất từ chơi game cho tới chụp ảnh, xứng đáng là chiếc điện thoại đáng mua nhất trên thị trường hiện tại.",
+                    Price = 51990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/289705/iphone-14-pro-max-vang-1.jpg",
+                    Quantity = 10,
+                    PercentSale = 20,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "  iPhone 14 Pro Max",
+                    Description = "iPhone 14 Pro Max một siêu phẩm trong giới smartphone được nhà Táo tung ra thị trường vào tháng 09/2022. Máy trang bị con chip Apple A16 Bionic vô cùng mạnh mẽ, đi kèm theo đó là thiết kế hình màn hình mới, hứa hẹn mang lại những trải nghiệm đầy mới mẻ cho người dùng iPhone.",
+                    Price = 27990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/251192/Slider/iphone-14-pro-max-tong-quan-1020x570.jpg",
+                    Quantity = 20,
+                    PercentSale = 15,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " iPhone 14 Pro",
+                    Description = "iPhone 14 Pro 128GB - Mẫu smartphone đến từ nhà Apple được mong đợi nhất năm 2022, lần này nhà Táo mang đến cho chúng ta một phiên bản với kiểu thiết kế hình notch mới, cấu hình mạnh mẽ nhờ con chip Apple A16 Bionic và cụm camera có độ phân giải được nâng cấp lên đến 48 MP.",
+                    Price = 24990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/247508/Slider/iphone-14-pro-up-3-new-1933x982.jpg",
+                    Quantity = 10,
+                    PercentSale = 13,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " iPhone 14 ",
+                    Description = "iPhone 14 128GB được xem là mẫu smartphone bùng nổ của nhà táo trong năm 2022, ấn tượng với ngoại hình trẻ trung, màn hình chất lượng đi kèm với những cải tiến về hệ điều hành và thuật toán xử lý hình ảnh, giúp máy trở thành cái tên thu hút được đông đảo người dùng quan tâm tại thời điểm ra mắt.",
+                    Price = 19990000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/240259/iphone-14-xanh-1.jpg",
+                    Quantity = 10,
+                    PercentSale = 5,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "  iPhone 14 Plus",
+                    Description = " Sau nhiều thế hệ điện thoại của Apple thì cái tên “Plus” cũng đã chính thức trở lại vào năm 2022 và xuất hiện trên chiếc iPhone 14 Plus 128GB, nổi trội với ngoại hình bắt trend cùng màn hình kích thước lớn để đem đến không gian hiển thị tốt hơn cùng cấu hình mạnh mẽ không đổi so với bản tiêu chuẩn.",
+                    Price = 21890000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/245545/iphone-14-plus-ti-1.jpg",
+                    Quantity = 15,
+                    PercentSale = 5,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                },
+                new Product()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = " iPhone 13 ",
+                    Description = " Trong khi sức hút đến từ bộ 4 phiên bản iPhone 12 vẫn chưa nguội đi, thì hãng điện thoại Apple đã mang đến cho người dùng một siêu phẩm mới iPhone 13 với nhiều cải tiến thú vị sẽ mang lại những trải nghiệm hấp dẫn nhất cho người dùng.",
+                    Price = 17000000,
+                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-xanh-1.jpg",
+                    Quantity = 25,
+                    PercentSale = 20,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
                 }
+
             );
 
             builder.Entity<LandPApi.Models.View>().HasData(
@@ -534,6 +764,15 @@ namespace LandPApi.Data
             var order1 = Guid.Parse("cd9218db-08c0-4af8-9058-0ac6cf7d58b9");
             var order2 = Guid.Parse("6925f34b-4021-4fe9-9155-88b9e0df0678");
             var order3 = Guid.Parse("5470e410-d659-4cdc-b84b-bb174a67a2bf");
+            var order4 = Guid.NewGuid();
+            var order5 = Guid.NewGuid();
+            var order6 = Guid.NewGuid();
+            var order7 = Guid.NewGuid();
+            var order8 = Guid.NewGuid();
+            var order9 = Guid.NewGuid();
+            var order10 = Guid.NewGuid();
+            var order11 = Guid.NewGuid();
+            
             builder.Entity<Order>().HasData(
                 new Order
                 {
@@ -561,6 +800,78 @@ namespace LandPApi.Data
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
                     Total = 58364800,
+                },
+                new Order
+                {
+                    Id = order4,
+                    CustomerId = user1Id,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
+                },
+                new Order
+                {
+                    Id = order5,
+                    CustomerId = user1Id,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
+                },
+                new Order
+                {
+                    Id = order6,
+                    CustomerId = user1Id,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
+                },
+                new Order
+                {
+                    Id = order7,
+                    CustomerId = user1Id,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
+                },
+                new Order
+                {
+                    Id = order8,
+                    CustomerId = user1Id,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
+                },
+                new Order
+                {
+                    Id = order9,
+                    CustomerId = user1Id,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
+                },
+                new Order
+                {
+                    Id = order10,
+                    CustomerId = userId,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
+                },
+                new Order
+                {
+                    Id = order11,
+                    CustomerId = userId,
+                    AddressId = addresuser1Id,
+                    PaidAt = DateTime.Now,
+                    Status = Status.Delivered,
+                    Total = 7250000,
                 }
             );
 
@@ -635,7 +946,63 @@ namespace LandPApi.Data
                 },
                 new OrderDetail
                 {
-                    OrderId = order3,
+                    OrderId = order4,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order5,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order6,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order7,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order8,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order9,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order10,
+                    ProductId = suunto7Id,
+                    Quantity = 2,
+                    Price = 7250000,
+                    PercentSale = 0
+                },
+                new OrderDetail
+                {
+                    OrderId = order11,
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
@@ -785,8 +1152,72 @@ namespace LandPApi.Data
                     CustomerId = user1Id,
                     OrderId = order3,
                     ProductId = suunto7Id,
+                    Comment = "Ổn trong tầm giá",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = user1Id,
+                    OrderId = order4,
+                    ProductId = suunto7Id,
                     Comment = "Wonderful",
                     Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = user1Id,
+                    OrderId = order5,
+                    ProductId = suunto7Id,
+                    Comment = "Ok",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = user1Id,
+                    OrderId = order6,
+                    ProductId = suunto7Id,
+                    Comment = "No problem",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = user1Id,
+                    OrderId = order7,
+                    ProductId = suunto7Id,
+                    Comment = "So expensive",
+                    Rating = 1
+                },
+                new Review
+                {
+                    CustomerId = user1Id,
+                    OrderId = order8,
+                    ProductId = suunto7Id,
+                    Comment = "worth the money",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = user1Id,
+                    OrderId = order9,
+                    ProductId = suunto7Id,
+                    Comment = "Comfortable",
+                    Rating = 4
+                },
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order10,
+                    ProductId = suunto7Id,
+                    Comment = "Product beauty",
+                    Rating = 5
+                },
+                new Review
+                {
+                    CustomerId = userId,
+                    OrderId = order11,
+                    ProductId = suunto7Id,
+                    Comment = "More than expected",
+                    Rating = 3
                 }
             );
 

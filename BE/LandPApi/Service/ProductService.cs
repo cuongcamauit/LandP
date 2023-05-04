@@ -70,10 +70,10 @@ namespace LandPApi.Service
                 switch (sortBy)
                 {
                     case "Name-": products = products.OrderByDescending(o => o.Name); break;
-                    case "Price": products = products.OrderBy(o => o.Price); break;
-                    case "Price-": products = products.OrderByDescending(o => o.Price); break;
+                    case "Price": products = products.OrderBy(o => o.Price * o.PercentSale); break;
+                    case "Price-": products = products.OrderByDescending(o => o.Price * o.PercentSale); break;
                     case "View": products = products.OrderByDescending(o => o.Views!.Count); break;
-                    case "Sale": products = products.OrderByDescending(o => o.OrderDetails!.Sum(o => o.Quantity)); break;
+                    case "BestSale": products = products.OrderByDescending(o => o.OrderDetails!.Sum(o => o.Quantity)); break;
                 }
             }
             #endregion
