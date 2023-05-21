@@ -25,6 +25,7 @@ namespace LandPApi.Data
         public DbSet<LandPApi.Models.View> Views { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Document> Documents { get; set; }
+        public DbSet<ObjectModel> ObjectModels { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -1249,6 +1250,9 @@ namespace LandPApi.Data
                     ProductId = ip12Id,
                 }
             );
+
+
+           
 
         }
     }

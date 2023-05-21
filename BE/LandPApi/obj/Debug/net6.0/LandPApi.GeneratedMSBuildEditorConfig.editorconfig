@@ -19,3 +19,27 @@ build_property._RazorSourceGeneratorDebug =
 [C:/Users/Phu Cuong/OneDrive/C Sharp/LandP/BE/LandPApi/Pages/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Phu Cuong/OneDrive/C Sharp/LandP/BE/LandPApi/Views/ObjectModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JqZWN0TW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Phu Cuong/OneDrive/C Sharp/LandP/BE/LandPApi/Views/ObjectModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JqZWN0TW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Phu Cuong/OneDrive/C Sharp/LandP/BE/LandPApi/Views/ObjectModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JqZWN0TW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Phu Cuong/OneDrive/C Sharp/LandP/BE/LandPApi/Views/ObjectModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JqZWN0TW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Phu Cuong/OneDrive/C Sharp/LandP/BE/LandPApi/Views/ObjectModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JqZWN0TW9kZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Phu Cuong/OneDrive/C Sharp/LandP/BE/LandPApi/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
