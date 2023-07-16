@@ -12,7 +12,7 @@ namespace LandPApi.Models
         public string? FolderId { get; set; }
         public string? Unit { get; set; } = "Unit";
         public int Quantity { get; set; }
-        public double PercentSale { get; set; }
+        //public double //PercentSale { get; set; }
         //public double AverageRating { get; set; } = 0;
         //public int ReviewQuantity { get; set; } = 0;
         //public double SoldQuantity { get; set; } = 0;

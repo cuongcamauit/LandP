@@ -25,7 +25,6 @@ namespace LandPApi.Data
         public DbSet<LandPApi.Models.View> Views { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Document> Documents { get; set; }
-        public DbSet<ObjectModel> ObjectModels { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -357,7 +356,7 @@ namespace LandPApi.Data
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1k0K8y37j9HLnI8C7qYy92mjOzgnY4kSL",
                     
                     Quantity = 100,
-                    PercentSale = 0,
+                    //PercentSale = 0,
                     CategoryId = smartphoneId,
                     BrandId = samsungId,
                     FolderId = "12oUrvgsYTJhM4WkmXuWd1f8NmbvOe9Gn"
@@ -371,7 +370,7 @@ namespace LandPApi.Data
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1yAleLMwDTEfXJNZF_eM8s4vkU8TFm9By",
                     
                     Quantity = 50,
-                    PercentSale = 20,
+                    //PercentSale = 20,
                     CategoryId = smartphoneId,
                     BrandId = samsungId,
                     FolderId = "1b9JWfgUruHr6j3U3XalWbAD2UO329_6X"
@@ -385,7 +384,7 @@ namespace LandPApi.Data
                     ImageUrl = "https://drive.google.com/uc?export=view&id=190zjmRvUnsTZdB4iDizNBjqKI_fk5L3a",
                     
                     Quantity = 50,
-                    PercentSale = 2,
+                    //PercentSale = 2,
                     BrandId = xiaomiId,
                     CategoryId = smartphoneId,
                     FolderId = "1gBdpMXybH0HOxSKI6g9AdmisL9IUMfPq"
@@ -399,7 +398,7 @@ namespace LandPApi.Data
                     ImageUrl = "https://drive.google.com/uc?export=view&id=165CbvBDjo8PPjxn2MPHVe2YrZPZ1oCwd",
                     
                     Quantity = 3,
-                    PercentSale = 0,
+                    //PercentSale = 0,
                     BrandId = xiaomiId,
                     CategoryId = smartphoneId,
                     FolderId = "1RvQvCVJ2wk72oMqDuYfeuTBHSIHNhplS"
@@ -413,7 +412,7 @@ namespace LandPApi.Data
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1s_UzQewLQ4zb7cX25cwUYAlVa3CpuCP9",
                     
                     Quantity = 50,
-                    PercentSale = 0,
+                    //PercentSale = 0,
                     BrandId = asusId,
                     CategoryId = laptopId,
                     FolderId = "1504cqv26tU1E4JAWix9Ajxwh3XCH8tOv"
@@ -427,7 +426,7 @@ namespace LandPApi.Data
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1ELd9fd2dk2meSyxz-hVnsIp8_gFrnHxp",
                     
                     Quantity = 10,
-                    PercentSale = 20,
+                    //PercentSale = 20,
                     BrandId = dellId,
                     CategoryId = laptopId,
                     FolderId = "1R9qzBw6zNwBARHF8aGu2_qJYlil161yl"
@@ -440,7 +439,7 @@ namespace LandPApi.Data
                     Price = 7990000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1IK5bpXd3iGWJbMDOS5c_zG5Zk5th3hhl",
                     Quantity = 10,
-                    PercentSale = 0,
+                    //PercentSale = 0,
                     BrandId = appleId,
                     CategoryId = tabletId,
                     FolderId = "1SZ3o96HmpNycsXIeOzuXBDF3dgh6v85o"
@@ -453,7 +452,7 @@ namespace LandPApi.Data
                     Price = 11190000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1PjgSj70e2Oc1GC-DJBiVkzs77mAdEokF",
                     Quantity = 10,
-                    PercentSale = 2,
+                    //PercentSale = 2,
                     BrandId = appleId,
                     CategoryId = tabletId,
                     FolderId = "18kx0xh8gVJAJllf-4ZVeFZFfkJHI1zkX"
@@ -466,7 +465,7 @@ namespace LandPApi.Data
                     Price = 7250000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1-nQviihO_G_HGipaWd72aRUURK4zkm6S",
                     Quantity = 5,
-                    PercentSale = 0,
+                    //PercentSale = 0,
                     BrandId = suuntoId,
                     CategoryId = smartwatchId,
                     FolderId = "15B4NY2lAFY9DXr1Z40hwoQNjI5ZjnpZ4"
@@ -479,7 +478,7 @@ namespace LandPApi.Data
                     Price = 5490000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=17uBw10YiFMD2ET9pw_wiXkznPsQrAhr0",
                     Quantity = 10,
-                    PercentSale = 0,
+                    //PercentSale = 0,
                     BrandId = samsungId,
                     CategoryId = smartwatchId,
                     FolderId = "1v5XPVE3A_7XnX4yUf8OekLE54mHXr_CZ"
@@ -492,7 +491,7 @@ namespace LandPApi.Data
                     Price = 765000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1ukyWOlXUIJzxVzjmNN5hPlrnHN0yET7b",
                     Quantity = 10,
-                    PercentSale = 0,
+                    //PercentSale = 0,
                     BrandId = logitechId,
                     CategoryId = mouseId,
                     FolderId = "1M0-dUHbo7g_pkLPbQu9NMTPc9tnGkwr7"
@@ -506,7 +505,7 @@ namespace LandPApi.Data
                     Price = 22990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/270031/Slider/vi-vn-asus-rog-strix-gaming-g513ih-r7-hn015w-1.jpg",
                     Quantity = 50,
-                    PercentSale = 10,
+                    //PercentSale = 10,
                     CategoryId = laptopId,
                     BrandId = asusId,
                 },
@@ -518,7 +517,7 @@ namespace LandPApi.Data
                     Price = 37490000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/299060/Slider/vi-vn-asus-rog-strix-scar-15-g533z-i7-ln2210w-ac-1.jpg",
                     Quantity = 40,
-                    PercentSale = 20,
+                    //PercentSale = 20,
                     CategoryId = laptopId,
                     BrandId = asusId,
                 },
@@ -530,7 +529,7 @@ namespace LandPApi.Data
                     Price = 84000000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/305745/asus-gaming-rog-strix-scar-17-g733pz-r9-ll980w-5.jpg",
                     Quantity = 10,
-                    PercentSale = 10,
+                    //PercentSale = 10,
                     CategoryId = laptopId,
                     BrandId = asusId,
                 },
@@ -542,7 +541,7 @@ namespace LandPApi.Data
                     Price = 31990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304259/asus-zenbook-14-flip-oled-up3404va-i7-kn039w-ab-glr-15.jpg",
                     Quantity = 10,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = laptopId,
                     BrandId = asusId,
                 },
@@ -554,7 +553,7 @@ namespace LandPApi.Data
                     Price = 20990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304869/Slider/vi-vn-asus-vivobook-s-14-flip-tp3402va-i5-lz031w--(3).jpg",
                     Quantity = 20,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = laptopId,
                     BrandId = asusId,
                 },
@@ -566,7 +565,7 @@ namespace LandPApi.Data
                     Price = 21990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/292396/Slider/vi-vn-dell-inspiron-16-5620-i7-n6i7110w1-1.jpg",
                     Quantity = 20,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -578,7 +577,7 @@ namespace LandPApi.Data
                     Price = 47490000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/271545/Slider/vi-vn-dell-gaming-alienware-m15-r6-i7-p109f001dbl-1.jpg",
                     Quantity = 20,
-                    PercentSale = 10,
+                    //PercentSale = 10,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -590,7 +589,7 @@ namespace LandPApi.Data
                     Price = 21990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264354/Slider/dell-gaming-g15-5511-i5-70266676-fix-ab-01-1020x570-2.jpg",
                     Quantity = 30,
-                    PercentSale = 2,
+                    //PercentSale = 2,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -602,7 +601,7 @@ namespace LandPApi.Data
                     Price = 17990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/267558/Slider/vi-vn-dell-inspiron-15-5515-r7-n5r75700u104w1-1.jpg",
                     Quantity = 10,
-                    PercentSale = 3,
+                    //PercentSale = 3,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -614,7 +613,7 @@ namespace LandPApi.Data
                     Price = 16990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/296921/Slider/vi-vn-dell-inspiron-15-3520-i5u085w11blu-1.jpg",
                     Quantity = 30,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -626,7 +625,7 @@ namespace LandPApi.Data
                     Price = 12690000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
                     Quantity = 10,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -638,7 +637,7 @@ namespace LandPApi.Data
                     Price = 12690000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
                     Quantity = 10,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -650,7 +649,7 @@ namespace LandPApi.Data
                     Price = 12690000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
                     Quantity = 10,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = laptopId,
                     BrandId = dellId,
                 },
@@ -662,7 +661,7 @@ namespace LandPApi.Data
                     Price = 51990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/289705/iphone-14-pro-max-vang-1.jpg",
                     Quantity = 10,
-                    PercentSale = 20,
+                    //PercentSale = 20,
                     CategoryId = smartphoneId,
                     BrandId = appleId,
                 },
@@ -674,7 +673,7 @@ namespace LandPApi.Data
                     Price = 27990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/251192/Slider/iphone-14-pro-max-tong-quan-1020x570.jpg",
                     Quantity = 20,
-                    PercentSale = 15,
+                    //PercentSale = 15,
                     CategoryId = smartphoneId,
                     BrandId = appleId,
                 },
@@ -686,7 +685,7 @@ namespace LandPApi.Data
                     Price = 24990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/247508/Slider/iphone-14-pro-up-3-new-1933x982.jpg",
                     Quantity = 10,
-                    PercentSale = 13,
+                    //PercentSale = 13,
                     CategoryId = smartphoneId,
                     BrandId = appleId,
                 },
@@ -698,7 +697,7 @@ namespace LandPApi.Data
                     Price = 19990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/240259/iphone-14-xanh-1.jpg",
                     Quantity = 10,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = smartphoneId,
                     BrandId = appleId,
                 },
@@ -710,7 +709,7 @@ namespace LandPApi.Data
                     Price = 21890000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/245545/iphone-14-plus-ti-1.jpg",
                     Quantity = 15,
-                    PercentSale = 5,
+                    //PercentSale = 5,
                     CategoryId = smartphoneId,
                     BrandId = appleId,
                 },
@@ -722,7 +721,7 @@ namespace LandPApi.Data
                     Price = 17000000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-xanh-1.jpg",
                     Quantity = 25,
-                    PercentSale = 20,
+                    //PercentSale = 20,
                     CategoryId = smartphoneId,
                     BrandId = appleId,
                 }
@@ -883,7 +882,7 @@ namespace LandPApi.Data
                     ProductId = ssa23Id,
                     Quantity = 2,
                     Price = 4990000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -891,7 +890,7 @@ namespace LandPApi.Data
                     ProductId = ip12Id,
                     Quantity = 2,
                     Price = 15590000,
-                    PercentSale = 20
+                    //PercentSale = 20
                 },
                 new OrderDetail
                 {
@@ -899,7 +898,7 @@ namespace LandPApi.Data
                     ProductId = ipad10Id,
                     Quantity = 1,
                     Price = 11190000,
-                    PercentSale = 2
+                    //PercentSale = 2
                 },
                 new OrderDetail
                 {
@@ -907,7 +906,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 3,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
 
                 //----------------------------//
@@ -917,7 +916,7 @@ namespace LandPApi.Data
                     ProductId = ip12Id,
                     Quantity = 1,
                     Price = 15590000,
-                    PercentSale = 20
+                    //PercentSale = 20
                 },
                 new OrderDetail
                 {
@@ -925,7 +924,7 @@ namespace LandPApi.Data
                     ProductId = ipad10Id,
                     Quantity = 2,
                     Price = 11190000,
-                    PercentSale = 2
+                    //PercentSale = 2
                 },
                 new OrderDetail
                 {
@@ -933,7 +932,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 3,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
 
                 //-----------------//
@@ -943,7 +942,7 @@ namespace LandPApi.Data
                     ProductId = ipad10Id,
                     Quantity = 4,
                     Price = 11190000,
-                    PercentSale = 2
+                    //PercentSale = 2
                 },
                 new OrderDetail
                 {
@@ -951,7 +950,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -959,7 +958,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -967,7 +966,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -975,7 +974,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -983,7 +982,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -991,7 +990,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -999,7 +998,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 },
                 new OrderDetail
                 {
@@ -1007,7 +1006,7 @@ namespace LandPApi.Data
                     ProductId = suunto7Id,
                     Quantity = 2,
                     Price = 7250000,
-                    PercentSale = 0
+                    //PercentSale = 0
                 }
             );
 

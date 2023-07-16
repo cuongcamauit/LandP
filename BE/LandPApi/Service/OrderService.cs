@@ -89,11 +89,11 @@ namespace LandPApi.Service
                 {
                     OrderId = order.Id,
                     Price = entityPro!.Price,
-                    PercentSale = entityPro.PercentSale,
+                    //PercentSale = entityPro.//PercentSale,
                     ProductId = item,
                     Quantity = entityCart!.Quantity
                 });
-                total += (entityPro.Price * (100 - entityPro.PercentSale)) * entityPro.Quantity; 
+                total += (entityPro.Price /*TODO */) * entityPro.Quantity; 
 
                 entityPro.Quantity -= entityCart.Quantity;
                 _repoPro.Update(entityPro);
@@ -175,7 +175,8 @@ namespace LandPApi.Service
             {
                 var product = _repoPro.ReadByCondition(o => o.Id == order.ProductId).FirstOrDefault();
                 //product!.SoldQuantity += order.Quantity;
-                _repoPro.Update(product);
+                if (product != null)
+                    _repoPro.Update(product);
             }
         }
 
@@ -206,7 +207,7 @@ namespace LandPApi.Service
 
 
             var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
-            var total = Math.Round(listDetail.Sum(o => (o.Price - (o.Price * o.PercentSale / 100)) * o.Quantity) / exchangeRate, 2);
+            var total = Math.Round(listDetail.Sum(o => (o.Price * /*TODO */ o.Quantity) / exchangeRate), 2);
 
             var itemList = new ItemList()
             {
@@ -218,7 +219,7 @@ namespace LandPApi.Service
                 {
                     name = item.Product!.Name,
                     currency = "USD",
-                    price = Math.Round((item.Price - (item.Price * item.PercentSale / 100)) / exchangeRate, 2).ToString(),
+                    price = Math.Round((item.Price) / exchangeRate, 2).ToString(),
                     quantity = item.Quantity.ToString(),
                     sku = "sku",
                     tax = "0"

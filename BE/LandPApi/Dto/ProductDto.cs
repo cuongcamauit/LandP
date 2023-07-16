@@ -9,7 +9,7 @@
         public string? ImageUrl { get; set; }
         public string? Unit { get; set; }
         public int Quantity { get; set; }
-        public double PercentSale { get; set; }
+        //public double PercentSale { get; set; }
         public double AverageRating { get; set; }
         public int ReviewQuantity { get; set; }
         public double SoldQuantity { get; set; }

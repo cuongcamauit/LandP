@@ -13,7 +13,7 @@ namespace LandPApi.View
         public string? Unit { get; set; }
         [Required]
         public int Quantity { get; set; }
-        public double PercentSale { get; set; } = 0;
+        //public double //PercentSale { get; set; } = 0;
         [Required]
         public Guid CategoryId { get; set; }
         [Required]
