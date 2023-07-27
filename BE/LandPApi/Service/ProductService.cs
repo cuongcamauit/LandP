@@ -83,10 +83,7 @@ namespace LandPApi.Service
             
             var result = PaginatedList<Product>.Create(products, page, pageSize);
 
-            return new
-            {
-                Success = true,
-                Data =
+            return 
                 new {
                     products = _mapper.Map<List<ProductDto>>(result),
                     pagination = new
@@ -96,7 +93,6 @@ namespace LandPApi.Service
                         pageSize = pageSize,
                         totalItem = result.TotalItem
                     }
-                }
             };
             #endregion
         }

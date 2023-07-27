@@ -116,10 +116,10 @@ namespace LandPApi
                         .AllowAnyHeader()
                         .AllowAnyMethod();
             }));
-            //builder.WebHost.UseKestrel()
-            //    .UseContentRoot(Directory.GetCurrentDirectory())
-            //    .UseUrls("https://*:7051")
-            //    .UseIISIntegration();
+            builder.WebHost.UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseUrls("https://*:7051")
+                .UseIISIntegration();
             builder.Services.Configure<KestrelServerOptions>(option =>
             {
                 option.AllowSynchronousIO = true;
