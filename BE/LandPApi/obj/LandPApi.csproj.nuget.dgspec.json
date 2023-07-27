@@ -49,6 +49,14 @@
               "target": "Package",
               "version": "[1.60.0.2971, )"
             },
+            "Google.Cloud.Dialogflow.V2": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.23.4, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[3.6.0, )"

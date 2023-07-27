@@ -79,7 +79,7 @@ namespace LandPApi.Service
             #endregion
 
             #region Paginate
-            products = products.Include(o => o.Reviews).Include(o => o.OrderDetails);
+            products = products.Include(o => o.Reviews).Include(o => o.OrderDetails).Include(o => o.ProductPrices);
             
             var result = PaginatedList<Product>.Create(products, page, pageSize);
 

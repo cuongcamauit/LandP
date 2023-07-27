@@ -22,6 +22,7 @@ namespace LandPApi.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductPrice> ProductPrices { get; set; }
         public DbSet<LandPApi.Models.View> Views { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Document> Documents { get; set; }
@@ -134,6 +135,10 @@ namespace LandPApi.Data
             {
                 entity.HasKey(o => o.Id);
 
+                entity.HasMany(o => o.ProductPrices)
+                        .WithOne(o => o.Product)
+                        .HasForeignKey(o => o.ProductId);
+
                 entity.HasMany(o => o.CartItems)
                         .WithOne(o => o.Product)
                         .HasForeignKey(o => o.ProductId);
@@ -162,6 +167,16 @@ namespace LandPApi.Data
                         .WithOne(o => o.Product)
                         .HasForeignKey(o => o.ProductId);
             });
+
+            builder.Entity<ProductPrice>(entity =>
+            {
+                entity.HasKey(o => new { o.ProductId, o.FromDate});
+                entity.HasOne(o => o.Product)
+                        .WithMany(o => o.ProductPrices)
+                        .HasForeignKey(o => o.ProductId);
+            });
+
+
             builder.Entity<Review>(entity =>
             {
                 entity.HasKey(o => new { o.CustomerId, o.ProductId, o.OrderId});

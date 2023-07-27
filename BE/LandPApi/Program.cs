@@ -78,6 +78,8 @@ namespace LandPApi
             builder.Services.AddScoped<IBrandService, BrandService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
             builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IProductPriceService, ProductPriceService>();
+
             builder.Services.AddScoped<ICartItemService, CartItemService>();
             builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
@@ -107,7 +109,10 @@ namespace LandPApi
 
             builder.Services.AddCors(p => p.AddPolicy("myCors", build =>
             {
-                build.WithOrigins("http://localhost:3000/")
+                //build.WithOrigins("http://localhost:3000/")
+                //        .AllowAnyHeader()
+                //        .AllowAnyMethod();
+                build.AllowAnyOrigin()
                         .AllowAnyHeader()
                         .AllowAnyMethod();
             }));
@@ -115,6 +120,10 @@ namespace LandPApi
             //    .UseContentRoot(Directory.GetCurrentDirectory())
             //    .UseUrls("https://*:7051")
             //    .UseIISIntegration();
+            builder.Services.Configure<KestrelServerOptions>(option =>
+            {
+                option.AllowSynchronousIO = true;
+            });
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;

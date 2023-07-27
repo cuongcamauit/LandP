@@ -927,3 +927,14 @@ D:\LandP\BE\LandPApi\obj\Debug\net6.0\scopedcss\bundle\LandPApi.styles.css
 D:\LandP\BE\LandPApi\obj\Debug\net6.0\LandPApi.csproj.CopyComplete
 D:\LandP\BE\LandPApi\obj\Debug\net6.0\LandPApi.genruntimeconfig.cache
 D:\LandP\BE\LandPApi\obj\Debug\net6.0\ref\LandPApi.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Google.Api.CommonProtos.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Google.Api.Gax.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Google.Api.Gax.Grpc.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Google.Cloud.Dialogflow.V2.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Google.Cloud.Location.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Google.LongRunning.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Google.Protobuf.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Grpc.Auth.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Grpc.Core.Api.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Grpc.Net.Client.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Grpc.Net.Common.dll
