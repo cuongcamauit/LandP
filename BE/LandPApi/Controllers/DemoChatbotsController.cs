@@ -28,6 +28,8 @@ namespace LandPApi.Controllers
 
             var pas = request.QueryResult.Parameters;
             Console.WriteLine(pas.ToString());
+            string category = null;
+            
             //var askingName = pas.Fields.ContainsKey("name") && pas.Fields["name"].ToString().Replace('\"', ' ').Trim().Length > 0;
             //var askingAddress = pas.Fields.ContainsKey("address") && pas.Fields["address"].ToString().Replace('\"', ' ').Trim().Length > 0;
             //var askingBusinessHour = pas.Fields.ContainsKey("business-hours") && pas.Fields["business-hours"].ToString().Replace('\"', ' ').Trim().Length > 0;

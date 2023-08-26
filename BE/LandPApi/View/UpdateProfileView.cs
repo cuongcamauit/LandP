@@ -11,7 +11,7 @@ namespace LandPApi.View
         public string? Phone { get; set; }
         public string? CurrentPassword { get; set; }
         public string? NewPassword { get; set; }
-        [Compare("NewPassword")]
+        
         public string? ConfirmNewPassword { get; set; }
     }
 }

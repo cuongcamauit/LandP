@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 
@@ -268,6 +269,16 @@ namespace LandPApi.Service
                     StatusCode = 403
                 };
             }
+            var checkEmail = await _userManager.FindByEmailAsync(model.Email);
+            if (checkEmail != null)
+            {
+                return new Response
+                {
+                    Message = "Email has been existed",
+                    Success = false,
+                    StatusCode = 409
+                };
+            }
             var identityUser = new Customer
             {
                 Name = model.Name,
@@ -314,9 +325,10 @@ namespace LandPApi.Service
                 StatusCode = 400
             };
         }
-
+       
         public async Task<Response> UpdateProfile(string customerId, UpdateProfileView updateProfileView)
         {
+
             Customer user = await _userManager.FindByIdAsync(customerId);
             user.Name = updateProfileView.Name;
             user.BirthDay = updateProfileView.BirthDay;
@@ -328,9 +340,19 @@ namespace LandPApi.Service
                 var message = string.Join(" | ", resultUpdate.Errors.Select(o => o.Description));
                 return new Response
                 {
-                    Message = "User did not update",
+                    Message = message,
                     Success = false,
-                    Data = message,
+                    Data = null,
+                    StatusCode = 400
+                };
+            }
+            if (updateProfileView.NewPassword != updateProfileView.ConfirmNewPassword)
+            {
+                return new Response
+                {
+                    Message = "Password doesn't match with confirm password",
+                    Success = false,
+                    Data = null,
                     StatusCode = 400
                 };
             }
@@ -342,9 +364,9 @@ namespace LandPApi.Service
                     var message = string.Join(" | ", result.Errors.Select(o => o.Description));
                     return new Response
                     {
-                        Message = "User did not update",
+                        Message = message,
                         Success = false,
-                        Data = message,
+                        Data = null,
                         StatusCode = 400
                     };
                 }
