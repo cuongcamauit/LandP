@@ -1,19 +1,19 @@
 {
   "Files": [
     {
-      "Id": "C:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutfail.html",
+      "Id": "D:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutfail.html",
       "PackagePath": "staticwebassets\\checkoutfail.html"
     },
     {
-      "Id": "C:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutsuccess.html",
+      "Id": "D:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutsuccess.html",
       "PackagePath": "staticwebassets\\checkoutsuccess.html"
     },
     {
-      "Id": "C:\\LandP\\BE\\LandPApi\\wwwroot\\confirmEmail.html",
+      "Id": "D:\\LandP\\BE\\LandPApi\\wwwroot\\confirmEmail.html",
       "PackagePath": "staticwebassets\\confirmEmail.html"
     },
     {
-      "Id": "C:\\LandP\\BE\\LandPApi\\wwwroot\\resetPassword.html",
+      "Id": "D:\\LandP\\BE\\LandPApi\\wwwroot\\resetPassword.html",
       "PackagePath": "staticwebassets\\resetPassword.html"
     },
     {

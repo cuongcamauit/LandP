@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6KdhI9wDVt9sCIFIgbQArrCrj42PqWrwZCThEAfF+Ww=",
+  "Hash": "tvxJlE3N8Sw37W+e8poxkxDO9NYmKGpOXm+XfrhHkRY=",
   "Source": "LandPApi",
   "BasePath": "_content/LandPApi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "LandPApi\\wwwroot",
       "Source": "LandPApi",
-      "ContentRoot": "C:\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "ContentRoot": "D:\\LandP\\BE\\LandPApi\\wwwroot\\",
       "BasePath": "_content/LandPApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutfail.html",
+      "Identity": "D:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutfail.html",
       "SourceId": "LandPApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "ContentRoot": "D:\\LandP\\BE\\LandPApi\\wwwroot\\",
       "BasePath": "_content/LandPApi",
       "RelativePath": "checkoutfail.html",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\checkoutfail.html"
     },
     {
-      "Identity": "C:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutsuccess.html",
+      "Identity": "D:\\LandP\\BE\\LandPApi\\wwwroot\\checkoutsuccess.html",
       "SourceId": "LandPApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "ContentRoot": "D:\\LandP\\BE\\LandPApi\\wwwroot\\",
       "BasePath": "_content/LandPApi",
       "RelativePath": "checkoutsuccess.html",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\checkoutsuccess.html"
     },
     {
-      "Identity": "C:\\LandP\\BE\\LandPApi\\wwwroot\\confirmEmail.html",
+      "Identity": "D:\\LandP\\BE\\LandPApi\\wwwroot\\confirmEmail.html",
       "SourceId": "LandPApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "ContentRoot": "D:\\LandP\\BE\\LandPApi\\wwwroot\\",
       "BasePath": "_content/LandPApi",
       "RelativePath": "confirmEmail.html",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\confirmEmail.html"
     },
     {
-      "Identity": "C:\\LandP\\BE\\LandPApi\\wwwroot\\resetPassword.html",
+      "Identity": "D:\\LandP\\BE\\LandPApi\\wwwroot\\resetPassword.html",
       "SourceId": "LandPApi",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\LandP\\BE\\LandPApi\\wwwroot\\",
+      "ContentRoot": "D:\\LandP\\BE\\LandPApi\\wwwroot\\",
       "BasePath": "_content/LandPApi",
       "RelativePath": "resetPassword.html",
       "AssetKind": "All",

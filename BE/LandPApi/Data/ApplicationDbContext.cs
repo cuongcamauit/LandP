@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Attribute = LandPApi.Models.Attribute;
 
 namespace LandPApi.Data
 {
@@ -15,6 +16,9 @@ namespace LandPApi.Data
         {
         }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Attribute> Attributes { get; set; }
+        public DbSet<AttributeGroup> AttributeGroups { get; set; }
+        public DbSet<AttributeSpec> AttributeSpecs { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -36,6 +40,48 @@ namespace LandPApi.Data
                 entity.HasOne(e => e.Customer)
                 .WithMany(o => o.Addresses)
                 .HasForeignKey(e => e.CustomerId);
+            });
+
+            builder.Entity<Attribute>(entity =>
+            {
+                entity.HasKey(o => o.Id);
+
+                entity.Property(o => o.Id)
+                        .ValueGeneratedOnAdd();
+
+                entity.HasMany(o => o.AttributeGroups)
+                        .WithOne(o => o.Attribute)
+                        .HasForeignKey(o => o.AttributeId);
+
+                entity.HasMany(o => o.AttributeSpecs)
+                        .WithOne(o => o.Attribute)
+                        .HasForeignKey(o => o.AttributeId);           
+            });
+
+            builder.Entity<AttributeGroup>(entity =>
+            {
+                entity.HasKey(o => new { o.AttributeId, o.CategoryId });
+
+                entity.HasOne(o => o.Category)
+                        .WithMany(o => o.AttributeGroups)
+                        .HasForeignKey(o => o.CategoryId);
+
+                entity.HasOne(o => o.Attribute)
+                        .WithMany(o => o.AttributeGroups)
+                        .HasForeignKey(o => o.AttributeId);
+            });
+
+            builder.Entity<AttributeSpec>(entity =>
+            {
+                entity.HasKey(o => new { o.ProductId, o.AttributeId});
+
+                entity.HasOne(o => o.Product)
+                        .WithMany(o => o.AttributeSpecs)
+                        .HasForeignKey(o => o.ProductId);
+
+                entity.HasOne(o => o.Attribute)
+                        .WithMany(o => o.AttributeSpecs)
+                        .HasForeignKey(o => o.AttributeId);
             });
 
             builder.Entity<Brand>(entity =>
@@ -64,6 +110,9 @@ namespace LandPApi.Data
                 entity.HasKey(o => o.Id);
 
                 entity.HasMany(o => o.Products)
+                        .WithOne(o => o.Category)
+                        .HasForeignKey(o => o.CategoryId);
+                entity.HasMany(o => o.AttributeGroups)
                         .WithOne(o => o.Category)
                         .HasForeignKey(o => o.CategoryId);
             });
@@ -166,11 +215,16 @@ namespace LandPApi.Data
                 entity.HasMany(o => o.Documents)
                         .WithOne(o => o.Product)
                         .HasForeignKey(o => o.ProductId);
+                entity.HasMany(o => o.AttributeSpecs)
+                        .WithOne(o => o.Product)
+                        .HasForeignKey(o => o.ProductId);
             });
 
             builder.Entity<ProductPrice>(entity =>
             {
-                entity.HasKey(o => new { o.ProductId, o.FromDate});
+                entity.HasKey(o => o.Id);
+                entity.Property(o => o.Id)
+                        .ValueGeneratedOnAdd();
                 entity.HasOne(o => o.Product)
                         .WithMany(o => o.ProductPrices)
                         .HasForeignKey(o => o.ProductId);

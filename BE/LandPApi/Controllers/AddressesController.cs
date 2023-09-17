@@ -47,7 +47,14 @@ namespace LandPApi.Controllers
             });
         }
 
-
+        // GET: api/Address/SetDefault/5
+        [HttpGet("SetDefault/{id}")]
+        [Authorize]
+        public async Task<IActionResult> SetDefault(Guid id)
+        {
+            await _addressService.SetDefault(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return NoContent();
+        }
         // GET: api/Addresses/5
         [HttpGet("{id}")]
         [Authorize(Roles = "User")]

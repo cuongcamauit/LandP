@@ -32,5 +32,22 @@ namespace LandPApi.Service
             var addresses = await _repository.ReadByCondition(o => o.CustomerId == customerId).ToListAsync();
             return _mapper.Map<List<AddressDto>>(addresses);
         }
+
+        public async Task SetDefault(Guid id, string customerId)
+        {
+            Address? address = await _repository.ReadByCondition(o => o.Id == id && o.CustomerId == customerId).FirstOrDefaultAsync();
+            if (address != null)
+            {
+                var addresses = _repository.ReadByCondition(o => o.CustomerId == customerId && o.isDefault == true && o.Id != id);
+                foreach (var item in addresses)
+                {
+                    item.isDefault = false;
+                    _repository.Update(item);
+                }
+                address.isDefault = true;
+                _repository.Update(address);
+                _repository.Save();
+            }
+        }
     }
 }

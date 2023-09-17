@@ -30,6 +30,9 @@ namespace LandPApi.Helper
                 .ForMember(dest => dest.PercentSale, act => act.MapFrom(scr => (scr.Price-scr.GetNowPrice(null))*100/scr.Price))
                 .ForMember(dest => dest.ReviewQuantity, act => act.MapFrom(scr => scr.Reviews!.Count))
                ;
+            CreateMap<ProductPrice, ProductPriceDto>()
+                .ReverseMap();
+            CreateMap<ProductPriceView, ProductPrice>();
 
             CreateMap<ProductView, Product>();
 

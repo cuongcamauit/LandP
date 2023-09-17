@@ -11,5 +11,6 @@
         public int WardId { get; set; }
         public string? Detail { get; set; }
         public string? CustomerId { get; set; }
+        public bool isDefault { get; set; }
     }
 }

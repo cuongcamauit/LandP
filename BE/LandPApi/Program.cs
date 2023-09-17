@@ -34,9 +34,10 @@ namespace LandPApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             //------------------------------------------------//
-            builder.Services.AddDbContext<ApplicationDbContext>(options => {
+            builder.Services.AddDbContextPool<ApplicationDbContext>(options => {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-            });
+            }, poolSize: 128);
+            Console.WriteLine(builder.Configuration["demo"]);
             builder.Services.AddIdentity<Customer, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();

@@ -9,5 +9,6 @@ namespace LandPApi.IService
     {
         Task Delete(Guid id, string customerId);
         Task<List<AddressDto>> GetAll(string customerId);
+        Task SetDefault(Guid id, string customerId);
     }
 }

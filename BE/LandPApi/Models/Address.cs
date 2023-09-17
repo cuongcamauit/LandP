@@ -13,6 +13,7 @@ namespace LandPApi.Models
         public int WardId { get; set; }
         public string? Detail { get; set; }
         public string? CustomerId { get; set; }
+        public bool isDefault { get; set; } = false;
         public Customer? Customer { get; set; }
         public ICollection<Order>? Orders { get;set; }
     }
