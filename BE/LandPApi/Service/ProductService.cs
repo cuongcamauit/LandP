@@ -105,6 +105,12 @@ namespace LandPApi.Service
             var products = _repository.ReadAll();
             products = products.Include(o => o.Reviews).Include(o => o.OrderDetails).Include(o => o.ProductPrices);
 
+            #region Searching
+            if (searchInfor.Query != "")
+            {
+                products = products.Where(o => o.Name!.Contains(searchInfor.Query));
+            }
+            #endregion
             #region Filtering
             if (searchInfor.Filter != null)
             {
@@ -113,6 +119,11 @@ namespace LandPApi.Service
                 if (searchInfor.Filter.Brands != null && searchInfor.Filter.Brands.Count > 0)
                 {
                     products = products.Where(o => searchInfor.Filter.Brands.Any(p => p == o.BrandId));
+                }
+                // categories
+                if (searchInfor.Filter.Categories != null && searchInfor.Filter.Categories.Count > 0)
+                {
+                    products = products.Where(o => searchInfor.Filter.Categories.Any(p => p == o.CategoryId));
                 }
                 // price
                 if (searchInfor.Filter.PriceGte > 0)

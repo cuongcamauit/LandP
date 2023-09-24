@@ -9,6 +9,7 @@
     {
         public List<Attribute>? Attributes { get; set; }
         public List<Guid>? Brands { get; set; }
+        public List<Guid>? Categories { get; set; }
         public double PriceGte { get; set; }
         public double PriceLte { get; set; }
     }
