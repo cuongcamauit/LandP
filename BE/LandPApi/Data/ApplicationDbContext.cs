@@ -441,7 +441,7 @@ namespace LandPApi.Data
                     Quantity = 50,
                     //PercentSale = 20,
                     CategoryId = smartphoneId,
-                    BrandId = samsungId,
+                    BrandId = appleId,
                     FolderId = "1b9JWfgUruHr6j3U3XalWbAD2UO329_6X"
                 },
                 new Product()

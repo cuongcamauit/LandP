@@ -10,6 +10,7 @@ namespace LandPApi.IService
     {
         ProductDto GetProduct(Guid id);
         object GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5);
+        object GetAllAsync(SearchInfor searchInfor);
         object GetForyou(string userId, double rate = 50);
     }
 }

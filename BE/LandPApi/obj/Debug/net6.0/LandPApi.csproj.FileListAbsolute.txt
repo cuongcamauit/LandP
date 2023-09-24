@@ -1260,3 +1260,6 @@ C:\LandP\BE\LandPApi\obj\Debug\net6.0\refint\LandPApi.dll
 C:\LandP\BE\LandPApi\obj\Debug\net6.0\LandPApi.pdb
 C:\LandP\BE\LandPApi\obj\Debug\net6.0\LandPApi.genruntimeconfig.cache
 C:\LandP\BE\LandPApi\obj\Debug\net6.0\ref\LandPApi.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\System.Web.Http.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

@@ -6,6 +6,9 @@ using LandPApi.Repository;
 using LandPApi.View;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using PayPal.Api;
+using System.Drawing.Printing;
+using System.Linq.Expressions;
 
 namespace LandPApi.Service
 {
@@ -95,6 +98,81 @@ namespace LandPApi.Service
                     }
             };
             #endregion
+        }
+
+        public object GetAllAsync(SearchInfor searchInfor)
+        {
+            var products = _repository.ReadAll();
+            products = products.Include(o => o.Reviews).Include(o => o.OrderDetails).Include(o => o.ProductPrices);
+
+            #region Filtering
+            if (searchInfor.Filter != null)
+            {
+                // attributes
+                // brands
+                if (searchInfor.Filter.Brands != null && searchInfor.Filter.Brands.Count > 0)
+                {
+                    products = products.Where(o => searchInfor.Filter.Brands.Any(p => p == o.BrandId));
+                }
+                // price
+                if (searchInfor.Filter.PriceGte > 0)
+                {
+                    products = products.Where(o => _mapper.Map<ProductDto>(o).Price >= searchInfor.Filter.PriceGte);
+                }
+                if (searchInfor.Filter.PriceLte > 0)
+                {
+                    products = products.Where(o => _mapper.Map<ProductDto>(o).Price <= searchInfor.Filter.PriceLte);
+                }
+            }
+            #endregion
+            #region Sorting
+            var lstProducts = products.ToList();
+            if (searchInfor.Sorting != null)
+            {
+                //SORT_BY_DISCOUNT_PERCENT, SORT_BY_PUBLISH_AT, SORT_BY_TOP_SALE_QUANTITy_7_DAY
+
+                switch (searchInfor.Sorting.Sort)
+                {
+                    case "SORT_BY_PRICE":
+                        lstProducts = lstProducts.OrderBy(o => _mapper.Map<ProductDto>(o).Price).ToList();
+                        break;
+                    case "SORT_BY_DISCOUNT_PERCENT":
+                        lstProducts = lstProducts.OrderBy(o => _mapper.Map<ProductDto>(o).PercentSale).ToList();
+                        break;
+                    case "SORT_BY_TOP_SALE":
+                        lstProducts = lstProducts.OrderBy(o => _mapper.Map<ProductDto>(o).SoldQuantity).ToList();
+                        break;
+                    default:
+                        break;
+                }
+                switch (searchInfor.Sorting.Order)
+                {
+                    case "ORDER_BY_DESCENDING":
+                        products = products.Reverse();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            #endregion
+            #region Paginate
+
+            var result = PaginatedList<Product>.Create(lstProducts, searchInfor.Pagination.PageNumber, searchInfor.Pagination.ItemsPerPage);
+
+            #endregion
+            
+
+            return new
+            {
+                products = _mapper.Map<List<ProductDto>>(result),
+                pagination = new
+                {
+                    currentPage = result.PageIndex,
+                    totalPage = result.TotalPage,
+                    pageSize = searchInfor.Pagination.ItemsPerPage,
+                    totalItem = result.TotalItem
+                }
+            };
         }
 
         public object GetForyou(string userId, double rate = 50)

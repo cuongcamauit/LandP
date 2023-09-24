@@ -86,6 +86,7 @@ namespace LandPApi
             builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddScoped<IViewService, ViewService>();
             builder.Services.AddScoped<IReviewService, ReviewService>();
+            builder.Services.AddScoped<IShipService, ShipService>();
             builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IMailService, GmailService>();

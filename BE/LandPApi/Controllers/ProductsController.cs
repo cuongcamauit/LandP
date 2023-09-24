@@ -20,22 +20,32 @@ namespace LandPApi.Controllers
             _productService = productService;
         }
 
+
         // GET: api/Products
-        [HttpGet]
-        public IActionResult GetProducts(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5)
+        [HttpPost("/search")]
+        public IActionResult GetProducts(SearchInfor searchInfor)
         {
-            if (page <= 0)
-                page = 1;
-            if (pageSize <= 0)
-                pageSize = 1;
-            var result = _productService.GetAllAsync(search, from, to, sortBy, categoryId, brandId, page, pageSize);
+            var result = _productService.GetAllAsync(searchInfor);
             return Ok(new Response
             {
-                Success = true,
                 Data = result,
                 Message = "Get products successfully"
             });
         }
+        //public IActionResult GetProducts([FromQuery]Guid[] lstBrand,string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5)
+        //{
+        //    if (page <= 0)
+        //        page = 1;
+        //    if (pageSize <= 0)
+        //        pageSize = 1;
+        //    var result = _productService.GetAllAsync(search, from, to, sortBy, categoryId, brandId, page, pageSize);
+        //    return Ok(new Response
+        //    {
+        //        Success = true,
+        //        Data = result,
+        //        Message = "Get products successfully"
+        //    });
+        //}
 
         // GET: api/Products/Foryou
         [HttpGet("Foryou")]
