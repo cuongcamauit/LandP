@@ -8,6 +8,7 @@ namespace LandPApi.IService
 {
     public interface IOrderService
     {
+        Task<double> GetTotal(string customerId, OrderView view);
         Task<OrderDto?> Add(string customerId, OrderView view);
         Task<List<OrderDto>> GetAll(string customerId);
         Task<OrderDto> GetById(string v, Guid id);

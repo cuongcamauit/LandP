@@ -12,7 +12,11 @@ namespace LandPApi.Dto
         public AddressDto? Address { get; set; }
         //public bool isPaid { get; set; }
         public DateTime? PaidAt { get; set; }
-        public double Total { get; set; }
+        public double SubTotal { get; set; }
+        public double ShippingFee { get; set; }
+        public double ShippingFeeVoucher { get; set; } = 0;
+        public double ShopVoucher { get; set; } = 0;
         public string? CustomerId { get; set; }
+        public double Total { get; set; }
     }
 }

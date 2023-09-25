@@ -39,7 +39,8 @@ namespace LandPApi.Helper
             CreateMap<CartItem, CartItemView>();
             CreateMap<CartItem, CartItemDto>();
 
-            CreateMap<Order, OrderDto>();
+            CreateMap<Order, OrderDto>()
+                .ForMember(dest => dest.Total, act => act.MapFrom(scr => scr.Total()));
 
             CreateMap<OrderDetail, OrderDetailDto>();
 

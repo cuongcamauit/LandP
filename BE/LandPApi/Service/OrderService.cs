@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using PayPal.Api;
 using System.Configuration;
 using System.Security.Claims;
+using System.Web.Http.Results;
 
 namespace LandPApi.Service
 {
@@ -42,6 +43,23 @@ namespace LandPApi.Service
             _repoPro = repoPro;
             _mapper = mapper;
         }
+
+        public async Task<double> GetTotal(string customerId, OrderView view)
+        {
+            double total = 0;
+            // everything is fine
+
+            foreach (var item in view.productIds!)
+            {
+                var entityPro = await _repoPro.ReadByCondition(o => o.Id == item).Include(o => o.ProductPrices).FirstOrDefaultAsync()!;
+                var entityCart = await _repoCart.ReadByCondition(o => o.CustomerId == customerId && o.ProductId == item).FirstOrDefaultAsync()!;
+
+                if (entityPro != null && entityCart != null)
+                    total += entityPro!.GetNowPrice() * entityCart!.Quantity;
+            }
+            return total;
+        }
+    
 
         public async Task<OrderDto?> Add(string customerId, OrderView view)
         {
@@ -84,22 +102,31 @@ namespace LandPApi.Service
             foreach (var item in view.productIds!)
             {
                 var entityCart = await _repoCart.ReadByCondition(o => o.CustomerId == customerId && o.ProductId == item).FirstOrDefaultAsync()!;
-                var entityPro = await _repoPro.ReadByCondition(o => o.Id == item).FirstOrDefaultAsync()!;
+                var entityPro = await _repoPro.ReadByCondition(o => o.Id == item).Include(o => o.ProductPrices).FirstOrDefaultAsync()!;
                 _repoDetail.Create(new OrderDetail
                 {
                     OrderId = order.Id,
-                    Price = entityPro!.Price,
-                    //PercentSale = entityPro.//PercentSale,
+                    Price = entityPro!.GetNowPrice(),
                     ProductId = item,
                     Quantity = entityCart!.Quantity
                 });
-                total += (entityPro.Price /*TODO */) * entityPro.Quantity; 
+                total += entityPro.GetNowPrice() * entityCart.Quantity; 
 
                 entityPro.Quantity -= entityCart.Quantity;
                 _repoPro.Update(entityPro);
                 _repoCart.Delete(entityCart);
             }
-            order.Total = total;
+            
+            var postData = new PostData
+            {
+                insurance_value = Convert.ToInt32(total),
+                to_district_id = address.DistrictId,
+                to_ward_code = address.WardCode
+            };
+
+            var shipFee = await GHN.FeeShip(postData);
+            order.SubTotal = total;
+            order.ShippingFee = shipFee;
             _repoOrder.Save();
             _repoPro.Save();
             _repoHis.Save();
@@ -200,14 +227,15 @@ namespace LandPApi.Service
             //}
             //_repoOrder.Update(order!);
             //_repoOrder.Save();
-
+            var order = _repoOrder.ReadByCondition(o => o.Id == orderId).FirstOrDefault();
 
             var apiContext = PaymentUtils.GetApiContext(_configuration);
 
 
 
             var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
-            var total = Math.Round(listDetail.Sum(o => (o.Price * /*TODO */ o.Quantity) / exchangeRate), 2);
+            //var total =  Math.Round(listDetail.Sum(o => (o.Price * o.Quantity) / exchangeRate), 2);
+            var total = order!.Total();
 
             var itemList = new ItemList()
             {
@@ -248,8 +276,8 @@ namespace LandPApi.Service
                                 details = new Details
                                 {
                                     tax = "0",
-                                    shipping = "0",
-                                    subtotal = total.ToString()
+                                    shipping = order.ShippingFee.ToString(),
+                                    subtotal = order.SubTotal.ToString()
                                 }
                             },
                             item_list = itemList,

@@ -293,8 +293,8 @@ namespace LandPApi.Data
             var addresuserId = Guid.Parse("0750d8d3-bfff-45f2-b081-2a86ffe91bfd");
             var addresuser1Id = Guid.Parse("3fd64b58-5ded-40ed-876c-027bcc759a75");
             builder.Entity<Address>().HasData(
-                new Address { Id = addresuserId, CustomerId = userId, Province = "Cà Mau", District = "Thành phố Cà Mau", Ward = "8", Detail = "5"},    
-                new Address { Id = addresuser1Id, CustomerId = user1Id, Province = "Thành phố Hồ Chí Minh", District = "12", Ward = "Tân Chánh Hiệp", Detail = "Tô Ký"}    
+                new Address { Id = addresuserId, CustomerId = userId, ProvinceName = "Cà Mau", ProvinceId = 252, DistrictName = "Thành phố Cà Mau", DistrictId = 1654,  WardName = "8", WardCode = "610107", Detail = "Khóm 5"},    
+                new Address { Id = addresuser1Id, CustomerId = user1Id, ProvinceName = "Thành phố Hồ Chí Minh", ProvinceId = 202, DistrictName = "Quận 12", DistrictId = 1454, WardName = "Phường Tân Chánh Hiệp", WardCode = "21204", Detail = "Đường Tô Ký"}    
             );
             //----------------------------------------------------------//
             var smartphoneId = Guid.Parse("bc17dda5-9e53-434d-ab30-32452bfc7d35");
@@ -850,7 +850,6 @@ namespace LandPApi.Data
                     AddressId = addresuserId,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 67640200,
                 },
                 new Order
                 {
@@ -859,7 +858,6 @@ namespace LandPApi.Data
                     AddressId = addresuserId,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 56154400,
                 },
                 new Order
                 {
@@ -868,7 +866,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 58364800,
                 },
                 new Order
                 {
@@ -877,7 +874,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 },
                 new Order
                 {
@@ -886,7 +882,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 },
                 new Order
                 {
@@ -895,7 +890,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 },
                 new Order
                 {
@@ -904,7 +898,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 },
                 new Order
                 {
@@ -913,7 +906,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 },
                 new Order
                 {
@@ -922,7 +914,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 },
                 new Order
                 {
@@ -931,7 +922,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 },
                 new Order
                 {
@@ -940,7 +930,6 @@ namespace LandPApi.Data
                     AddressId = addresuser1Id,
                     PaidAt = DateTime.Now,
                     Status = Status.Delivered,
-                    Total = 7250000,
                 }
             );
 
