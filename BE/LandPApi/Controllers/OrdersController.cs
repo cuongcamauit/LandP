@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using LandPApi.View;
 using LandPApi.Dto;
 using System.Security.Claims;
+using System.Security.Policy;
 
 namespace LandPApi.Controllers
 {
@@ -165,12 +166,22 @@ namespace LandPApi.Controllers
         }
 
         [HttpPut("PaypalCheckout/{orderId}")]
-        [Authorize]
-        public IActionResult PaypalCheckout(Guid orderId)
+        public IActionResult PaypalCheckout(Guid orderId, string? opt = "PayPal")
         {
             if (ModelState.IsValid)
             {
-                string link = _orderService.PaypalCheckout(orderId);
+                string link = "";
+                switch (opt)
+                {
+                    case "PayPal":
+                        link = _orderService.PaypalCheckout(orderId);
+                        break;
+                    case "VNPay":
+                        link = _orderService.VNPayCheckOut(orderId);
+                        break;
+                    default:
+                        break;
+                }
                 return Ok(new Response
                 {
                     StatusCode = 202,
@@ -188,7 +199,17 @@ namespace LandPApi.Controllers
                 StatusCode = 422
             });
         }
-
+        [HttpGet("VNPaySuccess")]
+        //? vnp_Amount = 5628590100 & vnp_BankCode = NCB & vnp_BankTranNo = VNP14130324 & vnp_CardType = ATM & vnp_OrderInfo = Thanh + toan + don + hang % 3A+23df699f-de87-4ba3-9410-08dbbd9a3fbe&vnp_PayDate=20231002104910&vnp_ResponseCode=00&vnp_TmnCode=U5O11J3C&vnp_TransactionNo=14130324&vnp_TransactionStatus=00&vnp_TxnRef=23df699f-de87-4ba3-9410-08dbbd9a3fbe&vnp_SecureHash=66bc018b6e9be477acae12ba712288f0c83a6595e9c23dad8e490566cd465c51029eb39687366e430055459133e6e44c7774e30a64f0eb97550a39ba362b6b36
+        public IActionResult VNPaySuccess(long vnp_Amount, string vnp_BankCode, string vnp_BankTranNo, string vnp_CardType, string vnp_OrderInfo, string vnp_PayDate, string vnp_ResponseCode, string vnp_TmnCode, int vnp_TransactionNo, string vnp_TransactionStatus, string vnp_TxnRef, string vnp_SecureHash)
+        {
+            if (_orderService.checkSum(vnp_Amount, vnp_BankCode, vnp_BankTranNo, vnp_CardType, vnp_OrderInfo, vnp_PayDate, vnp_ResponseCode, vnp_TmnCode, vnp_TransactionNo, vnp_TransactionStatus, vnp_TxnRef, vnp_SecureHash))
+            {
+                Guid orderId = Guid.Parse(vnp_TxnRef);
+                _orderService.isPaid(orderId);
+            }
+            return Content("<script>window.close();</script>", "text/html");
+        } 
         [HttpGet("CheckoutSuccess")]
         public IActionResult CheckoutSuccess(Guid orderId)
         {

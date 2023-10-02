@@ -5,11 +5,14 @@ using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.Utils;
 using LandPApi.View;
+using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
 using PayPal.Api;
 using System.Configuration;
 using System.Security.Claims;
 using System.Web.Http.Results;
+using static Google.Cloud.Dialogflow.V2.Intent.Types.Message.Types.CarouselSelect.Types;
+using Item = PayPal.Api.Item;
 
 namespace LandPApi.Service
 {
@@ -227,15 +230,16 @@ namespace LandPApi.Service
             //}
             //_repoOrder.Update(order!);
             //_repoOrder.Save();
-            var order = _repoOrder.ReadByCondition(o => o.Id == orderId).FirstOrDefault();
+            //Get order
+            var orderInfor = _repoOrder.ReadByCondition(o => o.Id == orderId).FirstOrDefault();
+            if (orderInfor == null)
+                return "";
+            var total = orderInfor!.Total();
 
             var apiContext = PaymentUtils.GetApiContext(_configuration);
 
-
-
             var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
-            //var total =  Math.Round(listDetail.Sum(o => (o.Price * o.Quantity) / exchangeRate), 2);
-            var total = order!.Total();
+                      
 
             var itemList = new ItemList()
             {
@@ -272,12 +276,12 @@ namespace LandPApi.Service
                             amount = new Amount
                             {
                                 currency = "USD",
-                                total = total.ToString(),
+                                total = Math.Round(total / exchangeRate, 2).ToString(),
                                 details = new Details
                                 {
                                     tax = "0",
-                                    shipping = order.ShippingFee.ToString(),
-                                    subtotal = order.SubTotal.ToString()
+                                    shipping = Math.Round(orderInfor.ShippingFee / exchangeRate, 2).ToString(),
+                                    subtotal = Math.Round(orderInfor.SubTotal / exchangeRate, 2).ToString()
                                 }
                             },
                             item_list = itemList,
@@ -294,20 +298,84 @@ namespace LandPApi.Service
             };
 
             // Send the payment to PayPal
-            var createdPayment = payment.Create(apiContext);
+            try
+            {
+                var createdPayment = payment.Create(apiContext);
+                // Find the Approval URL to send our user to
+                var approvalUrl =
+                    createdPayment.links.FirstOrDefault(
+                        x => x.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase));
+
+                // Send the user to PayPal to approve the payment
+                return approvalUrl!.href;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return "";
+            }
+            
 
             //// Save a reference to the paypal payment
             //paymentEntity.PaymentServiceReference = createdPayment.id;
             //_paymentRepository.Add(paymentEntity);
             //_paymentRepository.SaveAll();
 
-            // Find the Approval URL to send our user to
-            var approvalUrl =
-                createdPayment.links.FirstOrDefault(
-                    x => x.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase));
+            
+        }
+        public string VNPayCheckOut(Guid orderId)
+        {
+            //Get order
+            var orderInfor = _repoOrder.ReadByCondition(o => o.Id == orderId).FirstOrDefault();
+            if (orderInfor == null)
+                return "";
+            var total = orderInfor!.Total();
+            //Get Config Infor
+            string vnp_Returnurl = _configuration.GetSection("VNPay")["vnp_Returnurl"]!;
+            string vnp_Url = _configuration.GetSection("VNPay")["vnp_Url"]!;
+            string vnp_TmnCode = _configuration.GetSection("VNPay")["vnp_TmnCode"]!;
+            string vnp_HashSecret = _configuration.GetSection("VNPay")["vnp_HashSecret"]!;
 
-            // Send the user to PayPal to approve the payment
-            return approvalUrl!.href;
+            //Get payment input
+            OrderInfo order = new OrderInfo();
+            order.OrderId = orderInfor.Id.ToString();
+            order.Amount = (long)total;
+            order.Status = "0";
+            order.CreatedDate = DateTime.Now;
+
+            //Save order to db
+
+            //Build URL for VNPAY
+            VnPayLibrary vnpay = new VnPayLibrary();
+
+            vnpay.AddRequestData("vnp_Version", VnPayLibrary.VERSION);
+            vnpay.AddRequestData("vnp_Command", "pay");
+            vnpay.AddRequestData("vnp_TmnCode", vnp_TmnCode);
+            vnpay.AddRequestData("vnp_Amount", (order.Amount * 100).ToString());
+
+            //Chose payment method
+            //vnpay.AddRequestData("vnp_BankCode", "VNPAYQR");
+            //vnpay.AddRequestData("vnp_BankCode", "VNBANK"); //VNBANK stand for VietNam Bank
+            //vnpay.AddRequestData("vnp_BankCode", "INTCARD"); //INTCARD stands for international card
+
+            vnpay.AddRequestData("vnp_CreateDate", order.CreatedDate.ToString("yyyyMMddHHmmss"));
+            vnpay.AddRequestData("vnp_CurrCode", "VND");
+            vnpay.AddRequestData("vnp_IpAddr", Dto.Utils.GetIpAddress());
+
+            //Chose language
+            vnpay.AddRequestData("vnp_Locale", "vn");
+            //vnpay.AddRequestData("vnp_Locale", "en");
+            vnpay.AddRequestData("vnp_OrderInfo", "Thanh toan don hang: " + order.OrderId);
+            vnpay.AddRequestData("vnp_OrderType", "other"); //default value: order
+
+            vnpay.AddRequestData("vnp_ReturnUrl", vnp_Returnurl);
+            vnpay.AddRequestData("vnp_TxnRef", orderId.ToString()); //Mã tham chiếu của giao dịch tại hệ thống của merchant. Mã này là duy nhất dùng để phân biệt các đơn hàng gửi sang VNPAY. Không được trùng lặp trong ngày
+
+            //Add Params of 2.1.0 Version
+            //Billing
+
+            string paymentUrl = vnpay.CreateRequestUrl(vnp_Url, vnp_HashSecret);
+            return paymentUrl;
         }
 
         public async Task<OrderDto> GetById(string customerId, Guid id)
@@ -325,6 +393,22 @@ namespace LandPApi.Service
             order!.PaidAt = DateTime.Now;
             _repoOrder.Update(order);
             _repoOrder.Save();
+        }
+
+        public bool checkSum(long vnp_Amount, string vnp_BankCode, string vnp_BankTranNo, string vnp_CardType, string vnp_OrderInfo, string vnp_PayDate, string vnp_ResponseCode, string vnp_TmnCode, int vnp_TransactionNo, string vnp_TransactionStatus, string vnp_TxnRef, string vnp_SecureHash)
+        {
+            string vnp_HashSecret = _configuration.GetSection("VNPay")["vnp_HashSecret"]!;
+            VnPayLibrary vnpay = new VnPayLibrary();
+            bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, vnp_HashSecret);
+            if (checkSignature)
+            {
+                if (vnp_ResponseCode == "00" && vnp_TransactionStatus == "00")
+                {
+                    //Thanh toan thanh cong
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
