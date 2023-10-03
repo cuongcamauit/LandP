@@ -1,12 +1,9 @@
-﻿using LandPApi.Data;
-using LandPApi.Dto;
+﻿using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.View;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Claims;
 
 namespace LandPApi.Controllers
@@ -29,11 +26,12 @@ namespace LandPApi.Controllers
         {
             var result = await _cartItemService.GetAllAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
             return Ok(
-                new Response {
+                new Response
+                {
                     Success = true,
                     Message = "Get all current user's cart items",
-                    Data = result 
-            });
+                    Data = result
+                });
         }
 
         // GET: api/CartItems/5
@@ -59,7 +57,7 @@ namespace LandPApi.Controllers
                     Success = true,
                     Message = "Get an user's cart item",
                     Data = cartItem
-                }) ;
+                });
         }
 
         // PUT: api/CartItems/5

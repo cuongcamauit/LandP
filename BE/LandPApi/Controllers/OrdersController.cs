@@ -165,7 +165,7 @@ namespace LandPApi.Controllers
             });
         }
 
-        [HttpPut("PaypalCheckout/{orderId}")]
+        [HttpGet("Checkout/{orderId}")]
         public IActionResult PaypalCheckout(Guid orderId, string? opt = "PayPal")
         {
             if (ModelState.IsValid)
@@ -210,16 +210,21 @@ namespace LandPApi.Controllers
             }
             return Content("<script>window.close();</script>", "text/html");
         } 
-        [HttpGet("CheckoutSuccess")]
-        public IActionResult CheckoutSuccess(Guid orderId)
+        [HttpGet("PaypalSuccess")]
+        public IActionResult CheckoutSuccess(string paymentid, string token)
         {
-            // xu ly thanh true
-            _orderService.isPaid(orderId);
+            Guid orderId = _orderService.confirm(paymentid);
+            if (orderId != Guid.Empty)
+            {
+                // xu ly thanh true
+                _orderService.isPaid(orderId);
+            }
+
             return Content("<script>window.close();</script>", "text/html");
             //return Redirect($"{_configuration["UIUrl"]}/order/orderId");
         }
 
-        [HttpGet("CheckoutFail")]
+        [HttpGet("PaypalFail")]
         public IActionResult CheckoutFail()
         {
             return Content("<script>window.close();</script>", "text/html");

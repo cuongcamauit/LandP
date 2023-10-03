@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace LandPApi.Controllers
 {
@@ -7,6 +6,6 @@ namespace LandPApi.Controllers
     [ApiController]
     public class AttributesController : ControllerBase
     {
-        
+
     }
 }

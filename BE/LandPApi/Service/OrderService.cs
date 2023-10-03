@@ -5,13 +5,10 @@ using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.Utils;
 using LandPApi.View;
-using MailKit.Search;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using PayPal.Api;
-using System.Configuration;
 using System.Security.Claims;
-using System.Web.Http.Results;
-using static Google.Cloud.Dialogflow.V2.Intent.Types.Message.Types.CarouselSelect.Types;
 using Item = PayPal.Api.Item;
 
 namespace LandPApi.Service
@@ -26,16 +23,18 @@ namespace LandPApi.Service
         private readonly IRepository<Models.Address> _repoAdd;
         private readonly IRepository<Product> _repoPro;
         private readonly IMapper _mapper;
+        private readonly IMemoryCache _cache;
         private readonly double exchangeRate = 23000;
 
-        public OrderService(IRepository<Models.Order> repoOrder, 
-                            IRepository<CartItem> repoCart, 
-                            IRepository<OrderDetail> repoDetail, 
+        public OrderService(IRepository<Models.Order> repoOrder,
+                            IRepository<CartItem> repoCart,
+                            IRepository<OrderDetail> repoDetail,
                             IRepository<HistoryStatus> repoHis,
                             IRepository<Models.Address> repoAdd,
                             IRepository<Product> repoPro,
                             IMapper mapper,
-                            IConfiguration configuration)
+                            IConfiguration configuration,
+                            IMemoryCache cache)
         {
             _configuration = configuration;
             _repoOrder = repoOrder;
@@ -45,6 +44,7 @@ namespace LandPApi.Service
             _repoAdd = repoAdd;
             _repoPro = repoPro;
             _mapper = mapper;
+            _cache = cache;
         }
 
         public async Task<double> GetTotal(string customerId, OrderView view)
@@ -62,7 +62,7 @@ namespace LandPApi.Service
             }
             return total;
         }
-    
+
 
         public async Task<OrderDto?> Add(string customerId, OrderView view)
         {
@@ -91,8 +91,8 @@ namespace LandPApi.Service
                     item.Quantity > (await _repoPro.ReadByCondition(e => e.Id == item.ProductId).FirstOrDefaultAsync())!.Quantity)
                     d++;
             }
-                
-            if (cartItem.Count()-d != view.productIds!.Count())
+
+            if (cartItem.Count() - d != view.productIds!.Count())
                 return null;
 
             // everything is fine
@@ -113,13 +113,13 @@ namespace LandPApi.Service
                     ProductId = item,
                     Quantity = entityCart!.Quantity
                 });
-                total += entityPro.GetNowPrice() * entityCart.Quantity; 
+                total += entityPro.GetNowPrice() * entityCart.Quantity;
 
                 entityPro.Quantity -= entityCart.Quantity;
                 _repoPro.Update(entityPro);
                 _repoCart.Delete(entityCart);
             }
-            
+
             var postData = new PostData
             {
                 insurance_value = Convert.ToInt32(total),
@@ -147,7 +147,7 @@ namespace LandPApi.Service
         public void Update(ClaimsPrincipal user, Guid orderId, Status status, bool isPaid)
         {
             var order = _repoOrder.ReadByCondition(o => o.Id == orderId);
-            
+
             if (order == null)
             {
                 return;
@@ -176,7 +176,7 @@ namespace LandPApi.Service
 
             if (roles.Contains("Admin") && statusOrder != Status.Canceled)
             {
-                
+
                 var historyStatus = new HistoryStatus
                 {
                     Status = status,
@@ -239,7 +239,7 @@ namespace LandPApi.Service
             var apiContext = PaymentUtils.GetApiContext(_configuration);
 
             var listDetail = _repoDetail.ReadByCondition(o => o.OrderId == orderId).Include(o => o.Product);
-                      
+
 
             var itemList = new ItemList()
             {
@@ -292,8 +292,8 @@ namespace LandPApi.Service
                     },
                 redirect_urls = new RedirectUrls
                 {
-                    return_url = _configuration["AppUrl"] + @"/api/Orders/CheckoutSuccess?orderId=" + orderId,
-                    cancel_url = _configuration["AppUrl"] + @"/api/Orders/CheckoutFail"
+                    return_url = _configuration["AppUrl"] + @"/api/Orders/PaypalSuccess",
+                    cancel_url = _configuration["AppUrl"] + @"/api/Orders/PaypalFail"
                 }
             };
 
@@ -306,6 +306,12 @@ namespace LandPApi.Service
                     createdPayment.links.FirstOrDefault(
                         x => x.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase));
 
+                if (!_cache.TryGetValue(createdPayment.id, out Guid orderIdSaved))
+                {
+                    var cacheEntryOptions = new MemoryCacheEntryOptions()
+                                            .SetSlidingExpiration(TimeSpan.FromDays(3));
+                    _cache.Set(createdPayment.id, orderId);
+                }
                 // Send the user to PayPal to approve the payment
                 return approvalUrl!.href;
             }
@@ -314,14 +320,13 @@ namespace LandPApi.Service
                 Console.Write(ex);
                 return "";
             }
-            
+
 
             //// Save a reference to the paypal payment
             //paymentEntity.PaymentServiceReference = createdPayment.id;
             //_paymentRepository.Add(paymentEntity);
             //_paymentRepository.SaveAll();
 
-            
         }
         public string VNPayCheckOut(Guid orderId)
         {
@@ -409,6 +414,16 @@ namespace LandPApi.Service
                 }
             }
             return false;
+        }
+
+        public Guid confirm(string paymentid)
+        {
+            if (_cache.TryGetValue(paymentid, out Guid orderId))
+            {
+                _cache.Remove(paymentid);
+                return orderId;
+            }
+            return Guid.Empty;
         }
     }
 }

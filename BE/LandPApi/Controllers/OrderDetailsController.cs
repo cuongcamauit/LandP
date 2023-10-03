@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LandPApi.Data;
-using LandPApi.Models;
+﻿using LandPApi.Dto;
 using LandPApi.IService;
-using System.Security.Claims;
-using LandPApi.Dto;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LandPApi.Controllers
 {
