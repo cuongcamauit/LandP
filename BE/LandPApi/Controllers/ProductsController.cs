@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using LandPApi.Models;
+﻿using LandPApi.Dto;
 using LandPApi.IService;
-using LandPApi.Dto;
 using LandPApi.View;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Security.Claims;
 
@@ -22,7 +21,7 @@ namespace LandPApi.Controllers
 
 
         // GET: api/Products
-        [HttpPost("/search")]
+        [HttpPost("search")]
         public IActionResult GetProducts(SearchInfor searchInfor)
         {
             var result = _productService.GetAllAsync(searchInfor);

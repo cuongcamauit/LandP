@@ -27,7 +27,7 @@ namespace LandPApi.Models
         public ICollection<Review>? Reviews { get; set; }
         public ICollection<Document>? Documents { get; set; }
         public ICollection<ProductPrice>? ProductPrices { get; set; }
-        public ICollection<AttributeSpec> AttributeSpecs { get; set; }
+        public ICollection<AttributeSpec>? AttributeSpecs { get; set; }
         public double GetNowPrice(DateTime? datenow = null)
         {
             if (datenow == null)
