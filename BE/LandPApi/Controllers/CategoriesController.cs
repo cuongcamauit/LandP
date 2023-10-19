@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using LandPApi.Models;
+﻿using LandPApi.Dto;
 using LandPApi.IService;
-using LandPApi.Service;
-using System.Drawing.Drawing2D;
-using LandPApi.Dto;
 using LandPApi.View;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
 namespace LandPApi.Controllers

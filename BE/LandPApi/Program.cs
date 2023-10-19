@@ -8,13 +8,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Configuration;
-using System.Net.Http.Headers;
-using System.Security.Cryptography.Xml;
-using System.Security.Policy;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -34,7 +29,8 @@ namespace LandPApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             //------------------------------------------------//
-            builder.Services.AddDbContextPool<ApplicationDbContext>(options => {
+            builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
+            {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             }, poolSize: 128);
             Console.WriteLine(builder.Configuration["demo"]);
@@ -42,7 +38,8 @@ namespace LandPApi
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            builder.Services.AddAuthentication(options => {
+            builder.Services.AddAuthentication(options =>
+            {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -84,6 +81,8 @@ namespace LandPApi
             builder.Services.AddScoped<ICartItemService, CartItemService>();
             builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<ISlugService, SlugService>();
+            builder.Services.AddScoped<ISlugProductService, SlugProductService>();
             builder.Services.AddScoped<IViewService, ViewService>();
             builder.Services.AddScoped<IReviewService, ReviewService>();
             builder.Services.AddScoped<ICaculateOrderService, CaculateOrderService>();
@@ -148,15 +147,15 @@ namespace LandPApi
             app.UseAuthentication();
 
             app.UseAuthorization();
-            
+
             app.MapControllers();
 
             app.UseStaticFiles();
 
             app.MapRazorPages();
 
-            //app.UseMiddleware<CheckAcessMiddleware>();
-            
+            app.UseMiddleware<CheckAcessMiddleware>();
+
             app.Run();
         }
     }

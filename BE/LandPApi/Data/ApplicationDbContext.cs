@@ -1,6 +1,4 @@
-﻿using LandPApi.IService;
-using LandPApi.Models;
-using LandPApi.Service;
+﻿using LandPApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +25,8 @@ namespace LandPApi.Data
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductPrice> ProductPrices { get; set; }
+        public DbSet<Slug> Slugs { get; set; }
+        public DbSet<SlugProduct> SlugProducts { get; set; }
         public DbSet<LandPApi.Models.View> Views { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Document> Documents { get; set; }
@@ -55,7 +55,7 @@ namespace LandPApi.Data
 
                 entity.HasMany(o => o.AttributeSpecs)
                         .WithOne(o => o.Attribute)
-                        .HasForeignKey(o => o.AttributeId);           
+                        .HasForeignKey(o => o.AttributeId);
             });
 
             builder.Entity<AttributeGroup>(entity =>
@@ -73,7 +73,7 @@ namespace LandPApi.Data
 
             builder.Entity<AttributeSpec>(entity =>
             {
-                entity.HasKey(o => new { o.ProductId, o.AttributeId});
+                entity.HasKey(o => new { o.ProductId, o.AttributeId });
 
                 entity.HasOne(o => o.Product)
                         .WithMany(o => o.AttributeSpecs)
@@ -169,7 +169,7 @@ namespace LandPApi.Data
 
             builder.Entity<OrderDetail>(entity =>
             {
-                entity.HasKey(o => new {o.OrderId, o.ProductId});
+                entity.HasKey(o => new { o.OrderId, o.ProductId });
 
                 entity.HasOne(o => o.Order)
                         .WithMany(o => o.OrderDetails)
@@ -218,6 +218,10 @@ namespace LandPApi.Data
                 entity.HasMany(o => o.AttributeSpecs)
                         .WithOne(o => o.Product)
                         .HasForeignKey(o => o.ProductId);
+
+                entity.HasMany(o => o.SlugProducts)
+                        .WithOne(o => o.Product)
+                        .HasForeignKey(o => o.ProductId);
             });
 
             builder.Entity<ProductPrice>(entity =>
@@ -233,7 +237,7 @@ namespace LandPApi.Data
 
             builder.Entity<Review>(entity =>
             {
-                entity.HasKey(o => new { o.CustomerId, o.ProductId, o.OrderId});
+                entity.HasKey(o => new { o.CustomerId, o.ProductId, o.OrderId });
 
                 entity.HasOne(o => o.Customer)
                         .WithMany(o => o.Reviews)
@@ -248,9 +252,31 @@ namespace LandPApi.Data
                         .HasForeignKey(o => o.OrderId);
             });
 
+            builder.Entity<Slug>(entity =>
+            {
+                entity.HasKey(o => o.Id);
+
+                entity.HasMany(o => o.SlugProducts)
+                        .WithOne(o => o.Slug)
+                        .HasForeignKey(o => o.SlugId);
+            });
+
+            builder.Entity<SlugProduct>(entity =>
+            {
+                entity.HasKey(o => new { o.SlugId, o.ProductId });
+
+                entity.HasOne(o => o.Product)
+                        .WithMany(o => o.SlugProducts)
+                        .HasForeignKey(o => o.ProductId);
+
+                entity.HasOne(o => o.Slug)
+                        .WithMany(o => o.SlugProducts)
+                        .HasForeignKey(o => o.SlugId);
+            });
+
             builder.Entity<LandPApi.Models.View>(entity =>
             {
-                entity.HasKey(o => new {o.CustomerId, o.ProductId});
+                entity.HasKey(o => new { o.CustomerId, o.ProductId });
 
                 entity.HasOne(o => o.Customer)
                         .WithMany(o => o.Views)
@@ -279,22 +305,22 @@ namespace LandPApi.Data
 
             builder.Entity<Customer>().HasData(
                 new Customer { Id = superId, Name = "Super Admin", UserName = "landpsupadmika@gmail.com", PasswordHash = hasher.HashPassword(null!, "Superadmin.123"), EmailConfirmed = true, Email = "landpsupadmika@gmail.com", NormalizedEmail = "landpsupadmika@gmail.com" },
-                new Customer { Id = adminId, Name = "Admin"      , UserName = "landpadmika@gmail.com"   , PasswordHash = hasher.HashPassword(null!, "Admin.123")     , EmailConfirmed = true, Email = "landpadmika@gmail.com"   , NormalizedEmail = "landpadmika@gmail.com" },
-                new Customer { Id = userId , Name = "User"       , UserName = "landpuserdemo@gmail.com" , PasswordHash = hasher.HashPassword(null!, "Userdemo.123")  , EmailConfirmed = true, Email = "landpuserdemo@gmail.com" , NormalizedEmail = "landpuserdemo@gmail.com" },
-                new Customer { Id = user1Id, Name = "User1"      , UserName = "landpuserdemo1@gmail.com", PasswordHash = hasher.HashPassword(null!, "Userdemo1.123") , EmailConfirmed = true, Email = "landpuserdemo1@gmail.com", NormalizedEmail = "landpuserdemo1@gmail.com"}
+                new Customer { Id = adminId, Name = "Admin", UserName = "landpadmika@gmail.com", PasswordHash = hasher.HashPassword(null!, "Admin.123"), EmailConfirmed = true, Email = "landpadmika@gmail.com", NormalizedEmail = "landpadmika@gmail.com" },
+                new Customer { Id = userId, Name = "User", UserName = "landpuserdemo@gmail.com", PasswordHash = hasher.HashPassword(null!, "Userdemo.123"), EmailConfirmed = true, Email = "landpuserdemo@gmail.com", NormalizedEmail = "landpuserdemo@gmail.com" },
+                new Customer { Id = user1Id, Name = "User1", UserName = "landpuserdemo1@gmail.com", PasswordHash = hasher.HashPassword(null!, "Userdemo1.123"), EmailConfirmed = true, Email = "landpuserdemo1@gmail.com", NormalizedEmail = "landpuserdemo1@gmail.com" }
             );
 
             builder.Entity<IdentityUserRole<string>>().HasData(
                 new IdentityUserRole<string> { RoleId = superId, UserId = superId },
-                new IdentityUserRole<string> { RoleId = adminId, UserId = adminId},
-                new IdentityUserRole<string> { RoleId = userId, UserId = userId},
-                new IdentityUserRole<string> { RoleId = userId, UserId = user1Id}
+                new IdentityUserRole<string> { RoleId = adminId, UserId = adminId },
+                new IdentityUserRole<string> { RoleId = userId, UserId = userId },
+                new IdentityUserRole<string> { RoleId = userId, UserId = user1Id }
             );
             var addresuserId = Guid.Parse("0750d8d3-bfff-45f2-b081-2a86ffe91bfd");
             var addresuser1Id = Guid.Parse("3fd64b58-5ded-40ed-876c-027bcc759a75");
             builder.Entity<Address>().HasData(
-                new Address { Id = addresuserId, CustomerId = userId, ProvinceName = "Cà Mau", ProvinceId = 252, DistrictName = "Thành phố Cà Mau", DistrictId = 1654,  WardName = "8", WardCode = "610107", Detail = "Khóm 5"},    
-                new Address { Id = addresuser1Id, CustomerId = user1Id, ProvinceName = "Thành phố Hồ Chí Minh", ProvinceId = 202, DistrictName = "Quận 12", DistrictId = 1454, WardName = "Phường Tân Chánh Hiệp", WardCode = "21204", Detail = "Đường Tô Ký"}    
+                new Address { Id = addresuserId, CustomerId = userId, ProvinceName = "Cà Mau", ProvinceId = 252, DistrictName = "Thành phố Cà Mau", DistrictId = 1654, WardName = "8", WardCode = "610107", Detail = "Khóm 5" },
+                new Address { Id = addresuser1Id, CustomerId = user1Id, ProvinceName = "Thành phố Hồ Chí Minh", ProvinceId = 202, DistrictName = "Quận 12", DistrictId = 1454, WardName = "Phường Tân Chánh Hiệp", WardCode = "21204", Detail = "Đường Tô Ký" }
             );
             //----------------------------------------------------------//
             var smartphoneId = Guid.Parse("bc17dda5-9e53-434d-ab30-32452bfc7d35");
@@ -423,13 +449,13 @@ namespace LandPApi.Data
                     Description = "Màn hình:\r\n\r\nPLS TFT LCD6.6\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 12\r\nCamera sau:\r\n\r\nChính 50 MP & Phụ 5 MP, 2 MP, 2 MP\r\nCamera trước:\r\n\r\n8 MP\r\nChip:\r\n\r\nSnapdragon 680\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n128 GB\r\nSIM:\r\n\r\n2 Nano SIMHỗ trợ 4G\r\nPin, Sạc:\r\n\r\n5000 mAh25 W",
                     Price = 4990000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1k0K8y37j9HLnI8C7qYy92mjOzgnY4kSL",
-                    
+
                     Quantity = 100,
                     //PercentSale = 0,
                     CategoryId = smartphoneId,
                     BrandId = samsungId,
                     FolderId = "12oUrvgsYTJhM4WkmXuWd1f8NmbvOe9Gn"
-                }, 
+                },
                 new Product()
                 {
                     Id = ip12Id,
@@ -437,7 +463,7 @@ namespace LandPApi.Data
                     Description = "Màn hình:\r\n\r\nOLED6.1\"Super Retina XDR\r\nHệ điều hành:\r\n\r\niOS 15\r\nCamera sau:\r\n\r\n2 camera 12 MP\r\nCamera trước:\r\n\r\n12 MP\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n64 GB\r\nSIM:\r\n\r\n1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n2815 mAh20 W",
                     Price = 15590000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1yAleLMwDTEfXJNZF_eM8s4vkU8TFm9By",
-                    
+
                     Quantity = 50,
                     //PercentSale = 20,
                     CategoryId = smartphoneId,
@@ -451,7 +477,7 @@ namespace LandPApi.Data
                     Description = "Xiaomi Redmi Note 12 Pro 5G là mẫu điện thoại thuộc dòng Redmi Note được chính thức ra mắt trong năm 2023, máy mang trên mình những cải tiến vượt trội về thiết kế, camera và hiệu năng, đáp ứng mượt mà hầu hết các nhu cầu khác nhau của người dùng.",
                     Price = 9960000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=190zjmRvUnsTZdB4iDizNBjqKI_fk5L3a",
-                    
+
                     Quantity = 50,
                     //PercentSale = 2,
                     BrandId = xiaomiId,
@@ -465,7 +491,7 @@ namespace LandPApi.Data
                     Description = "Xiaomi 12T series đã ra mắt trong sự kiện của Xiaomi vào ngày 4/10, trong đó có Xiaomi 12T 5G 128GB - máy sở hữu nhiều công nghệ hàng đầu trong giới smartphone tiêu biểu như: Chipset mạnh mẽ đến từ MediaTek, camera 108 MP sắc nét cùng khả năng sạc 120 W siêu nhanh.",
                     Price = 9890000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=165CbvBDjo8PPjxn2MPHVe2YrZPZ1oCwd",
-                    
+
                     Quantity = 3,
                     //PercentSale = 0,
                     BrandId = xiaomiId,
@@ -479,7 +505,7 @@ namespace LandPApi.Data
                     Description = "Nếu bạn đang tìm kiếm một chiếc laptop gaming nhưng vẫn sở hữu một mức giá phải chăng thì laptop Asus TUF Gaming F15 FX506LHB i5 (HN188W) sẽ là sự lựa chọn đáng cân nhắc với card đồ họa rời NVIDIA GeForce GTX mạnh mẽ cùng phong cách thiết kế cứng cáp, độc đáo. ",
                     Price = 16990000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1s_UzQewLQ4zb7cX25cwUYAlVa3CpuCP9",
-                    
+
                     Quantity = 50,
                     //PercentSale = 0,
                     BrandId = asusId,
@@ -493,7 +519,7 @@ namespace LandPApi.Data
                     Description = "Laptop Dell Vostro 3510 i5 (P112F002BBL) sở hữu cấu hình mạnh mẽ, đa nhiệm mượt mà trên sức mạnh của bộ vi xử lý Intel thế hệ 11, cùng một thiết kế đơn giản mà sang đẹp, sẽ là lựa chọn đắt giá đáp ứng nhu cầu học tập, làm việc hay giải trí của bạn.",
                     Price = 17990000,
                     ImageUrl = "https://drive.google.com/uc?export=view&id=1ELd9fd2dk2meSyxz-hVnsIp8_gFrnHxp",
-                    
+
                     Quantity = 10,
                     //PercentSale = 20,
                     BrandId = dellId,
@@ -570,7 +596,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Laptop Asus Gaming ROG Strix G15",
-                    Description = "Laptop Asus Gaming ROG Strix G15 G513IH R7 (HN015W) là một trợ thủ đắc lực cho mọi game thủ chuyên nghiệp với phong cách thiết kế vô cùng độc đáo, ấn tượng chuẩn gaming cùng bộ cấu hình đầy mạnh mẽ. " ,
+                    Description = "Laptop Asus Gaming ROG Strix G15 G513IH R7 (HN015W) là một trợ thủ đắc lực cho mọi game thủ chuyên nghiệp với phong cách thiết kế vô cùng độc đáo, ấn tượng chuẩn gaming cùng bộ cấu hình đầy mạnh mẽ. ",
                     Price = 22990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/270031/Slider/vi-vn-asus-rog-strix-gaming-g513ih-r7-hn015w-1.jpg",
                     Quantity = 50,
@@ -594,7 +620,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Asus Gaming ROG Strix SCAR 17 G733PZ ",
-                    Description = "Laptop Asus Gaming ROG Strix SCAR 17 G733PZ R9 7945HX (LL980W) được thiết kế để mang đến trải nghiệm chơi game tốt nhất, cung cấp hiệu suất mạnh mẽ với cấu hình ấn tượng, chắc chắn sẽ làm hài lòng những game thủ khó tính nhất." ,
+                    Description = "Laptop Asus Gaming ROG Strix SCAR 17 G733PZ R9 7945HX (LL980W) được thiết kế để mang đến trải nghiệm chơi game tốt nhất, cung cấp hiệu suất mạnh mẽ với cấu hình ấn tượng, chắc chắn sẽ làm hài lòng những game thủ khó tính nhất.",
                     Price = 84000000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/305745/asus-gaming-rog-strix-scar-17-g733pz-r9-ll980w-5.jpg",
                     Quantity = 10,
@@ -618,7 +644,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Asus Vivobook S 14 Flip TP3402VA ",
-                    Description = "Laptop Asus Vivobook S 14 Flip TP3402VA i5 (LZ031W) được thiết kế với sự cân bằng tuyệt vời giữa sức mạnh và tính di động, một chiếc laptop cao cấp được tích hợp nhiều tính năng và cấu hình tiên tiến, sẵn sàng đáp ứng mọi nhu cầu sử dụng của bạn." ,
+                    Description = "Laptop Asus Vivobook S 14 Flip TP3402VA i5 (LZ031W) được thiết kế với sự cân bằng tuyệt vời giữa sức mạnh và tính di động, một chiếc laptop cao cấp được tích hợp nhiều tính năng và cấu hình tiên tiến, sẵn sàng đáp ứng mọi nhu cầu sử dụng của bạn.",
                     Price = 20990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304869/Slider/vi-vn-asus-vivobook-s-14-flip-tp3402va-i5-lz031w--(3).jpg",
                     Quantity = 20,
@@ -630,7 +656,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Inspiron 16 5620",
-                    Description = "Khi nhắc đến dòng laptop học tập - văn phòng thì bạn không thể nào bỏ qua laptop Dell Inspiron 16 5620 i7 (N6I7110W1) với hiệu năng vượt trội, thiết kế hiện đại và gọn nhẹ phù hợp với nhu cầu sử dụng của sinh viên và nhân viên văn phòng cần phải di chuyển thường xuyên." ,
+                    Description = "Khi nhắc đến dòng laptop học tập - văn phòng thì bạn không thể nào bỏ qua laptop Dell Inspiron 16 5620 i7 (N6I7110W1) với hiệu năng vượt trội, thiết kế hiện đại và gọn nhẹ phù hợp với nhu cầu sử dụng của sinh viên và nhân viên văn phòng cần phải di chuyển thường xuyên.",
                     Price = 21990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/292396/Slider/vi-vn-dell-inspiron-16-5620-i7-n6i7110w1-1.jpg",
                     Quantity = 20,
@@ -642,7 +668,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Gaming Alienware m15 R6 ",
-                    Description = "Nhắc đến dòng laptop gaming, nhà Dell cũng đã sở hữu cho mình một siêu phẩm không thể bỏ qua là chiếc laptop Dell Alienware m15 R6 i7 (P109F001DBL) với card đồ hoạ RTX 3060 6 GB mạnh mẽ sẵn sàng cùng bạn chinh phục mọi thử thách chiến game." ,
+                    Description = "Nhắc đến dòng laptop gaming, nhà Dell cũng đã sở hữu cho mình một siêu phẩm không thể bỏ qua là chiếc laptop Dell Alienware m15 R6 i7 (P109F001DBL) với card đồ hoạ RTX 3060 6 GB mạnh mẽ sẵn sàng cùng bạn chinh phục mọi thử thách chiến game.",
                     Price = 47490000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/271545/Slider/vi-vn-dell-gaming-alienware-m15-r6-i7-p109f001dbl-1.jpg",
                     Quantity = 20,
@@ -654,7 +680,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Gaming G15 5511 ",
-                    Description = "Không những mang đến cho người dùng hiệu năng ấn tượng nhờ con chip Intel thế hệ 11 tân tiến cùng card rời RTX 30 series, laptop Dell Gaming G15 5511 i5 11400H (70266676) còn sở hữu thiết kế thời thượng, lôi cuốn, hứa hẹn sẽ là người cộng sự lý tưởng cùng bạn chinh phục mọi chiến trường." ,
+                    Description = "Không những mang đến cho người dùng hiệu năng ấn tượng nhờ con chip Intel thế hệ 11 tân tiến cùng card rời RTX 30 series, laptop Dell Gaming G15 5511 i5 11400H (70266676) còn sở hữu thiết kế thời thượng, lôi cuốn, hứa hẹn sẽ là người cộng sự lý tưởng cùng bạn chinh phục mọi chiến trường.",
                     Price = 21990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264354/Slider/dell-gaming-g15-5511-i5-70266676-fix-ab-01-1020x570-2.jpg",
                     Quantity = 30,
@@ -666,7 +692,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Inspiron 15 5515",
-                    Description = "Laptop Dell Inspiron 15 5515 R7 (N5R75700U104W1) sẽ là một ứng cử viên sáng giá trong phân khúc laptop học tập - văn phòng bởi lối thiết kế tao nhã, tối giản cùng những thông số kỹ thuật ấn tượng, đáp ứng tốt mọi nhu cầu cơ bản hằng ngày phục vụ cho mọi đối tượng người dùng đặc biệt là học sinh, sinh viên và dân văn phòng." ,
+                    Description = "Laptop Dell Inspiron 15 5515 R7 (N5R75700U104W1) sẽ là một ứng cử viên sáng giá trong phân khúc laptop học tập - văn phòng bởi lối thiết kế tao nhã, tối giản cùng những thông số kỹ thuật ấn tượng, đáp ứng tốt mọi nhu cầu cơ bản hằng ngày phục vụ cho mọi đối tượng người dùng đặc biệt là học sinh, sinh viên và dân văn phòng.",
                     Price = 17990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/267558/Slider/vi-vn-dell-inspiron-15-5515-r7-n5r75700u104w1-1.jpg",
                     Quantity = 10,
@@ -678,7 +704,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Inspiron 15 3520",
-                    Description = "Laptop Dell Inspiron 15 3520 i5 1235U (i5U085W11BLU) là phiên bản laptop học tập - văn phòng của nhà Dell khi sở hữu phong cách thiết kế tối giản nhưng không kém phần trẻ trung, bộ vi xử lý Intel Gen 12 và bộ Office bản quyền vĩnh viễn đáp ứng đầy đủ mọi nhu cầu học tập, văn phòng của người dùng." ,
+                    Description = "Laptop Dell Inspiron 15 3520 i5 1235U (i5U085W11BLU) là phiên bản laptop học tập - văn phòng của nhà Dell khi sở hữu phong cách thiết kế tối giản nhưng không kém phần trẻ trung, bộ vi xử lý Intel Gen 12 và bộ Office bản quyền vĩnh viễn đáp ứng đầy đủ mọi nhu cầu học tập, văn phòng của người dùng.",
                     Price = 16990000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/296921/Slider/vi-vn-dell-inspiron-15-3520-i5u085w11blu-1.jpg",
                     Quantity = 30,
@@ -690,7 +716,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Inspiron 15 3511",
-                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên." ,
+                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
                     Price = 12690000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
                     Quantity = 10,
@@ -702,7 +728,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Inspiron 15 3511",
-                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên." ,
+                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
                     Price = 12690000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
                     Quantity = 10,
@@ -714,7 +740,7 @@ namespace LandPApi.Data
                 {
                     Id = Guid.NewGuid(),
                     Name = "Dell Inspiron 15 3511",
-                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên." ,
+                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
                     Price = 12690000,
                     ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
                     Quantity = 10,
@@ -807,17 +833,17 @@ namespace LandPApi.Data
                 {
                     CustomerId = userId,
                     ProductId = xiaominote12pro5gId
-                }, 
+                },
                 new Models.View
                 {
                     CustomerId = user1Id,
                     ProductId = xiaomi12t5gId
-                }, 
+                },
                 new Models.View
                 {
                     CustomerId = user1Id,
                     ProductId = xiaominote12pro5gId
-                }, 
+                },
                 new Models.View
                 {
                     CustomerId = user1Id,
@@ -841,7 +867,7 @@ namespace LandPApi.Data
             var order9 = Guid.NewGuid();
             var order10 = Guid.NewGuid();
             var order11 = Guid.NewGuid();
-            
+
             builder.Entity<Order>().HasData(
                 new Order
                 {
@@ -1152,7 +1178,7 @@ namespace LandPApi.Data
                     OrderId = order1,
                     ProductId = ssa23Id,
                     Comment = "Good",
-                    Rating = 5                    
+                    Rating = 5
                 },
                 new Review
                 {
@@ -1309,7 +1335,7 @@ namespace LandPApi.Data
             );
 
 
-           
+
 
         }
     }

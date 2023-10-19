@@ -2,8 +2,6 @@
 using LandPApi.Dto;
 using LandPApi.Models;
 using LandPApi.View;
-using Microsoft.Build.Framework;
-using System.Security.Cryptography;
 
 namespace LandPApi.Helper
 {
@@ -14,7 +12,7 @@ namespace LandPApi.Helper
             CreateMap<Brand, BrandDto>().ReverseMap();
             CreateMap<BrandView, Brand>();
 
-            CreateMap<Category, CategoryDto>().ReverseMap();    
+            CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<CategoryView, Category>();
 
             CreateMap<Address, AddressDto>().ReverseMap();
@@ -27,14 +25,14 @@ namespace LandPApi.Helper
                 .ForMember(dest => dest.SoldQuantity, act => act.MapFrom(scr => scr.OrderDetails!.Sum(o => o.Quantity)))
                 .ForMember(dest => dest.Price, act => act.MapFrom(scr => scr.GetNowPrice(null)))
                 .ForMember(dest => dest.BasePrice, act => act.MapFrom(scr => scr.Price))
-                .ForMember(dest => dest.PercentSale, act => act.MapFrom(scr => (scr.Price-scr.GetNowPrice(null))*100/scr.Price))
+                .ForMember(dest => dest.PercentSale, act => act.MapFrom(scr => (scr.Price - scr.GetNowPrice(null)) * 100 / scr.Price))
                 .ForMember(dest => dest.ReviewQuantity, act => act.MapFrom(scr => scr.Reviews!.Count))
                ;
+            CreateMap<ProductView, Product>();
+
             CreateMap<ProductPrice, ProductPriceDto>()
                 .ReverseMap();
             CreateMap<ProductPriceView, ProductPrice>();
-
-            CreateMap<ProductView, Product>();
 
             CreateMap<CartItem, CartItemView>();
             CreateMap<CartItem, CartItemDto>();
@@ -46,10 +44,16 @@ namespace LandPApi.Helper
 
             CreateMap<HistoryStatus, HistoryStatusDto>();
 
+            CreateMap<SlugView, Slug>();
+            CreateMap<Slug, SlugDto>()
+                .ForMember(dest => dest.Products, act => act.MapFrom(scr => scr.GetProducts()));
+
+            CreateMap<SlugProductView, SlugProduct>();
+
             CreateMap<Review, ReviewDto>()
                 .ForMember(dest => dest.Name, act => act.MapFrom(scr => scr.Customer!.Name));
 
             CreateMap<Customer, CustomerDto>();
         }
-    }   
+    }
 }

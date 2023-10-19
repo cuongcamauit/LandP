@@ -31,6 +31,6 @@
         public Pagination? Pagination { get; set; }
         public string Query { get; set; } = "";
         public Sorting? Sorting { get; set; }
-
+        public String? Slug { get; set; }
     }
 }

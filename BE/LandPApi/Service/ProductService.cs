@@ -16,19 +16,23 @@ namespace LandPApi.Service
         private readonly IRepository<Models.View> _repoView;
         private readonly UserManager<Customer> _userManager;
         private readonly IMemoryCache _cache;
-        private readonly string ProductCacheKey = "products";
+        private readonly ISlugService _slugService;
+        public static readonly string ProductCacheKey = "products";
+        public static readonly string SlugCacheKey = "slugs";
 
         public ProductService(IRepository<Product> repository
                             , IRepository<Models.View> repoView
                             , IMapper mapper
                             , UserManager<Customer> userManager
                             , IDriveService driveService
-                            , IMemoryCache cache) : base(repository, mapper)
+                            , IMemoryCache cache
+                            , ISlugService slugService) : base(repository, mapper)
         {
             _driveService = driveService;
             _repoView = repoView;
             _userManager = userManager;
             _cache = cache;
+            _slugService = slugService;
         }
         public new ProductDto Create(ProductView view)
         {
@@ -106,9 +110,20 @@ namespace LandPApi.Service
         public object GetAllAsync(SearchInfor searchInfor)
         {
             var products = GetCache();
+            var slugs = GetSlugCache();
+
+            SlugDto? slug = null;
+            var check = true;
+            if ((searchInfor.Slug != "" && slugs.SingleOrDefault(o => o.Id == searchInfor.Slug) != null) ||
+                (searchInfor.Query != "" && slugs.SingleOrDefault(o => o.Id == searchInfor.Query) != null))
+            {
+                check = false;
+                slug = slugs.SingleOrDefault(o => o.Id == searchInfor.Slug)!;
+                products = slug.Products!.ToList();
+            }
 
             #region Searching
-            if (searchInfor.Query != "")
+            if (searchInfor.Query != "" && check)
             {
                 products = products!.Where(o => o.Name!.Contains(searchInfor.Query)).ToList();
             }
@@ -177,6 +192,8 @@ namespace LandPApi.Service
             return new
             {
                 products = _mapper.Map<List<ProductDto>>(result),
+                slugName = slug == null ? "" : slug.Title,
+                slug = slug == null ? "" : slug.Id,
                 pagination = new
                 {
                     currentPage = result.PageIndex,
@@ -252,6 +269,16 @@ namespace LandPApi.Service
             }
 
             return products!;
+        }
+        private List<SlugDto> GetSlugCache()
+        {
+            if (!_cache.TryGetValue(ProductCacheKey, out List<SlugDto>? slugs))
+            {
+                slugs = _slugService.GetAll();
+                _cache.Set(SlugCacheKey, slugs);
+            }
+
+            return slugs!;
         }
     }
 }
