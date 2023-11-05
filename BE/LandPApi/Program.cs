@@ -80,6 +80,7 @@ namespace LandPApi
 
             builder.Services.AddScoped<ICartItemService, CartItemService>();
             builder.Services.AddScoped<IHistoryStatusService, HistoryStatusService>();
+            builder.Services.AddScoped<IMenuService, MenuService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddScoped<ISlugService, SlugService>();
             builder.Services.AddScoped<ISlugProductService, SlugProductService>();

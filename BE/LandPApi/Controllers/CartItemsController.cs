@@ -66,7 +66,7 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PutCartItem(Guid id, CartItemView view)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || view.Quantity < 0)
             {
                 var message = string.Join(" | ", ModelState.Values
                             .SelectMany(v => v.Errors)
@@ -75,7 +75,7 @@ namespace LandPApi.Controllers
                 {
                     Success = false,
                     Message = "Some properties is wrong",
-                    Data = message,
+                    Data = view.Quantity < 0 ? "Quantity can't less than 0" : message,
                     StatusCode = 422
                 });
             }

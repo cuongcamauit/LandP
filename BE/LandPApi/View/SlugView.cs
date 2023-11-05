@@ -6,5 +6,6 @@
         public String? Id { get; set; }
         // use to show title of group products
         public String? Title { get; set; }
+        public bool IsSilder { get; set; } = false;
     }
 }

@@ -34,6 +34,22 @@ namespace LandPApi.Controllers
                 })
             });
         }
+        [HttpGet("Slider")]
+        public IActionResult GetSlider()
+        {
+            var listSlugDto = _slugService.GetSliders();
+            return Ok(new Response
+            {
+                Success = true,
+                StatusCode = 200,
+                Data = listSlugDto.Select(o => new
+                {
+                    id = o.Id,
+                    title = o.Title,
+                    products = _mapper.Map<List<ProductDto>>(o.Products)
+                })
+            });
+        }
         [HttpPost]
         public IActionResult Add(SlugView slugView)
         {

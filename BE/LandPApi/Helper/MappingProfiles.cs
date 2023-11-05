@@ -44,6 +44,10 @@ namespace LandPApi.Helper
 
             CreateMap<HistoryStatus, HistoryStatusDto>();
 
+            CreateMap<MenuView, Menu>();
+            CreateMap<Menu, MenuDto>()
+                .ForMember(dest => dest.SlugName, act => act.MapFrom(scr => scr.Slug.Title));
+
             CreateMap<SlugView, Slug>();
             CreateMap<Slug, SlugDto>()
                 .ForMember(dest => dest.Products, act => act.MapFrom(scr => scr.GetProducts()));

@@ -21,6 +21,7 @@ namespace LandPApi.Data
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<HistoryStatus> HistoryStatuses { get; set; }
+        public DbSet<Menu> Menus { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -136,6 +137,26 @@ namespace LandPApi.Data
 
                 entity.Property(o => o.Status)
                         .HasConversion(new EnumToStringConverter<Status>());
+            });
+
+            builder.Entity<Menu>(entity =>
+            {
+                entity.HasKey(o => o.slugId);
+
+                entity.HasOne(o => o.Slug)
+                        .WithOne(o => o.Menu)
+                        .HasForeignKey<Menu>(o => o.slugId);
+
+                entity.HasOne(o => o.ParentMenu)
+                        .WithMany(o => o.ChildrenMenu)
+                        .HasForeignKey(o => o.ParentId)
+                        .OnDelete(DeleteBehavior.ClientSetNull);
+
+                entity.HasMany(o => o.ChildrenMenu)
+                        .WithOne(o => o.ParentMenu)
+                        .HasForeignKey(o => o.ParentId)
+                        .OnDelete(DeleteBehavior.ClientSetNull);
+
             });
 
             builder.Entity<Order>(entity =>
@@ -259,7 +280,13 @@ namespace LandPApi.Data
                 entity.HasMany(o => o.SlugProducts)
                         .WithOne(o => o.Slug)
                         .HasForeignKey(o => o.SlugId);
+
+                entity.HasOne(o => o.Menu)
+                        .WithOne(o => o.Slug)
+                        .HasForeignKey<Slug>(o => o.MenuId)
+                        .IsRequired(false);
             });
+
 
             builder.Entity<SlugProduct>(entity =>
             {

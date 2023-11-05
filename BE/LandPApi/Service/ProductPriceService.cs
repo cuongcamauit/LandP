@@ -34,9 +34,9 @@ namespace LandPApi.Service
 
         public bool CheckPriceExist(ProductPriceView productPriceView)
         {
-            var productPrice = _repository.ReadByCondition(o => 
-            (o.FromDate <= productPriceView.FromDate && o.ToDate >= productPriceView.FromDate) || 
-            (o.FromDate <= productPriceView.ToDate && o.ToDate <= productPriceView.ToDate));
+            var productPrice = _repository.ReadByCondition(o => o.ProductId == productPriceView.ProductId &&
+            ((o.FromDate <= productPriceView.FromDate && o.ToDate >= productPriceView.FromDate) ||
+            (o.FromDate <= productPriceView.ToDate && o.ToDate <= productPriceView.ToDate))).FirstOrDefault();
             return productPrice != null;
         }
 

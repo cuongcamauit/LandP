@@ -75,6 +75,45 @@ namespace LandPApi.Service
             return _mapper.Map<SlugDto>(slug);
         }
 
+        public List<SlugDto> GetSliders()
+        {
+            var listSlug = _repository.ReadByCondition(o => o.IsDeleted == false && o.IsSilder == true)
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.Brand)
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.Category)
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.Views)
+
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.CartItems)
+
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.OrderDetails)
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.Reviews)
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.ProductPrices)
+
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.Documents)
+
+            .Include(o => o.SlugProducts)!
+                .ThenInclude(o => o.Product)
+                .ThenInclude(o => o!.AttributeSpecs);
+
+
+            return _mapper.Map<List<SlugDto>>(listSlug);
+        }
+
         public void UpdateCache(string cacheName)
         {
             var slugs = GetAll();

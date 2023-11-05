@@ -118,7 +118,7 @@ namespace LandPApi.Service
                 (searchInfor.Query != "" && slugs.SingleOrDefault(o => o.Id == searchInfor.Query) != null))
             {
                 check = false;
-                slug = slugs.SingleOrDefault(o => o.Id == searchInfor.Slug)!;
+                slug = slugs.SingleOrDefault(o => o.Id == searchInfor.Slug || o.Id == searchInfor.Query)!;
                 products = slug.Products!.ToList();
             }
 
@@ -248,6 +248,7 @@ namespace LandPApi.Service
         {
             var products = GetCache();
             var product = products.Where(o => o.Id == id).FirstOrDefault();
+            var productDto = _mapper.Map<ProductDto>(product);
             return _mapper.Map<ProductDto>(product);
         }
         private List<Product> GetCache()
