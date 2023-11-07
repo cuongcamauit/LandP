@@ -2,8 +2,8 @@
 {
     public class Attribute
     {
-        public string? Code { get; set; }
-        public List<string>? OptionsId { get; set; }
+        public int? Code { get; set; }
+        public List<int>? OptionsId { get; set; }
     }
     public class Filter
     {

@@ -16,6 +16,7 @@ namespace LandPApi.Data
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Attribute> Attributes { get; set; }
         public DbSet<AttributeGroup> AttributeGroups { get; set; }
+        public DbSet<AttributeOption> AttributeOptions { get; set; }
         public DbSet<AttributeSpec> AttributeSpecs { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
@@ -57,6 +58,10 @@ namespace LandPApi.Data
                 entity.HasMany(o => o.AttributeSpecs)
                         .WithOne(o => o.Attribute)
                         .HasForeignKey(o => o.AttributeId);
+
+                entity.HasMany(o => o.AttributeOptions)
+                        .WithOne(o => o.Attribute)
+                        .HasForeignKey(o => o.AttributeId);
             });
 
             builder.Entity<AttributeGroup>(entity =>
@@ -72,6 +77,19 @@ namespace LandPApi.Data
                         .HasForeignKey(o => o.AttributeId);
             });
 
+            builder.Entity<AttributeOption>(entity =>
+            {
+                entity.HasKey(o => new { o.Id, o.AttributeId });
+
+                entity.HasOne(o => o.Attribute)
+                        .WithMany(o => o.AttributeOptions)
+                        .HasForeignKey(o => o.AttributeId);
+
+                entity.HasMany(o => o.AttributeSpecs)
+                        .WithOne(o => o.Option)
+                        .HasForeignKey(o => new { o.OptionID, o.AttributeId });
+            });
+
             builder.Entity<AttributeSpec>(entity =>
             {
                 entity.HasKey(o => new { o.ProductId, o.AttributeId });
@@ -83,6 +101,10 @@ namespace LandPApi.Data
                 entity.HasOne(o => o.Attribute)
                         .WithMany(o => o.AttributeSpecs)
                         .HasForeignKey(o => o.AttributeId);
+
+                entity.HasOne(o => o.Option)
+                        .WithMany(o => o.AttributeSpecs)
+                        .HasForeignKey(o => new { o.OptionID, o.AttributeId });
             });
 
             builder.Entity<Brand>(entity =>

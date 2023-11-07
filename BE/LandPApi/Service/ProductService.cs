@@ -7,6 +7,7 @@ using LandPApi.View;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Attribute = LandPApi.Models.Attribute;
 
 namespace LandPApi.Service
 {
@@ -14,6 +15,8 @@ namespace LandPApi.Service
     {
         private readonly IDriveService _driveService;
         private readonly IRepository<Models.View> _repoView;
+        private readonly IRepository<AttributeOption> _repoOption;
+        private readonly IRepository<Attribute> _repoAttribute;
         private readonly UserManager<Customer> _userManager;
         private readonly IMemoryCache _cache;
         private readonly ISlugService _slugService;
@@ -22,6 +25,8 @@ namespace LandPApi.Service
 
         public ProductService(IRepository<Product> repository
                             , IRepository<Models.View> repoView
+                            , IRepository<Attribute> repoAttribute
+                            , IRepository<AttributeOption> repoOption
                             , IMapper mapper
                             , UserManager<Customer> userManager
                             , IDriveService driveService
@@ -30,6 +35,8 @@ namespace LandPApi.Service
         {
             _driveService = driveService;
             _repoView = repoView;
+            _repoOption = repoOption;
+            _repoAttribute = repoAttribute;
             _userManager = userManager;
             _cache = cache;
             _slugService = slugService;
@@ -132,6 +139,10 @@ namespace LandPApi.Service
             if (searchInfor.Filter != null)
             {
                 // attributes
+                if (searchInfor.Filter.Attributes != null && searchInfor.Filter.Attributes.Count > 0)
+                {
+                    products = filtered(products, searchInfor.Filter.Attributes);
+                }
                 // brands
                 if (searchInfor.Filter.Brands != null && searchInfor.Filter.Brands.Count > 0)
                 {
@@ -187,11 +198,14 @@ namespace LandPApi.Service
             var result = PaginatedList<Product>.Create(products!, searchInfor.Pagination!.PageNumber, searchInfor.Pagination.ItemsPerPage);
 
             #endregion
-
+            var filterlist = getFilter(result);
+            var maxPrice = getMaxPrice(products);
 
             return new
             {
                 products = _mapper.Map<List<ProductDto>>(result),
+                maxprice = maxPrice,
+                filterable = filterlist,
                 slugName = slug == null ? "" : slug.Title,
                 slug = slug == null ? "" : slug.Id,
                 pagination = new
@@ -200,10 +214,90 @@ namespace LandPApi.Service
                     totalPage = result.TotalPage,
                     pageSize = searchInfor.Pagination.ItemsPerPage,
                     totalItem = result.TotalItem
-                }
+                },
             };
         }
 
+        private object getMaxPrice(List<Product> products)
+        {
+            var maxprice = _mapper.Map<List<ProductDto>>(products).MaxBy(o => o.Price);
+            return ((int)(maxprice!.Price + 1000000) / 1000000) * 1000000;
+        }
+
+        private List<Product> filtered(List<Product> products, List<Dto.Attribute> attributes)
+        {
+            var temp = new List<Product>();
+            foreach (var item in products)
+            {
+                int d = 0;
+                foreach (var item1 in item.AttributeSpecs!)
+                {
+                    if (item1.OptionID != null && attributes.FirstOrDefault(o => item1.AttributeId == o.Code && o.OptionsId!.Contains((int)item1.OptionID)) != null)
+                    {
+                        d++;
+                    }
+                }
+                if (d == attributes.Count)
+                {
+                    temp.Add(item);
+                }
+            }
+            return temp;
+        }
+        private object getFilter(PaginatedList<Product> result)
+        {
+            IDictionary<object, HashSet<object>> filterables = new Dictionary<object, HashSet<object>>();
+            foreach (var item in result)
+            {
+                if (item.AttributeSpecs != null && item.AttributeSpecs.Count > 0)
+                {
+                    foreach (var item1 in item.AttributeSpecs)
+                    {
+                        if (item1.OptionID != null)
+                        {
+                            var optionName = _repoOption.ReadByCondition(o => o.Id == item1.OptionID && o.AttributeId == item1.AttributeId).FirstOrDefault()!.Value;
+                            var attributeName = _repoAttribute.ReadByCondition(o => o.Id == item1.AttributeId).FirstOrDefault()!.Name;
+                            var key = new
+                            {
+                                attributeId = item1.AttributeId,
+                                attributeName = attributeName
+                            };
+
+                            var value = new
+                            {
+                                optionId = item1.OptionID,
+                                optionName = optionName
+                            };
+                            if (!filterables.ContainsKey(key))
+                            {
+                                filterables.Add(key, new HashSet<object> { value });
+                            }
+                            else
+                            {
+                                filterables[key].Add(value);
+                            }
+                        }
+                    }
+                }
+            }
+
+            List<object> list = new List<object>();
+            foreach (var dic in filterables)
+            {
+                var attributeid = dic.Key.GetType().GetProperty("attributeId")!.GetValue(dic.Key, null);
+                var attributename = dic.Key.GetType().GetProperty("attributeName")!.GetValue(dic.Key, null);
+                var options = dic.Value.ToList();
+
+                if (options.Count > 1)
+                    list.Add(new
+                    {
+                        code = attributeid,
+                        codeName = attributename,
+                        options = options
+                    });
+            }
+            return list;
+        }
         public object GetForyou(string userId, double rate = 50)
         {
             var viewed = _repoView.ReadByCondition(o => o.CustomerId == userId).Include(o => o.Product);

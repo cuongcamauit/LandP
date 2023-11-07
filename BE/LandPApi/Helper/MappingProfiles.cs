@@ -18,6 +18,15 @@ namespace LandPApi.Helper
             CreateMap<Address, AddressDto>().ReverseMap();
             CreateMap<AddressView, Address>();
 
+
+            CreateMap<AttributeView, Models.Attribute>();
+            CreateMap<Models.Attribute, AttributeDto>();
+
+            CreateMap<AttributeOption, AttributeOptionView>().ReverseMap();
+
+            CreateMap<AttributeSpecView, AttributeSpec>();
+            CreateMap<AttributeSpec, AttributeSpecDto>();
+
             CreateMap<Product, ProductDto>()
                 .ForMember(dest => dest.AverageRating, act => act.MapFrom(scr => (scr.Reviews!.Count == 0) ? 0 :
                                                                                  (scr.Reviews!.Sum(o => o.Rating) * 1.0 / scr.Reviews!.Count * 1.0)))

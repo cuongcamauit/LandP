@@ -7,5 +7,6 @@
         public string? Description { get; set; }
         public ICollection<AttributeGroup> AttributeGroups { get; set; }
         public ICollection<AttributeSpec> AttributeSpecs { get; set; }
+        public ICollection<AttributeOption> AttributeOptions { get; set; }
     }
 }

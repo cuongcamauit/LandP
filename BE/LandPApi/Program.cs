@@ -72,6 +72,9 @@ namespace LandPApi
             builder.Services.AddScoped(typeof(IRepository<>), typeof(SqlServerRepository<>));
             builder.Services.AddScoped(typeof(IGenericService<,,>), typeof(GenericService<,,>));
 
+            builder.Services.AddScoped<IAttributeService, AttributeService>();
+            builder.Services.AddScoped<IAttributeOptionService, AttributeOptionService>();
+            builder.Services.AddScoped<IAttributeSpeccService, AttributeSpecService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IBrandService, BrandService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
