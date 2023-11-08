@@ -22,6 +22,9 @@ namespace LandPApi.Helper
             CreateMap<AttributeView, Models.Attribute>();
             CreateMap<Models.Attribute, AttributeDto>();
 
+            CreateMap<AttributeGroupView, AttributeGroup>();
+            CreateMap<AttributeGroup, AttributeGroupDto>();
+
             CreateMap<AttributeOption, AttributeOptionView>().ReverseMap();
 
             CreateMap<AttributeSpecView, AttributeSpec>();
