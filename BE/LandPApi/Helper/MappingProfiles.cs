@@ -28,7 +28,8 @@ namespace LandPApi.Helper
             CreateMap<AttributeOption, AttributeOptionView>().ReverseMap();
 
             CreateMap<AttributeSpecView, AttributeSpec>();
-            CreateMap<AttributeSpec, AttributeSpecDto>();
+            CreateMap<AttributeSpec, AttributeSpecDto>()
+                .ForMember(dest => dest.Value, act => act.MapFrom(scr => scr.Option != null ? scr.Option.Value : scr.Value));
 
             CreateMap<Product, ProductDto>()
                 .ForMember(dest => dest.AverageRating, act => act.MapFrom(scr => (scr.Reviews!.Count == 0) ? 0 :

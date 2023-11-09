@@ -4,6 +4,7 @@ using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.View;
+using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
 {
@@ -32,6 +33,7 @@ namespace LandPApi.Service
         public List<AttributeSpecDto> GetById(Guid productId)
         {
             var specs = _repository.ReadByCondition(o => o.ProductId == productId)
+                        .Include(o => o.Option)
                         .ToList();
             return _mapper.Map<List<AttributeSpecDto>>(specs);
         }
