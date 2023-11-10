@@ -1914,8 +1914,8 @@ namespace LandPApi.Data
             #region Slug
             var laptopslug = "laptop";
             var macbookslug = "laptop-apple-macbook";
-            var acerslug = "latop-acer";
-            var asusslug = "laptop-usus";
+            var acerslug = "laptop-acer";
+            var asusslug = "laptop-asus";
             var dellslug = "laptop-dell";
 
             var smartphoneslug = "smartphone";
@@ -1926,6 +1926,7 @@ namespace LandPApi.Data
             var tabletslug = "tablet";
             var ipadslug = "tablet-ipad";
             var sstabletslug = "tablet-samsung";
+
             var smartwatchslug = "smartwatch";
             var applewatchslug = "smartwatch-apple";
 

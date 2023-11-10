@@ -6,7 +6,6 @@ using LandPApi.Repository;
 using LandPApi.View;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
 using Attribute = LandPApi.Models.Attribute;
 
 namespace LandPApi.Service
@@ -18,10 +17,7 @@ namespace LandPApi.Service
         private readonly IRepository<AttributeOption> _repoOption;
         private readonly IRepository<Attribute> _repoAttribute;
         private readonly UserManager<Customer> _userManager;
-        private readonly IMemoryCache _cache;
-        private readonly ISlugService _slugService;
-        public static readonly string ProductCacheKey = "products";
-        public static readonly string SlugCacheKey = "slugs";
+        private readonly ICacheService _cacheService;
 
         public ProductService(IRepository<Product> repository
                             , IRepository<Models.View> repoView
@@ -30,16 +26,14 @@ namespace LandPApi.Service
                             , IMapper mapper
                             , UserManager<Customer> userManager
                             , IDriveService driveService
-                            , IMemoryCache cache
-                            , ISlugService slugService) : base(repository, mapper)
+                            , ICacheService cacheService) : base(repository, mapper)
         {
             _driveService = driveService;
             _repoView = repoView;
             _repoOption = repoOption;
             _repoAttribute = repoAttribute;
             _userManager = userManager;
-            _cache = cache;
-            _slugService = slugService;
+            _cacheService = cacheService;
         }
         public new ProductDto Create(ProductView view)
         {
@@ -51,82 +45,19 @@ namespace LandPApi.Service
 
             return _mapper.Map<ProductDto>(entity);
         }
-        //public object GetAllAsync(string? search, double? from, double? to, string? sortBy, Guid? categoryId = null, Guid? brandId = null, int page = 1, int pageSize = 5)
-        //{
-        //    var products = _repository.ReadAll();
-        //    #region Filtering
-        //    if (categoryId != null)
-        //    {
-        //        products = products.Where(o => o.CategoryId == categoryId);
-        //    }
-        //    if (brandId != null)
-        //    {
-        //        products = products.Where(o => o.BrandId == brandId);
-        //    }
-        //    if (!string.IsNullOrEmpty(search))
-        //    {
-        //        products = products.Where(o => o.Name!.Contains(search));
-        //    }
-        //    if (from.HasValue)
-        //    {
-        //        products = products.Where(o => o.Price >= from);
-        //    }
-        //    if (to.HasValue)
-        //    {
-        //        products = products.Where(o => o.Price <= to);
-        //    }
-        //    #endregion
-
-        //    #region Sorting
-        //    //Default sort by Name 
-        //    products = products.OrderBy(o => o.Name);
-
-        //    if (!string.IsNullOrEmpty(sortBy))
-        //    {
-        //        switch (sortBy)
-        //        {
-        //            case "Name-": products = products.OrderByDescending(o => o.Name); break;
-        //            case "Price": products = products.OrderBy(o => o.Price /*TODO */); break;
-        //            case "Price-": products = products.OrderByDescending(o => o.Price  /*TODO */); break;
-        //            case "View": products = products.OrderByDescending(o => o.Views!.Count); break;
-        //            case "BestSale": products = products.OrderByDescending(o => o.OrderDetails!.Sum(o => o.Quantity)); break;
-        //        }
-        //    }
-        //    #endregion
-
-        //    #region Paginate
-        //    products = products.Include(o => o.Reviews).Include(o => o.OrderDetails).Include(o => o.ProductPrices);
-
-        //    var result = PaginatedList<Product>.Create(products, page, pageSize);
-
-        //    return
-        //        new
-        //        {
-        //            products = _mapper.Map<List<ProductDto>>(result),
-        //            pagination = new
-        //            {
-        //                currentPage = result.PageIndex,
-        //                totalPage = result.TotalPage,
-        //                pageSize = pageSize,
-        //                totalItem = result.TotalItem
-        //            }
-        //        };
-        //    #endregion
-        //}
-
         public object GetAllAsync(SearchInfor searchInfor)
         {
-            var products = GetCache();
-            var slugs = GetSlugCache();
+            var products = _cacheService.GetProduct();
+            var slugs = _cacheService.GetSlugs();
 
-            SlugDto? slug = null;
+            Slug? slug = slugs.SingleOrDefault(o => o.Id == searchInfor.Slug || o.Id == searchInfor.Query);
+
             var check = true;
-            if ((searchInfor.Slug != "" && slugs.SingleOrDefault(o => o.Id == searchInfor.Slug) != null) ||
-                (searchInfor.Query != "" && slugs.SingleOrDefault(o => o.Id == searchInfor.Query) != null))
+            if (slug != null)
             {
                 check = false;
                 slug = slugs.SingleOrDefault(o => o.Id == searchInfor.Slug || o.Id == searchInfor.Query)!;
-                products = slug.Products!.ToList();
+                products = _mapper.Map<SlugDto>(slug).Products!.ToList();
             }
 
             #region Searching
@@ -217,7 +148,6 @@ namespace LandPApi.Service
                 },
             };
         }
-
         private object getMaxPrice(List<Product> products)
         {
             if (products.Count == 0)
@@ -225,7 +155,6 @@ namespace LandPApi.Service
             var maxprice = _mapper.Map<List<ProductDto>>(products).MaxBy(o => o.Price);
             return ((int)(maxprice!.Price + 1000000) / 1000000) * 1000000;
         }
-
         private List<Product> filtered(List<Product> products, List<Dto.Attribute> attributes)
         {
             var temp = new List<Product>();
@@ -339,54 +268,10 @@ namespace LandPApi.Service
 
             return _mapper.Map<List<ProductDto>>(sorted);
         }
-
         public ProductDto GetProduct(Guid id)
         {
-            var products = GetCache();
-            var product = products.Where(o => o.Id == id).FirstOrDefault();
-            var productDto = _mapper.Map<ProductDto>(product);
+            var product = _cacheService.GetProduct().FirstOrDefault(o => o.Id == id);
             return _mapper.Map<ProductDto>(product);
-        }
-        private List<Product> GetCache()
-        {
-            var products = _repository.ReadAll()
-                        .Include(o => o.Brand)
-                        .Include(o => o.Category)
-                        .Include(o => o.Views)
-                        .Include(o => o.CartItems)
-                        .Include(o => o.OrderDetails)
-                        .Include(o => o.Reviews)
-                        .Include(o => o.Documents)
-                        .Include(o => o.ProductPrices)
-                        .Include(o => o.AttributeSpecs)
-                        .ToList();
-            //if (!_cache.TryGetValue(ProductCacheKey, out List<Product>? products))
-            //{
-            //    products = _repository.ReadAll()
-            //            .Include(o => o.Brand)
-            //            .Include(o => o.Category)
-            //            .Include(o => o.Views)
-            //            .Include(o => o.CartItems)
-            //            .Include(o => o.OrderDetails)
-            //            .Include(o => o.Reviews)
-            //            .Include(o => o.Documents)
-            //            .Include(o => o.ProductPrices)
-            //            .Include(o => o.AttributeSpecs)
-            //            .ToList();
-            //    _cache.Set(ProductCacheKey, products);
-            //}
-
-            return products!;
-        }
-        private List<SlugDto> GetSlugCache()
-        {
-            //if (!_cache.TryGetValue(ProductCacheKey, out List<SlugDto>? slugs))
-            //{
-            //    slugs = _slugService.GetAll();
-            //    _cache.Set(SlugCacheKey, slugs);
-            //}
-            var slugs = _slugService.GetAll();
-            return slugs!;
         }
     }
 }

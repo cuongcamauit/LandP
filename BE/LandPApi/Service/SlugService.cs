@@ -4,8 +4,6 @@ using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.View;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace LandPApi.Service
 {
@@ -13,111 +11,36 @@ namespace LandPApi.Service
     {
         private readonly IRepository<Slug> _repository;
         private readonly IMapper _mapper;
-        // private readonly IMemoryCache _cache;
+        private readonly ICacheService _cacheService;
 
-        public SlugService(IRepository<Slug> repository, IMapper mapper,
-            IMemoryCache cache)
+        public SlugService(IRepository<Slug> repository, IMapper mapper, ICacheService cacheService)
         {
             _repository = repository;
             _mapper = mapper;
-            // _cache = cache;
+            _cacheService = cacheService;
         }
         public void Add(SlugView slug)
         {
             var slugModel = _mapper.Map<Slug>(slug);
             _repository.Create(slugModel);
             _repository.Save();
-            // UpdateCache(ProductService.SlugCacheKey);
         }
 
         public List<SlugDto> GetAll()
         {
-            var listSlug = _repository.ReadByCondition(o => o.IsDeleted == false)
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.Brand)
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.Category)
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.Views)
-
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.CartItems)
-
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.OrderDetails)
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.Reviews)
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.ProductPrices)
-
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.Documents)
-
-                        .Include(o => o.SlugProducts)!
-                            .ThenInclude(o => o.Product)
-                            .ThenInclude(o => o!.AttributeSpecs);
-
-
-            return _mapper.Map<List<SlugDto>>(listSlug);
+            return _mapper.Map<List<SlugDto>>(_cacheService.GetSlugs());
         }
 
         public SlugDto GetById(String id)
         {
-            var slug = _repository.ReadByCondition(o => o.IsDeleted == false && o.Id == id);
+            var slug = _cacheService.GetSlugs().FirstOrDefault(o => o.Id == id);
             return _mapper.Map<SlugDto>(slug);
         }
 
         public List<SlugDto> GetSliders()
         {
-            var listSlug = _repository.ReadByCondition(o => o.IsDeleted == false && o.IsSilder == true)
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.Brand)
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.Category)
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.Views)
-
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.CartItems)
-
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.OrderDetails)
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.Reviews)
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.ProductPrices)
-
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.Documents)
-
-            .Include(o => o.SlugProducts)!
-                .ThenInclude(o => o.Product)
-                .ThenInclude(o => o!.AttributeSpecs);
-
-
-            return _mapper.Map<List<SlugDto>>(listSlug);
+            var sliders = _cacheService.GetSlugs().Where(o => o.IsSilder == true).ToList();
+            return _mapper.Map<List<SlugDto>>(sliders);
         }
-
-        //public void UpdateCache(string cacheName)
-        //{
-        //    var slugs = GetAll();
-        //    _cache.Set(cacheName, slugs);
-        //}
     }
 }

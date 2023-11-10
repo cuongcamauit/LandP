@@ -78,6 +78,7 @@ namespace LandPApi
             builder.Services.AddScoped<IAttributeSpeccService, AttributeSpecService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IBrandService, BrandService>();
+            builder.Services.AddScoped<ICacheService, CacheService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<IProductPriceService, ProductPriceService>();
