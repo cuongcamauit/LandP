@@ -34,6 +34,7 @@ namespace LandPApi.Service
         {
             var specs = _repository.ReadByCondition(o => o.ProductId == productId)
                         .Include(o => o.Option)
+                        .Include(o => o.Attribute)
                         .ToList();
             return _mapper.Map<List<AttributeSpecDto>>(specs);
         }

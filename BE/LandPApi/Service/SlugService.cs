@@ -13,21 +13,21 @@ namespace LandPApi.Service
     {
         private readonly IRepository<Slug> _repository;
         private readonly IMapper _mapper;
-        private readonly IMemoryCache _cache;
+        // private readonly IMemoryCache _cache;
 
         public SlugService(IRepository<Slug> repository, IMapper mapper,
             IMemoryCache cache)
         {
             _repository = repository;
             _mapper = mapper;
-            _cache = cache;
+            // _cache = cache;
         }
         public void Add(SlugView slug)
         {
             var slugModel = _mapper.Map<Slug>(slug);
             _repository.Create(slugModel);
             _repository.Save();
-            UpdateCache(ProductService.SlugCacheKey);
+            // UpdateCache(ProductService.SlugCacheKey);
         }
 
         public List<SlugDto> GetAll()
@@ -114,10 +114,10 @@ namespace LandPApi.Service
             return _mapper.Map<List<SlugDto>>(listSlug);
         }
 
-        public void UpdateCache(string cacheName)
-        {
-            var slugs = GetAll();
-            _cache.Set(cacheName, slugs);
-        }
+        //public void UpdateCache(string cacheName)
+        //{
+        //    var slugs = GetAll();
+        //    _cache.Set(cacheName, slugs);
+        //}
     }
 }

@@ -29,7 +29,8 @@ namespace LandPApi.Helper
 
             CreateMap<AttributeSpecView, AttributeSpec>();
             CreateMap<AttributeSpec, AttributeSpecDto>()
-                .ForMember(dest => dest.Value, act => act.MapFrom(scr => scr.Option != null ? scr.Option.Value : scr.Value));
+                .ForMember(dest => dest.Value, act => act.MapFrom(scr => scr.Option != null ? scr.Option.Value : scr.Value))
+                .ForMember(dest => dest.Name, act => act.MapFrom(scr => scr.Attribute.Name));
 
             CreateMap<Product, ProductDto>()
                 .ForMember(dest => dest.AverageRating, act => act.MapFrom(scr => (scr.Reviews!.Count == 0) ? 0 :

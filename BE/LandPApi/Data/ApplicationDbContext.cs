@@ -376,7 +376,6 @@ namespace LandPApi.Data
             var laptopId = Guid.Parse("3f8d98cb-a695-4334-bec2-09008670c39a");
             var tabletId = Guid.Parse("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2");
             var smartwatchId = Guid.Parse("3649b208-05c6-4129-86bd-df77801d3d39");
-            var mouseId = Guid.Parse("76f4c144-6e3f-44bf-a292-8dd21a461b5d");
 
             builder.Entity<Category>().HasData(
                 new Category()
@@ -384,1008 +383,1986 @@ namespace LandPApi.Data
                     Id = smartphoneId,
                     Name = "Smartphone",
                     Description = "A smart device",
-                    AvatarUrl = "https://drive.google.com/uc?export=view&id=1VPowiqiVfyuL7Pzntp1mqJV748v34zfb"
+                    AvatarUrl = ""
                 },
                 new Category()
                 {
                     Id = laptopId,
                     Name = "Laptop",
                     Description = "A smart device",
-                    AvatarUrl = "https://drive.google.com/uc?export=view&id=15Lo6BabMJo7m9p-VSve4kls1pG2VA1AN"
+                    AvatarUrl = ""
                 },
                 new Category()
                 {
                     Id = tabletId,
                     Name = "Tablet",
                     Description = "A smart device",
-                    AvatarUrl = "https://drive.google.com/uc?export=view&id=1EHDwKK-pKe78N_-Ns3RhID7Wg3S2nmDP"
+                    AvatarUrl = ""
                 },
                 new Category()
                 {
                     Id = smartwatchId,
                     Name = "Smartwatch",
                     Description = "A smart device",
-                    AvatarUrl = "https://drive.google.com/uc?export=view&id=1y_ap3ooVR_djmamFvklsm0tx-d9Zrt3V"
-                },
-                new Category()
-                {
-                    Id = mouseId,
-                    Name = "Mouse",
-                    Description = "A smart device",
-                    AvatarUrl = "https://drive.google.com/uc?export=view&id=1N6u8HMtyTtdXWGBxz5AFRzk2KbvB6aVc"
+                    AvatarUrl = ""
                 }
             );
 
-            var xiaomiId = Guid.Parse("32a244dc-528a-402a-b8e0-d86b31f0b8cb");
-            var samsungId = Guid.Parse("2ef43281-9c42-466e-ad66-483ff6f46326");
             var appleId = Guid.Parse("36326612-2d44-446f-87cd-d060d14237a6");
             var asusId = Guid.Parse("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e");
+            var accerId = Guid.Parse("fc6fcd3e-f156-4a33-a257-c92adfba2c63");
             var dellId = Guid.Parse("04d63fc1-582a-4ad3-9132-b531101220ca");
-            var suuntoId = Guid.Parse("2d750aa2-ea06-47ea-916c-abb6661f9781");
-            var logitechId = Guid.Parse("fc1a0ff3-92d8-4a16-adb5-8c901bbe48f2");
+            var xiaomiId = Guid.Parse("32a244dc-528a-402a-b8e0-d86b31f0b8cb");
+            var samsungId = Guid.Parse("2ef43281-9c42-466e-ad66-483ff6f46326");
 
             builder.Entity<Brand>().HasData(
                 new Brand()
                 {
                     Id = samsungId,
                     Name = "Samsung",
-                    Description = "A branch from korea",
-                    LogoUrl = "https://drive.google.com/uc?export=view&id=1JrfIHh1Fi9aM66IMLd2jdZwurx1As6x0"
-
+                    Description = "Samsung Group or Samsung (Korean: 삼성, Roma: Samseong, Hanja: 三星; Sino-Vietnamese: Tam Tinh - 3 stars) is a South Korean multinational corporation headquartered in Samsung Town, Seocho , Seoul",
+                    LogoUrl = ""
                 },
                 new Brand()
                 {
                     Id = appleId,
                     Name = "Apple",
-                    Description = "A branch from Ameria",
-                    LogoUrl = "https://drive.google.com/uc?export=view&id=1DfzKYG8dsu0C0tNK_5U8GNBM3IE92fsz"
+                    Description = "Apple is a large American technology corporation headquartered in Cupertino, California. Apple was founded on April 1, 1976 by three founders Steve Wozniak, Steve Jobs and Ronald Wayne, under the original name Apple Computer Inc, then changed its name to Apple in early 2007",
+                    LogoUrl = ""
                 },
                 new Brand()
                 {
                     Id = xiaomiId,
                     Name = "Xiaomi",
-                    Description = "A branch from China",
-                    LogoUrl = "https://drive.google.com/uc?export=view&id=1WGo9ev5XnfDETamxPvTVaJJuAYr892Nf"
+                    Description = "Xiaomi is a Chinese technology corporation , headquartered in Beijing. Considered the Apple of China, after only 5 years of establishment, Xiaomi has become the smartphone manufacturer with the 5th largest market share in the world and 1st in its home market (2015)",
+                    LogoUrl = ""
                 },
                 new Brand()
                 {
                     Id = asusId,
                     Name = "Assus",
-                    Description = "A branch from China",
-                    LogoUrl = "https://drive.google.com/uc?export=view&id=1CYKkazDIXzIw_q6ioPB8NlgZTjnhor-N"
+                    Description = "In 2015 and 2016, Fortune magazine recognized ASUS as one of the world's most popular companies, and for the past four years, Interbrand has ranked ASUS as Taiwan's most valuable international brand . Loan",
+                    LogoUrl = ""
                 },
                 new Brand()
                 {
                     Id = dellId,
                     Name = "Dell",
-                    Description = "A branch from China",
-                    LogoUrl = "https://drive.google.com/uc?export=view&id=1Q0u1RB9SfYkxXXmF2s9CPyTXKVY4IN1A"
+                    Description = "Dell Inc is an American multinational company that develops and commercializes computer technology headquartered in Round Rock, Texas, United States. In 1984, Dell was founded by Michael Dell. It is the 28th largest company by revenue in the United States",
+                    LogoUrl = ""
                 },
                 new Brand()
                 {
-                    Id = suuntoId,
-                    Name = "Suunto",
-                    Description = "A branch from China",
-                    LogoUrl = "https://drive.google.com/uc?export=view&id=1T3galDlqvff5zyZd8kf19McJK9V7iAvL"
-                },
-                new Brand()
-                {
-                    Id = logitechId,
-                    Name = "Logitech",
-                    Description = "A branch from China",
-                    LogoUrl = "https://drive.google.com/uc?export=view&id=1F9Sn87qp9kkJbbANHNKSXoE6pYwLPVz-"
+                    Id = accerId,
+                    Name = "Acer",
+                    Description = "Founded in 1976, Acer is a Taiwanese multinational corporation of electronics and computer hardware",
+                    LogoUrl = ""
                 }
             );
             //------------------------------------------------------------//
 
-            var ssa23Id = Guid.Parse("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04");
-            var ip12Id = Guid.Parse("257c3301-487b-4c18-bc3d-21ffb71a4d43");
-            var xiaominote12pro5gId = Guid.Parse("13c2386e-1348-42ef-8de1-46d7515eb3df");
-            var xiaomi12t5gId = Guid.Parse("c2c75508-8eac-47de-a3fa-43c44ce8e917");
-            var tuff15Id = Guid.Parse("5d7beeaf-f51e-44bb-ae26-aadb1bdc0276");
-            var vostro3510Id = Guid.Parse("d5682976-7d8c-4549-884c-e85f73ddbed3");
-            var ipad9Id = Guid.Parse("3e9d9046-0534-44cf-a0fa-746a31acad9f");
-            var ipad10Id = Guid.Parse("13461ff9-0374-4101-a88e-a01dff5f1d8e");
-            var suunto7Id = Guid.Parse("7d7b21dd-b2fe-4179-8238-e871f52fcb2a");
-            var galaxywatch5Id = Guid.Parse("777ffbe5-1f43-4b6c-80d3-6b3cffbcb721");
-            var logitecgm650Id = Guid.Parse("61a1dce1-164c-4a2f-a6e1-6397c5033bfb");
+            var macpro16 = Guid.NewGuid();
+            var macair15 = Guid.NewGuid();
+            var macair2020 = Guid.NewGuid();
+            var macair2022_1 = Guid.NewGuid();
+            var macair2022_2 = Guid.NewGuid();
+            var macpro13 = Guid.NewGuid();
 
+            var acer16 = Guid.NewGuid();
+            var acerasp15 = Guid.NewGuid();
+            var acernitro5 = Guid.NewGuid();
+
+            var asus1 = Guid.NewGuid();
+            var asus2 = Guid.NewGuid();
+            var asus3 = Guid.NewGuid();
+
+            var dellins15 = Guid.NewGuid();
+            var dellins3530 = Guid.NewGuid();
+            var dellins14 = Guid.NewGuid();
+            var dellins16 = Guid.NewGuid();
+            var dellvos3430 = Guid.NewGuid();
+            var dellins142 = Guid.NewGuid();
+
+            var ip15pm = Guid.NewGuid();
+            var ip13 = Guid.NewGuid();
+            var ip13mn = Guid.NewGuid();
+            var ip14pm = Guid.NewGuid();
+            var ip15p = Guid.NewGuid();
+            var ip14 = Guid.NewGuid();
+
+            var ssa05 = Guid.NewGuid();
+            var xiaomi12c = Guid.NewGuid();
+            var ipadpro = Guid.NewGuid();
+            var tabss = Guid.NewGuid();
+
+            var applewatch2 = Guid.NewGuid();
+            #region Product
             builder.Entity<Product>().HasData(
                 new Product()
                 {
-                    Id = ssa23Id,
-                    Name = "Samsung Galaxy A23",
-                    Description = "Màn hình:\r\n\r\nPLS TFT LCD6.6\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 12\r\nCamera sau:\r\n\r\nChính 50 MP & Phụ 5 MP, 2 MP, 2 MP\r\nCamera trước:\r\n\r\n8 MP\r\nChip:\r\n\r\nSnapdragon 680\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n128 GB\r\nSIM:\r\n\r\n2 Nano SIMHỗ trợ 4G\r\nPin, Sạc:\r\n\r\n5000 mAh25 W",
-                    Price = 4990000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1k0K8y37j9HLnI8C7qYy92mjOzgnY4kSL",
-
+                    Id = macpro16,
+                    Name = "Macbook Pro 16 M2 MAX 12C CPU 38C GPU 64GB 1TB SSD (SILVER)",
+                    Description = "MacBook The 13.6-inch Air M2 Z15S00092 belongs to Apple's high-end laptop line with Apple M2 CPU that delivers durable performance at incredible speed. Besides, MacBook Air possesses a luxurious appearance and youthful color gamut to help suit many needs of today's Apple fans.",
+                    Price = 100190000,
+                    ImageUrl = "https://lh3.googleusercontent.com/cPyVxwDbLfShad22xfK-dd2nlFWqTCSDMHXH7LffhPy37iGunzUM9VUtZCSiEgzzgPGcW3ZkGbImyjcVkf1RrjFr_plC_BjA=w500-rw",
                     Quantity = 100,
-                    //PercentSale = 0,
-                    CategoryId = smartphoneId,
-                    BrandId = samsungId,
-                    FolderId = "12oUrvgsYTJhM4WkmXuWd1f8NmbvOe9Gn"
+                    CategoryId = laptopId,
+                    BrandId = appleId,
+                    FolderId = "14copW3YiYA9OZtplLedaDhsV4LRN2eEz"
                 },
                 new Product()
                 {
-                    Id = ip12Id,
-                    Name = "Iphone 12",
-                    Description = "Màn hình:\r\n\r\nOLED6.1\"Super Retina XDR\r\nHệ điều hành:\r\n\r\niOS 15\r\nCamera sau:\r\n\r\n2 camera 12 MP\r\nCamera trước:\r\n\r\n12 MP\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n64 GB\r\nSIM:\r\n\r\n1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n2815 mAh20 W",
-                    Price = 15590000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1yAleLMwDTEfXJNZF_eM8s4vkU8TFm9By",
+                    Id = macair15,
+                    Name = "MacBook Air 15 M2 8C CPU 10C GPU 8GB 512GB SSD(Midnight)",
+                    Description = "Updating",
+                    Price = 39990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/lZLaRombXnbrg99vFtGOTiH4zUpkt3PhblRRTZWyqt7DUc-ztoRC6kT2VuuFD9-XJsPYf-8DVJNz1lRCs406a5NWdTROd1I=w1000-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = appleId,
+                    FolderId = "1SqDtpkZFWiXmnAoeGKMJB0JRg_jZy63g"
+                },
+                new Product()
+                {
+                    Id = macair2020,
+                    Name = "MacBook Air 2020 13.3 inch MGNE3SA/A (M1/8GB/SSD512GB)",
+                    Description = "MacBook Air 2020 13.3\" MGNE3SA/A belongs to a high-end laptop product line from the Apple brand that possesses outstanding performance thanks to being equipped with a genuine proprietary processor. With an elegant design and outstanding powerful configuration, MacBook Air 2020 13.3\" MGNE3SA/A promises to bring you an enjoyable experience",
+                    Price = 34990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/lc6DzDy1TKN_guYmItGOG1DIWMp3iACXwfMJL4ZdlW501Sqm4j86XGaQDD_mrGiT8OoxFGj7FQGrc5DTR8MSZjrwV0ezEds=w1000-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = appleId,
+                    FolderId = "15zxKTkBDtJT9sr9bKwkfAQGZHnM6LjRz"
+                },
+                new Product()
+                {
+                    Id = macair2022_1,
+                    Name = "MacBook Air 2022 13.6 inch Z15S00092 (M2/ 16GB/ 256GB SSD)",
+                    Description = "MacBook The 13.6-inch Air M2 Z15S00092 belongs to Apple's high-end laptop line with Apple M2 CPU that delivers durable performance at incredible speed. Besides, MacBook Air possesses a luxurious appearance and youthful color gamut to help suit many needs of today's Apple fans",
+                    Price = 36890000,
+                    ImageUrl = "https://lh3.googleusercontent.com/u2qUk5mgupuh9ubXaQxqE2kum6Exm8DygVJFez6Ksj6Yjb6CDjwQ3Jgh7bQ3-TjNxfWxmXTUd6zkxbA2w79-9zTlYsLUp9ah=w1000-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = appleId,
+                    FolderId = "1gzBXbbcWwhP3NKwYzlVZ10k362zzQ8WO"
+                },
+                new Product()
+                {
+                    Id = macair2022_2,
+                    Name = "MacBook Air 2022 13.6 inch MLY33SA/A (M2/ 8GB/ SSD 256GB)",
+                    Description = "Updating",
+                    Price = 31900000,
+                    ImageUrl = "https://lh3.googleusercontent.com/T4dQPx6nSJi3y147mwJH6kDJsxM6ULAAtIoZjgDDIi3yF5YpFYW7QbWh_nfT0Lhi2LxIDFuNPMamXlrBW-EcZ1NUGYBZ6VqbLw=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = appleId,
+                    FolderId = "1oRNlAF2LJEdMnyJsNbCGtirUa0GxSEYC"
+                },
+                new Product()
+                {
+                    Id = macpro13,
+                    Name = "Macbook Pro 13 M2 8C CPU 10C GPU 24GB 512GB SSD (SILVER)",
+                    Description = "Updating",
+                    Price = 49590000,
+                    ImageUrl = "https://lh3.googleusercontent.com/sPJkn-BIybufvMuXd1Ut6UkSWqz1UG76-WdZ3JcZ0GS1mNvYlY3_tUAGjzD_TkbC-k3HV_3bgGsmcoB56sbIVCLzcVmul6E=w1000-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = appleId,
+                    FolderId = "10TOIotAbfwDK0MQmc1QyELyxy8oScukl"
+                },
 
-                    Quantity = 50,
-                    //PercentSale = 20,
-                    CategoryId = smartphoneId,
-                    BrandId = appleId,
-                    FolderId = "1b9JWfgUruHr6j3U3XalWbAD2UO329_6X"
-                },
                 new Product()
                 {
-                    Id = xiaominote12pro5gId,
-                    Name = "Xiaomi Redmi Note 12 Pro 5G",
-                    Description = "Xiaomi Redmi Note 12 Pro 5G là mẫu điện thoại thuộc dòng Redmi Note được chính thức ra mắt trong năm 2023, máy mang trên mình những cải tiến vượt trội về thiết kế, camera và hiệu năng, đáp ứng mượt mà hầu hết các nhu cầu khác nhau của người dùng.",
-                    Price = 9960000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=190zjmRvUnsTZdB4iDizNBjqKI_fk5L3a",
-
-                    Quantity = 50,
-                    //PercentSale = 2,
-                    BrandId = xiaomiId,
-                    CategoryId = smartphoneId,
-                    FolderId = "1gBdpMXybH0HOxSKI6g9AdmisL9IUMfPq"
-                },
-                new Product()
-                {
-                    Id = xiaomi12t5gId,
-                    Name = "Xiaomi 12T 5G 128GB",
-                    Description = "Xiaomi 12T series đã ra mắt trong sự kiện của Xiaomi vào ngày 4/10, trong đó có Xiaomi 12T 5G 128GB - máy sở hữu nhiều công nghệ hàng đầu trong giới smartphone tiêu biểu như: Chipset mạnh mẽ đến từ MediaTek, camera 108 MP sắc nét cùng khả năng sạc 120 W siêu nhanh.",
-                    Price = 9890000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=165CbvBDjo8PPjxn2MPHVe2YrZPZ1oCwd",
-
-                    Quantity = 3,
-                    //PercentSale = 0,
-                    BrandId = xiaomiId,
-                    CategoryId = smartphoneId,
-                    FolderId = "1RvQvCVJ2wk72oMqDuYfeuTBHSIHNhplS"
-                },
-                new Product()
-                {
-                    Id = tuff15Id,
-                    Name = "TUF Gaming F15",
-                    Description = "Nếu bạn đang tìm kiếm một chiếc laptop gaming nhưng vẫn sở hữu một mức giá phải chăng thì laptop Asus TUF Gaming F15 FX506LHB i5 (HN188W) sẽ là sự lựa chọn đáng cân nhắc với card đồ họa rời NVIDIA GeForce GTX mạnh mẽ cùng phong cách thiết kế cứng cáp, độc đáo. ",
-                    Price = 16990000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1s_UzQewLQ4zb7cX25cwUYAlVa3CpuCP9",
-
-                    Quantity = 50,
-                    //PercentSale = 0,
-                    BrandId = asusId,
+                    Id = acer16,
+                    Name = "Laptop ACER Nitro 16 Phoenix AN16-41-R5M4 (Ryzen 5 7535HS/RAM 8GB/RTX 4050/512GB SSD/ Windows 11)",
+                    Description = "Are you a professional gamer, always want to have the best gaming experience? Are you also a person with a lot of work and study, need a versatile and efficient laptop? Are you also a lover of beauty and fashion, want a laptop with impressive design and convenience? If you have all the above requirements, then you cannot ignore ACER NITRO 16 PHOENIX Gaming Laptop - ACER's national gaming laptop, introduced by Phong Vu at a reasonable price. ACER NITRO 16 PHOENIX Gaming Laptop will satisfy you with the features below, let's find out in the article below!",
+                    Price = 29990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/OzQVKRXMUlErjxiwqtLwpWvOWUbmuLay-lL_o80bXTheu_tfX-j07L8fuGtCgddQTrvaF_hbjKwxMlU7IxMgE_6oTkrW06Gs=w1000-rw",
+                    Quantity = 100,
                     CategoryId = laptopId,
-                    FolderId = "1504cqv26tU1E4JAWix9Ajxwh3XCH8tOv"
+                    BrandId = accerId,
+                    FolderId = "14xHS-BcOOmhjY013toMSWulGWKadT_0N"
                 },
                 new Product()
                 {
-                    Id = vostro3510Id,
-                    Name = "Dell Vostro 3510",
-                    Description = "Laptop Dell Vostro 3510 i5 (P112F002BBL) sở hữu cấu hình mạnh mẽ, đa nhiệm mượt mà trên sức mạnh của bộ vi xử lý Intel thế hệ 11, cùng một thiết kế đơn giản mà sang đẹp, sẽ là lựa chọn đắt giá đáp ứng nhu cầu học tập, làm việc hay giải trí của bạn.",
-                    Price = 17990000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1ELd9fd2dk2meSyxz-hVnsIp8_gFrnHxp",
-
-                    Quantity = 10,
-                    //PercentSale = 20,
-                    BrandId = dellId,
-                    CategoryId = laptopId,
-                    FolderId = "1R9qzBw6zNwBARHF8aGu2_qJYlil161yl"
-                },
-                new Product()
-                {
-                    Id = ipad9Id,
-                    Name = "iPad 9",
-                    Description = "Sau thành công của iPad 8, Apple cho đã cho ra mắt máy tính bảng iPad 9 WiFi 64GB - phiên bản tiếp theo của dòng iPad 10.2 inch, về cơ bản nó kế thừa những điểm mạnh từ các phiên bản trước đó và được cải tiến thêm hiệu suất, trải nghiệm người dùng nhằm giúp nhu cầu sử dụng giải trí và làm việc tiện lợi, linh hoạt hơn",
-                    Price = 7990000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1IK5bpXd3iGWJbMDOS5c_zG5Zk5th3hhl",
-                    Quantity = 10,
-                    //PercentSale = 0,
-                    BrandId = appleId,
-                    CategoryId = tabletId,
-                    FolderId = "1SZ3o96HmpNycsXIeOzuXBDF3dgh6v85o"
-                },
-                new Product()
-                {
-                    Id = ipad10Id,
-                    Name = "iPad 10",
-                    Description = "Sau khi trình làng hàng loạt mẫu iPhone vào tháng 09/2022 thì Apple cũng đã tiếp tục giới thiệu series iPad mới cho năm 2022. Trong đó iPad 10 WiFi 64GB là cái tên được hãng chú trọng khá nhiều về việc tối ưu giá thành nhằm giúp người dùng có thể dễ dàng tiếp cận. Máy hỗ trợ hệ điều hành iPadOS 16 cùng con chip Apple A14 Bionic giúp mang lại hiệu năng vượt trội.",
-                    Price = 11190000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1PjgSj70e2Oc1GC-DJBiVkzs77mAdEokF",
-                    Quantity = 10,
-                    //PercentSale = 2,
-                    BrandId = appleId,
-                    CategoryId = tabletId,
-                    FolderId = "18kx0xh8gVJAJllf-4ZVeFZFfkJHI1zkX"
-                },
-                new Product()
-                {
-                    Id = suunto7Id,
-                    Name = "Suunto 7",
-                    Description = "Đồng hồ thông minh Suunto 7 Dây silicone phiên bản màu đen trang bị mặt kính cường lực chống va đập, màn hình AMOLED 1.97 inch (454 x 454 pixels) cùng độ sáng lên tới 1000 nits, vì thế có thể hiển thị sắc nét ngay cả khi ở điều kiện có ánh sáng mặt trời. Đặc biệt, với thiết kế dây đeo silicone tạo cảm giác mềm mại và dễ chịu khi đeo trong thời gian dài.",
-                    Price = 7250000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1-nQviihO_G_HGipaWd72aRUURK4zkm6S",
-                    Quantity = 5,
-                    //PercentSale = 0,
-                    BrandId = suuntoId,
-                    CategoryId = smartwatchId,
-                    FolderId = "15B4NY2lAFY9DXr1Z40hwoQNjI5ZjnpZ4"
-                },
-                new Product()
-                {
-                    Id = galaxywatch5Id,
-                    Name = "Samsung Galaxy Watch5",
-                    Description = "Sau thành công của dòng Galaxy Watch4, tháng 8/2022 ông lớn công nghệ Samsung đã cho ra mắt thế hệ smartwatch tiếp theo của hãng mang tên Samsung Galaxy Watch5 40 mm.",
-                    Price = 5490000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=17uBw10YiFMD2ET9pw_wiXkznPsQrAhr0",
-                    Quantity = 10,
-                    //PercentSale = 0,
-                    BrandId = samsungId,
-                    CategoryId = smartwatchId,
-                    FolderId = "1v5XPVE3A_7XnX4yUf8OekLE54mHXr_CZ"
-                },
-                new Product()
-                {
-                    Id = logitecgm650Id,
-                    Name = "Bluetooth Silent Logitech Signature M650",
-                    Description = "Chuột Không dây Bluetooth Silent Logitech Signature M650 sở hữu kiểu dáng công thái học cùng độ phân giải lớn, đáp ứng tốt gần như mọi nhu cầu từ sử dụng cơ bản tới những tác vụ chuyên nghiệp của người dùng.",
-                    Price = 765000,
-                    ImageUrl = "https://drive.google.com/uc?export=view&id=1ukyWOlXUIJzxVzjmNN5hPlrnHN0yET7b",
-                    Quantity = 10,
-                    //PercentSale = 0,
-                    BrandId = logitechId,
-                    CategoryId = mouseId,
-                    FolderId = "1M0-dUHbo7g_pkLPbQu9NMTPc9tnGkwr7"
-                },
-                ///--------------------------------------//
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Laptop Asus Gaming ROG Strix G15",
-                    Description = "Laptop Asus Gaming ROG Strix G15 G513IH R7 (HN015W) là một trợ thủ đắc lực cho mọi game thủ chuyên nghiệp với phong cách thiết kế vô cùng độc đáo, ấn tượng chuẩn gaming cùng bộ cấu hình đầy mạnh mẽ. ",
-                    Price = 22990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/270031/Slider/vi-vn-asus-rog-strix-gaming-g513ih-r7-hn015w-1.jpg",
-                    Quantity = 50,
-                    //PercentSale = 10,
-                    CategoryId = laptopId,
-                    BrandId = asusId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Asus Gaming ROG Strix SCAR 15 G533ZM ",
-                    Description = "Laptop Asus Gaming ROG Strix SCAR 15 G533ZM i7 (LN2210W) chinh phục mọi chiến trường ảo với bộ vi xử lý Intel Core i7 thế hệ 12 cùng đồ hoạ NVIDIA GeForce RTX 3060. Giảm tối đa thời gian chờ đợi nhờ ổ SSD PCIe thế hệ 4 và bộ nhớ RAM DDR5 tốc độ cao, luôn sẵn sàng cùng bạn chiến thắng trong mọi cuộc chiến.",
-                    Price = 37490000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/299060/Slider/vi-vn-asus-rog-strix-scar-15-g533z-i7-ln2210w-ac-1.jpg",
-                    Quantity = 40,
-                    //PercentSale = 20,
-                    CategoryId = laptopId,
-                    BrandId = asusId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Asus Gaming ROG Strix SCAR 17 G733PZ ",
-                    Description = "Laptop Asus Gaming ROG Strix SCAR 17 G733PZ R9 7945HX (LL980W) được thiết kế để mang đến trải nghiệm chơi game tốt nhất, cung cấp hiệu suất mạnh mẽ với cấu hình ấn tượng, chắc chắn sẽ làm hài lòng những game thủ khó tính nhất.",
-                    Price = 84000000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/305745/asus-gaming-rog-strix-scar-17-g733pz-r9-ll980w-5.jpg",
-                    Quantity = 10,
-                    //PercentSale = 10,
-                    CategoryId = laptopId,
-                    BrandId = asusId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Asus Zenbook 14 Flip OLED UP3404VA ",
-                    Description = "Thêm một siêu phẩm được trang bị bộ vi xử lý Intel thế hệ 13 hoàn toàn mới có mặt tại Thế Giới Di Động đó chính là laptop Asus Zenbook 14 Flip OLED UP3404VA i7 (KN039W) với những thông số hết sức ấn tượng.                   ",
-                    Price = 31990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304259/asus-zenbook-14-flip-oled-up3404va-i7-kn039w-ab-glr-15.jpg",
-                    Quantity = 10,
-                    //PercentSale = 5,
-                    CategoryId = laptopId,
-                    BrandId = asusId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Asus Vivobook S 14 Flip TP3402VA ",
-                    Description = "Laptop Asus Vivobook S 14 Flip TP3402VA i5 (LZ031W) được thiết kế với sự cân bằng tuyệt vời giữa sức mạnh và tính di động, một chiếc laptop cao cấp được tích hợp nhiều tính năng và cấu hình tiên tiến, sẵn sàng đáp ứng mọi nhu cầu sử dụng của bạn.",
-                    Price = 20990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304869/Slider/vi-vn-asus-vivobook-s-14-flip-tp3402va-i5-lz031w--(3).jpg",
-                    Quantity = 20,
-                    //PercentSale = 5,
-                    CategoryId = laptopId,
-                    BrandId = asusId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Inspiron 16 5620",
-                    Description = "Khi nhắc đến dòng laptop học tập - văn phòng thì bạn không thể nào bỏ qua laptop Dell Inspiron 16 5620 i7 (N6I7110W1) với hiệu năng vượt trội, thiết kế hiện đại và gọn nhẹ phù hợp với nhu cầu sử dụng của sinh viên và nhân viên văn phòng cần phải di chuyển thường xuyên.",
-                    Price = 21990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/292396/Slider/vi-vn-dell-inspiron-16-5620-i7-n6i7110w1-1.jpg",
-                    Quantity = 20,
-                    //PercentSale = 5,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Gaming Alienware m15 R6 ",
-                    Description = "Nhắc đến dòng laptop gaming, nhà Dell cũng đã sở hữu cho mình một siêu phẩm không thể bỏ qua là chiếc laptop Dell Alienware m15 R6 i7 (P109F001DBL) với card đồ hoạ RTX 3060 6 GB mạnh mẽ sẵn sàng cùng bạn chinh phục mọi thử thách chiến game.",
-                    Price = 47490000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/271545/Slider/vi-vn-dell-gaming-alienware-m15-r6-i7-p109f001dbl-1.jpg",
-                    Quantity = 20,
-                    //PercentSale = 10,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Gaming G15 5511 ",
-                    Description = "Không những mang đến cho người dùng hiệu năng ấn tượng nhờ con chip Intel thế hệ 11 tân tiến cùng card rời RTX 30 series, laptop Dell Gaming G15 5511 i5 11400H (70266676) còn sở hữu thiết kế thời thượng, lôi cuốn, hứa hẹn sẽ là người cộng sự lý tưởng cùng bạn chinh phục mọi chiến trường.",
-                    Price = 21990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264354/Slider/dell-gaming-g15-5511-i5-70266676-fix-ab-01-1020x570-2.jpg",
-                    Quantity = 30,
-                    //PercentSale = 2,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Inspiron 15 5515",
-                    Description = "Laptop Dell Inspiron 15 5515 R7 (N5R75700U104W1) sẽ là một ứng cử viên sáng giá trong phân khúc laptop học tập - văn phòng bởi lối thiết kế tao nhã, tối giản cùng những thông số kỹ thuật ấn tượng, đáp ứng tốt mọi nhu cầu cơ bản hằng ngày phục vụ cho mọi đối tượng người dùng đặc biệt là học sinh, sinh viên và dân văn phòng.",
-                    Price = 17990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/267558/Slider/vi-vn-dell-inspiron-15-5515-r7-n5r75700u104w1-1.jpg",
-                    Quantity = 10,
-                    //PercentSale = 3,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Inspiron 15 3520",
-                    Description = "Laptop Dell Inspiron 15 3520 i5 1235U (i5U085W11BLU) là phiên bản laptop học tập - văn phòng của nhà Dell khi sở hữu phong cách thiết kế tối giản nhưng không kém phần trẻ trung, bộ vi xử lý Intel Gen 12 và bộ Office bản quyền vĩnh viễn đáp ứng đầy đủ mọi nhu cầu học tập, văn phòng của người dùng.",
-                    Price = 16990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/296921/Slider/vi-vn-dell-inspiron-15-3520-i5u085w11blu-1.jpg",
-                    Quantity = 30,
-                    //PercentSale = 5,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Inspiron 15 3511",
-                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
-                    Price = 12690000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
-                    Quantity = 10,
-                    //PercentSale = 5,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Inspiron 15 3511",
-                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
-                    Price = 12690000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
-                    Quantity = 10,
-                    //PercentSale = 5,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dell Inspiron 15 3511",
-                    Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
-                    Price = 12690000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
-                    Quantity = 10,
-                    //PercentSale = 5,
-                    CategoryId = laptopId,
-                    BrandId = dellId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "iPhone 14 Pro Max 1TB",
-                    Description = "iPhone 14 Pro Max 1TB là phiên bản điện thoại cao cấp nhất mà Apple đã cho ra mắt tại sự kiện giới thiệu sản phẩm mới cho năm 2022. Được thừa hưởng mọi công nghệ hàng đầu thế giới nên máy hứa hẹn sẽ mang lại trải nghiệm sử dụng tốt nhất từ chơi game cho tới chụp ảnh, xứng đáng là chiếc điện thoại đáng mua nhất trên thị trường hiện tại.",
-                    Price = 51990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/289705/iphone-14-pro-max-vang-1.jpg",
-                    Quantity = 10,
-                    //PercentSale = 20,
-                    CategoryId = smartphoneId,
-                    BrandId = appleId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "iPhone 14 Pro Max",
-                    Description = "iPhone 14 Pro Max một siêu phẩm trong giới smartphone được nhà Táo tung ra thị trường vào tháng 09/2022. Máy trang bị con chip Apple A16 Bionic vô cùng mạnh mẽ, đi kèm theo đó là thiết kế hình màn hình mới, hứa hẹn mang lại những trải nghiệm đầy mới mẻ cho người dùng iPhone.",
-                    Price = 27990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/251192/Slider/iphone-14-pro-max-tong-quan-1020x570.jpg",
-                    Quantity = 20,
-                    //PercentSale = 15,
-                    CategoryId = smartphoneId,
-                    BrandId = appleId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "iPhone 14 Pro",
-                    Description = "iPhone 14 Pro 128GB - Mẫu smartphone đến từ nhà Apple được mong đợi nhất năm 2022, lần này nhà Táo mang đến cho chúng ta một phiên bản với kiểu thiết kế hình notch mới, cấu hình mạnh mẽ nhờ con chip Apple A16 Bionic và cụm camera có độ phân giải được nâng cấp lên đến 48 MP.",
-                    Price = 24990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/247508/Slider/iphone-14-pro-up-3-new-1933x982.jpg",
-                    Quantity = 10,
-                    //PercentSale = 13,
-                    CategoryId = smartphoneId,
-                    BrandId = appleId,
-                },
-                new Product()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "iPhone 14 ",
-                    Description = "iPhone 14 128GB được xem là mẫu smartphone bùng nổ của nhà táo trong năm 2022, ấn tượng với ngoại hình trẻ trung, màn hình chất lượng đi kèm với những cải tiến về hệ điều hành và thuật toán xử lý hình ảnh, giúp máy trở thành cái tên thu hút được đông đảo người dùng quan tâm tại thời điểm ra mắt.",
+                    Id = acerasp15,
+                    Name = "Laptop ACER Aspire 5 A514-55-5954 (NX.K5BSV.001) (i5-1235U/RAM 8GB/512GB SSD/ Windows 11)",
+                    Description = "Laptop Acer Aspire 5 A514-55-5954 NX. K5BSV.001 is one of the top choices for students as well as office workers. With a minimalist but still extremely sophisticated design along with powerful performance thanks to the Intel Core i5 CPU will be a great assistant for you in work, study as well as entertainment",
                     Price = 19990000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/240259/iphone-14-xanh-1.jpg",
-                    Quantity = 10,
-                    //PercentSale = 5,
-                    CategoryId = smartphoneId,
-                    BrandId = appleId,
+                    ImageUrl = "https://lh3.googleusercontent.com/dF2OlQH_sxhOSNEUvCpUhODxCVoNqtrPHIDtosatk9iKmkmc_k6uq_5salWjPEob-5U1urzlFmTtqpByX7kvmdn0cKFB43Ps=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = accerId,
+                    FolderId = "1U7gBEhG9szCsxXY95gzGO-mDX5M21Ric"
                 },
                 new Product()
                 {
-                    Id = Guid.NewGuid(),
-                    Name = "iPhone 14 Plus",
-                    Description = "Sau nhiều thế hệ điện thoại của Apple thì cái tên “Plus” cũng đã chính thức trở lại vào năm 2022 và xuất hiện trên chiếc iPhone 14 Plus 128GB, nổi trội với ngoại hình bắt trend cùng màn hình kích thước lớn để đem đến không gian hiển thị tốt hơn cùng cấu hình mạnh mẽ không đổi so với bản tiêu chuẩn.",
-                    Price = 21890000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/245545/iphone-14-plus-ti-1.jpg",
-                    Quantity = 15,
-                    //PercentSale = 5,
-                    CategoryId = smartphoneId,
-                    BrandId = appleId,
+                    Id = acernitro5,
+                    Name = "Laptop ACER Nitro 5 Eagle AN515-57-54MV (i5-11400H/RAM 8GB/RTX 3050/512GB SSD/ Windows 11)",
+                    Description = "As a gaming laptop line of the Acer brand, the Acer Nitro 5 Eagle AN515-57-54MV laptop is equipped with a powerful i5 chip, NVIDIA GeForce RTX 3050 graphics card, 8Gb ram and large capacity. Combined with its beautiful and powerful design, this will be the choice for young gamers and people doing graphics-related work",
+                    Price = 25990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/c7VuA4P8sHHJCilfzRVp50AQmgZEkJOyOCuh4vvkcT9jxfqTzZVd2gepUFSSqzXVSEljnYlAN319sJD-H1IztNcxPT3UypA=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = accerId,
+                    FolderId = "1p7PobtADVoyyLZnOokk2ltDiFCAsdyfL"
+                },
+
+                new Product()
+                {
+                    Id = asus1,
+                    Name = "Laptop ASUS Vivobook X515EA-EJ3633W (i3-1115G4/RAM 8GB/512GB SSD/ Windows 11)",
+                    Description = "ASUS Vivobook X515EA-EJ3633W laptop (i3-1115G4) is equipped with Intel Core i3 CPU, 8GB Onboard DDR4 RAM capacity along with 512GB SSD hard drive for you to freely store study data, basic work with office tasks. Anti-glare screens help protect your eyes well from harmful blue light",
+                    Price = 11290000,
+                    ImageUrl = "https://lh3.googleusercontent.com/kkZs0JLWxfJpJg1dMiuzMDNayo_HpxHAaCQzVHE_ecuXjXD3vvZTGynpe4S2Ou5Y0FR-HVCIh4UU_o11huEYAm104zukaYlk=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                    FolderId = "1lge0An1ZzjQlD3oV-cjenDJ9M4WJzTL7"
                 },
                 new Product()
                 {
-                    Id = Guid.NewGuid(),
-                    Name = "iPhone 13 ",
-                    Description = "Trong khi sức hút đến từ bộ 4 phiên bản iPhone 12 vẫn chưa nguội đi, thì hãng điện thoại Apple đã mang đến cho người dùng một siêu phẩm mới iPhone 13 với nhiều cải tiến thú vị sẽ mang lại những trải nghiệm hấp dẫn nhất cho người dùng.",
-                    Price = 17000000,
-                    ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-xanh-1.jpg",
-                    Quantity = 25,
-                    //PercentSale = 20,
+                    Id = asus2,
+                    Name = "Laptop ASUS Vivobook 15 X1504VA-NJ025W (i5-1335U/RAM 8GB/512GB SSD/ Windows 11)",
+                    Description = "Updating",
+                    Price = 17990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/_w0us6FSWOX-V9byAkNIbBL2BDR0CH7_pQODsmFKEP2PcEHM4O8EfHSy2LpBx35SX5SWgQFNEJ0aW1kPp-_aujK9mhL2_AjBHg=w1000-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                    FolderId = "1iEEPx1N9MkI7LBBP_hBwODMvZ6sih4mX"
+                },
+                new Product()
+                {
+                    Id = asus3,
+                    Name = "Laptop ASUS Vivobook 16 M1605YA-MB303W (Ryzen 7 7730U/RAM 16GB/512GB SSD/ Windows 11)",
+                    Description = "Updating",
+                    Price = 18490000,
+                    ImageUrl = "https://lh3.googleusercontent.com/GBCMEXu9-VgSeUAO8fW-XlSD-9GGd5YYwOkH8yi3cQOn0rRXFvNbIkDhoQbcr0iI3aeO6PDS4hHS2ZbQDhA8Rwedz5u1VOnS=w1000-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = asusId,
+                    FolderId = "1kX3Ic2DGpw7jR46-iNGWgpDlHGHNt40o"
+                },
+
+                new Product()
+                {
+                    Id = dellins15,
+                    Name = "Laptop Dell Inspiron 15 3520 (3520-71003264) (i3-1215U/RAM 8GB/512GB SSD/ Windows 11 + Office)",
+                    Description = "The Dell Inspiron 15 3520 3520-71003264 i3-1215U Carbon Black is the perfect office laptop. The device is equipped with Intel Core i3 Alder Lake - 1215U chip, integrated Intel UHD Graphics card. Not too powerful but enough to meet your daily study and work needs",
+                    Price = 15990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/nOikqpVL4HXGK3Hs6wKff1Wnl-U7aYbpvw6lu83FHjfGNVGMdF6OyoVLq_pErwB-MmmfDmN7VKIEaQ6Fc9T7k6hKYoXafeYhYg=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                    FolderId = "1yobT5QGolFBw6r3dGOBKtutHG0eizgfy"
+                },
+                new Product()
+                {
+                    Id = dellins3530,
+                    Name = "Laptop Dell Inspiron 3530 - N5I5791W1 (i5-1335U/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                    Description = "Updating",
+                    Price = 20290000,
+                    ImageUrl = "https://lh3.googleusercontent.com/b00d0m8txaixII_rmYYCu1W1N0yeXlgANpNPvGC6ATQLAFZWbyqtUnAMqJhTsirVuwCVMXb0FwX6JXBPRPQLtAmGujAbLNuS=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                    FolderId = "1ildfLhZpElIwWRcHPfmhIe9xwWhusoTY"
+                },
+                new Product()
+                {
+                    Id = dellins14,
+                    Name = "Laptop Dell Inspiron 14 5430 - i5P165W11SL2050 (i5-1340P/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                    Description = "Updating",
+                    Price = 29790000,
+                    ImageUrl = "https://lh3.googleusercontent.com/wFM2g6YQMMVWACV2sVKL6ouSZpVFWeIcwvWZ9f1mjyDBOzPNghhib2EPJBLrRUcbrDbC52fSzGwRp8sCLbpvoYHkbE3nsg0=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                    FolderId = "1Wxkpz8DL6OAuA-iE2Y8QfINzWwMdcYN7"
+                },
+                new Product()
+                {
+                    Id = dellins16,
+                    Name = "Laptop Dell Inspiron 16 5630 - i7P165W11SL2050 (i7-1360P/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                    Description = "Updating",
+                    Price = 30990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/kC9I2-5m1WbJlbXYStTMIuVcLNj1Qex_Bae7GQ1iqEwBzj1GhQSUCy2IJXxL0qinWDyWFlO80JZcYVN1YXLEPnhmsW70t639ww=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                    FolderId = "1VCX_PE9G4DIU16blKhPiCdhWPWC6mvR8"
+                },
+                new Product()
+                {
+                    Id = dellvos3430,
+                    Name = "Laptop Dell Vostro 3430 (i7-1355U/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                    Description = "Updating",
+                    Price = 26690000,
+                    ImageUrl = "https://lh3.googleusercontent.com/QQEbvWwDKVxZedtS1EFexrYOZa6RqhW1J7mFYZU_IiMjbwV5fWHQWXvCxwwdv5hWK-GMOgthkMOslRRCAIUSA5p-HyCLbLE=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                    FolderId = "134Zgrr4qGMDGTvc5iv-ajH2cELOW9GsK"
+                },
+                new Product()
+                {
+                    Id = dellins142,
+                    Name = "Laptop Dell Inspiron 14 5430 (i7-1360P/RAM 16GB/1TB SSD/ Windows 11 + Office)",
+                    Description = "Updating",
+                    Price = 31490000,
+                    ImageUrl = "https://lh3.googleusercontent.com/JzaLDtRkM112HJ0nqZ1SiIVOxSimMwOgmCx00Bbat3LXC7H-cCja3vJJg4Ac70UHfE2TVGCMp6loAqLMUT8VD0WSvxCqphM=w500-rw",
+                    Quantity = 100,
+                    CategoryId = laptopId,
+                    BrandId = dellId,
+                    FolderId = "1sxNQzMjOHSJ7fTAIWGWdVkx1YkuAxdbw"
+                },
+
+                new Product()
+                {
+                    Id = ip15pm,
+                    Name = "iPhone 15 Pro Max - Genuine VNA",
+                    Description = "iPhone 15 Pro Max belongs to the high-end product line that has just been launched by Apple on the market in 2023, retaining the outstanding design \"Dynamic Island\" along with a series of luxurious colors. The iPhone 15 Pro max is equipped with a new A17 Bionic chip with outstanding and powerful processing performance today to perform the tasks you want",
+                    Price = 43990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/8w4MFwwKtq8dboBtb_bJLWcYgZge4G4G3kVv2tF8yKEQfUeu0xihFhvC2IGiZaQrnSfoZDU_Qcbk938-uolUGIX396P_qlQ=w500-rw",
+                    Quantity = 100,
                     CategoryId = smartphoneId,
                     BrandId = appleId,
-                }
-
-            );
-
-            builder.Entity<LandPApi.Models.View>().HasData(
-                new Models.View
-                {
-                    CustomerId = userId,
-                    ProductId = xiaomi12t5gId
+                    FolderId = "1Ifg5rJYBvzJtFdk6ZfqM_cUbJvf6k6Mj"
                 },
-                new Models.View
+                new Product()
                 {
-                    CustomerId = userId,
-                    ProductId = xiaominote12pro5gId
+                    Id = ip13,
+                    Name = "iPhone 13 128GB Pink mobile phone (MLPH3VN/A)",
+                    Description = "The set of 4 versions of iPhone 12 is still attractive and has not cooled, but Apple brings users a new super product iPhone 13 with many interesting improvements that promise to bring the most attractive experience to users",
+                    Price = 24990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/NA85MErOuDh4WfEGmnTIDG6O-SMoCvMve2sGMqKpBJ-CrGCRcdv7Ouo5HpRr-ZrnIbah9GEWcZA_hO7BRmu4wHw0UktOkZgo=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                    FolderId = "1q9K2oaCGMyerUkMlELsDRoBZrfGXmhNa"
                 },
-                new Models.View
+                new Product()
                 {
-                    CustomerId = user1Id,
-                    ProductId = xiaomi12t5gId
+                    Id = ip13mn,
+                    Name = "iPhone 13 mini 128GB (pink) (3J765VN/A) (DEMO) (PINK) - Exhibits",
+                    Description = "Updating",
+                    Price = 17490000,
+                    ImageUrl = "https://lh3.googleusercontent.com/rT4c6CfzG8osJnzcpD4kDpdmInxJZ3y_qKBaR5OiMKNUWvV3KDVCh5Ke4vm6D2tmQYluG4_gVDR5wHKgob2lKasef-ODOmWh=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                    FolderId = "1FGeL7rFIhopiQKRmN4N47myHzxBOSmOB"
                 },
-                new Models.View
+                new Product()
                 {
-                    CustomerId = user1Id,
-                    ProductId = xiaominote12pro5gId
+                    Id = ip14pm,
+                    Name = "iPhone 14 Pro Max | Genuine VNA",
+                    Description = "iPhone 14 Pro Max launched in September 2022 has made a prominent mark on the smart mobile market worldwide by an impressive makeover of the \"Dynamic Island\" screen design. iPhone 14 pro series is favored by Apple when equipped with a powerful A16 Bionic chip with outstanding processing performance, helping you perform many tasks on the device at the same time without jerking or lag",
+                    Price = 36990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/Y1OVqtPmmjFd3lzbR0onqBQLgUtNkiX2T4zCffguTiZoMs73EJ9naybVgmrRat4i6bqWSC6oMQYvkWZlKxWlddEY3EzNvIj6=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                    FolderId = "10CQlOpmK0_9G6lBaJnvZ5TvXnecJOFgR"
                 },
-                new Models.View
+                new Product()
                 {
-                    CustomerId = user1Id,
-                    ProductId = suunto7Id
+                    Id = ip15p,
+                    Name = "iPhone 15 Plus - Genuine VNA",
+                    Description = "In the iPhone 15 series collection launched in 2023, iPhone 15 Plus in particular and other iPhone 15 versions in general are highly appreciated to have a leap in new design, outstanding features are improved compared to the iPhone 14 series in 2022, bringing a completely new experience for iPhone enthusiasts. Join Phong Vu to learn about iPhone 15 Plus through this article!",
+                    Price = 27990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/_eACMH4Tyg60SnkYcrMPgscrJ1P6PB8I_hmIUdWjDouY-hSJ44lNjiD2BDE6XMQ_ZUoIUvU9C4zlJCfBOwv5AC-eA6eQC1g=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                    FolderId = "1PeJEiAIBag3DupEC0hZOI4BRKqtuoTI5"
                 },
-                new Models.View
+                new Product()
                 {
-                    CustomerId = user1Id,
-                    ProductId = ssa23Id
-                }
-            );
-
-            var order1 = Guid.Parse("cd9218db-08c0-4af8-9058-0ac6cf7d58b9");
-            var order2 = Guid.Parse("6925f34b-4021-4fe9-9155-88b9e0df0678");
-            var order3 = Guid.Parse("5470e410-d659-4cdc-b84b-bb174a67a2bf");
-            var order4 = Guid.NewGuid();
-            var order5 = Guid.NewGuid();
-            var order6 = Guid.NewGuid();
-            var order7 = Guid.NewGuid();
-            var order8 = Guid.NewGuid();
-            var order9 = Guid.NewGuid();
-            var order10 = Guid.NewGuid();
-            var order11 = Guid.NewGuid();
-
-            builder.Entity<Order>().HasData(
-                new Order
-                {
-                    Id = order1,
-                    CustomerId = userId,
-                    AddressId = addresuserId,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
+                    Id = ip14,
+                    Name = "iPhone 14 128GB",
+                    Description = "Product descriptions will be updated as soon as possible!",
+                    Price = 24990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/HD6tK_lv_T2Hp6WDHzRREnZI0T-Cnx1hgDTAPuMWZBHB8di1gdeyL5KBZz34diG54BDRF0zqXQL6loA90vL4HoS0jmUYFEc=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartphoneId,
+                    BrandId = appleId,
+                    FolderId = "1rgiZ9htIqDMEvN_6_xUpKZQ3oXMY704V"
                 },
-                new Order
+                new Product()
                 {
-                    Id = order2,
-                    CustomerId = userId,
-                    AddressId = addresuserId,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
+                    Id = ssa05,
+                    Name = "Samsung Galaxy A05 (4+128) (Black) (SM-A055FZKGXXV)",
+                    Description = "Updating",
+                    Price = 3090000,
+                    ImageUrl = "https://lh3.googleusercontent.com/knEb077WDBllxLpzXhn_3HIAoR-l7TvZzCd2fsUL7P1dOeN5W6WDNQVDBn3xpHIir8jYE37c9s0ZI47I-rtni2dm2SB5xe8shg=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartphoneId,
+                    BrandId = samsungId,
+                    FolderId = "10Z1Q2lr51ycdqF6fejHz_WgoaX7qDpYl"
                 },
-                new Order
+                new Product()
                 {
-                    Id = order3,
-                    CustomerId = user1Id,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
+                    Id = xiaomi12c,
+                    Name = "Xiaomi Redmi 12C (4GB/64GB) (Blue)",
+                    Description = "Updating",
+                    Price = 3590000,
+                    ImageUrl = "https://lh3.googleusercontent.com/wSCq7HZuqP30D8ZFZrFpi95EX_GLeN22ZymVx5_it-B8QjrqL2xdQ8q98PJix7lE0BtpOfTaPNVazU84Gv9YyADTC57OAss=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartphoneId,
+                    BrandId = xiaomiId,
+                    FolderId = "19a9uKIG6FsYwGBIpdAOOeuybQIfhg_3I"
                 },
-                new Order
+                new Product()
                 {
-                    Id = order4,
-                    CustomerId = user1Id,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
+                    Id = ipadpro,
+                    Name = "iPad Pro 11 inch M2 Wifi",
+                    Description = "Updating",
+                    Price = 23990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/xrZTVonyBNNMAjArfukj_4B1xD8O4T_poW3j0SLYpaYVIvei3Pv2zYzefhLA65v_6_2aFfv0953cGXXVZ8UBZAu0g5CLSA=w500-rw",
+                    Quantity = 100,
+                    CategoryId = tabletId,
+                    BrandId = appleId,
+                    FolderId = "1R0gypNL_KuXDb4Hsw-TK92OB4wyBcKlN"
                 },
-                new Order
+                new Product()
                 {
-                    Id = order5,
-                    CustomerId = user1Id,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
+                    Id = tabss,
+                    Name = "Samsung Galaxy Tab S7 FE LTE Tablet 4GB/64GB (Black) (SM-T735NZKAXXV)",
+                    Description = "Updating",
+                    Price = 13990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/WDBs6MVNz4hnSM3L1ukUN98WmnDm7Ag_s_AhLNYVWuvg0lYprSCTmtj8UDNCHu621AvU1eUMwlEylid-_JamBDp1Xdo33W0b=w500-rw",
+                    Quantity = 100,
+                    CategoryId = tabletId,
+                    BrandId = samsungId,
+                    FolderId = "1HVLMIm5HTuj-anZwQGeewsD4XpeioTLx"
                 },
-                new Order
+                new Product()
                 {
-                    Id = order6,
-                    CustomerId = user1Id,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
-                },
-                new Order
-                {
-                    Id = order7,
-                    CustomerId = user1Id,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
-                },
-                new Order
-                {
-                    Id = order8,
-                    CustomerId = user1Id,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
-                },
-                new Order
-                {
-                    Id = order9,
-                    CustomerId = user1Id,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
-                },
-                new Order
-                {
-                    Id = order10,
-                    CustomerId = userId,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
-                },
-                new Order
-                {
-                    Id = order11,
-                    CustomerId = userId,
-                    AddressId = addresuser1Id,
-                    PaidAt = DateTime.Now,
-                    Status = Status.Delivered,
+                    Id = applewatch2,
+                    Name = "Apple Watch Ultra 2 4G 49mm (Blue Olive Alpine - M Titanium Case) (MREY3VN/A)",
+                    Description = "Updating",
+                    Price = 25990000,
+                    ImageUrl = "https://lh3.googleusercontent.com/h1DPkY2SVo3kw4e37lnqiJRd1nd5QlaNPDXxjiF8UJ4yakeTrR1wNzGO4W7qTMjSy8qQI7_2yS_B2M6975c4ceziO__U0MryBw=w500-rw",
+                    Quantity = 100,
+                    CategoryId = smartwatchId,
+                    BrandId = appleId,
+                    FolderId = "18B4NF_mYnJqpx41VfJLjAGBKbtQyfB4M"
                 }
             );
-
-            builder.Entity<OrderDetail>().HasData(
-                new OrderDetail
+            #endregion
+            #region ProductPrice
+            builder.Entity<ProductPrice>().HasData(
+                new ProductPrice()
                 {
-                    OrderId = order1,
-                    ProductId = ssa23Id,
-                    Quantity = 2,
-                    Price = 4990000,
-                    //PercentSale = 0
+                    Id = 1,
+                    ProductId = macpro16,
+                    Price = 94690000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order1,
-                    ProductId = ip12Id,
-                    Quantity = 2,
-                    Price = 15590000,
-                    //PercentSale = 20
+                    Id = 2,
+                    ProductId = macair15,
+                    Price = 34790000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order1,
-                    ProductId = ipad10Id,
-                    Quantity = 1,
-                    Price = 11190000,
-                    //PercentSale = 2
+                    Id = 3,
+                    ProductId = macair2020,
+                    Price = 29990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order1,
-                    ProductId = suunto7Id,
-                    Quantity = 3,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 4,
+                    ProductId = macair2022_1,
+                    Price = 33290000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-
-                //----------------------------//
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order2,
-                    ProductId = ip12Id,
-                    Quantity = 1,
-                    Price = 15590000,
-                    //PercentSale = 20
-                },
-                new OrderDetail
-                {
-                    OrderId = order2,
-                    ProductId = ipad10Id,
-                    Quantity = 2,
-                    Price = 11190000,
-                    //PercentSale = 2
-                },
-                new OrderDetail
-                {
-                    OrderId = order2,
-                    ProductId = suunto7Id,
-                    Quantity = 3,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 5,
+                    ProductId = macair2022_2,
+                    Price = 26590000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
 
-                //-----------------//
-                new OrderDetail
+                // no price for macpro13
+                new ProductPrice()
                 {
-                    OrderId = order3,
-                    ProductId = ipad10Id,
-                    Quantity = 4,
-                    Price = 11190000,
-                    //PercentSale = 2
+                    Id = 6,
+                    ProductId = acer16,
+                    Price = 25990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order4,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 7,
+                    ProductId = acerasp15,
+                    Price = 14990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order5,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 8,
+                    ProductId = acernitro5,
+                    Price = 18990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order6,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 9,
+                    ProductId = asus1,
+                    Price = 9490000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order7,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 10,
+                    ProductId = asus2,
+                    Price = 14990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order8,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 11,
+                    ProductId = asus3,
+                    Price = 15690000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order9,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 12,
+                    ProductId = dellins15,
+                    Price = 14390000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order10,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 13,
+                    ProductId = dellins3530,
+                    Price = 18590000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 },
-                new OrderDetail
+                new ProductPrice()
                 {
-                    OrderId = order11,
-                    ProductId = suunto7Id,
-                    Quantity = 2,
-                    Price = 7250000,
-                    //PercentSale = 0
+                    Id = 14,
+                    ProductId = dellins14,
+                    Price = 27990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 15,
+                    ProductId = dellins16,
+                    Price = 28690000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 16,
+                    ProductId = dellvos3430,
+                    Price = 24890000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 17,
+                    ProductId = dellins142,
+                    Price = 30290000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 18,
+                    ProductId = ip15pm,
+                    Price = 39490000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 19,
+                    ProductId = ip13,
+                    Price = 15990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                // no price for ip13mn
+                new ProductPrice()
+                {
+                    Id = 20,
+                    ProductId = ip14pm,
+                    Price = 29190000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 21,
+                    ProductId = ip15p,
+                    Price = 25190000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 22,
+                    ProductId = ip14,
+                    Price = 18790000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 23,
+                    ProductId = ssa05,
+                    Price = 2990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 24,
+                    ProductId = xiaomi12c,
+                    Price = 2490000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 25,
+                    ProductId = ipadpro,
+                    Price = 19990000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 26,
+                    ProductId = tabss,
+                    Price = 9390000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
+                },
+                new ProductPrice()
+                {
+                    Id = 27,
+                    ProductId = applewatch2,
+                    Price = 21490000,
+                    FromDate = DateTime.Now,
+                    ToDate = DateTime.Now.AddDays(10)
                 }
             );
-
-            builder.Entity<HistoryStatus>().HasData(
-                new HistoryStatus
-                {
-                    OrderId = order1,
-                    Id = Guid.NewGuid(),
-                    Status = Status.New,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order1,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Processing,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order1,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Shipping,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order1,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Delivered,
-                },
-                //--------//
-                new HistoryStatus
-                {
-                    OrderId = order2,
-                    Id = Guid.NewGuid(),
-                    Status = Status.New,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order2,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Processing,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order2,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Shipping,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order2,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Delivered,
-                },
-                //-----//
-                new HistoryStatus
-                {
-                    OrderId = order3,
-                    Id = Guid.NewGuid(),
-                    Status = Status.New,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order3,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Processing,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order3,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Shipping,
-                },
-                new HistoryStatus
-                {
-                    OrderId = order3,
-                    Id = Guid.NewGuid(),
-                    Status = Status.Delivered,
-                }
-            );
-
-            builder.Entity<Review>().HasData(
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order1,
-                    ProductId = ssa23Id,
-                    Comment = "Good",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order1,
-                    ProductId = ipad10Id,
-                    Comment = "More than expected!",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order1,
-                    ProductId = suunto7Id,
-                    Comment = "Wonderful",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order1,
-                    ProductId = ip12Id,
-                    Comment = "Ok",
-                    Rating = 4
-                },
-
-                //-------//
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order2,
-                    ProductId = ipad10Id,
-                    Comment = "More than expected!",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order2,
-                    ProductId = suunto7Id,
-                    Comment = "Wonderful",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order2,
-                    ProductId = ip12Id,
-                    Comment = "Ok",
-                    Rating = 4
-                },
-                //---//
-                new Review
-                {
-                    CustomerId = user1Id,
-                    OrderId = order3,
-                    ProductId = suunto7Id,
-                    Comment = "Ổn trong tầm giá",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = user1Id,
-                    OrderId = order4,
-                    ProductId = suunto7Id,
-                    Comment = "Wonderful",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = user1Id,
-                    OrderId = order5,
-                    ProductId = suunto7Id,
-                    Comment = "Ok",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = user1Id,
-                    OrderId = order6,
-                    ProductId = suunto7Id,
-                    Comment = "No problem",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = user1Id,
-                    OrderId = order7,
-                    ProductId = suunto7Id,
-                    Comment = "So expensive",
-                    Rating = 1
-                },
-                new Review
-                {
-                    CustomerId = user1Id,
-                    OrderId = order8,
-                    ProductId = suunto7Id,
-                    Comment = "worth the money",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = user1Id,
-                    OrderId = order9,
-                    ProductId = suunto7Id,
-                    Comment = "Comfortable",
-                    Rating = 4
-                },
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order10,
-                    ProductId = suunto7Id,
-                    Comment = "Product beauty",
-                    Rating = 5
-                },
-                new Review
-                {
-                    CustomerId = userId,
-                    OrderId = order11,
-                    ProductId = suunto7Id,
-                    Comment = "More than expected",
-                    Rating = 3
-                }
-            );
-
-
+            #endregion
+            #region Document
             builder.Entity<Document>().HasData(
-                new Document
+                new Document()
                 {
-                    Id = "https://drive.google.com/uc?export=view&id=1IzG911rHzKN2p51Ite3JZqDV1FonTt4d",
-                    ProductId = ssa23Id,
+                    Id = "https://drive.google.com/uc?export=view&id=1fXgj_qQJMKNQczOx0Kd_0foAVyiYcmb8",
+                    ProductId = macpro16
                 },
-                new Document
+                new Document()
                 {
-                    Id = "https://drive.google.com/uc?export=view&id=1DeA5LM1HQsUEb9tXUHEg27fWqKenJJDG",
-                    ProductId = ip12Id,
+                    Id = "https://drive.google.com/uc?export=view&id=1F2Z5C1km_4FvIa70xF0b8bL-OwsK07d6",
+                    ProductId = macpro16
                 },
-                new Document
+                new Document()
                 {
-                    Id = "https://drive.google.com/uc?export=view&id=1JgLvP6rxTkkkmdWG7RhyqB4nMnaktLE6",
-                    ProductId = ip12Id,
+                    Id = "https://drive.google.com/uc?export=view&id=1IrnkUeFEoVdNEY-FMf0Y4i33tOEOh1l8",
+                    ProductId = macpro16
                 },
-                new Document
+                new Document()
                 {
-                    Id = "https://drive.google.com/uc?export=view&id=1g7NLy-NZE9OTZhH0xctgVXONMNjHpQ4V",
-                    ProductId = ip12Id,
+                    Id = "https://drive.google.com/uc?export=view&id=1p0Eq0ptA7J3g5mTUP9g131BgLb6XCiyI",
+                    ProductId = macpro16
                 },
-                new Document
+
+                new Document()
                 {
-                    Id = "https://drive.google.com/uc?export=view&id=1JO-t8NpCi9qb9Jx8pmXbdHMvPg8LQAg3",
-                    ProductId = ip12Id,
+                    Id = "https://drive.google.com/uc?export=view&id=1KGDOpVmwofx2viWcLPSdji5_dVz6IEYK",
+                    ProductId = macair15
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1NB-4hrhVBTP0kRbx9VOMRxMEOIsuT0Dt",
+                    ProductId = macair15
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1hcc5bb9xZwftkpNNLbNSdWO-OaglGEU-",
+                    ProductId = macair15
+                },
+
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=18_VERsQCkR5top5RyAiyXBWoyQTVgYLU",
+                    ProductId = macair2020
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1oA7zu7vf9vxdDzRUOfTShMTO9TMYB2t1",
+                    ProductId = macair2020
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1gCSDRkYeTgsuklm4-ZUVKutTKTu6bsOW",
+                    ProductId = macair2020
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=13YRnumTXIikNyks6MMGS7IHy2XKsLcUG",
+                    ProductId = macair2020
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1_8nLKemsZNH5ob80loz-Rjk46gIPCyAk",
+                    ProductId = macair2020
+                },
+
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1AoKIxY1_KpVC--DBDv-5vkL7KRBETaTj",
+                    ProductId = macair2022_1
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=19JhyKc7SDq8OS-FKWCEE1fHlB9zmlF4_",
+                    ProductId = macair2022_1
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1D6w59akVTqabNKBcaDFvZeGh0DHiPZNS",
+                    ProductId = macair2022_1
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1ANMv2MD1x9POXwFzqbtAFJaSVDsBygR_",
+                    ProductId = macair2022_1
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1jFJ0Dy7LgyF9l-bnF6VeOVpvbqDDXkgz",
+                    ProductId = macair2022_1
+                },
+
+                new Document()
+                {
+                    Id = "",
+                    ProductId = macair2022_2
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1sojVUeqtcf6kDA84Mdj73JcbipmW5HP0",
+                    ProductId = macair2022_2
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1pW-V7JEHlpOswTpw68p7GbAV_NV8i62S",
+                    ProductId = macair2022_2
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=17g-gOr-mKqeRCKmv3aLa7kNBIf8AMza2",
+                    ProductId = macair2022_2
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1_mXukBwuEtyZsG7bR_MDAO-d7PjMhP-w",
+                    ProductId = macair2022_2
+                },
+
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1sf_iHr6KcO6Gl7oucfq46NirqaBERifh",
+                    ProductId = macpro13
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1vpOJlcWyzrUGceYi-ilCZ4b3ufeMZapS",
+                    ProductId = macpro13
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1KAPyG_jY6xo0pp13IhGHq3HosAlc42hB",
+                    ProductId = macpro13
+                },
+                new Document()
+                {
+                    Id = "https://drive.google.com/uc?export=view&id=1pmIx4SB6rmApjVB6YIm9rYmsn7C5GNua",
+                    ProductId = macpro13
+                }
+            );
+            #endregion
+            #region Attribute
+            builder.Entity<Attribute>().HasData(
+                new Attribute()
+                {
+                    Id = 1,
+                    Name = "Trademark"
+                },
+                new Attribute()
+                {
+                    Id = 2,
+                    Name = "Warranty"
+                },
+                new Attribute()
+                {
+                    Id = 3,
+                    Name = "Laptop series"
+                },
+                new Attribute()
+                {
+                    Id = 4,
+                    Name = "Colour"
+                },
+                new Attribute()
+                {
+                    Id = 5,
+                    Name = "Demand"
+                },
+                new Attribute()
+                {
+                    Id = 6,
+                    Name = "CPU generation"
+                },
+                new Attribute()
+                {
+                    Id = 7,
+                    Name = "CPU"
+                },
+                new Attribute()
+                {
+                    Id = 8,
+                    Name = "Graphics chip"
+                },
+                new Attribute()
+                {
+                    Id = 9,
+                    Name = "RAM"
+                },
+                new Attribute()
+                {
+                    Id = 10,
+                    Name = "Monitor"
+                },
+                new Attribute()
+                {
+                    Id = 11,
+                    Name = "Archive"
+                },
+                new Attribute()
+                {
+                    Id = 12,
+                    Name = "Video output port"
+                },
+                new Attribute()
+                {
+                    Id = 13,
+                    Name = "Gateway"
+                },
+                new Attribute()
+                {
+                    Id = 14,
+                    Name = "Wireless connection"
+                },
+                new Attribute()
+                {
+                    Id = 15,
+                    Name = "Keyboard"
+                },
+                new Attribute()
+                {
+                    Id = 16,
+                    Name = "Operating system"
+                },
+                new Attribute()
+                {
+                    Id = 17,
+                    Name = "Dimension"
+                },
+                new Attribute()
+                {
+                    Id = 18,
+                    Name = "Battery"
+                },
+                new Attribute()
+                {
+                    Id = 19,
+                    Name = "Mass"
+                },
+                new Attribute()
+                {
+                    Id = 20,
+                    Name = "Included accessories"
+                },
+                new Attribute()
+                {
+                    Id = 21,
+                    Name = "Series"
+                },
+                new Attribute()
+                {
+                    Id = 22,
+                    Name = "Screen type"
+                },
+                new Attribute()
+                {
+                    Id = 23,
+                    Name = "Resolution"
+                },
+                new Attribute()
+                {
+                    Id = 24,
+                    Name = "Capacity(ROM)"
+                },
+                new Attribute()
+                {
+                    Id = 25,
+                    Name = "Chip"
+                },
+                new Attribute()
+                {
+                    Id = 26,
+                    Name = "Battery technology"
+                },
+                new Attribute()
+                {
+                    Id = 27,
+                    Name = "Charging port"
+                },
+                new Attribute()
+                {
+                    Id = 28,
+                    Name = "SIM type"
+                },
+                new Attribute()
+                {
+                    Id = 29,
+                    Name = "Mobile networks"
+                },
+                new Attribute()
+                {
+                    Id = 30,
+                    Name = "Rear camera"
+                },
+                new Attribute()
+                {
+                    Id = 31,
+                    Name = "Front camera"
+                },
+                new Attribute()
+                {
+                    Id = 32,
+                    Name = "Wifi"
+                },
+                new Attribute()
+                {
+                    Id = 33,
+                    Name = "GPS"
+                },
+                new Attribute()
+                {
+                    Id = 34,
+                    Name = "Blutooth"
+                },
+                new Attribute()
+                {
+                    Id = 35,
+                    Name = "Headphone jack"
+                },
+                new Attribute()
+                {
+                    Id = 36,
+                    Name = "Feature"
+                },
+                new Attribute()
+                {
+                    Id = 37,
+                    Name = "Case Size"
+                },
+                new Attribute()
+                {
+                    Id = 38,
+                    Name = "Screen technology"
+                },
+                new Attribute()
+                {
+                    Id = 39,
+                    Name = "Screen size"
+                },
+                new Attribute()
+                {
+                    Id = 40,
+                    Name = "Glass Material"
+                },
+                new Attribute()
+                {
+                    Id = 41,
+                    Name = "Internal memory"
+                },
+                new Attribute()
+                {
+                    Id = 42,
+                    Name = "Connect"
+                },
+                new Attribute()
+                {
+                    Id = 43,
+                    Name = "Time of use"
+                },
+                new Attribute()
+                {
+                    Id = 44,
+                    Name = "Material"
+                },
+                new Attribute()
+                {
+                    Id = 45,
+                    Name = "Strap"
+                }
+            );
+            #endregion
+            #region AttributeOption
+            builder.Entity<AttributeOption>().HasData(
+                new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 1,
+                    Value = "APPLE"
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 1,
+                    Value = "ACER"
+                }, new AttributeOption()
+                {
+                    Id = 3,
+                    AttributeId = 1,
+                    Value = "ASUS"
+                }, new AttributeOption()
+                {
+                    Id = 4,
+                    AttributeId = 1,
+                    Value = "Dell"
+                }, new AttributeOption()
+                {
+                    Id = 5,
+                    AttributeId = 1,
+                    Value = "Samsung"
+                }, new AttributeOption()
+                {
+                    Id = 6,
+                    AttributeId = 1,
+                    Value = "Xiaomi"
+                }, new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 3,
+                    Value = "Macbook Pro"
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 3,
+                    Value = "Macbook Air"
+                }, new AttributeOption()
+                {
+                    Id = 3,
+                    AttributeId = 3,
+                    Value = "Aspire 5"
+                }, new AttributeOption()
+                {
+                    Id = 4,
+                    AttributeId = 3,
+                    Value = "Nitro 5"
+                }, new AttributeOption()
+                {
+                    Id = 5,
+                    AttributeId = 3,
+                    Value = "Nitro 16"
+                }, new AttributeOption()
+                {
+                    Id = 6,
+                    AttributeId = 3,
+                    Value = "Vivobook"
+                }, new AttributeOption()
+                {
+                    Id = 7,
+                    AttributeId = 3,
+                    Value = "Inspiron"
+                }, new AttributeOption()
+                {
+                    Id = 8,
+                    AttributeId = 3,
+                    Value = "Vostro"
+                },
+
+
+
+
+                new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 4,
+                    Value = "Silver"
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 4,
+                    Value = "Gold"
+                }, new AttributeOption()
+                {
+                    Id = 3,
+                    AttributeId = 4,
+                    Value = "Red"
+                }, new AttributeOption()
+                {
+                    Id = 4,
+                    AttributeId = 4,
+                    Value = "Midnight"
+                }, new AttributeOption()
+                {
+                    Id = 5,
+                    AttributeId = 4,
+                    Value = "Starlight"
+                }, new AttributeOption()
+                {
+                    Id = 6,
+                    AttributeId = 4,
+                    Value = "White"
+                }, new AttributeOption()
+                {
+                    Id = 7,
+                    AttributeId = 4,
+                    Value = "Sand gold"
+                }, new AttributeOption()
+                {
+                    Id = 8,
+                    AttributeId = 4,
+                    Value = "Bronze gold"
+                }, new AttributeOption()
+                {
+                    Id = 9,
+                    AttributeId = 4,
+                    Value = "Green"
+                }, new AttributeOption()
+                {
+                    Id = 10,
+                    AttributeId = 4,
+                    Value = "Grey"
+                }, new AttributeOption()
+                {
+                    Id = 11,
+                    AttributeId = 4,
+                    Value = "Silver gray"
+                }, new AttributeOption()
+                {
+                    Id = 12,
+                    AttributeId = 4,
+                    Value = "Dark gray"
+                }, new AttributeOption()
+                {
+                    Id = 13,
+                    AttributeId = 4,
+                    Value = "Black"
+                }, new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 5,
+                    Value = "Business"
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 5,
+                    Value = "Entrepreneur"
+                }, new AttributeOption()
+                {
+                    Id = 3,
+                    AttributeId = 5,
+                    Value = "Gaming"
+                }, new AttributeOption()
+                {
+                    Id = 4,
+                    AttributeId = 5,
+                    Value = "Family"
+                }, new AttributeOption()
+                {
+                    Id = 5,
+                    AttributeId = 5,
+                    Value = "Students"
+                }, new AttributeOption()
+                {
+                    Id = 6,
+                    AttributeId = 5,
+                    Value = "Office"
+                }, new AttributeOption()
+                {
+                    Id = 7,
+                    AttributeId = 5,
+                    Value = "Graphics - Engineering"
+                }, new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 6,
+                    Value = "Apple M"
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 6,
+                    Value = "Celeron"
+                }, new AttributeOption()
+                {
+                    Id = 3,
+                    AttributeId = 6,
+                    Value = "Core i3"
+                }, new AttributeOption()
+                {
+                    Id = 4,
+                    AttributeId = 6,
+                    Value = "Core i5"
+                }, new AttributeOption()
+                {
+                    Id = 5,
+                    AttributeId = 6,
+                    Value = "Core i7"
+                }, new AttributeOption()
+                {
+                    Id = 6,
+                    AttributeId = 6,
+                    Value = "Core i9"
+                }, new AttributeOption()
+                {
+                    Id = 7,
+                    AttributeId = 6,
+                    Value = "Qualcomn"
+                }, new AttributeOption()
+                {
+                    Id = 8,
+                    AttributeId = 6,
+                    Value = "Snapdrogon"
+                }, new AttributeOption()
+                {
+                    Id = 9,
+                    AttributeId = 6,
+                    Value = "Ryzen 3"
+                }, new AttributeOption()
+                {
+                    Id = 10,
+                    AttributeId = 6,
+                    Value = "Ryzen 5"
+                }, new AttributeOption()
+                {
+                    Id = 11,
+                    AttributeId = 6,
+                    Value = "Ryzen 7"
+                }, new AttributeOption()
+                {
+                    Id = 12,
+                    AttributeId = 6,
+                    Value = "Ryzen 9"
+                }, new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 9,
+                    Value = "4GB"
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 9,
+                    Value = "8GB"
+                }, new AttributeOption()
+                {
+                    Id = 3,
+                    AttributeId = 9,
+                    Value = "16GB"
+                }, new AttributeOption()
+                {
+                    Id = 4,
+                    AttributeId = 9,
+                    Value = "24GB"
+                }, new AttributeOption()
+                {
+                    Id = 5,
+                    AttributeId = 9,
+                    Value = "32GB"
+                }, new AttributeOption()
+                {
+                    Id = 6,
+                    AttributeId = 9,
+                    Value = "64GB"
+                }, new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 10,
+                    Value = "11.6\""
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 10,
+                    Value = "12.3\""
+                }, new AttributeOption()
+                {
+                    Id = 3,
+                    AttributeId = 10,
+                    Value = "13\""
+                }, new AttributeOption()
+                {
+                    Id = 4,
+                    AttributeId = 10,
+                    Value = "13.3\""
+                }, new AttributeOption()
+                {
+                    Id = 5,
+                    AttributeId = 10,
+                    Value = "13.4\""
+                }, new AttributeOption()
+                {
+                    Id = 6,
+                    AttributeId = 10,
+                    Value = "13.5\""
+                }, new AttributeOption()
+                {
+                    Id = 7,
+                    AttributeId = 10,
+                    Value = "13.6\""
+                }, new AttributeOption()
+                {
+                    Id = 8,
+                    AttributeId = 10,
+                    Value = "14\""
+                }, new AttributeOption()
+                {
+                    Id = 9,
+                    AttributeId = 10,
+                    Value = "14.2\""
+                }, new AttributeOption()
+                {
+                    Id = 10,
+                    AttributeId = 10,
+                    Value = "14.5\""
+                }, new AttributeOption()
+                {
+                    Id = 11,
+                    AttributeId = 10,
+                    Value = "15.3\""
+                }, new AttributeOption()
+                {
+                    Id = 12,
+                    AttributeId = 10,
+                    Value = "15.6\""
+                }, new AttributeOption()
+                {
+                    Id = 13,
+                    AttributeId = 10,
+                    Value = "16\""
+                }, new AttributeOption()
+                {
+                    Id = 14,
+                    AttributeId = 10,
+                    Value = "16.1\""
+                }, new AttributeOption()
+                {
+                    Id = 15,
+                    AttributeId = 10,
+                    Value = "17\""
+                }, new AttributeOption()
+                {
+                    Id = 16,
+                    AttributeId = 10,
+                    Value = "17.3\""
+                }, new AttributeOption()
+                {
+                    Id = 17,
+                    AttributeId = 10,
+                    Value = "18\""
+                }, new AttributeOption()
+                {
+                    Id = 1,
+                    AttributeId = 16,
+                    Value = "Android"
+                }, new AttributeOption()
+                {
+                    Id = 2,
+                    AttributeId = 16,
+                    Value = "iOS"
+                }
+            );
+            #endregion
+            #region AttributeSpec
+            builder.Entity<AttributeSpec>().HasData(
+                new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 1,
+                    OptionID = 1
+                },
+                new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 3,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 5,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 6,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 7,
+                    Value = "Apple M2 Max ( 12-Core CPU / 64-Core GPU )"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 9,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 10,
+                    OptionID = 13
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 13,
+                    Value = "3 x Thunderbolt 4 , 1 x 3.5 mm , 1 x SDXC Card Slot"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.3"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 15
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 16,
+                    Value = "macOS"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 17,
+                    Value = "1.68 x 35.57 x 24.81 cm"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 18,
+                    Value = "100 Wh"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 19,
+                    Value = "2.1 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro16,
+                    AttributeId = 20,
+                }
+
+            );
+            #endregion
+            #region Slug
+            var laptopslug = "laptop";
+            var macbookslug = "laptop-apple-macbook";
+            var acerslug = "latop-acer";
+            var asusslug = "laptop-usus";
+            var dellslug = "laptop-dell";
+
+            var smartphoneslug = "smartphone";
+            var iphoneslug = "smartphone-iphone";
+            var ssspslug = "smartphone-samsung";
+            var xiaomislug = "smartphone-xiaomi";
+
+            var tabletslug = "tablet";
+            var ipadslug = "tablet-ipad";
+            var sstabletslug = "tablet-samsung";
+            var smartwatchslug = "smartwatch";
+            var applewatchslug = "smartwatch-apple";
+
+            // slider
+            var blackfriday = "black-friday";
+            var bestsale = "best-sale";
+            var salelaptop = "sale-laptop";
+            builder.Entity<Slug>().HasData(
+                new Slug()
+                {
+                    Id = laptopslug,
+                    Title = "Laptop",
+                    Image = "https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw"
+                }, new Slug()
+                {
+                    Id = macbookslug,
+                    Title = "Apple (Macbook)",
+                }, new Slug()
+                {
+                    Id = acerslug,
+                    Title = "Acer",
+                }, new Slug()
+                {
+                    Id = asusslug,
+                    Title = "ASUS",
+                }, new Slug()
+                {
+                    Id = dellslug,
+                    Title = "Dell",
+                }, new Slug()
+                {
+                    Id = smartphoneslug,
+                    Title = "Smartphone",
+                    Image = "https://lh3.googleusercontent.com/qtC62XnXkTsyJbMok7Z7Uu5GOPvhqslzU5YscZZ0HvorTWRs0Qg5s8gWU6l6CTcmc-pQA2y1myJCZ92t9VDq=rw"
+                }, new Slug()
+                {
+                    Id = iphoneslug,
+                    Title = "Iphone",
+                }, new Slug()
+                {
+                    Id = ssspslug,
+                    Title = "Samsung",
+                }, new Slug()
+                {
+                    Id = xiaomislug,
+                    Title = "Xiaomi",
+                }, new Slug()
+                {
+                    Id = tabletslug,
+                    Title = "Tablet",
+                    Image = "https://lh3.googleusercontent.com/dkzFFaKYmPLLkPnC-cyefC1u1Qh0Iy_6Loz7adsbIMs-KAK8FA_PwUOklM3gEppESc1uSeaTa63U4Vejifo=rw"
+                }, new Slug()
+                {
+                    Id = ipadslug,
+                    Title = "Apple (iPad)",
+                }, new Slug()
+                {
+                    Id = sstabletslug,
+                    Title = "Samsung",
+                }, new Slug()
+                {
+                    Id = smartwatchslug,
+                    Title = "Smartwatch",
+                    Image = "https://th.bing.com/th/id/R.2650cb6112fbd5590eb781022a3c148e?rik=ZlMWy8mm%2fzwGTg&pid=ImgRaw&r=0"
+                }, new Slug()
+                {
+                    Id = applewatchslug,
+                    Title = "Apple",
+                },
+                // slider
+                new Slug()
+                {
+                    Id = blackfriday,
+                    Title = "Black Friday",
+                    Image = "https://ben.com.vn/tin-tuc/wp-content/uploads/2021/10/black-friday-la-ngay-bao-nhieu-750x536.jpg",
+                    IsSilder = true
+                }, new Slug()
+                {
+                    Id = bestsale,
+                    Title = "Sale up to 50%",
+                    Image = "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/fs-0611-1211-theme/desk/tgdd/banner-title.gif",
+                    IsSilder = true
+                }, new Slug()
+                {
+                    Id = salelaptop,
+                    Title = "Laptop gaming sale up to 40%",
+                    Image = "https://static.vecteezy.com/system/resources/thumbnails/006/241/067/small/abstract-polygon-3d-triangle-yellow-geometric-background-free-photo.jpg",
+                    IsSilder = true
                 }
             );
 
+            #endregion
+            #region SlugProduct
+            builder.Entity<SlugProduct>().HasData(
+                new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = macpro16
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = macair15
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = macair2020
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = macair2022_1
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = macair2022_2
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = macpro13
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = acer16
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = acerasp15
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = acernitro5
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = asus1
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = asus2
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = asus3
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = dellins15
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = dellins3530
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = dellins14
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = dellins16
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = dellvos3430
+                }, new SlugProduct()
+                {
+                    SlugId = laptopslug,
+                    ProductId = dellins142
+                },
 
+                // slug lv2
 
+                new SlugProduct()
+                {
+                    SlugId = macbookslug,
+                    ProductId = macpro16
+                }, new SlugProduct()
+                {
+                    SlugId = macbookslug,
+                    ProductId = macair15
+                }, new SlugProduct()
+                {
+                    SlugId = macbookslug,
+                    ProductId = macair2020
+                }, new SlugProduct()
+                {
+                    SlugId = macbookslug,
+                    ProductId = macair2022_1
+                }, new SlugProduct()
+                {
+                    SlugId = macbookslug,
+                    ProductId = macair2022_2
+                }, new SlugProduct()
+                {
+                    SlugId = macbookslug,
+                    ProductId = macpro13
+                }, new SlugProduct()
+                {
+                    SlugId = acerslug,
+                    ProductId = acer16
+                }, new SlugProduct()
+                {
+                    SlugId = acerslug,
+                    ProductId = acerasp15
+                }, new SlugProduct()
+                {
+                    SlugId = acerslug,
+                    ProductId = acernitro5
+                }, new SlugProduct()
+                {
+                    SlugId = asusslug,
+                    ProductId = asus1
+                }, new SlugProduct()
+                {
+                    SlugId = asusslug,
+                    ProductId = asus2
+                }, new SlugProduct()
+                {
+                    SlugId = asusslug,
+                    ProductId = asus3
+                }, new SlugProduct()
+                {
+                    SlugId = dellslug,
+                    ProductId = dellins15
+                }, new SlugProduct()
+                {
+                    SlugId = dellslug,
+                    ProductId = dellins3530
+                }, new SlugProduct()
+                {
+                    SlugId = dellslug,
+                    ProductId = dellins14
+                }, new SlugProduct()
+                {
+                    SlugId = dellslug,
+                    ProductId = dellins16
+                }, new SlugProduct()
+                {
+                    SlugId = dellslug,
+                    ProductId = dellvos3430
+                }, new SlugProduct()
+                {
+                    SlugId = dellslug,
+                    ProductId = dellins142
+                },
 
+                // smartphone slug
+                new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = ip15pm
+                }, new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = ip13
+                }, new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = ip13mn
+                }, new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = ip14pm
+                }, new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = ip15p
+                }, new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = ip14
+                }, new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = ssa05
+                }, new SlugProduct()
+                {
+                    SlugId = smartphoneslug,
+                    ProductId = xiaomi12c
+                },
+                // smartphone lv2
+                new SlugProduct()
+                {
+                    SlugId = iphoneslug,
+                    ProductId = ip15pm
+                }, new SlugProduct()
+                {
+                    SlugId = iphoneslug,
+                    ProductId = ip13
+                }, new SlugProduct()
+                {
+                    SlugId = iphoneslug,
+                    ProductId = ip13mn
+                }, new SlugProduct()
+                {
+                    SlugId = iphoneslug,
+                    ProductId = ip14pm
+                }, new SlugProduct()
+                {
+                    SlugId = iphoneslug,
+                    ProductId = ip15p
+                }, new SlugProduct()
+                {
+                    SlugId = iphoneslug,
+                    ProductId = ip14
+                }, new SlugProduct()
+                {
+                    SlugId = ssspslug,
+                    ProductId = ssa05
+                }, new SlugProduct()
+                {
+                    SlugId = xiaomislug,
+                    ProductId = xiaomi12c
+                }, new SlugProduct()
+                {
+                    SlugId = tabletslug,
+                    ProductId = ipadpro
+                }, new SlugProduct()
+                {
+                    SlugId = tabletslug,
+                    ProductId = tabss
+                }, new SlugProduct()
+                {
+                    SlugId = ipadslug,
+                    ProductId = ipadpro
+                }, new SlugProduct()
+                {
+                    SlugId = sstabletslug,
+                    ProductId = tabss
+                }, new SlugProduct()
+                {
+                    SlugId = smartwatchslug,
+                    ProductId = applewatch2
+                }, new SlugProduct()
+                {
+                    SlugId = applewatchslug,
+                    ProductId = applewatch2
+                },
+
+                // black friday
+                new SlugProduct()
+                {
+                    SlugId = blackfriday,
+                    ProductId = applewatch2
+                }, new SlugProduct()
+                {
+                    SlugId = blackfriday,
+                    ProductId = acer16
+                }, new SlugProduct()
+                {
+                    SlugId = blackfriday,
+                    ProductId = ip15pm
+                }, new SlugProduct()
+                {
+                    SlugId = blackfriday,
+                    ProductId = dellins142
+                }, new SlugProduct()
+                {
+                    SlugId = blackfriday,
+                    ProductId = asus3
+                }, new SlugProduct()
+                {
+                    SlugId = blackfriday,
+                    ProductId = tabss
+                },
+
+                // 11.11
+                new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = macair15
+                }, new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = macair2020
+                }, new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = macair2022_2
+                }, new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = acerasp15
+                }, new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = acernitro5
+                }, new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = dellvos3430
+                }, new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = tabss
+                }, new SlugProduct()
+                {
+                    SlugId = bestsale,
+                    ProductId = ipadpro
+                },
+
+                // sale laptop
+                new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = dellins16
+                }, new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = dellins14
+                }, new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = dellins15
+                }, new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = dellins142
+                }, new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = dellins3530
+                }, new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = asus1
+                }, new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = acerasp15
+                }, new SlugProduct()
+                {
+                    SlugId = salelaptop,
+                    ProductId = acer16
+                }
+            );
+            #endregion
+            #region Menu
+            #endregion
         }
     }
 }

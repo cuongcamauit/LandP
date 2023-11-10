@@ -8,7 +8,7 @@ namespace LandPApi.IService
         List<SlugDto> GetAll();
         SlugDto GetById(String id);
         void Add(SlugView slug);
-        void UpdateCache(string cacheName);
+        // void UpdateCache(string cacheName);
         List<SlugDto> GetSliders();
     }
 }

@@ -1,7 +1,6 @@
 ﻿using LandPApi.Dto;
 using LandPApi.IService;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
@@ -44,7 +43,7 @@ namespace LandPApi.Controllers
         }
 
         [HttpPost("ProductFile")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> PostFile(IFormFile file, Guid productId)
         {
             if (!ModelState.IsValid)

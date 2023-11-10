@@ -24,7 +24,7 @@ namespace LandPApi.Service
             var slugProduct = _mapper.Map<SlugProduct>(slugProductView);
             _repository.Create(slugProduct);
             _repository.Save();
-            _slugService.UpdateCache(ProductService.SlugCacheKey);
+            // _slugService.UpdateCache(ProductService.SlugCacheKey);
         }
 
         public void Remove(SlugProductView slugProductView)
@@ -32,7 +32,7 @@ namespace LandPApi.Service
             var slugProduct = _mapper.Map<SlugProduct>(slugProductView);
             _repository.Delete(slugProduct);
             _repository.Save();
-            _slugService.UpdateCache(ProductService.SlugCacheKey);
+            // _slugService.UpdateCache(ProductService.SlugCacheKey);
         }
     }
 }

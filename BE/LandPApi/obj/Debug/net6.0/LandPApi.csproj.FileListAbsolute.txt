@@ -1263,3 +1263,5 @@ C:\LandP\BE\LandPApi\obj\Debug\net6.0\ref\LandPApi.dll
 D:\LandP\BE\LandPApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 D:\LandP\BE\LandPApi\bin\Debug\net6.0\System.Web.Http.dll
 D:\LandP\BE\LandPApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\client_secret_190041112925-bbo90uoc5h42jkt45uvg7r92g8v20abq.apps.googleusercontent.com.json
+D:\LandP\BE\LandPApi\bin\Debug\net6.0\client_secret_190041112925-sohfidfib7g33dr72l10m96mus6i6j84.apps.googleusercontent.com.json

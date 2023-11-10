@@ -3,13 +3,20 @@ using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using LandPApi.IService;
-using static NuGet.Packaging.PackagingConstants;
 
 namespace LandPApi.Service
 {
     public class GGDriveService : IDriveService
     {
         private readonly DriveService _driveService;
+        public static IDictionary<string, string> mineType = new Dictionary<string, string>()
+        {
+            {".jpg", "image/jpeg" },
+            {".png", "image/png" },
+            {".gif", "image/gif" },
+            {".bmp", "image/bmp" },
+            {".webp", "image/webp" }
+        };
 
         public GGDriveService()
         {
@@ -17,7 +24,7 @@ namespace LandPApi.Service
             string ApplicationName = "LanP";
 
             UserCredential credential;
-            using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream("client_secret_190041112925-sohfidfib7g33dr72l10m96mus6i6j84.apps.googleusercontent.com.json", FileMode.Open, FileAccess.Read))
             {
 
                 string credPath = "token.json";
@@ -39,14 +46,14 @@ namespace LandPApi.Service
                 ApplicationName = ApplicationName,
             });
         }
-        public string AddFile(string filePath, string ex, string folderId = "1Fp5cZ4J75621_nsSQizn2c4ovmt3Jsm4")
+        public string AddFile(string filePath, string ext, string folderId = "1Fp5cZ4J75621_nsSQizn2c4ovmt3Jsm4")
         {
             // ID thư mục file, các bạn thay bằng ID của các bạn khi chạy
 
             var fileMetadata = new Google.Apis.Drive.v3.Data.File()
             {
                 // Tên file sẽ lưu trên Google Drive
-                Name = Guid.NewGuid().ToString() + ex,
+                Name = Guid.NewGuid().ToString() + ext,
 
                 // Thư mục chưa file
                 Parents = new List<string> { folderId }
@@ -58,7 +65,9 @@ namespace LandPApi.Service
             FilesResource.CreateMediaUpload request;
             using (var stream = new System.IO.FileStream(filePath, System.IO.FileMode.Open))
             {
-                request = _driveService.Files.Create(fileMetadata, stream, "image/jpeg");
+                var minetype = GGDriveService.mineType[ext];
+                //request = _driveService.Files.Create(fileMetadata, stream, "image/jpeg");
+                request = _driveService.Files.Create(fileMetadata, stream, minetype);
 
                 // Cấu hình thông tin lấy về là ID
                 request.Fields = "id";

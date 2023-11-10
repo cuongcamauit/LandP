@@ -108,6 +108,233 @@ namespace LandPApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Attributes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Trademark"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Warranty"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Laptop series"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Colour"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Demand"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "CPU generation"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "CPU"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Graphics chip"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "RAM"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Monitor"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Archive"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Video output port"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Gateway"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Wireless connection"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Keyboard"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Operating system"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "Dimension"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "Battery"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "Mass"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "Included accessories"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "Series"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "Screen type"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "Resolution"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "Capacity(ROM)"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "Chip"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "Battery technology"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "Charging port"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "SIM type"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Name = "Mobile networks"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Name = "Rear camera"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Name = "Front camera"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Name = "Wifi"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "GPS"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Name = "Blutooth"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Name = "Headphone jack"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Name = "Feature"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Name = "Case Size"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Name = "Screen technology"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Name = "Screen size"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Name = "Glass Material"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Name = "Internal memory"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Name = "Connect"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Name = "Time of use"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Name = "Material"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Name = "Strap"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.AttributeGroup", b =>
@@ -142,6 +369,434 @@ namespace LandPApi.Migrations
                     b.HasIndex("AttributeId");
 
                     b.ToTable("AttributeOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 1,
+                            Value = "APPLE"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 1,
+                            Value = "ACER"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttributeId = 1,
+                            Value = "ASUS"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttributeId = 1,
+                            Value = "Dell"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttributeId = 1,
+                            Value = "Samsung"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttributeId = 1,
+                            Value = "Xiaomi"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 3,
+                            Value = "Macbook Pro"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 3,
+                            Value = "Macbook Air"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttributeId = 3,
+                            Value = "Aspire 5"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttributeId = 3,
+                            Value = "Nitro 5"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttributeId = 3,
+                            Value = "Nitro 16"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttributeId = 3,
+                            Value = "Vivobook"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AttributeId = 3,
+                            Value = "Inspiron"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AttributeId = 3,
+                            Value = "Vostro"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 4,
+                            Value = "Silver"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 4,
+                            Value = "Gold"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttributeId = 4,
+                            Value = "Red"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttributeId = 4,
+                            Value = "Midnight"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttributeId = 4,
+                            Value = "Starlight"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttributeId = 4,
+                            Value = "White"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AttributeId = 4,
+                            Value = "Sand gold"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AttributeId = 4,
+                            Value = "Bronze gold"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AttributeId = 4,
+                            Value = "Green"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AttributeId = 4,
+                            Value = "Grey"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AttributeId = 4,
+                            Value = "Silver gray"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AttributeId = 4,
+                            Value = "Dark gray"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            AttributeId = 4,
+                            Value = "Black"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 5,
+                            Value = "Business"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 5,
+                            Value = "Entrepreneur"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttributeId = 5,
+                            Value = "Gaming"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttributeId = 5,
+                            Value = "Family"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttributeId = 5,
+                            Value = "Students"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttributeId = 5,
+                            Value = "Office"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AttributeId = 5,
+                            Value = "Graphics - Engineering"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 6,
+                            Value = "Apple M"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 6,
+                            Value = "Celeron"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttributeId = 6,
+                            Value = "Core i3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttributeId = 6,
+                            Value = "Core i5"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttributeId = 6,
+                            Value = "Core i7"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttributeId = 6,
+                            Value = "Core i9"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AttributeId = 6,
+                            Value = "Qualcomn"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AttributeId = 6,
+                            Value = "Snapdrogon"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AttributeId = 6,
+                            Value = "Ryzen 3"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AttributeId = 6,
+                            Value = "Ryzen 5"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AttributeId = 6,
+                            Value = "Ryzen 7"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AttributeId = 6,
+                            Value = "Ryzen 9"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 9,
+                            Value = "4GB"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 9,
+                            Value = "8GB"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttributeId = 9,
+                            Value = "16GB"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttributeId = 9,
+                            Value = "24GB"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttributeId = 9,
+                            Value = "32GB"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttributeId = 9,
+                            Value = "64GB"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 10,
+                            Value = "11.6\""
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 10,
+                            Value = "12.3\""
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttributeId = 10,
+                            Value = "13\""
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttributeId = 10,
+                            Value = "13.3\""
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttributeId = 10,
+                            Value = "13.4\""
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttributeId = 10,
+                            Value = "13.5\""
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AttributeId = 10,
+                            Value = "13.6\""
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AttributeId = 10,
+                            Value = "14\""
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AttributeId = 10,
+                            Value = "14.2\""
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AttributeId = 10,
+                            Value = "14.5\""
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AttributeId = 10,
+                            Value = "15.3\""
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AttributeId = 10,
+                            Value = "15.6\""
+                        },
+                        new
+                        {
+                            Id = 13,
+                            AttributeId = 10,
+                            Value = "16\""
+                        },
+                        new
+                        {
+                            Id = 14,
+                            AttributeId = 10,
+                            Value = "16.1\""
+                        },
+                        new
+                        {
+                            Id = 15,
+                            AttributeId = 10,
+                            Value = "17\""
+                        },
+                        new
+                        {
+                            Id = 16,
+                            AttributeId = 10,
+                            Value = "17.3\""
+                        },
+                        new
+                        {
+                            Id = 17,
+                            AttributeId = 10,
+                            Value = "18\""
+                        },
+                        new
+                        {
+                            Id = 1,
+                            AttributeId = 16,
+                            Value = "Android"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttributeId = 16,
+                            Value = "iOS"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.AttributeSpec", b =>
@@ -165,6 +820,124 @@ namespace LandPApi.Migrations
                     b.HasIndex("OptionID", "AttributeId");
 
                     b.ToTable("AttributeSpecs");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 1,
+                            OptionID = 1
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 2,
+                            Value = "12 months"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 3,
+                            OptionID = 1
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 4,
+                            OptionID = 1
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 5,
+                            OptionID = 1
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 6,
+                            OptionID = 1
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 7,
+                            Value = "Apple M2 Max ( 12-Core CPU / 64-Core GPU )"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 8
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 9,
+                            OptionID = 6
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 10,
+                            OptionID = 13
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 11
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 12,
+                            Value = "1 x HDMI"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 13,
+                            Value = "3 x Thunderbolt 4 , 1 x 3.5 mm , 1 x SDXC Card Slot"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 14,
+                            Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.3"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 15
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 16,
+                            Value = "macOS"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 17,
+                            Value = "1.68 x 35.57 x 24.81 cm"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 18,
+                            Value = "100 Wh"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 19,
+                            Value = "2.1 kg"
+                        },
+                        new
+                        {
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            AttributeId = 20
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Brand", b =>
@@ -190,51 +963,44 @@ namespace LandPApi.Migrations
                         new
                         {
                             Id = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
-                            Description = "A branch from korea",
-                            LogoUrl = "https://drive.google.com/uc?export=view&id=1JrfIHh1Fi9aM66IMLd2jdZwurx1As6x0",
+                            Description = "Samsung Group or Samsung (Korean: 삼성, Roma: Samseong, Hanja: 三星; Sino-Vietnamese: Tam Tinh - 3 stars) is a South Korean multinational corporation headquartered in Samsung Town, Seocho , Seoul",
+                            LogoUrl = "",
                             Name = "Samsung"
                         },
                         new
                         {
                             Id = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            Description = "A branch from Ameria",
-                            LogoUrl = "https://drive.google.com/uc?export=view&id=1DfzKYG8dsu0C0tNK_5U8GNBM3IE92fsz",
+                            Description = "Apple is a large American technology corporation headquartered in Cupertino, California. Apple was founded on April 1, 1976 by three founders Steve Wozniak, Steve Jobs and Ronald Wayne, under the original name Apple Computer Inc, then changed its name to Apple in early 2007",
+                            LogoUrl = "",
                             Name = "Apple"
                         },
                         new
                         {
                             Id = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
-                            Description = "A branch from China",
-                            LogoUrl = "https://drive.google.com/uc?export=view&id=1WGo9ev5XnfDETamxPvTVaJJuAYr892Nf",
+                            Description = "Xiaomi is a Chinese technology corporation , headquartered in Beijing. Considered the Apple of China, after only 5 years of establishment, Xiaomi has become the smartphone manufacturer with the 5th largest market share in the world and 1st in its home market (2015)",
+                            LogoUrl = "",
                             Name = "Xiaomi"
                         },
                         new
                         {
                             Id = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
-                            Description = "A branch from China",
-                            LogoUrl = "https://drive.google.com/uc?export=view&id=1CYKkazDIXzIw_q6ioPB8NlgZTjnhor-N",
+                            Description = "In 2015 and 2016, Fortune magazine recognized ASUS as one of the world's most popular companies, and for the past four years, Interbrand has ranked ASUS as Taiwan's most valuable international brand . Loan",
+                            LogoUrl = "",
                             Name = "Assus"
                         },
                         new
                         {
                             Id = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            Description = "A branch from China",
-                            LogoUrl = "https://drive.google.com/uc?export=view&id=1Q0u1RB9SfYkxXXmF2s9CPyTXKVY4IN1A",
+                            Description = "Dell Inc is an American multinational company that develops and commercializes computer technology headquartered in Round Rock, Texas, United States. In 1984, Dell was founded by Michael Dell. It is the 28th largest company by revenue in the United States",
+                            LogoUrl = "",
                             Name = "Dell"
                         },
                         new
                         {
-                            Id = new Guid("2d750aa2-ea06-47ea-916c-abb6661f9781"),
-                            Description = "A branch from China",
-                            LogoUrl = "https://drive.google.com/uc?export=view&id=1T3galDlqvff5zyZd8kf19McJK9V7iAvL",
-                            Name = "Suunto"
-                        },
-                        new
-                        {
-                            Id = new Guid("fc1a0ff3-92d8-4a16-adb5-8c901bbe48f2"),
-                            Description = "A branch from China",
-                            LogoUrl = "https://drive.google.com/uc?export=view&id=1F9Sn87qp9kkJbbANHNKSXoE6pYwLPVz-",
-                            Name = "Logitech"
+                            Id = new Guid("fc6fcd3e-f156-4a33-a257-c92adfba2c63"),
+                            Description = "Founded in 1976, Acer is a Taiwanese multinational corporation of electronics and computer hardware",
+                            LogoUrl = "",
+                            Name = "Acer"
                         });
                 });
 
@@ -279,37 +1045,30 @@ namespace LandPApi.Migrations
                         new
                         {
                             Id = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1VPowiqiVfyuL7Pzntp1mqJV748v34zfb",
+                            AvatarUrl = "",
                             Description = "A smart device",
                             Name = "Smartphone"
                         },
                         new
                         {
                             Id = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            AvatarUrl = "https://drive.google.com/uc?export=view&id=15Lo6BabMJo7m9p-VSve4kls1pG2VA1AN",
+                            AvatarUrl = "",
                             Description = "A smart device",
                             Name = "Laptop"
                         },
                         new
                         {
                             Id = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
-                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1EHDwKK-pKe78N_-Ns3RhID7Wg3S2nmDP",
+                            AvatarUrl = "",
                             Description = "A smart device",
                             Name = "Tablet"
                         },
                         new
                         {
                             Id = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
-                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1y_ap3ooVR_djmamFvklsm0tx-d9Zrt3V",
+                            AvatarUrl = "",
                             Description = "A smart device",
                             Name = "Smartwatch"
-                        },
-                        new
-                        {
-                            Id = new Guid("76f4c144-6e3f-44bf-a292-8dd21a461b5d"),
-                            AvatarUrl = "https://drive.google.com/uc?export=view&id=1N6u8HMtyTtdXWGBxz5AFRzk2KbvB6aVc",
-                            Description = "A smart device",
-                            Name = "Mouse"
                         });
                 });
 
@@ -395,16 +1154,16 @@ namespace LandPApi.Migrations
                             Id = "289f6c6a783e4d89b25c847d1ffa4833",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "12fcdd95-6a64-4336-898e-93eaf0139645",
+                            ConcurrencyStamp = "86d6ae36-cf6f-4bc6-8b96-8c83185549bb",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpsupadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Super Admin",
                             NormalizedEmail = "landpsupadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDPNSjuijuGtzfdzFDX57hTfYdvQm8+PCl+JBxCfZvke4mdEAUxupGeLgpBksmFwfg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHcCLvnwTI1mHLEye3XTWIznTJRPRTlALGAnnpHOu2924/DeNpDCfLaGWojcF4tiLg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "51d70255-a690-45f1-800a-eb83ec318e21",
+                            SecurityStamp = "835b9025-fe00-49e7-8181-7d0cf88e629a",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpsupadmika@gmail.com"
@@ -414,16 +1173,16 @@ namespace LandPApi.Migrations
                             Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "265a0e10-7fb1-432f-b4ee-739cb743690d",
+                            ConcurrencyStamp = "083c6cdb-f800-4051-adcf-631f1ffd1b9b",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "landpadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPC66+FYW/QXs3fRHG7OBpVreItvgj+j92HJSq2v7huLnPGuNushLVZemS9P1oJ+4A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED/5BxlIwmntPlUk1j/A1/XqMBl30LG1URWuLxT1MTBSwLfb6Nrq8MPla53kVf64NA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "37c18347-2195-417b-9296-e402d23aba91",
+                            SecurityStamp = "0221f2f2-c7a7-43ca-9ae3-50275b1e2c46",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpadmika@gmail.com"
@@ -433,16 +1192,16 @@ namespace LandPApi.Migrations
                             Id = "04be0c35-571e-425c-992e-15a7227286de",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "093e46bd-c8bc-433f-b787-40612a589754",
+                            ConcurrencyStamp = "a30578da-6cf1-40ad-92a9-a6c90605db4c",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User",
                             NormalizedEmail = "landpuserdemo@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGgDTcm9pl3Mr9iFGY7W4MaCd6YgcXOAnoKL7bBUY1TPTdKL2eVWL6lGEsF/DI2vzQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN4oGABFvAFZiOK6IOfXFZ8TMF9NXvWkC+tN0KTD8zELbRXhlhpGAg3V2fshIgXo+Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b39d0501-eea1-4dac-a14c-c377a24aa77f",
+                            SecurityStamp = "c3f972ca-0668-487f-b596-5641221921fc",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo@gmail.com"
@@ -452,16 +1211,16 @@ namespace LandPApi.Migrations
                             Id = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "a92574a8-1cda-48b1-96d3-8c62ea91beb2",
+                            ConcurrencyStamp = "f3693d39-a89f-41b1-b0f1-97ff96ae3a56",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo1@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User1",
                             NormalizedEmail = "landpuserdemo1@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFHFF3lY7OpTp8+KLg/h6n7EeGR6aidTzKBhfD7ipiqHCrpz8rkooxwvIOyzm37rCw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENBhW0ATM4Rm44CzpP3bLq3LpNhuR+f7k/XCimUGvnTSCMIewCdSy8en7YKmIkpw8w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8bc3a39d-4059-4d82-9b1e-95650307bb08",
+                            SecurityStamp = "6e6b72bb-f59b-413d-8bc2-bc687e95b765",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo1@gmail.com"
@@ -485,28 +1244,133 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "https://drive.google.com/uc?export=view&id=1IzG911rHzKN2p51Ite3JZqDV1FonTt4d",
-                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04")
+                            Id = "https://drive.google.com/uc?export=view&id=1fXgj_qQJMKNQczOx0Kd_0foAVyiYcmb8",
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1")
                         },
                         new
                         {
-                            Id = "https://drive.google.com/uc?export=view&id=1DeA5LM1HQsUEb9tXUHEg27fWqKenJJDG",
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                            Id = "https://drive.google.com/uc?export=view&id=1F2Z5C1km_4FvIa70xF0b8bL-OwsK07d6",
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1")
                         },
                         new
                         {
-                            Id = "https://drive.google.com/uc?export=view&id=1JgLvP6rxTkkkmdWG7RhyqB4nMnaktLE6",
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                            Id = "https://drive.google.com/uc?export=view&id=1IrnkUeFEoVdNEY-FMf0Y4i33tOEOh1l8",
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1")
                         },
                         new
                         {
-                            Id = "https://drive.google.com/uc?export=view&id=1g7NLy-NZE9OTZhH0xctgVXONMNjHpQ4V",
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                            Id = "https://drive.google.com/uc?export=view&id=1p0Eq0ptA7J3g5mTUP9g131BgLb6XCiyI",
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1")
                         },
                         new
                         {
-                            Id = "https://drive.google.com/uc?export=view&id=1JO-t8NpCi9qb9Jx8pmXbdHMvPg8LQAg3",
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43")
+                            Id = "https://drive.google.com/uc?export=view&id=1KGDOpVmwofx2viWcLPSdji5_dVz6IEYK",
+                            ProductId = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1NB-4hrhVBTP0kRbx9VOMRxMEOIsuT0Dt",
+                            ProductId = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1hcc5bb9xZwftkpNNLbNSdWO-OaglGEU-",
+                            ProductId = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=18_VERsQCkR5top5RyAiyXBWoyQTVgYLU",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1oA7zu7vf9vxdDzRUOfTShMTO9TMYB2t1",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1gCSDRkYeTgsuklm4-ZUVKutTKTu6bsOW",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=13YRnumTXIikNyks6MMGS7IHy2XKsLcUG",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1_8nLKemsZNH5ob80loz-Rjk46gIPCyAk",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1AoKIxY1_KpVC--DBDv-5vkL7KRBETaTj",
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=19JhyKc7SDq8OS-FKWCEE1fHlB9zmlF4_",
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1D6w59akVTqabNKBcaDFvZeGh0DHiPZNS",
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1ANMv2MD1x9POXwFzqbtAFJaSVDsBygR_",
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1jFJ0Dy7LgyF9l-bnF6VeOVpvbqDDXkgz",
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df")
+                        },
+                        new
+                        {
+                            Id = "",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1sojVUeqtcf6kDA84Mdj73JcbipmW5HP0",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1pW-V7JEHlpOswTpw68p7GbAV_NV8i62S",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=17g-gOr-mKqeRCKmv3aLa7kNBIf8AMza2",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1_mXukBwuEtyZsG7bR_MDAO-d7PjMhP-w",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1sf_iHr6KcO6Gl7oucfq46NirqaBERifh",
+                            ProductId = new Guid("9cd800e5-3457-4602-9083-1d7fee04e240")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1vpOJlcWyzrUGceYi-ilCZ4b3ufeMZapS",
+                            ProductId = new Guid("9cd800e5-3457-4602-9083-1d7fee04e240")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1KAPyG_jY6xo0pp13IhGHq3HosAlc42hB",
+                            ProductId = new Guid("9cd800e5-3457-4602-9083-1d7fee04e240")
+                        },
+                        new
+                        {
+                            Id = "https://drive.google.com/uc?export=view&id=1pmIx4SB6rmApjVB6YIm9rYmsn7C5GNua",
+                            ProductId = new Guid("9cd800e5-3457-4602-9083-1d7fee04e240")
                         });
                 });
 
@@ -531,92 +1395,6 @@ namespace LandPApi.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("HistoryStatuses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ef8860b5-7525-47bd-9a96-85ce21dfd15c"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4622),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Status = "New"
-                        },
-                        new
-                        {
-                            Id = new Guid("beddfc09-c02b-4ab6-97f1-df65ef4e08bb"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4629),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Status = "Processing"
-                        },
-                        new
-                        {
-                            Id = new Guid("5d53d573-3ed5-43cf-b613-2ccf42a40fbd"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4631),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Status = "Shipping"
-                        },
-                        new
-                        {
-                            Id = new Guid("52a3cbbb-fa9c-490f-8a2c-14f2e53022a1"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4634),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Status = "Delivered"
-                        },
-                        new
-                        {
-                            Id = new Guid("e22ac8a7-3c52-4028-be85-fa4441297bd9"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4644),
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            Status = "New"
-                        },
-                        new
-                        {
-                            Id = new Guid("2e163394-e7f4-43c6-a445-3563c069bc33"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4646),
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            Status = "Processing"
-                        },
-                        new
-                        {
-                            Id = new Guid("be27e5a5-f3b9-4aa4-9f28-7c02d669a892"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4648),
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            Status = "Shipping"
-                        },
-                        new
-                        {
-                            Id = new Guid("763f6c49-45f8-4cb3-a586-00717c1d0303"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4654),
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            Status = "Delivered"
-                        },
-                        new
-                        {
-                            Id = new Guid("12f54cd6-ed2f-4717-af76-7cb4bc546fc4"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4661),
-                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
-                            Status = "New"
-                        },
-                        new
-                        {
-                            Id = new Guid("7a549847-c92e-44d3-996c-959fc47f650e"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4663),
-                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
-                            Status = "Processing"
-                        },
-                        new
-                        {
-                            Id = new Guid("a240a097-8c19-4faa-aca8-05c9addaef97"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4665),
-                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
-                            Status = "Shipping"
-                        },
-                        new
-                        {
-                            Id = new Guid("ade93783-ed18-4190-b154-d95e209be33f"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4667),
-                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
-                            Status = "Delivered"
-                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Menu", b =>
@@ -675,151 +1453,6 @@ namespace LandPApi.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("Orders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            AddressId = new Guid("0750d8d3-bfff-45f2-b081-2a86ffe91bfd"),
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4407),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4409),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            AddressId = new Guid("0750d8d3-bfff-45f2-b081-2a86ffe91bfd"),
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4413),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4414),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4415),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4416),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("b68d7699-772a-4e9a-a994-b5488ee73fa6"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4417),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4418),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("89fe8d4e-588f-4da1-8f72-3c3ca91ad478"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4419),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4420),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("ed6294ff-6e5e-4318-9cd7-7abeee62f237"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4422),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4423),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("5de24961-48a5-4496-816e-1840a6889924"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4423),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4424),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("91c610c1-b1eb-45a2-9380-8a679ac6ddda"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4425),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4426),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("e873a5c3-8af2-4df2-a3d7-c8c55ff1feb6"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4427),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4428),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("7dc81bcc-6b9b-4f33-a102-bc3fc5303fec"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4429),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4430),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        },
-                        new
-                        {
-                            Id = new Guid("039c02f8-295e-47f7-bf41-df7563060515"),
-                            AddressId = new Guid("3fd64b58-5ded-40ed-876c-027bcc759a75"),
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4431),
-                            PaidAt = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4433),
-                            ShippingFee = 0.0,
-                            ShippingFeeVoucher = 0.0,
-                            ShopVoucher = 0.0,
-                            Status = "Delivered",
-                            SubTotal = 0.0
-                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.OrderDetail", b =>
@@ -841,120 +1474,6 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("OrderDetails");
-
-                    b.HasData(
-                        new
-                        {
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
-                            Price = 4990000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
-                            Price = 15590000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
-                            Price = 11190000.0,
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 3
-                        },
-                        new
-                        {
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
-                            Price = 15590000.0,
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
-                            Price = 11190000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 3
-                        },
-                        new
-                        {
-                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
-                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
-                            Price = 11190000.0,
-                            Quantity = 4
-                        },
-                        new
-                        {
-                            OrderId = new Guid("b68d7699-772a-4e9a-a994-b5488ee73fa6"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("89fe8d4e-588f-4da1-8f72-3c3ca91ad478"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("ed6294ff-6e5e-4318-9cd7-7abeee62f237"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("5de24961-48a5-4496-816e-1840a6889924"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("91c610c1-b1eb-45a2-9380-8a679ac6ddda"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("e873a5c3-8af2-4df2-a3d7-c8c55ff1feb6"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("7dc81bcc-6b9b-4f33-a102-bc3fc5303fec"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            OrderId = new Guid("039c02f8-295e-47f7-bf41-df7563060515"),
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Price = 7250000.0,
-                            Quantity = 2
-                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Product", b =>
@@ -1004,403 +1523,408 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
-                            BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "Màn hình:\r\n\r\nPLS TFT LCD6.6\"Full HD+\r\nHệ điều hành:\r\n\r\nAndroid 12\r\nCamera sau:\r\n\r\nChính 50 MP & Phụ 5 MP, 2 MP, 2 MP\r\nCamera trước:\r\n\r\n8 MP\r\nChip:\r\n\r\nSnapdragon 680\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n128 GB\r\nSIM:\r\n\r\n2 Nano SIMHỗ trợ 4G\r\nPin, Sạc:\r\n\r\n5000 mAh25 W",
-                            FolderId = "12oUrvgsYTJhM4WkmXuWd1f8NmbvOe9Gn",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1k0K8y37j9HLnI8C7qYy92mjOzgnY4kSL",
+                            Id = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "MacBook The 13.6-inch Air M2 Z15S00092 belongs to Apple's high-end laptop line with Apple M2 CPU that delivers durable performance at incredible speed. Besides, MacBook Air possesses a luxurious appearance and youthful color gamut to help suit many needs of today's Apple fans.",
+                            FolderId = "14copW3YiYA9OZtplLedaDhsV4LRN2eEz",
+                            ImageUrl = "https://lh3.googleusercontent.com/cPyVxwDbLfShad22xfK-dd2nlFWqTCSDMHXH7LffhPy37iGunzUM9VUtZCSiEgzzgPGcW3ZkGbImyjcVkf1RrjFr_plC_BjA=w500-rw",
                             IsDeleted = false,
-                            Name = "Samsung Galaxy A23",
-                            Price = 4990000.0,
+                            Name = "Macbook Pro 16 M2 MAX 12C CPU 38C GPU 64GB 1TB SSD (SILVER)",
+                            Price = 100190000.0,
                             Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
+                            Id = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "Màn hình:\r\n\r\nOLED6.1\"Super Retina XDR\r\nHệ điều hành:\r\n\r\niOS 15\r\nCamera sau:\r\n\r\n2 camera 12 MP\r\nCamera trước:\r\n\r\n12 MP\r\nChip:\r\n\r\nApple A14 Bionic\r\nRAM:\r\n\r\n4 GB\r\nDung lượng lưu trữ:\r\n\r\n64 GB\r\nSIM:\r\n\r\n1 Nano SIM & 1 eSIMHỗ trợ 5G\r\nPin, Sạc:\r\n\r\n2815 mAh20 W",
-                            FolderId = "1b9JWfgUruHr6j3U3XalWbAD2UO329_6X",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1yAleLMwDTEfXJNZF_eM8s4vkU8TFm9By",
-                            IsDeleted = false,
-                            Name = "Iphone 12",
-                            Price = 15590000.0,
-                            Quantity = 50,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
-                            BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "Xiaomi Redmi Note 12 Pro 5G là mẫu điện thoại thuộc dòng Redmi Note được chính thức ra mắt trong năm 2023, máy mang trên mình những cải tiến vượt trội về thiết kế, camera và hiệu năng, đáp ứng mượt mà hầu hết các nhu cầu khác nhau của người dùng.",
-                            FolderId = "1gBdpMXybH0HOxSKI6g9AdmisL9IUMfPq",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=190zjmRvUnsTZdB4iDizNBjqKI_fk5L3a",
-                            IsDeleted = false,
-                            Name = "Xiaomi Redmi Note 12 Pro 5G",
-                            Price = 9960000.0,
-                            Quantity = 50,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
-                            BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "Xiaomi 12T series đã ra mắt trong sự kiện của Xiaomi vào ngày 4/10, trong đó có Xiaomi 12T 5G 128GB - máy sở hữu nhiều công nghệ hàng đầu trong giới smartphone tiêu biểu như: Chipset mạnh mẽ đến từ MediaTek, camera 108 MP sắc nét cùng khả năng sạc 120 W siêu nhanh.",
-                            FolderId = "1RvQvCVJ2wk72oMqDuYfeuTBHSIHNhplS",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=165CbvBDjo8PPjxn2MPHVe2YrZPZ1oCwd",
-                            IsDeleted = false,
-                            Name = "Xiaomi 12T 5G 128GB",
-                            Price = 9890000.0,
-                            Quantity = 3,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("5d7beeaf-f51e-44bb-ae26-aadb1bdc0276"),
-                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Nếu bạn đang tìm kiếm một chiếc laptop gaming nhưng vẫn sở hữu một mức giá phải chăng thì laptop Asus TUF Gaming F15 FX506LHB i5 (HN188W) sẽ là sự lựa chọn đáng cân nhắc với card đồ họa rời NVIDIA GeForce GTX mạnh mẽ cùng phong cách thiết kế cứng cáp, độc đáo. ",
-                            FolderId = "1504cqv26tU1E4JAWix9Ajxwh3XCH8tOv",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1s_UzQewLQ4zb7cX25cwUYAlVa3CpuCP9",
+                            Description = "Updating",
+                            FolderId = "1SqDtpkZFWiXmnAoeGKMJB0JRg_jZy63g",
+                            ImageUrl = "https://lh3.googleusercontent.com/lZLaRombXnbrg99vFtGOTiH4zUpkt3PhblRRTZWyqt7DUc-ztoRC6kT2VuuFD9-XJsPYf-8DVJNz1lRCs406a5NWdTROd1I=w1000-rw",
                             IsDeleted = false,
-                            Name = "TUF Gaming F15",
-                            Price = 16990000.0,
-                            Quantity = 50,
+                            Name = "MacBook Air 15 M2 8C CPU 10C GPU 8GB 512GB SSD(Midnight)",
+                            Price = 39990000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("d5682976-7d8c-4549-884c-e85f73ddbed3"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Dell Vostro 3510 i5 (P112F002BBL) sở hữu cấu hình mạnh mẽ, đa nhiệm mượt mà trên sức mạnh của bộ vi xử lý Intel thế hệ 11, cùng một thiết kế đơn giản mà sang đẹp, sẽ là lựa chọn đắt giá đáp ứng nhu cầu học tập, làm việc hay giải trí của bạn.",
-                            FolderId = "1R9qzBw6zNwBARHF8aGu2_qJYlil161yl",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1ELd9fd2dk2meSyxz-hVnsIp8_gFrnHxp",
-                            IsDeleted = false,
-                            Name = "Dell Vostro 3510",
-                            Price = 17990000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("3e9d9046-0534-44cf-a0fa-746a31acad9f"),
+                            Id = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
-                            Description = "Sau thành công của iPad 8, Apple cho đã cho ra mắt máy tính bảng iPad 9 WiFi 64GB - phiên bản tiếp theo của dòng iPad 10.2 inch, về cơ bản nó kế thừa những điểm mạnh từ các phiên bản trước đó và được cải tiến thêm hiệu suất, trải nghiệm người dùng nhằm giúp nhu cầu sử dụng giải trí và làm việc tiện lợi, linh hoạt hơn",
-                            FolderId = "1SZ3o96HmpNycsXIeOzuXBDF3dgh6v85o",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1IK5bpXd3iGWJbMDOS5c_zG5Zk5th3hhl",
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "MacBook Air 2020 13.3\" MGNE3SA/A belongs to a high-end laptop product line from the Apple brand that possesses outstanding performance thanks to being equipped with a genuine proprietary processor. With an elegant design and outstanding powerful configuration, MacBook Air 2020 13.3\" MGNE3SA/A promises to bring you an enjoyable experience",
+                            FolderId = "15zxKTkBDtJT9sr9bKwkfAQGZHnM6LjRz",
+                            ImageUrl = "https://lh3.googleusercontent.com/lc6DzDy1TKN_guYmItGOG1DIWMp3iACXwfMJL4ZdlW501Sqm4j86XGaQDD_mrGiT8OoxFGj7FQGrc5DTR8MSZjrwV0ezEds=w1000-rw",
                             IsDeleted = false,
-                            Name = "iPad 9",
-                            Price = 7990000.0,
-                            Quantity = 10,
+                            Name = "MacBook Air 2020 13.3 inch MGNE3SA/A (M1/8GB/SSD512GB)",
+                            Price = 34990000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
+                            Id = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
-                            Description = "Sau khi trình làng hàng loạt mẫu iPhone vào tháng 09/2022 thì Apple cũng đã tiếp tục giới thiệu series iPad mới cho năm 2022. Trong đó iPad 10 WiFi 64GB là cái tên được hãng chú trọng khá nhiều về việc tối ưu giá thành nhằm giúp người dùng có thể dễ dàng tiếp cận. Máy hỗ trợ hệ điều hành iPadOS 16 cùng con chip Apple A14 Bionic giúp mang lại hiệu năng vượt trội.",
-                            FolderId = "18kx0xh8gVJAJllf-4ZVeFZFfkJHI1zkX",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1PjgSj70e2Oc1GC-DJBiVkzs77mAdEokF",
-                            IsDeleted = false,
-                            Name = "iPad 10",
-                            Price = 11190000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            BrandId = new Guid("2d750aa2-ea06-47ea-916c-abb6661f9781"),
-                            CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
-                            Description = "Đồng hồ thông minh Suunto 7 Dây silicone phiên bản màu đen trang bị mặt kính cường lực chống va đập, màn hình AMOLED 1.97 inch (454 x 454 pixels) cùng độ sáng lên tới 1000 nits, vì thế có thể hiển thị sắc nét ngay cả khi ở điều kiện có ánh sáng mặt trời. Đặc biệt, với thiết kế dây đeo silicone tạo cảm giác mềm mại và dễ chịu khi đeo trong thời gian dài.",
-                            FolderId = "15B4NY2lAFY9DXr1Z40hwoQNjI5ZjnpZ4",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1-nQviihO_G_HGipaWd72aRUURK4zkm6S",
-                            IsDeleted = false,
-                            Name = "Suunto 7",
-                            Price = 7250000.0,
-                            Quantity = 5,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("777ffbe5-1f43-4b6c-80d3-6b3cffbcb721"),
-                            BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
-                            CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
-                            Description = "Sau thành công của dòng Galaxy Watch4, tháng 8/2022 ông lớn công nghệ Samsung đã cho ra mắt thế hệ smartwatch tiếp theo của hãng mang tên Samsung Galaxy Watch5 40 mm.",
-                            FolderId = "1v5XPVE3A_7XnX4yUf8OekLE54mHXr_CZ",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=17uBw10YiFMD2ET9pw_wiXkznPsQrAhr0",
-                            IsDeleted = false,
-                            Name = "Samsung Galaxy Watch5",
-                            Price = 5490000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("61a1dce1-164c-4a2f-a6e1-6397c5033bfb"),
-                            BrandId = new Guid("fc1a0ff3-92d8-4a16-adb5-8c901bbe48f2"),
-                            CategoryId = new Guid("76f4c144-6e3f-44bf-a292-8dd21a461b5d"),
-                            Description = "Chuột Không dây Bluetooth Silent Logitech Signature M650 sở hữu kiểu dáng công thái học cùng độ phân giải lớn, đáp ứng tốt gần như mọi nhu cầu từ sử dụng cơ bản tới những tác vụ chuyên nghiệp của người dùng.",
-                            FolderId = "1M0-dUHbo7g_pkLPbQu9NMTPc9tnGkwr7",
-                            ImageUrl = "https://drive.google.com/uc?export=view&id=1ukyWOlXUIJzxVzjmNN5hPlrnHN0yET7b",
-                            IsDeleted = false,
-                            Name = "Bluetooth Silent Logitech Signature M650",
-                            Price = 765000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("99c30773-c617-419d-a12a-2e2db67f3faa"),
-                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Asus Gaming ROG Strix G15 G513IH R7 (HN015W) là một trợ thủ đắc lực cho mọi game thủ chuyên nghiệp với phong cách thiết kế vô cùng độc đáo, ấn tượng chuẩn gaming cùng bộ cấu hình đầy mạnh mẽ. ",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/270031/Slider/vi-vn-asus-rog-strix-gaming-g513ih-r7-hn015w-1.jpg",
+                            Description = "MacBook The 13.6-inch Air M2 Z15S00092 belongs to Apple's high-end laptop line with Apple M2 CPU that delivers durable performance at incredible speed. Besides, MacBook Air possesses a luxurious appearance and youthful color gamut to help suit many needs of today's Apple fans",
+                            FolderId = "1gzBXbbcWwhP3NKwYzlVZ10k362zzQ8WO",
+                            ImageUrl = "https://lh3.googleusercontent.com/u2qUk5mgupuh9ubXaQxqE2kum6Exm8DygVJFez6Ksj6Yjb6CDjwQ3Jgh7bQ3-TjNxfWxmXTUd6zkxbA2w79-9zTlYsLUp9ah=w1000-rw",
                             IsDeleted = false,
-                            Name = "Laptop Asus Gaming ROG Strix G15",
-                            Price = 22990000.0,
-                            Quantity = 50,
+                            Name = "MacBook Air 2022 13.6 inch Z15S00092 (M2/ 16GB/ 256GB SSD)",
+                            Price = 36890000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("ce2bb946-c098-43e9-bf2e-e83fbe8bf903"),
-                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Asus Gaming ROG Strix SCAR 15 G533ZM i7 (LN2210W) chinh phục mọi chiến trường ảo với bộ vi xử lý Intel Core i7 thế hệ 12 cùng đồ hoạ NVIDIA GeForce RTX 3060. Giảm tối đa thời gian chờ đợi nhờ ổ SSD PCIe thế hệ 4 và bộ nhớ RAM DDR5 tốc độ cao, luôn sẵn sàng cùng bạn chiến thắng trong mọi cuộc chiến.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/299060/Slider/vi-vn-asus-rog-strix-scar-15-g533z-i7-ln2210w-ac-1.jpg",
-                            IsDeleted = false,
-                            Name = "Asus Gaming ROG Strix SCAR 15 G533ZM ",
-                            Price = 37490000.0,
-                            Quantity = 40,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("cdf09130-c814-416e-ba4b-59078bdbf4e1"),
-                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Asus Gaming ROG Strix SCAR 17 G733PZ R9 7945HX (LL980W) được thiết kế để mang đến trải nghiệm chơi game tốt nhất, cung cấp hiệu suất mạnh mẽ với cấu hình ấn tượng, chắc chắn sẽ làm hài lòng những game thủ khó tính nhất.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/305745/asus-gaming-rog-strix-scar-17-g733pz-r9-ll980w-5.jpg",
-                            IsDeleted = false,
-                            Name = "Asus Gaming ROG Strix SCAR 17 G733PZ ",
-                            Price = 84000000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("6955eb13-86b8-456a-a676-3d29af3e764f"),
-                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Thêm một siêu phẩm được trang bị bộ vi xử lý Intel thế hệ 13 hoàn toàn mới có mặt tại Thế Giới Di Động đó chính là laptop Asus Zenbook 14 Flip OLED UP3404VA i7 (KN039W) với những thông số hết sức ấn tượng.                   ",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304259/asus-zenbook-14-flip-oled-up3404va-i7-kn039w-ab-glr-15.jpg",
-                            IsDeleted = false,
-                            Name = "Asus Zenbook 14 Flip OLED UP3404VA ",
-                            Price = 31990000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("d06f0a2f-f1bd-4322-bd28-d59eb55e010b"),
-                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Asus Vivobook S 14 Flip TP3402VA i5 (LZ031W) được thiết kế với sự cân bằng tuyệt vời giữa sức mạnh và tính di động, một chiếc laptop cao cấp được tích hợp nhiều tính năng và cấu hình tiên tiến, sẵn sàng đáp ứng mọi nhu cầu sử dụng của bạn.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/304869/Slider/vi-vn-asus-vivobook-s-14-flip-tp3402va-i5-lz031w--(3).jpg",
-                            IsDeleted = false,
-                            Name = "Asus Vivobook S 14 Flip TP3402VA ",
-                            Price = 20990000.0,
-                            Quantity = 20,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("ebd97c78-cc87-4a30-b146-571892dae36d"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Khi nhắc đến dòng laptop học tập - văn phòng thì bạn không thể nào bỏ qua laptop Dell Inspiron 16 5620 i7 (N6I7110W1) với hiệu năng vượt trội, thiết kế hiện đại và gọn nhẹ phù hợp với nhu cầu sử dụng của sinh viên và nhân viên văn phòng cần phải di chuyển thường xuyên.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/292396/Slider/vi-vn-dell-inspiron-16-5620-i7-n6i7110w1-1.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Inspiron 16 5620",
-                            Price = 21990000.0,
-                            Quantity = 20,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("fb732361-a9fc-4eef-9911-013209aa2366"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Nhắc đến dòng laptop gaming, nhà Dell cũng đã sở hữu cho mình một siêu phẩm không thể bỏ qua là chiếc laptop Dell Alienware m15 R6 i7 (P109F001DBL) với card đồ hoạ RTX 3060 6 GB mạnh mẽ sẵn sàng cùng bạn chinh phục mọi thử thách chiến game.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/271545/Slider/vi-vn-dell-gaming-alienware-m15-r6-i7-p109f001dbl-1.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Gaming Alienware m15 R6 ",
-                            Price = 47490000.0,
-                            Quantity = 20,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("f8bb0d7a-eed0-4295-97b1-03e206e66c6b"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Không những mang đến cho người dùng hiệu năng ấn tượng nhờ con chip Intel thế hệ 11 tân tiến cùng card rời RTX 30 series, laptop Dell Gaming G15 5511 i5 11400H (70266676) còn sở hữu thiết kế thời thượng, lôi cuốn, hứa hẹn sẽ là người cộng sự lý tưởng cùng bạn chinh phục mọi chiến trường.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264354/Slider/dell-gaming-g15-5511-i5-70266676-fix-ab-01-1020x570-2.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Gaming G15 5511 ",
-                            Price = 21990000.0,
-                            Quantity = 30,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("b1b356c3-4fe5-41ef-8679-653992ac0721"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Dell Inspiron 15 5515 R7 (N5R75700U104W1) sẽ là một ứng cử viên sáng giá trong phân khúc laptop học tập - văn phòng bởi lối thiết kế tao nhã, tối giản cùng những thông số kỹ thuật ấn tượng, đáp ứng tốt mọi nhu cầu cơ bản hằng ngày phục vụ cho mọi đối tượng người dùng đặc biệt là học sinh, sinh viên và dân văn phòng.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/267558/Slider/vi-vn-dell-inspiron-15-5515-r7-n5r75700u104w1-1.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Inspiron 15 5515",
-                            Price = 17990000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("1429c801-f882-47fc-91ba-6f9572fbb443"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Dell Inspiron 15 3520 i5 1235U (i5U085W11BLU) là phiên bản laptop học tập - văn phòng của nhà Dell khi sở hữu phong cách thiết kế tối giản nhưng không kém phần trẻ trung, bộ vi xử lý Intel Gen 12 và bộ Office bản quyền vĩnh viễn đáp ứng đầy đủ mọi nhu cầu học tập, văn phòng của người dùng.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/296921/Slider/vi-vn-dell-inspiron-15-3520-i5u085w11blu-1.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Inspiron 15 3520",
-                            Price = 16990000.0,
-                            Quantity = 30,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("242e3a90-3290-440c-954e-707fdbb39b3a"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Inspiron 15 3511",
-                            Price = 12690000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("e36801b3-6cc9-426c-8e4c-e7b86d89db40"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Inspiron 15 3511",
-                            Price = 12690000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("db75a250-2626-44e7-9177-ec16d1a9883c"),
-                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
-                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
-                            Description = "Laptop Dell Inspiron 15 3511 i3 (P112F001CBL) sở hữu thiết kế sang trọng, thanh lịch với sức mạnh hiệu năng đến từ dòng chip Intel thế hệ thứ 11 đáp ứng tốt các tác vụ học tập, văn phòng và giải trí cơ bản của người dùng học sinh, sinh viên.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/44/264370/Slider/vi-vn-dell-inspiron-15-3511-i3-p112f001cbl-1.jpg",
-                            IsDeleted = false,
-                            Name = "Dell Inspiron 15 3511",
-                            Price = 12690000.0,
-                            Quantity = 10,
-                            Unit = "Unit"
-                        },
-                        new
-                        {
-                            Id = new Guid("2c3309b8-5e91-4451-a2b0-270ee2cf33ca"),
+                            Id = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "iPhone 14 Pro Max 1TB là phiên bản điện thoại cao cấp nhất mà Apple đã cho ra mắt tại sự kiện giới thiệu sản phẩm mới cho năm 2022. Được thừa hưởng mọi công nghệ hàng đầu thế giới nên máy hứa hẹn sẽ mang lại trải nghiệm sử dụng tốt nhất từ chơi game cho tới chụp ảnh, xứng đáng là chiếc điện thoại đáng mua nhất trên thị trường hiện tại.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/289705/iphone-14-pro-max-vang-1.jpg",
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "1oRNlAF2LJEdMnyJsNbCGtirUa0GxSEYC",
+                            ImageUrl = "https://lh3.googleusercontent.com/T4dQPx6nSJi3y147mwJH6kDJsxM6ULAAtIoZjgDDIi3yF5YpFYW7QbWh_nfT0Lhi2LxIDFuNPMamXlrBW-EcZ1NUGYBZ6VqbLw=w500-rw",
                             IsDeleted = false,
-                            Name = "iPhone 14 Pro Max 1TB",
-                            Price = 51990000.0,
-                            Quantity = 10,
+                            Name = "MacBook Air 2022 13.6 inch MLY33SA/A (M2/ 8GB/ SSD 256GB)",
+                            Price = 31900000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("4d8cbe5f-b318-4101-959d-8fc1a1b17a3a"),
+                            Id = new Guid("9cd800e5-3457-4602-9083-1d7fee04e240"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "iPhone 14 Pro Max một siêu phẩm trong giới smartphone được nhà Táo tung ra thị trường vào tháng 09/2022. Máy trang bị con chip Apple A16 Bionic vô cùng mạnh mẽ, đi kèm theo đó là thiết kế hình màn hình mới, hứa hẹn mang lại những trải nghiệm đầy mới mẻ cho người dùng iPhone.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/251192/Slider/iphone-14-pro-max-tong-quan-1020x570.jpg",
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "10TOIotAbfwDK0MQmc1QyELyxy8oScukl",
+                            ImageUrl = "https://lh3.googleusercontent.com/sPJkn-BIybufvMuXd1Ut6UkSWqz1UG76-WdZ3JcZ0GS1mNvYlY3_tUAGjzD_TkbC-k3HV_3bgGsmcoB56sbIVCLzcVmul6E=w1000-rw",
                             IsDeleted = false,
-                            Name = "iPhone 14 Pro Max",
-                            Price = 27990000.0,
-                            Quantity = 20,
+                            Name = "Macbook Pro 13 M2 8C CPU 10C GPU 24GB 512GB SSD (SILVER)",
+                            Price = 49590000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("0dc865d5-c725-40a9-8fc8-54e7ffb8bc63"),
-                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "iPhone 14 Pro 128GB - Mẫu smartphone đến từ nhà Apple được mong đợi nhất năm 2022, lần này nhà Táo mang đến cho chúng ta một phiên bản với kiểu thiết kế hình notch mới, cấu hình mạnh mẽ nhờ con chip Apple A16 Bionic và cụm camera có độ phân giải được nâng cấp lên đến 48 MP.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/247508/Slider/iphone-14-pro-up-3-new-1933x982.jpg",
+                            Id = new Guid("8f323332-b1c3-445b-8ac2-0a89cae35ec4"),
+                            BrandId = new Guid("fc6fcd3e-f156-4a33-a257-c92adfba2c63"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Are you a professional gamer, always want to have the best gaming experience? Are you also a person with a lot of work and study, need a versatile and efficient laptop? Are you also a lover of beauty and fashion, want a laptop with impressive design and convenience? If you have all the above requirements, then you cannot ignore ACER NITRO 16 PHOENIX Gaming Laptop - ACER's national gaming laptop, introduced by Phong Vu at a reasonable price. ACER NITRO 16 PHOENIX Gaming Laptop will satisfy you with the features below, let's find out in the article below!",
+                            FolderId = "14xHS-BcOOmhjY013toMSWulGWKadT_0N",
+                            ImageUrl = "https://lh3.googleusercontent.com/OzQVKRXMUlErjxiwqtLwpWvOWUbmuLay-lL_o80bXTheu_tfX-j07L8fuGtCgddQTrvaF_hbjKwxMlU7IxMgE_6oTkrW06Gs=w1000-rw",
                             IsDeleted = false,
-                            Name = "iPhone 14 Pro",
-                            Price = 24990000.0,
-                            Quantity = 10,
+                            Name = "Laptop ACER Nitro 16 Phoenix AN16-41-R5M4 (Ryzen 5 7535HS/RAM 8GB/RTX 4050/512GB SSD/ Windows 11)",
+                            Price = 29990000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("87fb9b17-751c-42e2-b506-89717496646a"),
-                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "iPhone 14 128GB được xem là mẫu smartphone bùng nổ của nhà táo trong năm 2022, ấn tượng với ngoại hình trẻ trung, màn hình chất lượng đi kèm với những cải tiến về hệ điều hành và thuật toán xử lý hình ảnh, giúp máy trở thành cái tên thu hút được đông đảo người dùng quan tâm tại thời điểm ra mắt.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/240259/iphone-14-xanh-1.jpg",
+                            Id = new Guid("1f6bf39a-344a-4e1b-afa6-151b2577654a"),
+                            BrandId = new Guid("fc6fcd3e-f156-4a33-a257-c92adfba2c63"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Laptop Acer Aspire 5 A514-55-5954 NX. K5BSV.001 is one of the top choices for students as well as office workers. With a minimalist but still extremely sophisticated design along with powerful performance thanks to the Intel Core i5 CPU will be a great assistant for you in work, study as well as entertainment",
+                            FolderId = "1U7gBEhG9szCsxXY95gzGO-mDX5M21Ric",
+                            ImageUrl = "https://lh3.googleusercontent.com/dF2OlQH_sxhOSNEUvCpUhODxCVoNqtrPHIDtosatk9iKmkmc_k6uq_5salWjPEob-5U1urzlFmTtqpByX7kvmdn0cKFB43Ps=w500-rw",
                             IsDeleted = false,
-                            Name = "iPhone 14 ",
+                            Name = "Laptop ACER Aspire 5 A514-55-5954 (NX.K5BSV.001) (i5-1235U/RAM 8GB/512GB SSD/ Windows 11)",
                             Price = 19990000.0,
-                            Quantity = 10,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("034573e2-712f-4095-ba28-3b0cdaa1c291"),
-                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
-                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "Sau nhiều thế hệ điện thoại của Apple thì cái tên “Plus” cũng đã chính thức trở lại vào năm 2022 và xuất hiện trên chiếc iPhone 14 Plus 128GB, nổi trội với ngoại hình bắt trend cùng màn hình kích thước lớn để đem đến không gian hiển thị tốt hơn cùng cấu hình mạnh mẽ không đổi so với bản tiêu chuẩn.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/245545/iphone-14-plus-ti-1.jpg",
+                            Id = new Guid("959ce058-f49b-4d27-a215-acddc043ad97"),
+                            BrandId = new Guid("fc6fcd3e-f156-4a33-a257-c92adfba2c63"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "As a gaming laptop line of the Acer brand, the Acer Nitro 5 Eagle AN515-57-54MV laptop is equipped with a powerful i5 chip, NVIDIA GeForce RTX 3050 graphics card, 8Gb ram and large capacity. Combined with its beautiful and powerful design, this will be the choice for young gamers and people doing graphics-related work",
+                            FolderId = "1p7PobtADVoyyLZnOokk2ltDiFCAsdyfL",
+                            ImageUrl = "https://lh3.googleusercontent.com/c7VuA4P8sHHJCilfzRVp50AQmgZEkJOyOCuh4vvkcT9jxfqTzZVd2gepUFSSqzXVSEljnYlAN319sJD-H1IztNcxPT3UypA=w500-rw",
                             IsDeleted = false,
-                            Name = "iPhone 14 Plus",
-                            Price = 21890000.0,
-                            Quantity = 15,
+                            Name = "Laptop ACER Nitro 5 Eagle AN515-57-54MV (i5-11400H/RAM 8GB/RTX 3050/512GB SSD/ Windows 11)",
+                            Price = 25990000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         },
                         new
                         {
-                            Id = new Guid("7ef93a25-83c7-42d3-85e1-a3e18b234ac0"),
+                            Id = new Guid("3569044f-c6cd-403b-a5b1-34d08eca73d6"),
+                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "ASUS Vivobook X515EA-EJ3633W laptop (i3-1115G4) is equipped with Intel Core i3 CPU, 8GB Onboard DDR4 RAM capacity along with 512GB SSD hard drive for you to freely store study data, basic work with office tasks. Anti-glare screens help protect your eyes well from harmful blue light",
+                            FolderId = "1lge0An1ZzjQlD3oV-cjenDJ9M4WJzTL7",
+                            ImageUrl = "https://lh3.googleusercontent.com/kkZs0JLWxfJpJg1dMiuzMDNayo_HpxHAaCQzVHE_ecuXjXD3vvZTGynpe4S2Ou5Y0FR-HVCIh4UU_o11huEYAm104zukaYlk=w500-rw",
+                            IsDeleted = false,
+                            Name = "Laptop ASUS Vivobook X515EA-EJ3633W (i3-1115G4/RAM 8GB/512GB SSD/ Windows 11)",
+                            Price = 11290000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("94ec5dcd-4bd1-428b-ae29-63fd6d3fed02"),
+                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "1iEEPx1N9MkI7LBBP_hBwODMvZ6sih4mX",
+                            ImageUrl = "https://lh3.googleusercontent.com/_w0us6FSWOX-V9byAkNIbBL2BDR0CH7_pQODsmFKEP2PcEHM4O8EfHSy2LpBx35SX5SWgQFNEJ0aW1kPp-_aujK9mhL2_AjBHg=w1000-rw",
+                            IsDeleted = false,
+                            Name = "Laptop ASUS Vivobook 15 X1504VA-NJ025W (i5-1335U/RAM 8GB/512GB SSD/ Windows 11)",
+                            Price = 17990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("0b393809-33a5-4ed9-80dd-a9b610a8d3be"),
+                            BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "1kX3Ic2DGpw7jR46-iNGWgpDlHGHNt40o",
+                            ImageUrl = "https://lh3.googleusercontent.com/GBCMEXu9-VgSeUAO8fW-XlSD-9GGd5YYwOkH8yi3cQOn0rRXFvNbIkDhoQbcr0iI3aeO6PDS4hHS2ZbQDhA8Rwedz5u1VOnS=w1000-rw",
+                            IsDeleted = false,
+                            Name = "Laptop ASUS Vivobook 16 M1605YA-MB303W (Ryzen 7 7730U/RAM 16GB/512GB SSD/ Windows 11)",
+                            Price = 18490000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("6699213e-ecb0-441c-8d08-1d97f0122f27"),
+                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "The Dell Inspiron 15 3520 3520-71003264 i3-1215U Carbon Black is the perfect office laptop. The device is equipped with Intel Core i3 Alder Lake - 1215U chip, integrated Intel UHD Graphics card. Not too powerful but enough to meet your daily study and work needs",
+                            FolderId = "1yobT5QGolFBw6r3dGOBKtutHG0eizgfy",
+                            ImageUrl = "https://lh3.googleusercontent.com/nOikqpVL4HXGK3Hs6wKff1Wnl-U7aYbpvw6lu83FHjfGNVGMdF6OyoVLq_pErwB-MmmfDmN7VKIEaQ6Fc9T7k6hKYoXafeYhYg=w500-rw",
+                            IsDeleted = false,
+                            Name = "Laptop Dell Inspiron 15 3520 (3520-71003264) (i3-1215U/RAM 8GB/512GB SSD/ Windows 11 + Office)",
+                            Price = 15990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("4d5125c7-82ea-43ad-9ca1-c631a68300c0"),
+                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "1ildfLhZpElIwWRcHPfmhIe9xwWhusoTY",
+                            ImageUrl = "https://lh3.googleusercontent.com/b00d0m8txaixII_rmYYCu1W1N0yeXlgANpNPvGC6ATQLAFZWbyqtUnAMqJhTsirVuwCVMXb0FwX6JXBPRPQLtAmGujAbLNuS=w500-rw",
+                            IsDeleted = false,
+                            Name = "Laptop Dell Inspiron 3530 - N5I5791W1 (i5-1335U/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                            Price = 20290000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("35b74922-f5ca-4f8c-901b-77be1f6b0079"),
+                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "1Wxkpz8DL6OAuA-iE2Y8QfINzWwMdcYN7",
+                            ImageUrl = "https://lh3.googleusercontent.com/wFM2g6YQMMVWACV2sVKL6ouSZpVFWeIcwvWZ9f1mjyDBOzPNghhib2EPJBLrRUcbrDbC52fSzGwRp8sCLbpvoYHkbE3nsg0=w500-rw",
+                            IsDeleted = false,
+                            Name = "Laptop Dell Inspiron 14 5430 - i5P165W11SL2050 (i5-1340P/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                            Price = 29790000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("31683266-0a17-4e17-b060-75be71acb1e8"),
+                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "1VCX_PE9G4DIU16blKhPiCdhWPWC6mvR8",
+                            ImageUrl = "https://lh3.googleusercontent.com/kC9I2-5m1WbJlbXYStTMIuVcLNj1Qex_Bae7GQ1iqEwBzj1GhQSUCy2IJXxL0qinWDyWFlO80JZcYVN1YXLEPnhmsW70t639ww=w500-rw",
+                            IsDeleted = false,
+                            Name = "Laptop Dell Inspiron 16 5630 - i7P165W11SL2050 (i7-1360P/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                            Price = 30990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("8d90f72a-acf6-42a7-b75c-2ec1e5b41f7f"),
+                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "134Zgrr4qGMDGTvc5iv-ajH2cELOW9GsK",
+                            ImageUrl = "https://lh3.googleusercontent.com/QQEbvWwDKVxZedtS1EFexrYOZa6RqhW1J7mFYZU_IiMjbwV5fWHQWXvCxwwdv5hWK-GMOgthkMOslRRCAIUSA5p-HyCLbLE=w500-rw",
+                            IsDeleted = false,
+                            Name = "Laptop Dell Vostro 3430 (i7-1355U/RAM 16GB/512GB SSD/ Windows 11 + Office)",
+                            Price = 26690000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("14fbcdc9-0efb-4d67-b435-37b099497949"),
+                            BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
+                            CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
+                            Description = "Updating",
+                            FolderId = "1sxNQzMjOHSJ7fTAIWGWdVkx1YkuAxdbw",
+                            ImageUrl = "https://lh3.googleusercontent.com/JzaLDtRkM112HJ0nqZ1SiIVOxSimMwOgmCx00Bbat3LXC7H-cCja3vJJg4Ac70UHfE2TVGCMp6loAqLMUT8VD0WSvxCqphM=w500-rw",
+                            IsDeleted = false,
+                            Name = "Laptop Dell Inspiron 14 5430 (i7-1360P/RAM 16GB/1TB SSD/ Windows 11 + Office)",
+                            Price = 31490000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("1cbc4229-9501-4426-a3e1-523c3be1aaa5"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
-                            Description = "Trong khi sức hút đến từ bộ 4 phiên bản iPhone 12 vẫn chưa nguội đi, thì hãng điện thoại Apple đã mang đến cho người dùng một siêu phẩm mới iPhone 13 với nhiều cải tiến thú vị sẽ mang lại những trải nghiệm hấp dẫn nhất cho người dùng.",
-                            ImageUrl = "https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-xanh-1.jpg",
+                            Description = "iPhone 15 Pro Max belongs to the high-end product line that has just been launched by Apple on the market in 2023, retaining the outstanding design \"Dynamic Island\" along with a series of luxurious colors. The iPhone 15 Pro max is equipped with a new A17 Bionic chip with outstanding and powerful processing performance today to perform the tasks you want",
+                            FolderId = "1Ifg5rJYBvzJtFdk6ZfqM_cUbJvf6k6Mj",
+                            ImageUrl = "https://lh3.googleusercontent.com/8w4MFwwKtq8dboBtb_bJLWcYgZge4G4G3kVv2tF8yKEQfUeu0xihFhvC2IGiZaQrnSfoZDU_Qcbk938-uolUGIX396P_qlQ=w500-rw",
                             IsDeleted = false,
-                            Name = "iPhone 13 ",
-                            Price = 17000000.0,
-                            Quantity = 25,
+                            Name = "iPhone 15 Pro Max - Genuine VNA",
+                            Price = 43990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("34b1b9ec-8986-49b0-b2e3-56d5cb797b45"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "The set of 4 versions of iPhone 12 is still attractive and has not cooled, but Apple brings users a new super product iPhone 13 with many interesting improvements that promise to bring the most attractive experience to users",
+                            FolderId = "1q9K2oaCGMyerUkMlELsDRoBZrfGXmhNa",
+                            ImageUrl = "https://lh3.googleusercontent.com/NA85MErOuDh4WfEGmnTIDG6O-SMoCvMve2sGMqKpBJ-CrGCRcdv7Ouo5HpRr-ZrnIbah9GEWcZA_hO7BRmu4wHw0UktOkZgo=w500-rw",
+                            IsDeleted = false,
+                            Name = "iPhone 13 128GB Pink mobile phone (MLPH3VN/A)",
+                            Price = 24990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("44a98b53-9fac-4cbd-a7d2-35cf17ccbf71"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Updating",
+                            FolderId = "1FGeL7rFIhopiQKRmN4N47myHzxBOSmOB",
+                            ImageUrl = "https://lh3.googleusercontent.com/rT4c6CfzG8osJnzcpD4kDpdmInxJZ3y_qKBaR5OiMKNUWvV3KDVCh5Ke4vm6D2tmQYluG4_gVDR5wHKgob2lKasef-ODOmWh=w500-rw",
+                            IsDeleted = false,
+                            Name = "iPhone 13 mini 128GB (pink) (3J765VN/A) (DEMO) (PINK) - Exhibits",
+                            Price = 17490000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("53ef75d3-a2b9-4154-8694-2885b926f257"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "iPhone 14 Pro Max launched in September 2022 has made a prominent mark on the smart mobile market worldwide by an impressive makeover of the \"Dynamic Island\" screen design. iPhone 14 pro series is favored by Apple when equipped with a powerful A16 Bionic chip with outstanding processing performance, helping you perform many tasks on the device at the same time without jerking or lag",
+                            FolderId = "10CQlOpmK0_9G6lBaJnvZ5TvXnecJOFgR",
+                            ImageUrl = "https://lh3.googleusercontent.com/Y1OVqtPmmjFd3lzbR0onqBQLgUtNkiX2T4zCffguTiZoMs73EJ9naybVgmrRat4i6bqWSC6oMQYvkWZlKxWlddEY3EzNvIj6=w500-rw",
+                            IsDeleted = false,
+                            Name = "iPhone 14 Pro Max | Genuine VNA",
+                            Price = 36990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("5af43061-9c5e-4d1a-b8f4-a801f71a6419"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "In the iPhone 15 series collection launched in 2023, iPhone 15 Plus in particular and other iPhone 15 versions in general are highly appreciated to have a leap in new design, outstanding features are improved compared to the iPhone 14 series in 2022, bringing a completely new experience for iPhone enthusiasts. Join Phong Vu to learn about iPhone 15 Plus through this article!",
+                            FolderId = "1PeJEiAIBag3DupEC0hZOI4BRKqtuoTI5",
+                            ImageUrl = "https://lh3.googleusercontent.com/_eACMH4Tyg60SnkYcrMPgscrJ1P6PB8I_hmIUdWjDouY-hSJ44lNjiD2BDE6XMQ_ZUoIUvU9C4zlJCfBOwv5AC-eA6eQC1g=w500-rw",
+                            IsDeleted = false,
+                            Name = "iPhone 15 Plus - Genuine VNA",
+                            Price = 27990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("ded6f0a0-a430-45d9-9f70-f238692804b2"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Product descriptions will be updated as soon as possible!",
+                            FolderId = "1rgiZ9htIqDMEvN_6_xUpKZQ3oXMY704V",
+                            ImageUrl = "https://lh3.googleusercontent.com/HD6tK_lv_T2Hp6WDHzRREnZI0T-Cnx1hgDTAPuMWZBHB8di1gdeyL5KBZz34diG54BDRF0zqXQL6loA90vL4HoS0jmUYFEc=w500-rw",
+                            IsDeleted = false,
+                            Name = "iPhone 14 128GB",
+                            Price = 24990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("1bc2effd-7841-4eb2-8630-20e5d5f02bcc"),
+                            BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Updating",
+                            FolderId = "10Z1Q2lr51ycdqF6fejHz_WgoaX7qDpYl",
+                            ImageUrl = "https://lh3.googleusercontent.com/knEb077WDBllxLpzXhn_3HIAoR-l7TvZzCd2fsUL7P1dOeN5W6WDNQVDBn3xpHIir8jYE37c9s0ZI47I-rtni2dm2SB5xe8shg=w500-rw",
+                            IsDeleted = false,
+                            Name = "Samsung Galaxy A05 (4+128) (Black) (SM-A055FZKGXXV)",
+                            Price = 3090000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("4da9a5c8-783b-475e-99ed-cd78314af7fa"),
+                            BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
+                            CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
+                            Description = "Updating",
+                            FolderId = "19a9uKIG6FsYwGBIpdAOOeuybQIfhg_3I",
+                            ImageUrl = "https://lh3.googleusercontent.com/wSCq7HZuqP30D8ZFZrFpi95EX_GLeN22ZymVx5_it-B8QjrqL2xdQ8q98PJix7lE0BtpOfTaPNVazU84Gv9YyADTC57OAss=w500-rw",
+                            IsDeleted = false,
+                            Name = "Xiaomi Redmi 12C (4GB/64GB) (Blue)",
+                            Price = 3590000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("6497c128-2315-4c15-9f40-e8a382087480"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
+                            Description = "Updating",
+                            FolderId = "1R0gypNL_KuXDb4Hsw-TK92OB4wyBcKlN",
+                            ImageUrl = "https://lh3.googleusercontent.com/xrZTVonyBNNMAjArfukj_4B1xD8O4T_poW3j0SLYpaYVIvei3Pv2zYzefhLA65v_6_2aFfv0953cGXXVZ8UBZAu0g5CLSA=w500-rw",
+                            IsDeleted = false,
+                            Name = "iPad Pro 11 inch M2 Wifi",
+                            Price = 23990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("a90bc83a-958b-44c7-ab48-fe9744d581b5"),
+                            BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
+                            CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
+                            Description = "Updating",
+                            FolderId = "1HVLMIm5HTuj-anZwQGeewsD4XpeioTLx",
+                            ImageUrl = "https://lh3.googleusercontent.com/WDBs6MVNz4hnSM3L1ukUN98WmnDm7Ag_s_AhLNYVWuvg0lYprSCTmtj8UDNCHu621AvU1eUMwlEylid-_JamBDp1Xdo33W0b=w500-rw",
+                            IsDeleted = false,
+                            Name = "Samsung Galaxy Tab S7 FE LTE Tablet 4GB/64GB (Black) (SM-T735NZKAXXV)",
+                            Price = 13990000.0,
+                            Quantity = 100,
+                            Unit = "Unit"
+                        },
+                        new
+                        {
+                            Id = new Guid("b022ad18-3f5a-494d-8d41-b6775f9eb961"),
+                            BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
+                            CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
+                            Description = "Updating",
+                            FolderId = "18B4NF_mYnJqpx41VfJLjAGBKbtQyfB4M",
+                            ImageUrl = "https://lh3.googleusercontent.com/h1DPkY2SVo3kw4e37lnqiJRd1nd5QlaNPDXxjiF8UJ4yakeTrR1wNzGO4W7qTMjSy8qQI7_2yS_B2M6975c4ceziO__U0MryBw=w500-rw",
+                            IsDeleted = false,
+                            Name = "Apple Watch Ultra 2 4G 49mm (Blue Olive Alpine - M Titanium Case) (MREY3VN/A)",
+                            Price = 25990000.0,
+                            Quantity = 100,
                             Unit = "Unit"
                         });
                 });
@@ -1430,6 +1954,224 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductPrices");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4855),
+                            Price = 94690000.0,
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4866)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4871),
+                            Price = 34790000.0,
+                            ProductId = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4871)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4872),
+                            Price = 29990000.0,
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4873)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4873),
+                            Price = 33290000.0,
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4874)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4875),
+                            Price = 26590000.0,
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4875)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4876),
+                            Price = 25990000.0,
+                            ProductId = new Guid("8f323332-b1c3-445b-8ac2-0a89cae35ec4"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4877)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4878),
+                            Price = 14990000.0,
+                            ProductId = new Guid("1f6bf39a-344a-4e1b-afa6-151b2577654a"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4878)
+                        },
+                        new
+                        {
+                            Id = 8,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4880),
+                            Price = 18990000.0,
+                            ProductId = new Guid("959ce058-f49b-4d27-a215-acddc043ad97"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4880)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4881),
+                            Price = 9490000.0,
+                            ProductId = new Guid("3569044f-c6cd-403b-a5b1-34d08eca73d6"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4881)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4882),
+                            Price = 14990000.0,
+                            ProductId = new Guid("94ec5dcd-4bd1-428b-ae29-63fd6d3fed02"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4883)
+                        },
+                        new
+                        {
+                            Id = 11,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4884),
+                            Price = 15690000.0,
+                            ProductId = new Guid("0b393809-33a5-4ed9-80dd-a9b610a8d3be"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4884)
+                        },
+                        new
+                        {
+                            Id = 12,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4885),
+                            Price = 14390000.0,
+                            ProductId = new Guid("6699213e-ecb0-441c-8d08-1d97f0122f27"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4886)
+                        },
+                        new
+                        {
+                            Id = 13,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4887),
+                            Price = 18590000.0,
+                            ProductId = new Guid("4d5125c7-82ea-43ad-9ca1-c631a68300c0"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4887)
+                        },
+                        new
+                        {
+                            Id = 14,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4888),
+                            Price = 27990000.0,
+                            ProductId = new Guid("35b74922-f5ca-4f8c-901b-77be1f6b0079"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4889)
+                        },
+                        new
+                        {
+                            Id = 15,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4890),
+                            Price = 28690000.0,
+                            ProductId = new Guid("31683266-0a17-4e17-b060-75be71acb1e8"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4890)
+                        },
+                        new
+                        {
+                            Id = 16,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4891),
+                            Price = 24890000.0,
+                            ProductId = new Guid("8d90f72a-acf6-42a7-b75c-2ec1e5b41f7f"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4892)
+                        },
+                        new
+                        {
+                            Id = 17,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4893),
+                            Price = 30290000.0,
+                            ProductId = new Guid("14fbcdc9-0efb-4d67-b435-37b099497949"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4894)
+                        },
+                        new
+                        {
+                            Id = 18,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4895),
+                            Price = 39490000.0,
+                            ProductId = new Guid("1cbc4229-9501-4426-a3e1-523c3be1aaa5"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4896)
+                        },
+                        new
+                        {
+                            Id = 19,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4897),
+                            Price = 15990000.0,
+                            ProductId = new Guid("34b1b9ec-8986-49b0-b2e3-56d5cb797b45"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4897)
+                        },
+                        new
+                        {
+                            Id = 20,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4898),
+                            Price = 29190000.0,
+                            ProductId = new Guid("53ef75d3-a2b9-4154-8694-2885b926f257"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4898)
+                        },
+                        new
+                        {
+                            Id = 21,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4899),
+                            Price = 25190000.0,
+                            ProductId = new Guid("5af43061-9c5e-4d1a-b8f4-a801f71a6419"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4900)
+                        },
+                        new
+                        {
+                            Id = 22,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4901),
+                            Price = 18790000.0,
+                            ProductId = new Guid("ded6f0a0-a430-45d9-9f70-f238692804b2"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4901)
+                        },
+                        new
+                        {
+                            Id = 23,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4902),
+                            Price = 2990000.0,
+                            ProductId = new Guid("1bc2effd-7841-4eb2-8630-20e5d5f02bcc"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4903)
+                        },
+                        new
+                        {
+                            Id = 24,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4904),
+                            Price = 2490000.0,
+                            ProductId = new Guid("4da9a5c8-783b-475e-99ed-cd78314af7fa"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4904)
+                        },
+                        new
+                        {
+                            Id = 25,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4905),
+                            Price = 19990000.0,
+                            ProductId = new Guid("6497c128-2315-4c15-9f40-e8a382087480"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4905)
+                        },
+                        new
+                        {
+                            Id = 26,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4906),
+                            Price = 9390000.0,
+                            ProductId = new Guid("a90bc83a-958b-44c7-ab48-fe9744d581b5"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4907)
+                        },
+                        new
+                        {
+                            Id = 27,
+                            FromDate = new DateTime(2023, 11, 10, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4909),
+                            Price = 21490000.0,
+                            ProductId = new Guid("b022ad18-3f5a-494d-8d41-b6775f9eb961"),
+                            ToDate = new DateTime(2023, 11, 20, 14, 18, 31, 775, DateTimeKind.Local).AddTicks(4909)
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Review", b =>
@@ -1459,152 +2201,6 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Reviews");
-
-                    b.HasData(
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Comment = "Good",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4731),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Comment = "More than expected!",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4734),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Comment = "Wonderful",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4736),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
-                            OrderId = new Guid("cd9218db-08c0-4af8-9058-0ac6cf7d58b9"),
-                            Comment = "Ok",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4737),
-                            Rating = 4
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("13461ff9-0374-4101-a88e-a01dff5f1d8e"),
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            Comment = "More than expected!",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4739),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            Comment = "Wonderful",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4740),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("257c3301-487b-4c18-bc3d-21ffb71a4d43"),
-                            OrderId = new Guid("6925f34b-4021-4fe9-9155-88b9e0df0678"),
-                            Comment = "Ok",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4741),
-                            Rating = 4
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("5470e410-d659-4cdc-b84b-bb174a67a2bf"),
-                            Comment = "Ổn trong tầm giá",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4743),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("b68d7699-772a-4e9a-a994-b5488ee73fa6"),
-                            Comment = "Wonderful",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4744),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("89fe8d4e-588f-4da1-8f72-3c3ca91ad478"),
-                            Comment = "Ok",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4748),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("ed6294ff-6e5e-4318-9cd7-7abeee62f237"),
-                            Comment = "No problem",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4749),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("5de24961-48a5-4496-816e-1840a6889924"),
-                            Comment = "So expensive",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4750),
-                            Rating = 1
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("91c610c1-b1eb-45a2-9380-8a679ac6ddda"),
-                            Comment = "worth the money",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4751),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("e873a5c3-8af2-4df2-a3d7-c8c55ff1feb6"),
-                            Comment = "Comfortable",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4753),
-                            Rating = 4
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("7dc81bcc-6b9b-4f33-a102-bc3fc5303fec"),
-                            Comment = "Product beauty",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4755),
-                            Rating = 5
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            OrderId = new Guid("039c02f8-295e-47f7-bf41-df7563060515"),
-                            Comment = "More than expected",
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4756),
-                            Rating = 3
-                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.Slug", b =>
@@ -1634,6 +2230,134 @@ namespace LandPApi.Migrations
                         .HasFilter("[MenuId] IS NOT NULL");
 
                     b.ToTable("Slugs");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "laptop",
+                            Image = "https://lh3.googleusercontent.com/lFZZtBMUqkbl9qKKUe3DSmHqpb62UjWrOkxqcJ6lN3yM83Wg2Irp-ZlvkUwGO6TMcsscLELMZa_lN9jo8tKteWsCzmUii7po=rw",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Laptop"
+                        },
+                        new
+                        {
+                            Id = "laptop-apple-macbook",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Apple (Macbook)"
+                        },
+                        new
+                        {
+                            Id = "latop-acer",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Acer"
+                        },
+                        new
+                        {
+                            Id = "laptop-usus",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "ASUS"
+                        },
+                        new
+                        {
+                            Id = "laptop-dell",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Dell"
+                        },
+                        new
+                        {
+                            Id = "smartphone",
+                            Image = "https://lh3.googleusercontent.com/qtC62XnXkTsyJbMok7Z7Uu5GOPvhqslzU5YscZZ0HvorTWRs0Qg5s8gWU6l6CTcmc-pQA2y1myJCZ92t9VDq=rw",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Smartphone"
+                        },
+                        new
+                        {
+                            Id = "smartphone-iphone",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Iphone"
+                        },
+                        new
+                        {
+                            Id = "smartphone-samsung",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Samsung"
+                        },
+                        new
+                        {
+                            Id = "smartphone-xiaomi",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Xiaomi"
+                        },
+                        new
+                        {
+                            Id = "tablet",
+                            Image = "https://lh3.googleusercontent.com/dkzFFaKYmPLLkPnC-cyefC1u1Qh0Iy_6Loz7adsbIMs-KAK8FA_PwUOklM3gEppESc1uSeaTa63U4Vejifo=rw",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Tablet"
+                        },
+                        new
+                        {
+                            Id = "tablet-ipad",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Apple (iPad)"
+                        },
+                        new
+                        {
+                            Id = "tablet-samsung",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Samsung"
+                        },
+                        new
+                        {
+                            Id = "smartwatch",
+                            Image = "https://th.bing.com/th/id/R.2650cb6112fbd5590eb781022a3c148e?rik=ZlMWy8mm%2fzwGTg&pid=ImgRaw&r=0",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Smartwatch"
+                        },
+                        new
+                        {
+                            Id = "smartwatch-apple",
+                            IsDeleted = false,
+                            IsSilder = false,
+                            Title = "Apple"
+                        },
+                        new
+                        {
+                            Id = "black-friday",
+                            Image = "https://ben.com.vn/tin-tuc/wp-content/uploads/2021/10/black-friday-la-ngay-bao-nhieu-750x536.jpg",
+                            IsDeleted = false,
+                            IsSilder = true,
+                            Title = "Black Friday"
+                        },
+                        new
+                        {
+                            Id = "best-sale",
+                            Image = "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/homev2/fs-0611-1211-theme/desk/tgdd/banner-title.gif",
+                            IsDeleted = false,
+                            IsSilder = true,
+                            Title = "Sale up to 50%"
+                        },
+                        new
+                        {
+                            Id = "sale-laptop",
+                            Image = "https://static.vecteezy.com/system/resources/thumbnails/006/241/067/small/abstract-polygon-3d-triangle-yellow-geometric-background-free-photo.jpg",
+                            IsDeleted = false,
+                            IsSilder = true,
+                            Title = "Laptop gaming sale up to 40%"
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.SlugProduct", b =>
@@ -1649,6 +2373,408 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("SlugProducts");
+
+                    b.HasData(
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("9cd800e5-3457-4602-9083-1d7fee04e240")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("8f323332-b1c3-445b-8ac2-0a89cae35ec4")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("1f6bf39a-344a-4e1b-afa6-151b2577654a")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("959ce058-f49b-4d27-a215-acddc043ad97")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("3569044f-c6cd-403b-a5b1-34d08eca73d6")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("94ec5dcd-4bd1-428b-ae29-63fd6d3fed02")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("0b393809-33a5-4ed9-80dd-a9b610a8d3be")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("6699213e-ecb0-441c-8d08-1d97f0122f27")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("4d5125c7-82ea-43ad-9ca1-c631a68300c0")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("35b74922-f5ca-4f8c-901b-77be1f6b0079")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("31683266-0a17-4e17-b060-75be71acb1e8")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("8d90f72a-acf6-42a7-b75c-2ec1e5b41f7f")
+                        },
+                        new
+                        {
+                            SlugId = "laptop",
+                            ProductId = new Guid("14fbcdc9-0efb-4d67-b435-37b099497949")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-apple-macbook",
+                            ProductId = new Guid("338e268a-f282-4cc6-b823-0b40592bb4c1")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-apple-macbook",
+                            ProductId = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-apple-macbook",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-apple-macbook",
+                            ProductId = new Guid("86e30c06-9d56-44c4-8ddc-f209eea665df")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-apple-macbook",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-apple-macbook",
+                            ProductId = new Guid("9cd800e5-3457-4602-9083-1d7fee04e240")
+                        },
+                        new
+                        {
+                            SlugId = "latop-acer",
+                            ProductId = new Guid("8f323332-b1c3-445b-8ac2-0a89cae35ec4")
+                        },
+                        new
+                        {
+                            SlugId = "latop-acer",
+                            ProductId = new Guid("1f6bf39a-344a-4e1b-afa6-151b2577654a")
+                        },
+                        new
+                        {
+                            SlugId = "latop-acer",
+                            ProductId = new Guid("959ce058-f49b-4d27-a215-acddc043ad97")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-usus",
+                            ProductId = new Guid("3569044f-c6cd-403b-a5b1-34d08eca73d6")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-usus",
+                            ProductId = new Guid("94ec5dcd-4bd1-428b-ae29-63fd6d3fed02")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-usus",
+                            ProductId = new Guid("0b393809-33a5-4ed9-80dd-a9b610a8d3be")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-dell",
+                            ProductId = new Guid("6699213e-ecb0-441c-8d08-1d97f0122f27")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-dell",
+                            ProductId = new Guid("4d5125c7-82ea-43ad-9ca1-c631a68300c0")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-dell",
+                            ProductId = new Guid("35b74922-f5ca-4f8c-901b-77be1f6b0079")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-dell",
+                            ProductId = new Guid("31683266-0a17-4e17-b060-75be71acb1e8")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-dell",
+                            ProductId = new Guid("8d90f72a-acf6-42a7-b75c-2ec1e5b41f7f")
+                        },
+                        new
+                        {
+                            SlugId = "laptop-dell",
+                            ProductId = new Guid("14fbcdc9-0efb-4d67-b435-37b099497949")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("1cbc4229-9501-4426-a3e1-523c3be1aaa5")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("34b1b9ec-8986-49b0-b2e3-56d5cb797b45")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("44a98b53-9fac-4cbd-a7d2-35cf17ccbf71")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("53ef75d3-a2b9-4154-8694-2885b926f257")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("5af43061-9c5e-4d1a-b8f4-a801f71a6419")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("ded6f0a0-a430-45d9-9f70-f238692804b2")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("1bc2effd-7841-4eb2-8630-20e5d5f02bcc")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone",
+                            ProductId = new Guid("4da9a5c8-783b-475e-99ed-cd78314af7fa")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-iphone",
+                            ProductId = new Guid("1cbc4229-9501-4426-a3e1-523c3be1aaa5")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-iphone",
+                            ProductId = new Guid("34b1b9ec-8986-49b0-b2e3-56d5cb797b45")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-iphone",
+                            ProductId = new Guid("44a98b53-9fac-4cbd-a7d2-35cf17ccbf71")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-iphone",
+                            ProductId = new Guid("53ef75d3-a2b9-4154-8694-2885b926f257")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-iphone",
+                            ProductId = new Guid("5af43061-9c5e-4d1a-b8f4-a801f71a6419")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-iphone",
+                            ProductId = new Guid("ded6f0a0-a430-45d9-9f70-f238692804b2")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-samsung",
+                            ProductId = new Guid("1bc2effd-7841-4eb2-8630-20e5d5f02bcc")
+                        },
+                        new
+                        {
+                            SlugId = "smartphone-xiaomi",
+                            ProductId = new Guid("4da9a5c8-783b-475e-99ed-cd78314af7fa")
+                        },
+                        new
+                        {
+                            SlugId = "tablet",
+                            ProductId = new Guid("6497c128-2315-4c15-9f40-e8a382087480")
+                        },
+                        new
+                        {
+                            SlugId = "tablet",
+                            ProductId = new Guid("a90bc83a-958b-44c7-ab48-fe9744d581b5")
+                        },
+                        new
+                        {
+                            SlugId = "tablet-ipad",
+                            ProductId = new Guid("6497c128-2315-4c15-9f40-e8a382087480")
+                        },
+                        new
+                        {
+                            SlugId = "tablet-samsung",
+                            ProductId = new Guid("a90bc83a-958b-44c7-ab48-fe9744d581b5")
+                        },
+                        new
+                        {
+                            SlugId = "smartwatch",
+                            ProductId = new Guid("b022ad18-3f5a-494d-8d41-b6775f9eb961")
+                        },
+                        new
+                        {
+                            SlugId = "smartwatch-apple",
+                            ProductId = new Guid("b022ad18-3f5a-494d-8d41-b6775f9eb961")
+                        },
+                        new
+                        {
+                            SlugId = "black-friday",
+                            ProductId = new Guid("b022ad18-3f5a-494d-8d41-b6775f9eb961")
+                        },
+                        new
+                        {
+                            SlugId = "black-friday",
+                            ProductId = new Guid("8f323332-b1c3-445b-8ac2-0a89cae35ec4")
+                        },
+                        new
+                        {
+                            SlugId = "black-friday",
+                            ProductId = new Guid("1cbc4229-9501-4426-a3e1-523c3be1aaa5")
+                        },
+                        new
+                        {
+                            SlugId = "black-friday",
+                            ProductId = new Guid("14fbcdc9-0efb-4d67-b435-37b099497949")
+                        },
+                        new
+                        {
+                            SlugId = "black-friday",
+                            ProductId = new Guid("0b393809-33a5-4ed9-80dd-a9b610a8d3be")
+                        },
+                        new
+                        {
+                            SlugId = "black-friday",
+                            ProductId = new Guid("a90bc83a-958b-44c7-ab48-fe9744d581b5")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("53b17c22-a6de-49c3-8a15-3dc252805fa3")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("33ae145c-880a-493c-aecd-3859d66f41a7")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("1a7a8ea6-ccb4-4133-bc01-5031e0ea8de8")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("1f6bf39a-344a-4e1b-afa6-151b2577654a")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("959ce058-f49b-4d27-a215-acddc043ad97")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("8d90f72a-acf6-42a7-b75c-2ec1e5b41f7f")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("a90bc83a-958b-44c7-ab48-fe9744d581b5")
+                        },
+                        new
+                        {
+                            SlugId = "best-sale",
+                            ProductId = new Guid("6497c128-2315-4c15-9f40-e8a382087480")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("31683266-0a17-4e17-b060-75be71acb1e8")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("35b74922-f5ca-4f8c-901b-77be1f6b0079")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("6699213e-ecb0-441c-8d08-1d97f0122f27")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("14fbcdc9-0efb-4d67-b435-37b099497949")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("4d5125c7-82ea-43ad-9ca1-c631a68300c0")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("3569044f-c6cd-403b-a5b1-34d08eca73d6")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("1f6bf39a-344a-4e1b-afa6-151b2577654a")
+                        },
+                        new
+                        {
+                            SlugId = "sale-laptop",
+                            ProductId = new Guid("8f323332-b1c3-445b-8ac2-0a89cae35ec4")
+                        });
                 });
 
             modelBuilder.Entity("LandPApi.Models.View", b =>
@@ -1670,50 +2796,6 @@ namespace LandPApi.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Views");
-
-                    b.HasData(
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4313),
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            CustomerId = "04be0c35-571e-425c-992e-15a7227286de",
-                            ProductId = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4332),
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("c2c75508-8eac-47de-a3fa-43c44ce8e917"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4333),
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("13c2386e-1348-42ef-8de1-46d7515eb3df"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4334),
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("7d7b21dd-b2fe-4179-8238-e871f52fcb2a"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4335),
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            CustomerId = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
-                            ProductId = new Guid("d01f7780-5cdd-4ff0-b6db-947a1f3d3f04"),
-                            Date = new DateTime(2023, 11, 7, 10, 54, 18, 56, DateTimeKind.Local).AddTicks(4336),
-                            Quantity = 1
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

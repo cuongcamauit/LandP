@@ -220,6 +220,8 @@ namespace LandPApi.Service
 
         private object getMaxPrice(List<Product> products)
         {
+            if (products.Count == 0)
+                return 0;
             var maxprice = _mapper.Map<List<ProductDto>>(products).MaxBy(o => o.Price);
             return ((int)(maxprice!.Price + 1000000) / 1000000) * 1000000;
         }
@@ -347,9 +349,7 @@ namespace LandPApi.Service
         }
         private List<Product> GetCache()
         {
-            if (!_cache.TryGetValue(ProductCacheKey, out List<Product>? products))
-            {
-                products = _repository.ReadAll()
+            var products = _repository.ReadAll()
                         .Include(o => o.Brand)
                         .Include(o => o.Category)
                         .Include(o => o.Views)
@@ -360,19 +360,32 @@ namespace LandPApi.Service
                         .Include(o => o.ProductPrices)
                         .Include(o => o.AttributeSpecs)
                         .ToList();
-                _cache.Set(ProductCacheKey, products);
-            }
+            //if (!_cache.TryGetValue(ProductCacheKey, out List<Product>? products))
+            //{
+            //    products = _repository.ReadAll()
+            //            .Include(o => o.Brand)
+            //            .Include(o => o.Category)
+            //            .Include(o => o.Views)
+            //            .Include(o => o.CartItems)
+            //            .Include(o => o.OrderDetails)
+            //            .Include(o => o.Reviews)
+            //            .Include(o => o.Documents)
+            //            .Include(o => o.ProductPrices)
+            //            .Include(o => o.AttributeSpecs)
+            //            .ToList();
+            //    _cache.Set(ProductCacheKey, products);
+            //}
 
             return products!;
         }
         private List<SlugDto> GetSlugCache()
         {
-            if (!_cache.TryGetValue(ProductCacheKey, out List<SlugDto>? slugs))
-            {
-                slugs = _slugService.GetAll();
-                _cache.Set(SlugCacheKey, slugs);
-            }
-
+            //if (!_cache.TryGetValue(ProductCacheKey, out List<SlugDto>? slugs))
+            //{
+            //    slugs = _slugService.GetAll();
+            //    _cache.Set(SlugCacheKey, slugs);
+            //}
+            var slugs = _slugService.GetAll();
             return slugs!;
         }
     }
