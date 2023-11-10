@@ -28,10 +28,12 @@ namespace LandPApi.Service
             postData.to_ward_code = address.WardCode!;
             postData.to_district_id = address.DistrictId;
             postData.insurance_value = Convert.ToInt32(valueOrder);
+            var shipfee = await GHN.FeeShip(postData);
             return new CaculateOrder
             {
-                Total = valueOrder,
-                Ship = await GHN.FeeShip(postData)
+                SubTotal = valueOrder,
+                Ship = shipfee,
+                Total = shipfee + valueOrder
             };
         }
     }
