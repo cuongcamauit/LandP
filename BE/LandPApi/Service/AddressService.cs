@@ -1,12 +1,10 @@
 ﻿
 using AutoMapper;
-using LandPApi.Data;
 using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.View;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace LandPApi.Service
@@ -16,7 +14,6 @@ namespace LandPApi.Service
         public AddressService(IRepository<Address> repository, IMapper mapper) : base(repository, mapper)
         {
         }
-
         public async Task Delete(Guid id, string customerId)
         {
             var address = await _repository.ReadByCondition(o => (o.Id == id && o.CustomerId == customerId)).FirstOrDefaultAsync();
@@ -31,6 +28,12 @@ namespace LandPApi.Service
         {
             var addresses = await _repository.ReadByCondition(o => o.CustomerId == customerId).ToListAsync();
             return _mapper.Map<List<AddressDto>>(addresses);
+        }
+
+        public bool HaveNoAddress(string customerId)
+        {
+            var check = _repository.ReadByCondition(o => o.CustomerId == customerId).Count();
+            return check == 0;
         }
 
         public async Task SetDefault(Guid id, string customerId)

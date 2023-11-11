@@ -1907,8 +1907,104 @@ namespace LandPApi.Data
                 {
                     ProductId = macpro16,
                     AttributeId = 20,
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 1,
+                    OptionID = 1
+                },
+                new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 3,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 4,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 5,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 6,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 7,
+                    Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 10,
+                    OptionID = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 13,
+                    Value = "2 x Thunderbolt 4 , 1 x 3.5 mm , 1 x SDXC Card Slot"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.3"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 15
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 16,
+                    Value = "macOS"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 17,
+                    Value = "1.15 x 34.04 x 23.76 cm"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 18,
+                    Value = "53 Wh"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 19,
+                    Value = "1.5 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair15,
+                    AttributeId = 20,
                 }
-
             );
             #endregion
             #region Slug

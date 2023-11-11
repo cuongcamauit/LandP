@@ -1,6 +1,5 @@
 ﻿using LandPApi.Dto;
 using LandPApi.Models;
-using LandPApi.Service;
 using LandPApi.View;
 
 namespace LandPApi.IService
@@ -10,5 +9,6 @@ namespace LandPApi.IService
         Task Delete(Guid id, string customerId);
         Task<List<AddressDto>> GetAll(string customerId);
         Task SetDefault(Guid id, string customerId);
+        bool HaveNoAddress(string customerId);
     }
 }

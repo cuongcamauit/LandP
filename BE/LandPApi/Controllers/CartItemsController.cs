@@ -13,10 +13,12 @@ namespace LandPApi.Controllers
     public class CartItemsController : ControllerBase
     {
         private readonly ICartItemService _cartItemService;
+        private readonly ICacheService _cacheService;
 
-        public CartItemsController(ICartItemService cartItemService)
+        public CartItemsController(ICartItemService cartItemService, ICacheService cacheService)
         {
             _cartItemService = cartItemService;
+            _cacheService = cacheService;
         }
 
         // GET: api/CartItems
@@ -121,7 +123,18 @@ namespace LandPApi.Controllers
                     StatusCode = 422
                 });
             }
+            var product = _cacheService.GetProduct().FirstOrDefault(o => o.Id == cartItem.ProductId);
+            var quantity = product != null ? product.Quantity : 0;
             var check = await _cartItemService.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier), cartItem.ProductId);
+            if ((check != null && quantity < check.Quantity + cartItem.Quantity) ||
+                (check == null && quantity < cartItem.Quantity))
+            {
+                return Ok(new Response
+                {
+                    StatusCode = 422,
+                    Message = "Quantity exeed"
+                });
+            }
             if (check != null)
             {
                 var newCartItem = new CartItem
@@ -134,7 +147,7 @@ namespace LandPApi.Controllers
                 return Ok(new Response
                 {
                     StatusCode = 204,
-                    Message = "Add to cart successful!"
+                    Message = "Update quantity to cart successful!"
                 });
             }
 
@@ -144,8 +157,8 @@ namespace LandPApi.Controllers
             return Ok(new Response
             {
                 StatusCode = 201,
-                Message = "Add to cart successful!",
-                Data = cartItem
+                Message = "Add new product to cart successful!",
+                Data = result
             });
         }
 
@@ -162,7 +175,5 @@ namespace LandPApi.Controllers
                 Data = id
             });
         }
-
-
     }
 }

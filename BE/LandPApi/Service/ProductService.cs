@@ -124,13 +124,14 @@ namespace LandPApi.Service
                 }
             }
             #endregion
+            var filterlist = getFilter(products);
+            var maxPrice = getMaxPrice(products);
             #region Paginate
 
             var result = PaginatedList<Product>.Create(products!, searchInfor.Pagination!.PageNumber, searchInfor.Pagination.ItemsPerPage);
 
             #endregion
-            var filterlist = getFilter(result);
-            var maxPrice = getMaxPrice(products);
+
 
             return new
             {
@@ -175,7 +176,7 @@ namespace LandPApi.Service
             }
             return temp;
         }
-        private object getFilter(PaginatedList<Product> result)
+        private object getFilter(List<Product> result)
         {
             IDictionary<object, HashSet<object>> filterables = new Dictionary<object, HashSet<object>>();
             foreach (var item in result)

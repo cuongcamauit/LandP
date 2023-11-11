@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using LandPApi.Models;
+﻿using LandPApi.Dto;
 using LandPApi.IService;
-using System.Net.WebSockets;
-using LandPApi.Dto;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
 using LandPApi.View;
-using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace LandPApi.Controllers
 {
@@ -123,21 +120,31 @@ namespace LandPApi.Controllers
         [Authorize(Roles = "User")]
         public IActionResult PostAddress(AddressView address)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    var message = string.Join(" | ", ModelState.Values
-            //                .SelectMany(v => v.Errors)
-            //                .Select(e => e.ErrorMessage));
-            //    return Ok(new Response
-            //    {
-            //        Success = false,
-            //        Message = "Some properties is wrong",
-            //        Data = message,
-            //        StatusCode = 422
-            //    });
-            //}
+            if (!ModelState.IsValid)
+            {
+                var message = string.Join(" | ", ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage));
+                return Ok(new Response
+                {
+                    Success = false,
+                    Message = "Some properties is wrong",
+                    Data = message,
+                    StatusCode = 422
+                });
+            }
+            var flag = false;
             address.CustomerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (_addressService.HaveNoAddress(address.CustomerId))
+            {
+                flag = true;
+            }
             var result = _addressService.Create(address);
+            if (flag == true)
+            {
+                _addressService.SetDefault(result.Id, result.CustomerId!);
+            }
+
             return Ok(new Response
             {
                 StatusCode = 201,
