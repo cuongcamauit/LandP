@@ -23,6 +23,7 @@ namespace LandPApi.Service
         private readonly IRepository<Models.Address> _repoAdd;
         private readonly IRepository<Product> _repoPro;
         private readonly IMapper _mapper;
+        private readonly ICacheService _cacheService;
         private readonly IMemoryCache _cache;
         private readonly double exchangeRate = 23000;
 
@@ -34,7 +35,7 @@ namespace LandPApi.Service
                             IRepository<Product> repoPro,
                             IMapper mapper,
                             IConfiguration configuration,
-                            IMemoryCache cache)
+                            ICacheService cacheService)
         {
             _configuration = configuration;
             _repoOrder = repoOrder;
@@ -44,7 +45,7 @@ namespace LandPApi.Service
             _repoAdd = repoAdd;
             _repoPro = repoPro;
             _mapper = mapper;
-            _cache = cache;
+            _cacheService = cacheService;
         }
 
         public async Task<double> GetTotal(string customerId, OrderView view)
@@ -117,6 +118,8 @@ namespace LandPApi.Service
 
                 entityPro.Quantity -= entityCart.Quantity;
                 _repoPro.Update(entityPro);
+                _cacheService.UpdateProduct(entityPro);
+
                 _repoCart.Delete(entityCart);
             }
 
@@ -124,7 +127,7 @@ namespace LandPApi.Service
             {
                 insurance_value = Convert.ToInt32(total),
                 to_district_id = address.DistrictId,
-                to_ward_code = address.WardCode
+                to_ward_code = address.WardCode!
             };
 
             var shipFee = await GHN.FeeShip(postData);

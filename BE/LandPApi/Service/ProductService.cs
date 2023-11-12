@@ -42,6 +42,7 @@ namespace LandPApi.Service
 
             _repository.Create(entity);
             _repository.Save();
+            _cacheService.AddProduct(entity);
 
             return _mapper.Map<ProductDto>(entity);
         }

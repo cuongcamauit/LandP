@@ -469,7 +469,7 @@ namespace LandPApi.Data
             var macpro13 = Guid.NewGuid();
 
             var acer16 = Guid.NewGuid();
-            var acerasp15 = Guid.NewGuid();
+            var acerasp5 = Guid.NewGuid();
             var acernitro5 = Guid.NewGuid();
 
             var asus1 = Guid.NewGuid();
@@ -585,7 +585,7 @@ namespace LandPApi.Data
                 },
                 new Product()
                 {
-                    Id = acerasp15,
+                    Id = acerasp5,
                     Name = "Laptop ACER Aspire 5 A514-55-5954 (NX.K5BSV.001) (i5-1235U/RAM 8GB/512GB SSD/ Windows 11)",
                     Description = "Laptop Acer Aspire 5 A514-55-5954 NX. K5BSV.001 is one of the top choices for students as well as office workers. With a minimalist but still extremely sophisticated design along with powerful performance thanks to the Intel Core i5 CPU will be a great assistant for you in work, study as well as entertainment",
                     Price = 19990000,
@@ -907,7 +907,7 @@ namespace LandPApi.Data
                 new ProductPrice()
                 {
                     Id = 7,
-                    ProductId = acerasp15,
+                    ProductId = acerasp5,
                     Price = 14990000,
                     FromDate = DateTime.Now,
                     ToDate = DateTime.Now.AddDays(10)
@@ -2004,7 +2004,1613 @@ namespace LandPApi.Data
                 {
                     ProductId = macair15,
                     AttributeId = 20,
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 1,
+                    OptionID = 1
+                },
+                new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 3,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 4,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 5,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 6,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 7,
+                    Value = "Apple M1 ( 8-Core CPU / 7-Core GPU )"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 10,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 13,
+                    Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 15
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 16,
+                    Value = "macOS"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 17,
+                    Value = "30.41 x 21.24 x 0.41–1.61 cm"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 18,
+                    Value = "53 Wh"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 19,
+                    Value = "1.3 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2020,
+                    AttributeId = 20,
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 1,
+                    OptionID = 1
+                },
+                new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 3,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 4,
+                    OptionID = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 5,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 6,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 7,
+                    Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 9,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 10,
+                    OptionID = 7
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 13,
+                    Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 15
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 16,
+                    Value = "macOS"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 17,
+                    Value = "30.41 x 21.5 x 1.13 cm"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 18,
+                    Value = "53 Wh"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 19,
+                    Value = "1.2 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_1,
+                    AttributeId = 20,
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 1,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 3,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 4,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 5,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 6,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 7,
+                    Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 10,
+                    OptionID = 7
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 13,
+                    Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 15
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 16,
+                    Value = "macOS"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 17,
+                    Value = "30.41 x 21.24 x 0.41–1.61 cm"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 18,
+                    Value = "53 Wh"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 19,
+                    Value = "1.3 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = macair2022_2,
+                    AttributeId = 20,
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 1,
+                    OptionID = 1
+                },
+                new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 3,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 5,
+                    OptionID = 5
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 6,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 7,
+                    Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 9,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 10,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 13,
+                    Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 15
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 16,
+                    Value = "macOS"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 17,
+                    Value = "30.41 x 21.24 x 0.41–1.61 cm"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 18,
+                    Value = "53 Wh"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 19,
+                    Value = "1.3 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = macpro13,
+                    AttributeId = 20,
+                },
+                // acer
+                new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 1,
+                    OptionID = 2
+                },
+                new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 3,
+                    OptionID = 5
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 4,
+                    OptionID = 13
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 5,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 6,
+                    OptionID = 10
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 7,
+                    Value = "AMD Ryzen 5 7535HS ( 3.3 GHz - 4.5 GHz / 16MB / 6 cores, 12 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 8,
+                    Value = "RTX 4050 6GB GDDR6 / AMD Radeon 660M"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 10,
+                    OptionID = 13
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 18,
+                    Value = "4 cell 90 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 19,
+                    Value = "2.6 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = acer16,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 1,
+                    OptionID = 2
+                },
+                new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 3,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 4,
+                    OptionID = 10
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 5,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 6,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 7,
+                    Value = "Intel Core i5-1235U ( 1.3 GHz - 4.4GHz / 12MB / 10 cores, 12 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 8,
+                    Value = "Onboard Intel Iris Xe Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 10,
+                    OptionID = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 18,
+                    Value = "4 cell 90 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 19,
+                    Value = "2.6 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = acerasp5,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 1,
+                    OptionID = 2
+                },
+                new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 3,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 4,
+                    OptionID = 13
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 5,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 6,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 7,
+                    Value = "Intel Core i5-11400H ( 2.7 GHz - 4.5 GHz / 12MB / 6 cores, 12 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 8,
+                    Value = "RTX 3050 4GB GDDR6 / Intel UHD Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 10,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 18,
+                    Value = "4 cell 90 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 19,
+                    Value = "2.6 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = acernitro5,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                },
+                // asus
+                new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 1,
+                    OptionID = 3
+                },
+                new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 3,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 5,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 6,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 7,
+                    Value = "Intel Core i3-1115G4 ( 3.0 GHz – 4.10 GHz / 6MB / 2 cores, 4 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 8,
+                    Value = "Onboard Intel UHD Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 10,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus1,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 1,
+                    OptionID = 3
+                },
+                new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 3,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 5,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 6,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 7,
+                    Value = "Intel Core i5-1335U ( 1.3 GHz – 4.6GHz / 12MB / 10 cores, 12 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 8,
+                    Value = "Onboard Intel UHD Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 10,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus2,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 1,
+                    OptionID = 3
+                },
+                new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 3,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 5,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 6,
+                    OptionID = 11
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 7,
+                    Value = "AMD Ryzen 7 7730U ( 2.0 GHz - 4.5 GHz / 16MB / 8 cores, 16 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 8,
+                    Value = "Onboard AMD Radeon Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 9,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 10,
+                    OptionID = 13
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = asus3,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                },
+                // dell
+                new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 1,
+                    OptionID = 4
+                },
+                new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 3,
+                    OptionID = 7
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 4,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 5,
+                    OptionID = 5
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 6,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 7,
+                    Value = "Intel Core i3-1215U ( 1.2 GHz - 4.4 GHz / 10MB / 6 cores, 8 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 8,
+                    Value = "Onboard Intel UHD Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 10,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins15,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 1,
+                    OptionID = 4
+                },
+                new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 3,
+                    OptionID = 7
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 4,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 5,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 6,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 7,
+                    Value = "Intel Core i3-1215U ( 1.2 GHz - 4.4 GHz / 10MB / 6 cores, 8 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 8,
+                    Value = "Onboard Intel UHD Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 10,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins3530,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 1,
+                    OptionID = 4
+                },
+                new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 3,
+                    OptionID = 7
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 5,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 6,
+                    OptionID = 4
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 7,
+                    Value = "Intel Core i5-1340P ( 1.9 GHz – 4.6 GHz / 12MB / 12 cores, 16 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 8,
+                    Value = "Onboard Intel UHD Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 9,
+                    OptionID = 2
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 10,
+                    OptionID = 12
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins14,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 1,
+                    OptionID = 4
+                },
+                new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 3,
+                    OptionID = 7
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 5,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 6,
+                    OptionID = 5
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 7,
+                    Value = "Intel Core i7-1360P ( 2.2 GHz – 5.0 GHz / 12MB / 12 cores, 16 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 8,
+                    Value = "RTX 2050 4GB GDDR6 / Intel Iris Xe Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 9,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 10,
+                    OptionID = 13
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins16,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 1,
+                    OptionID = 4
+                },
+                new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 3,
+                    OptionID = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 4,
+                    OptionID = 10
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 5,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 6,
+                    OptionID = 5
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 7,
+                    Value = "Intel Core i7-1355U ( 1.7 GHz - 5.0 GHz / 12MB / 10 cores, 12 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 8,
+                    Value = "GeForce MX550 2GB GDDR6 / Intel Iris Xe Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 9,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 10,
+                    OptionID = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellvos3430,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 1,
+                    OptionID = 4
+                },
+                new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 2,
+                    Value = "12 months"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 3,
+                    OptionID = 7
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 4,
+                    OptionID = 1
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 5,
+                    OptionID = 6
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 6,
+                    OptionID = 5
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 7,
+                    Value = "Intel Core i7-1360P ( 2.2 GHz – 5.0 GHz / 18MB / 12 cores, 16 threads )"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 8,
+                    Value = "RTX 2050 4GB GDDR6 / Intel Iris Xe Graphics"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 9,
+                    OptionID = 3
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 10,
+                    OptionID = 8
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 11,
+                    Value = "512GB M.2 NVMe SSD"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 12,
+                    Value = "1 x HDMI"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 13,
+                    Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 14,
+                    Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 15,
+                    Value = "usually, with numeric keypad, RGB 4 zones"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 16,
+                    Value = "Windows 11 Home SL"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 17,
+                    Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 18,
+                    Value = "2 cell 37 Wh , Built-in battery"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 19,
+                    Value = "1.8 kg"
+                }, new AttributeSpec()
+                {
+                    ProductId = dellins142,
+                    AttributeId = 20,
+                    Value = "Adapter, power cord"
                 }
+                // acer
             );
             #endregion
             #region Slug
@@ -2148,7 +3754,7 @@ namespace LandPApi.Data
                 }, new SlugProduct()
                 {
                     SlugId = laptopslug,
-                    ProductId = acerasp15
+                    ProductId = acerasp5
                 }, new SlugProduct()
                 {
                     SlugId = laptopslug,
@@ -2224,7 +3830,7 @@ namespace LandPApi.Data
                 }, new SlugProduct()
                 {
                     SlugId = acerslug,
-                    ProductId = acerasp15
+                    ProductId = acerasp5
                 }, new SlugProduct()
                 {
                     SlugId = acerslug,
@@ -2403,7 +4009,7 @@ namespace LandPApi.Data
                 }, new SlugProduct()
                 {
                     SlugId = bestsale,
-                    ProductId = acerasp15
+                    ProductId = acerasp5
                 }, new SlugProduct()
                 {
                     SlugId = bestsale,
@@ -2450,7 +4056,7 @@ namespace LandPApi.Data
                 }, new SlugProduct()
                 {
                     SlugId = salelaptop,
-                    ProductId = acerasp15
+                    ProductId = acerasp5
                 }, new SlugProduct()
                 {
                     SlugId = salelaptop,

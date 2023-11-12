@@ -20,6 +20,20 @@ namespace LandPApi.Service
             _repoPro = repoPro;
             _repoSlug = repoSlug;
         }
+
+        public void AddProduct(Product entity)
+        {
+            var product = _repoPro.ReadByCondition(o => o.Id == entity.Id)
+                    .Include(o => o.Reviews)
+                    .Include(o => o.OrderDetails)
+                    .Include(o => o.ProductPrices)
+                    .Include(o => o.AttributeSpecs)
+                    .FirstOrDefault();
+            var products = GetProduct();
+            products.Add(product!);
+            _cache.Set(ProductKey, products);
+        }
+
         public List<Product> GetProduct()
         {
             if (!_cache.TryGetValue(ProductKey, out List<Product>? products))
@@ -61,6 +75,20 @@ namespace LandPApi.Service
                 _cache.Set(SlugKey, slugs);
             }
             return slugs!;
+        }
+
+        public void UpdateProduct(Product entityPro)
+        {
+            var products = GetProduct();
+            var temp = products.FirstOrDefault(o => o.Id == entityPro.Id);
+            temp!.Name = entityPro.Name;
+            temp.IsDeleted = entityPro.IsDeleted;
+            temp.Description = entityPro.Description;
+            temp.Price = entityPro.Price;
+            temp.Quantity = entityPro.Quantity;
+            products.Remove(products.FirstOrDefault(o => o.Id == entityPro.Id)!);
+            products.Add(temp);
+            _cache.Set(ProductKey, products);
         }
     }
 }
