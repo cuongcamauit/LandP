@@ -368,8 +368,8 @@ namespace LandPApi.Data
             var addresuserId = Guid.Parse("0750d8d3-bfff-45f2-b081-2a86ffe91bfd");
             var addresuser1Id = Guid.Parse("3fd64b58-5ded-40ed-876c-027bcc759a75");
             builder.Entity<Address>().HasData(
-                new Address { Id = addresuserId, CustomerId = userId, ProvinceName = "Cà Mau", ProvinceId = 252, DistrictName = "Thành phố Cà Mau", DistrictId = 1654, WardName = "8", WardCode = "610107", Detail = "Khóm 5" },
-                new Address { Id = addresuser1Id, CustomerId = user1Id, ProvinceName = "Thành phố Hồ Chí Minh", ProvinceId = 202, DistrictName = "Quận 12", DistrictId = 1454, WardName = "Phường Tân Chánh Hiệp", WardCode = "21204", Detail = "Đường Tô Ký" }
+                new Address { Id = addresuserId, CustomerId = userId, ProvinceName = "Cà Mau", ProvinceId = 252, DistrictName = "Thành phố Cà Mau", DistrictId = 1654, WardName = "8", WardCode = "610107", Detail = "Khóm 5", isDefault = true },
+                new Address { Id = addresuser1Id, CustomerId = user1Id, ProvinceName = "Thành phố Hồ Chí Minh", ProvinceId = 202, DistrictName = "Quận 12", DistrictId = 1454, WardName = "Phường Tân Chánh Hiệp", WardCode = "21204", Detail = "Đường Tô Ký", isDefault = true }
             );
             //----------------------------------------------------------//
             var smartphoneId = Guid.Parse("bc17dda5-9e53-434d-ab30-32452bfc7d35");

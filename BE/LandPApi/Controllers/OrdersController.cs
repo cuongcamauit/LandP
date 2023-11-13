@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using LandPApi.Models;
+﻿using LandPApi.Dto;
 using LandPApi.IService;
-using Microsoft.AspNetCore.Authorization;
+using LandPApi.Models;
 using LandPApi.View;
-using LandPApi.Dto;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using System.Security.Policy;
 
 namespace LandPApi.Controllers
 {
@@ -19,7 +18,7 @@ namespace LandPApi.Controllers
         {
             _orderService = orderService;
             _configuration = configuration;
-        }   
+        }
 
         // GET: api/Orders
         [HttpGet]
@@ -121,12 +120,12 @@ namespace LandPApi.Controllers
                     StatusCode = 422
                 });
             }
-            OrderDto? result = await _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier), 
+            OrderDto? result = await _orderService.Add(User.FindFirstValue(ClaimTypes.NameIdentifier),
                                                      order);
             if (result == null)
             {
-                return Ok(new Response 
-                { 
+                return Ok(new Response
+                {
                     StatusCode = 400,
                     Message = "No item in cart!",
                     Success = false
@@ -209,7 +208,7 @@ namespace LandPApi.Controllers
                 _orderService.isPaid(orderId);
             }
             return Content("<script>window.close();</script>", "text/html");
-        } 
+        }
         [HttpGet("PaypalSuccess")]
         public IActionResult CheckoutSuccess(string paymentid, string token)
         {

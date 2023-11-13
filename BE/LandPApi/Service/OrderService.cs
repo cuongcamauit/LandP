@@ -35,7 +35,8 @@ namespace LandPApi.Service
                             IRepository<Product> repoPro,
                             IMapper mapper,
                             IConfiguration configuration,
-                            ICacheService cacheService)
+                            ICacheService cacheService,
+                            IMemoryCache cache)
         {
             _configuration = configuration;
             _repoOrder = repoOrder;
@@ -46,6 +47,7 @@ namespace LandPApi.Service
             _repoPro = repoPro;
             _mapper = mapper;
             _cacheService = cacheService;
+            _cache = cache;
         }
 
         public async Task<double> GetTotal(string customerId, OrderView view)

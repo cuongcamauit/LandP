@@ -824,2137 +824,2137 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 1,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 3,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 5,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 6,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 7,
                             Value = "Apple M2 Max ( 12-Core CPU / 64-Core GPU )"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 8
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 9,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 10,
                             OptionID = 13
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 11
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 13,
                             Value = "3 x Thunderbolt 4 , 1 x 3.5 mm , 1 x SDXC Card Slot"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.3"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 15
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 16,
                             Value = "macOS"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 17,
                             Value = "1.68 x 35.57 x 24.81 cm"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 18,
                             Value = "100 Wh"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 19,
                             Value = "2.1 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             AttributeId = 20
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 1,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 3,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 4,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 5,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 6,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 7,
                             Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 8
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 10,
                             OptionID = 11
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 11
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 13,
                             Value = "2 x Thunderbolt 4 , 1 x 3.5 mm , 1 x SDXC Card Slot"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.3"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 15
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 16,
                             Value = "macOS"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 17,
                             Value = "1.15 x 34.04 x 23.76 cm"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 18,
                             Value = "53 Wh"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 19,
                             Value = "1.5 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             AttributeId = 20
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 1,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 3,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 4,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 5,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 6,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 7,
                             Value = "Apple M1 ( 8-Core CPU / 7-Core GPU )"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 8
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 10,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 11
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 13,
                             Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 15
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 16,
                             Value = "macOS"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 17,
                             Value = "30.41 x 21.24 x 0.41–1.61 cm"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 18,
                             Value = "53 Wh"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 19,
                             Value = "1.3 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             AttributeId = 20
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 1,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 3,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 4,
                             OptionID = 11
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 5,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 6,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 7,
                             Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 8
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 9,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 10,
                             OptionID = 7
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 11
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 13,
                             Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 15
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 16,
                             Value = "macOS"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 17,
                             Value = "30.41 x 21.5 x 1.13 cm"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 18,
                             Value = "53 Wh"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 19,
                             Value = "1.2 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             AttributeId = 20
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 1,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 3,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 4,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 5,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 6,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 7,
                             Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 8
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 10,
                             OptionID = 7
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 11
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 13,
                             Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 15
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 16,
                             Value = "macOS"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 17,
                             Value = "30.41 x 21.24 x 0.41–1.61 cm"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 18,
                             Value = "53 Wh"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 19,
                             Value = "1.3 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             AttributeId = 20
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 1,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 3,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 5,
                             OptionID = 5
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 6,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 7,
                             Value = "Apple M2 ( 8-Core CPU / 10-Core GPU )"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 8
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 9,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 10,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 11
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 13,
                             Value = "2 x Thunderbolt 3 , 1 x 3.5 mm , 1 x SDXC Card Slot"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.0"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 15
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 16,
                             Value = "macOS"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 17,
                             Value = "30.41 x 21.24 x 0.41–1.61 cm"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 18,
                             Value = "53 Wh"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 19,
                             Value = "1.3 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             AttributeId = 20
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 1,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 3,
                             OptionID = 5
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 4,
                             OptionID = 13
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 5,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 6,
                             OptionID = 10
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 7,
                             Value = "AMD Ryzen 5 7535HS ( 3.3 GHz - 4.5 GHz / 16MB / 6 cores, 12 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 8,
                             Value = "RTX 4050 6GB GDDR6 / AMD Radeon 660M"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 10,
                             OptionID = 13
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 18,
                             Value = "4 cell 90 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 19,
                             Value = "2.6 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 1,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 3,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 4,
                             OptionID = 10
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 5,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 6,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 7,
                             Value = "Intel Core i5-1235U ( 1.3 GHz - 4.4GHz / 12MB / 10 cores, 12 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 8,
                             Value = "Onboard Intel Iris Xe Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 10,
                             OptionID = 8
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 18,
                             Value = "4 cell 90 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 19,
                             Value = "2.6 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 1,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 3,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 4,
                             OptionID = 13
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 5,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 6,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 7,
                             Value = "Intel Core i5-11400H ( 2.7 GHz - 4.5 GHz / 12MB / 6 cores, 12 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 8,
                             Value = "RTX 3050 4GB GDDR6 / Intel UHD Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 10,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 18,
                             Value = "4 cell 90 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 19,
                             Value = "2.6 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 1,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 3,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 5,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 6,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 7,
                             Value = "Intel Core i3-1115G4 ( 3.0 GHz – 4.10 GHz / 6MB / 2 cores, 4 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 8,
                             Value = "Onboard Intel UHD Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 10,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 1,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 3,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 5,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 6,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 7,
                             Value = "Intel Core i5-1335U ( 1.3 GHz – 4.6GHz / 12MB / 10 cores, 12 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 8,
                             Value = "Onboard Intel UHD Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 10,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 1,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 3,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 5,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 6,
                             OptionID = 11
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 7,
                             Value = "AMD Ryzen 7 7730U ( 2.0 GHz - 4.5 GHz / 16MB / 8 cores, 16 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 8,
                             Value = "Onboard AMD Radeon Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 9,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 10,
                             OptionID = 13
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 1,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 3,
                             OptionID = 7
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 4,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 5,
                             OptionID = 5
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 6,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 7,
                             Value = "Intel Core i3-1215U ( 1.2 GHz - 4.4 GHz / 10MB / 6 cores, 8 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 8,
                             Value = "Onboard Intel UHD Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 10,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 1,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 3,
                             OptionID = 7
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 4,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 5,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 6,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 7,
                             Value = "Intel Core i3-1215U ( 1.2 GHz - 4.4 GHz / 10MB / 6 cores, 8 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 8,
                             Value = "Onboard Intel UHD Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 10,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 1,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 3,
                             OptionID = 7
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 5,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 6,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 7,
                             Value = "Intel Core i5-1340P ( 1.9 GHz – 4.6 GHz / 12MB / 12 cores, 16 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 8,
                             Value = "Onboard Intel UHD Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 9,
                             OptionID = 2
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 10,
                             OptionID = 12
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 1,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 3,
                             OptionID = 7
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 5,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 6,
                             OptionID = 5
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 7,
                             Value = "Intel Core i7-1360P ( 2.2 GHz – 5.0 GHz / 12MB / 12 cores, 16 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 8,
                             Value = "RTX 2050 4GB GDDR6 / Intel Iris Xe Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 9,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 10,
                             OptionID = 13
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 1,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 3,
                             OptionID = 8
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 4,
                             OptionID = 10
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 5,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 6,
                             OptionID = 5
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 7,
                             Value = "Intel Core i7-1355U ( 1.7 GHz - 5.0 GHz / 12MB / 10 cores, 12 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 8,
                             Value = "GeForce MX550 2GB GDDR6 / Intel Iris Xe Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 9,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 10,
                             OptionID = 8
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 1,
                             OptionID = 4
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 2,
                             Value = "12 months"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 3,
                             OptionID = 7
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 4,
                             OptionID = 1
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 5,
                             OptionID = 6
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 6,
                             OptionID = 5
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 7,
                             Value = "Intel Core i7-1360P ( 2.2 GHz – 5.0 GHz / 18MB / 12 cores, 16 threads )"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 8,
                             Value = "RTX 2050 4GB GDDR6 / Intel Iris Xe Graphics"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 9,
                             OptionID = 3
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 10,
                             OptionID = 8
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 11,
                             Value = "512GB M.2 NVMe SSD"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 12,
                             Value = "1 x HDMI"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 13,
                             Value = "2 x USB Type C , 2 x USB 3.2 , 1 x USB 2.0 , 1 x micro SD card slot , Audio combo , LAN 1 Gb/s"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 14,
                             Value = "WiFi 802.11ax (Wifi 6) , Bluetooth 5.1"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 15,
                             Value = "usually, with numeric keypad, RGB 4 zones"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 16,
                             Value = "Windows 11 Home SL"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 17,
                             Value = "360.1 x 279.9 x 25.9 - 27.9 mm"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 18,
                             Value = "2 cell 37 Wh , Built-in battery"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 19,
                             Value = "1.8 kg"
                         },
                         new
                         {
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             AttributeId = 20,
                             Value = "Adapter, power cord"
                         });
@@ -3174,16 +3174,16 @@ namespace LandPApi.Migrations
                             Id = "289f6c6a783e4d89b25c847d1ffa4833",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "cb3c88c5-ec40-4a5d-9eec-c4a08ace63e9",
+                            ConcurrencyStamp = "236219fd-20ef-438f-92b8-1658d4624bc2",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpsupadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Super Admin",
                             NormalizedEmail = "landpsupadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIWEZCPSjAFOdW4nj6LO6zBt816Y919TgmoRJPDcRwWxKJYGl1V6U7oHf6Vv2ocsXA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDVj7Tw9DBixVCR876aJNEL/rFXWB4SszxoYivh3EUHZaU4VKvA3gTKvidr4U41WDg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1abd1b6d-346a-425f-8d11-4fac1658770f",
+                            SecurityStamp = "c4c3c367-7385-462a-924e-92a30e4c0aa5",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpsupadmika@gmail.com"
@@ -3193,16 +3193,16 @@ namespace LandPApi.Migrations
                             Id = "43bd8d30-85af-4960-8a9f-d7f7eeeb8571",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "8aac8d44-3d90-4cc3-bf90-2caa61c95325",
+                            ConcurrencyStamp = "fed1e75f-f029-4f56-b18b-ed5e90779f42",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpadmika@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "landpadmika@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOf7mwSBZLKR4DdEitKNHUEa8MYD/rHSl2WSMQNfc8QXz9+OSiKRXJ3HXX6/HRYD2g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL2p+HNDyFR4jwUR86em7Nsi1ccBmgoTs/5bhQGvO1JSrqapMNTxznodlbMyreT4fA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bd6e3ccc-ffe9-45d1-a7ea-0a6a7584afa3",
+                            SecurityStamp = "9e63ed78-cfdb-469d-92a6-00860c2b4130",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpadmika@gmail.com"
@@ -3212,16 +3212,16 @@ namespace LandPApi.Migrations
                             Id = "04be0c35-571e-425c-992e-15a7227286de",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "34b069c4-d084-4ada-b236-e33b4fffe4e6",
+                            ConcurrencyStamp = "c2a2a590-a450-4386-b6c5-32a20b87c91c",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User",
                             NormalizedEmail = "landpuserdemo@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFpl/WA7uylgefbqKe6cRJZMxZ1hArM1t+Q2VuDVQo0uAYIaPTBWWB2kcLDXQ2Uzag==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHahTDJPRR13++ljL9Yb8MP3phhJb7dIdzP5xAlKrjgZ4AOWvrFA/PI5o2t8MiHTaw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "98549f11-dfcf-476f-9367-1c8025cd05fc",
+                            SecurityStamp = "1970d7c8-372e-4333-907d-9f9371852a54",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo@gmail.com"
@@ -3231,16 +3231,16 @@ namespace LandPApi.Migrations
                             Id = "1b0b163d-032f-4e19-9e64-d89bf02f1751",
                             AccessFailedCount = 0,
                             BirthDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "c9d22e55-4b44-43b3-ad76-85c8501cb6a1",
+                            ConcurrencyStamp = "80ea51e1-aec2-4f48-b6ab-38307696a1de",
                             CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "landpuserdemo1@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "User1",
                             NormalizedEmail = "landpuserdemo1@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN4cqS48oyGnZ4DWsRicucvO3/oPngzeq0jv8sua/ssJsnIrvszLWfSOqkb/RFY/0A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEy+JLTSeOFDfeVAiksibyvTCNv3wO4Z3hIO7l9lGn0XBGetICxdfvjX65JkphvmGA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5fd7ca8-b532-482e-b400-83498999b870",
+                            SecurityStamp = "c749b6d7-ccef-4272-8077-78cbeaf7ea74",
                             TwoFactorEnabled = false,
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "landpuserdemo1@gmail.com"
@@ -3265,132 +3265,132 @@ namespace LandPApi.Migrations
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1fXgj_qQJMKNQczOx0Kd_0foAVyiYcmb8",
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d")
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1F2Z5C1km_4FvIa70xF0b8bL-OwsK07d6",
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d")
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1IrnkUeFEoVdNEY-FMf0Y4i33tOEOh1l8",
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d")
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1p0Eq0ptA7J3g5mTUP9g131BgLb6XCiyI",
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d")
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1KGDOpVmwofx2viWcLPSdji5_dVz6IEYK",
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace")
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1NB-4hrhVBTP0kRbx9VOMRxMEOIsuT0Dt",
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace")
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1hcc5bb9xZwftkpNNLbNSdWO-OaglGEU-",
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace")
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=18_VERsQCkR5top5RyAiyXBWoyQTVgYLU",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1oA7zu7vf9vxdDzRUOfTShMTO9TMYB2t1",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1gCSDRkYeTgsuklm4-ZUVKutTKTu6bsOW",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=13YRnumTXIikNyks6MMGS7IHy2XKsLcUG",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1_8nLKemsZNH5ob80loz-Rjk46gIPCyAk",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1AoKIxY1_KpVC--DBDv-5vkL7KRBETaTj",
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447")
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=19JhyKc7SDq8OS-FKWCEE1fHlB9zmlF4_",
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447")
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1D6w59akVTqabNKBcaDFvZeGh0DHiPZNS",
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447")
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1ANMv2MD1x9POXwFzqbtAFJaSVDsBygR_",
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447")
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1jFJ0Dy7LgyF9l-bnF6VeOVpvbqDDXkgz",
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447")
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32")
                         },
                         new
                         {
                             Id = "",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1sojVUeqtcf6kDA84Mdj73JcbipmW5HP0",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1pW-V7JEHlpOswTpw68p7GbAV_NV8i62S",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=17g-gOr-mKqeRCKmv3aLa7kNBIf8AMza2",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1_mXukBwuEtyZsG7bR_MDAO-d7PjMhP-w",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1sf_iHr6KcO6Gl7oucfq46NirqaBERifh",
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722")
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1vpOJlcWyzrUGceYi-ilCZ4b3ufeMZapS",
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722")
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1KAPyG_jY6xo0pp13IhGHq3HosAlc42hB",
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722")
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3")
                         },
                         new
                         {
                             Id = "https://drive.google.com/uc?export=view&id=1pmIx4SB6rmApjVB6YIm9rYmsn7C5GNua",
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722")
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3")
                         });
                 });
 
@@ -3543,7 +3543,7 @@ namespace LandPApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
+                            Id = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "MacBook The 13.6-inch Air M2 Z15S00092 belongs to Apple's high-end laptop line with Apple M2 CPU that delivers durable performance at incredible speed. Besides, MacBook Air possesses a luxurious appearance and youthful color gamut to help suit many needs of today's Apple fans.",
@@ -3557,7 +3557,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
+                            Id = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3571,7 +3571,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
+                            Id = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "MacBook Air 2020 13.3\" MGNE3SA/A belongs to a high-end laptop product line from the Apple brand that possesses outstanding performance thanks to being equipped with a genuine proprietary processor. With an elegant design and outstanding powerful configuration, MacBook Air 2020 13.3\" MGNE3SA/A promises to bring you an enjoyable experience",
@@ -3585,7 +3585,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
+                            Id = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "MacBook The 13.6-inch Air M2 Z15S00092 belongs to Apple's high-end laptop line with Apple M2 CPU that delivers durable performance at incredible speed. Besides, MacBook Air possesses a luxurious appearance and youthful color gamut to help suit many needs of today's Apple fans",
@@ -3599,7 +3599,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
+                            Id = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3613,7 +3613,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("610e638d-db36-423a-8607-9bb921eff722"),
+                            Id = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3627,7 +3627,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
+                            Id = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
                             BrandId = new Guid("fc6fcd3e-f156-4a33-a257-c92adfba2c63"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Are you a professional gamer, always want to have the best gaming experience? Are you also a person with a lot of work and study, need a versatile and efficient laptop? Are you also a lover of beauty and fashion, want a laptop with impressive design and convenience? If you have all the above requirements, then you cannot ignore ACER NITRO 16 PHOENIX Gaming Laptop - ACER's national gaming laptop, introduced by Phong Vu at a reasonable price. ACER NITRO 16 PHOENIX Gaming Laptop will satisfy you with the features below, let's find out in the article below!",
@@ -3641,7 +3641,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
+                            Id = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
                             BrandId = new Guid("fc6fcd3e-f156-4a33-a257-c92adfba2c63"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Laptop Acer Aspire 5 A514-55-5954 NX. K5BSV.001 is one of the top choices for students as well as office workers. With a minimalist but still extremely sophisticated design along with powerful performance thanks to the Intel Core i5 CPU will be a great assistant for you in work, study as well as entertainment",
@@ -3655,7 +3655,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
+                            Id = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
                             BrandId = new Guid("fc6fcd3e-f156-4a33-a257-c92adfba2c63"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "As a gaming laptop line of the Acer brand, the Acer Nitro 5 Eagle AN515-57-54MV laptop is equipped with a powerful i5 chip, NVIDIA GeForce RTX 3050 graphics card, 8Gb ram and large capacity. Combined with its beautiful and powerful design, this will be the choice for young gamers and people doing graphics-related work",
@@ -3669,7 +3669,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
+                            Id = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
                             BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "ASUS Vivobook X515EA-EJ3633W laptop (i3-1115G4) is equipped with Intel Core i3 CPU, 8GB Onboard DDR4 RAM capacity along with 512GB SSD hard drive for you to freely store study data, basic work with office tasks. Anti-glare screens help protect your eyes well from harmful blue light",
@@ -3683,7 +3683,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
+                            Id = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
                             BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3697,7 +3697,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
+                            Id = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
                             BrandId = new Guid("71d6e1f9-8c22-43e8-ad37-1609dd7bc61e"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3711,7 +3711,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
+                            Id = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
                             BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "The Dell Inspiron 15 3520 3520-71003264 i3-1215U Carbon Black is the perfect office laptop. The device is equipped with Intel Core i3 Alder Lake - 1215U chip, integrated Intel UHD Graphics card. Not too powerful but enough to meet your daily study and work needs",
@@ -3725,7 +3725,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
+                            Id = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
                             BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3739,7 +3739,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
+                            Id = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
                             BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3753,7 +3753,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
+                            Id = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
                             BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3767,7 +3767,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
+                            Id = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
                             BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3781,7 +3781,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
+                            Id = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
                             BrandId = new Guid("04d63fc1-582a-4ad3-9132-b531101220ca"),
                             CategoryId = new Guid("3f8d98cb-a695-4334-bec2-09008670c39a"),
                             Description = "Updating",
@@ -3795,7 +3795,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("35ac0f71-d213-489c-a896-9ed548445d98"),
+                            Id = new Guid("64dea844-cbb8-4a3e-9788-8a1c9b8280f7"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "iPhone 15 Pro Max belongs to the high-end product line that has just been launched by Apple on the market in 2023, retaining the outstanding design \"Dynamic Island\" along with a series of luxurious colors. The iPhone 15 Pro max is equipped with a new A17 Bionic chip with outstanding and powerful processing performance today to perform the tasks you want",
@@ -3809,7 +3809,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6a468a7c-eae3-440c-8d52-4280ca96f2ef"),
+                            Id = new Guid("3f2503ab-dccc-4e14-943a-07dacf221cfe"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "The set of 4 versions of iPhone 12 is still attractive and has not cooled, but Apple brings users a new super product iPhone 13 with many interesting improvements that promise to bring the most attractive experience to users",
@@ -3823,7 +3823,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e9833028-c705-4724-a552-eedf2d255ee4"),
+                            Id = new Guid("d187d8c5-08b5-468e-aa4f-fd0c56cef26d"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Updating",
@@ -3837,7 +3837,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9fde08ad-4a1b-427a-afa2-9d935dd7aeae"),
+                            Id = new Guid("17f975eb-5426-4002-b336-e19cd8dad333"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "iPhone 14 Pro Max launched in September 2022 has made a prominent mark on the smart mobile market worldwide by an impressive makeover of the \"Dynamic Island\" screen design. iPhone 14 pro series is favored by Apple when equipped with a powerful A16 Bionic chip with outstanding processing performance, helping you perform many tasks on the device at the same time without jerking or lag",
@@ -3851,7 +3851,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b29bff4c-b64f-4378-b323-a53ac045306a"),
+                            Id = new Guid("5ee665b6-516e-480e-99d5-61601f397b33"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "In the iPhone 15 series collection launched in 2023, iPhone 15 Plus in particular and other iPhone 15 versions in general are highly appreciated to have a leap in new design, outstanding features are improved compared to the iPhone 14 series in 2022, bringing a completely new experience for iPhone enthusiasts. Join Phong Vu to learn about iPhone 15 Plus through this article!",
@@ -3865,7 +3865,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c1e06eef-aad6-4975-9d8b-a64817e31f07"),
+                            Id = new Guid("54bf406c-b071-4caa-9269-62d74f467de6"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Product descriptions will be updated as soon as possible!",
@@ -3879,7 +3879,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5ea0cc0f-c6f5-4a99-b723-61373cd78957"),
+                            Id = new Guid("c1d2359a-0bcc-40ce-9eb2-ed4f3243d370"),
                             BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Updating",
@@ -3893,7 +3893,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5f469a4f-afe3-4f56-8045-d8fb8197f21a"),
+                            Id = new Guid("24ab7807-1328-44e2-b0aa-8a6849924541"),
                             BrandId = new Guid("32a244dc-528a-402a-b8e0-d86b31f0b8cb"),
                             CategoryId = new Guid("bc17dda5-9e53-434d-ab30-32452bfc7d35"),
                             Description = "Updating",
@@ -3907,7 +3907,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f7e94e03-ab0f-411c-9d80-00251f1f0cb0"),
+                            Id = new Guid("72453175-6788-4703-9a91-b0e210fd6fc9"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
                             Description = "Updating",
@@ -3921,7 +3921,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8af59149-35a4-4026-97ca-239f54dad1cb"),
+                            Id = new Guid("4d6a90c6-db9d-40b1-aed8-3f747eca911f"),
                             BrandId = new Guid("2ef43281-9c42-466e-ad66-483ff6f46326"),
                             CategoryId = new Guid("a54988d2-7eeb-4e6c-8421-6f3fa5bb91a2"),
                             Description = "Updating",
@@ -3935,7 +3935,7 @@ namespace LandPApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b8ce4a1e-0e5f-4fb5-a396-1977e907b08d"),
+                            Id = new Guid("b89b3105-27ea-46c8-bf98-67ec6443da7d"),
                             BrandId = new Guid("36326612-2d44-446f-87cd-d060d14237a6"),
                             CategoryId = new Guid("3649b208-05c6-4129-86bd-df77801d3d39"),
                             Description = "Updating",
@@ -3979,218 +3979,218 @@ namespace LandPApi.Migrations
                         new
                         {
                             Id = 1,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(539),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(196),
                             Price = 94690000.0,
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(554)
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(211)
                         },
                         new
                         {
                             Id = 2,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(562),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(220),
                             Price = 34790000.0,
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(564)
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(221)
                         },
                         new
                         {
                             Id = 3,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(565),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(224),
                             Price = 29990000.0,
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(566)
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(225)
                         },
                         new
                         {
                             Id = 4,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(568),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(226),
                             Price = 33290000.0,
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(569)
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(227)
                         },
                         new
                         {
                             Id = 5,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(571),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(230),
                             Price = 26590000.0,
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(572)
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(231)
                         },
                         new
                         {
                             Id = 6,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(574),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(234),
                             Price = 25990000.0,
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(575)
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(240)
                         },
                         new
                         {
                             Id = 7,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(577),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(241),
                             Price = 14990000.0,
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(578)
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(242)
                         },
                         new
                         {
                             Id = 8,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(580),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(243),
                             Price = 18990000.0,
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(580)
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(243)
                         },
                         new
                         {
                             Id = 9,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(582),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(246),
                             Price = 9490000.0,
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(583)
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(247)
                         },
                         new
                         {
                             Id = 10,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(585),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(251),
                             Price = 14990000.0,
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(586)
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(252)
                         },
                         new
                         {
                             Id = 11,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(588),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(254),
                             Price = 15690000.0,
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(589)
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(254)
                         },
                         new
                         {
                             Id = 12,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(591),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(257),
                             Price = 14390000.0,
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(592)
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(258)
                         },
                         new
                         {
                             Id = 13,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(594),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(261),
                             Price = 18590000.0,
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(595)
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(261)
                         },
                         new
                         {
                             Id = 14,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(597),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(265),
                             Price = 27990000.0,
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(598)
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(265)
                         },
                         new
                         {
                             Id = 15,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(600),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(266),
                             Price = 28690000.0,
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(617)
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(267)
                         },
                         new
                         {
                             Id = 16,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(639),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(270),
                             Price = 24890000.0,
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(640)
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(271)
                         },
                         new
                         {
                             Id = 17,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(642),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(274),
                             Price = 30290000.0,
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(642)
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(274)
                         },
                         new
                         {
                             Id = 18,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(645),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(277),
                             Price = 39490000.0,
-                            ProductId = new Guid("35ac0f71-d213-489c-a896-9ed548445d98"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(646)
+                            ProductId = new Guid("64dea844-cbb8-4a3e-9788-8a1c9b8280f7"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(278)
                         },
                         new
                         {
                             Id = 19,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(647),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(279),
                             Price = 15990000.0,
-                            ProductId = new Guid("6a468a7c-eae3-440c-8d52-4280ca96f2ef"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(648)
+                            ProductId = new Guid("3f2503ab-dccc-4e14-943a-07dacf221cfe"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(279)
                         },
                         new
                         {
                             Id = 20,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(650),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(282),
                             Price = 29190000.0,
-                            ProductId = new Guid("9fde08ad-4a1b-427a-afa2-9d935dd7aeae"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(651)
+                            ProductId = new Guid("17f975eb-5426-4002-b336-e19cd8dad333"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(282)
                         },
                         new
                         {
                             Id = 21,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(653),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(284),
                             Price = 25190000.0,
-                            ProductId = new Guid("b29bff4c-b64f-4378-b323-a53ac045306a"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(654)
+                            ProductId = new Guid("5ee665b6-516e-480e-99d5-61601f397b33"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(286)
                         },
                         new
                         {
                             Id = 22,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(655),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(289),
                             Price = 18790000.0,
-                            ProductId = new Guid("c1e06eef-aad6-4975-9d8b-a64817e31f07"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(656)
+                            ProductId = new Guid("54bf406c-b071-4caa-9269-62d74f467de6"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(290)
                         },
                         new
                         {
                             Id = 23,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(658),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(291),
                             Price = 2990000.0,
-                            ProductId = new Guid("5ea0cc0f-c6f5-4a99-b723-61373cd78957"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(659)
+                            ProductId = new Guid("c1d2359a-0bcc-40ce-9eb2-ed4f3243d370"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(292)
                         },
                         new
                         {
                             Id = 24,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(661),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(295),
                             Price = 2490000.0,
-                            ProductId = new Guid("5f469a4f-afe3-4f56-8045-d8fb8197f21a"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(662)
+                            ProductId = new Guid("24ab7807-1328-44e2-b0aa-8a6849924541"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(296)
                         },
                         new
                         {
                             Id = 25,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(663),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(298),
                             Price = 19990000.0,
-                            ProductId = new Guid("f7e94e03-ab0f-411c-9d80-00251f1f0cb0"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(664)
+                            ProductId = new Guid("72453175-6788-4703-9a91-b0e210fd6fc9"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(299)
                         },
                         new
                         {
                             Id = 26,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(666),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(304),
                             Price = 9390000.0,
-                            ProductId = new Guid("8af59149-35a4-4026-97ca-239f54dad1cb"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(667)
+                            ProductId = new Guid("4d6a90c6-db9d-40b1-aed8-3f747eca911f"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(304)
                         },
                         new
                         {
                             Id = 27,
-                            FromDate = new DateTime(2023, 11, 12, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(668),
+                            FromDate = new DateTime(2023, 11, 12, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(305),
                             Price = 21490000.0,
-                            ProductId = new Guid("b8ce4a1e-0e5f-4fb5-a396-1977e907b08d"),
-                            ToDate = new DateTime(2023, 11, 22, 15, 10, 5, 910, DateTimeKind.Local).AddTicks(669)
+                            ProductId = new Guid("b89b3105-27ea-46c8-bf98-67ec6443da7d"),
+                            ToDate = new DateTime(2023, 11, 22, 18, 57, 6, 531, DateTimeKind.Local).AddTicks(308)
                         });
                 });
 
@@ -4398,402 +4398,402 @@ namespace LandPApi.Migrations
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d")
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace")
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447")
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722")
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa")
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed")
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6")
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb")
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e")
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be")
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2")
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad")
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf")
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722")
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c")
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8")
                         },
                         new
                         {
                             SlugId = "laptop",
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c")
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e")
                         },
                         new
                         {
                             SlugId = "laptop-apple-macbook",
-                            ProductId = new Guid("a03a8079-c2e9-4d40-9efa-2d50da6f795d")
+                            ProductId = new Guid("119677b1-6ec5-4b0e-a624-00344b3c3e63")
                         },
                         new
                         {
                             SlugId = "laptop-apple-macbook",
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace")
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6")
                         },
                         new
                         {
                             SlugId = "laptop-apple-macbook",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             SlugId = "laptop-apple-macbook",
-                            ProductId = new Guid("df03b52f-e611-4340-8910-fc9e47fe9447")
+                            ProductId = new Guid("c654618b-6ca3-4534-ac34-f28c961ada32")
                         },
                         new
                         {
                             SlugId = "laptop-apple-macbook",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             SlugId = "laptop-apple-macbook",
-                            ProductId = new Guid("610e638d-db36-423a-8607-9bb921eff722")
+                            ProductId = new Guid("e3bd3144-82ea-45ea-b24c-53b7d70d7eb3")
                         },
                         new
                         {
                             SlugId = "laptop-acer",
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa")
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f")
                         },
                         new
                         {
                             SlugId = "laptop-acer",
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed")
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8")
                         },
                         new
                         {
                             SlugId = "laptop-acer",
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6")
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407")
                         },
                         new
                         {
                             SlugId = "laptop-asus",
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb")
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891")
                         },
                         new
                         {
                             SlugId = "laptop-asus",
-                            ProductId = new Guid("c1e027f5-9759-436a-a61c-fd9d25955b7e")
+                            ProductId = new Guid("658a610d-0ed5-4be5-a145-5f7d231154e0")
                         },
                         new
                         {
                             SlugId = "laptop-asus",
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be")
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437")
                         },
                         new
                         {
                             SlugId = "laptop-dell",
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2")
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d")
                         },
                         new
                         {
                             SlugId = "laptop-dell",
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad")
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549")
                         },
                         new
                         {
                             SlugId = "laptop-dell",
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf")
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226")
                         },
                         new
                         {
                             SlugId = "laptop-dell",
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722")
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9")
                         },
                         new
                         {
                             SlugId = "laptop-dell",
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c")
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8")
                         },
                         new
                         {
                             SlugId = "laptop-dell",
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c")
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("35ac0f71-d213-489c-a896-9ed548445d98")
+                            ProductId = new Guid("64dea844-cbb8-4a3e-9788-8a1c9b8280f7")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("6a468a7c-eae3-440c-8d52-4280ca96f2ef")
+                            ProductId = new Guid("3f2503ab-dccc-4e14-943a-07dacf221cfe")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("e9833028-c705-4724-a552-eedf2d255ee4")
+                            ProductId = new Guid("d187d8c5-08b5-468e-aa4f-fd0c56cef26d")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("9fde08ad-4a1b-427a-afa2-9d935dd7aeae")
+                            ProductId = new Guid("17f975eb-5426-4002-b336-e19cd8dad333")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("b29bff4c-b64f-4378-b323-a53ac045306a")
+                            ProductId = new Guid("5ee665b6-516e-480e-99d5-61601f397b33")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("c1e06eef-aad6-4975-9d8b-a64817e31f07")
+                            ProductId = new Guid("54bf406c-b071-4caa-9269-62d74f467de6")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("5ea0cc0f-c6f5-4a99-b723-61373cd78957")
+                            ProductId = new Guid("c1d2359a-0bcc-40ce-9eb2-ed4f3243d370")
                         },
                         new
                         {
                             SlugId = "smartphone",
-                            ProductId = new Guid("5f469a4f-afe3-4f56-8045-d8fb8197f21a")
+                            ProductId = new Guid("24ab7807-1328-44e2-b0aa-8a6849924541")
                         },
                         new
                         {
                             SlugId = "smartphone-iphone",
-                            ProductId = new Guid("35ac0f71-d213-489c-a896-9ed548445d98")
+                            ProductId = new Guid("64dea844-cbb8-4a3e-9788-8a1c9b8280f7")
                         },
                         new
                         {
                             SlugId = "smartphone-iphone",
-                            ProductId = new Guid("6a468a7c-eae3-440c-8d52-4280ca96f2ef")
+                            ProductId = new Guid("3f2503ab-dccc-4e14-943a-07dacf221cfe")
                         },
                         new
                         {
                             SlugId = "smartphone-iphone",
-                            ProductId = new Guid("e9833028-c705-4724-a552-eedf2d255ee4")
+                            ProductId = new Guid("d187d8c5-08b5-468e-aa4f-fd0c56cef26d")
                         },
                         new
                         {
                             SlugId = "smartphone-iphone",
-                            ProductId = new Guid("9fde08ad-4a1b-427a-afa2-9d935dd7aeae")
+                            ProductId = new Guid("17f975eb-5426-4002-b336-e19cd8dad333")
                         },
                         new
                         {
                             SlugId = "smartphone-iphone",
-                            ProductId = new Guid("b29bff4c-b64f-4378-b323-a53ac045306a")
+                            ProductId = new Guid("5ee665b6-516e-480e-99d5-61601f397b33")
                         },
                         new
                         {
                             SlugId = "smartphone-iphone",
-                            ProductId = new Guid("c1e06eef-aad6-4975-9d8b-a64817e31f07")
+                            ProductId = new Guid("54bf406c-b071-4caa-9269-62d74f467de6")
                         },
                         new
                         {
                             SlugId = "smartphone-samsung",
-                            ProductId = new Guid("5ea0cc0f-c6f5-4a99-b723-61373cd78957")
+                            ProductId = new Guid("c1d2359a-0bcc-40ce-9eb2-ed4f3243d370")
                         },
                         new
                         {
                             SlugId = "smartphone-xiaomi",
-                            ProductId = new Guid("5f469a4f-afe3-4f56-8045-d8fb8197f21a")
+                            ProductId = new Guid("24ab7807-1328-44e2-b0aa-8a6849924541")
                         },
                         new
                         {
                             SlugId = "tablet",
-                            ProductId = new Guid("f7e94e03-ab0f-411c-9d80-00251f1f0cb0")
+                            ProductId = new Guid("72453175-6788-4703-9a91-b0e210fd6fc9")
                         },
                         new
                         {
                             SlugId = "tablet",
-                            ProductId = new Guid("8af59149-35a4-4026-97ca-239f54dad1cb")
+                            ProductId = new Guid("4d6a90c6-db9d-40b1-aed8-3f747eca911f")
                         },
                         new
                         {
                             SlugId = "tablet-ipad",
-                            ProductId = new Guid("f7e94e03-ab0f-411c-9d80-00251f1f0cb0")
+                            ProductId = new Guid("72453175-6788-4703-9a91-b0e210fd6fc9")
                         },
                         new
                         {
                             SlugId = "tablet-samsung",
-                            ProductId = new Guid("8af59149-35a4-4026-97ca-239f54dad1cb")
+                            ProductId = new Guid("4d6a90c6-db9d-40b1-aed8-3f747eca911f")
                         },
                         new
                         {
                             SlugId = "smartwatch",
-                            ProductId = new Guid("b8ce4a1e-0e5f-4fb5-a396-1977e907b08d")
+                            ProductId = new Guid("b89b3105-27ea-46c8-bf98-67ec6443da7d")
                         },
                         new
                         {
                             SlugId = "smartwatch-apple",
-                            ProductId = new Guid("b8ce4a1e-0e5f-4fb5-a396-1977e907b08d")
+                            ProductId = new Guid("b89b3105-27ea-46c8-bf98-67ec6443da7d")
                         },
                         new
                         {
                             SlugId = "black-friday",
-                            ProductId = new Guid("b8ce4a1e-0e5f-4fb5-a396-1977e907b08d")
+                            ProductId = new Guid("b89b3105-27ea-46c8-bf98-67ec6443da7d")
                         },
                         new
                         {
                             SlugId = "black-friday",
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa")
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f")
                         },
                         new
                         {
                             SlugId = "black-friday",
-                            ProductId = new Guid("35ac0f71-d213-489c-a896-9ed548445d98")
+                            ProductId = new Guid("64dea844-cbb8-4a3e-9788-8a1c9b8280f7")
                         },
                         new
                         {
                             SlugId = "black-friday",
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c")
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e")
                         },
                         new
                         {
                             SlugId = "black-friday",
-                            ProductId = new Guid("8c12aaf1-f426-48af-8b8d-6ee1497820be")
+                            ProductId = new Guid("369d0315-b37c-4b5c-91d1-19d1fe04e437")
                         },
                         new
                         {
                             SlugId = "black-friday",
-                            ProductId = new Guid("8af59149-35a4-4026-97ca-239f54dad1cb")
+                            ProductId = new Guid("4d6a90c6-db9d-40b1-aed8-3f747eca911f")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("6a93a332-8735-4a3b-9fd7-ea0d40595ace")
+                            ProductId = new Guid("19e8484a-4edc-4da1-b943-25c42c812ee6")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("fe34a114-7fc9-4d06-936e-098fb9224d22")
+                            ProductId = new Guid("9d1cdd3f-683c-4799-8563-b40c9bab22cf")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("d4157570-6f05-4061-981a-6d536304708c")
+                            ProductId = new Guid("022242b5-1055-4c20-a36e-9e4bfb99f8ab")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed")
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("569e42ce-03d0-452d-8f2e-d677c56e59f6")
+                            ProductId = new Guid("36b08812-8d6b-4b5e-8705-56c04807e407")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("563899c2-c73f-4707-9abb-d03cb0f77d0c")
+                            ProductId = new Guid("eb1b1c17-2540-462d-90ed-765c8d0753e8")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("8af59149-35a4-4026-97ca-239f54dad1cb")
+                            ProductId = new Guid("4d6a90c6-db9d-40b1-aed8-3f747eca911f")
                         },
                         new
                         {
                             SlugId = "best-sale",
-                            ProductId = new Guid("f7e94e03-ab0f-411c-9d80-00251f1f0cb0")
+                            ProductId = new Guid("72453175-6788-4703-9a91-b0e210fd6fc9")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("6f950d41-5c06-416a-8945-2f9b6bd24722")
+                            ProductId = new Guid("2daf0607-9488-4d02-8644-24d6d75a27f9")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("db0fc61a-d810-4faa-9e93-802d2456cddf")
+                            ProductId = new Guid("42d88308-82e8-4713-bc0f-b8ccdfd84226")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("bb17209f-1627-4c9f-9044-637e4b948ef2")
+                            ProductId = new Guid("b4890d0c-277c-4d9e-b476-e3f28770e78d")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("dcce86f5-3860-42f3-b279-ab80a447127c")
+                            ProductId = new Guid("417030fd-da36-4fb9-bb69-677a97931b4e")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("fe6af79d-ab09-4457-ab56-2c4560fb67ad")
+                            ProductId = new Guid("54ad2d5c-a67b-4953-a9fa-4915d07e2549")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("d3cabbf5-1305-42a6-b0a9-3fdc1cdeb1fb")
+                            ProductId = new Guid("e76d20ad-4fe7-4325-a6a3-cd794bbb9891")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("14f5091f-7426-4c69-ad62-c303dd6103ed")
+                            ProductId = new Guid("f06d2063-cdc5-4538-a414-6c899b47aec8")
                         },
                         new
                         {
                             SlugId = "sale-laptop",
-                            ProductId = new Guid("ebbf5693-d350-4f42-aa6d-e2cfd43ea7fa")
+                            ProductId = new Guid("ed3c2886-4ef9-4834-9ab3-61cc3bef682f")
                         });
                 });
 
