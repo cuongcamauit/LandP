@@ -120,7 +120,8 @@ namespace LandPApi.Service
 
                 entityPro.Quantity -= entityCart.Quantity;
                 _repoPro.Update(entityPro);
-                _cacheService.UpdateProduct(entityPro);
+                _repoPro.Save();
+                _cacheService.UpdateProduct(entityPro.Id);
 
                 _repoCart.Delete(entityCart);
             }

@@ -7,6 +7,6 @@ namespace LandPApi.IService
         void AddProduct(Product entity);
         List<Product> GetProduct();
         List<Slug> GetSlugs();
-        void UpdateProduct(Product entityPro);
+        void UpdateProduct(Guid productId);
     }
 }

@@ -16,18 +16,21 @@ namespace LandPApi.Service
         private readonly IRepository<Product> _repoPro;
         private readonly IMapper _mapper;
         private readonly UserManager<Customer> _userManager;
+        private readonly ICacheService _cacheService;
 
         public ReviewService(IRepository<Review> repoReview
                             , IRepository<Product> repoPro
                             , IRepository<OrderDetail> repoDetail
                             , IMapper mapper
-                            , UserManager<Customer> userManager)
+                            , UserManager<Customer> userManager
+                            , ICacheService cacheService)
         {
             _repoReview = repoReview;
             _repoDetail = repoDetail;
             _repoPro = repoPro;
             _mapper = mapper;
             _userManager = userManager;
+            _cacheService = cacheService;
         }
 
         public bool Check(string customerId, Guid orderId, Guid productId)
@@ -44,10 +47,11 @@ namespace LandPApi.Service
 
         public Response Create(string customerId, ReviewView review)
         {
-            var check = _repoReview.ReadByCondition(o => o.CustomerId == customerId 
+            var check = _repoReview.ReadByCondition(o => o.CustomerId == customerId
                                                     && o.OrderId == review.OrderId
                                                     && o.ProductId == review.ProductId).FirstOrDefault();
             var haveOrder = _repoDetail.ReadByCondition(o => o.OrderId == review.OrderId && o.ProductId == review.ProductId && o.Order!.CustomerId == customerId).FirstOrDefault();
+
 
             if (haveOrder == null)
             {
@@ -66,7 +70,7 @@ namespace LandPApi.Service
                     Success = false,
                     StatusCode = 409,
                     Message = "You reviewed this product",
-                    
+
                 };
             }
 
@@ -80,6 +84,8 @@ namespace LandPApi.Service
                 Rating = review.Rating
             });
             _repoReview.Save();
+            _cacheService.UpdateProduct(review.ProductId);
+
 
             // update average rating
             //var created = _repoPro.ReadByCondition(o => o.Id == review.ProductId).FirstOrDefault();
@@ -88,8 +94,8 @@ namespace LandPApi.Service
             //created!.AverageRating = productsReviews.Sum(o => o.Rating);
             //_repoPro.Update(created);
             _repoPro.Save();
-            return new Response 
-            { 
+            return new Response
+            {
                 StatusCode = 201,
                 Message = "Created review successful!"
             };

@@ -77,17 +77,19 @@ namespace LandPApi.Service
             return slugs!;
         }
 
-        public void UpdateProduct(Product entityPro)
+        public void UpdateProduct(Guid productId)
         {
+            var product = _repoPro.ReadByCondition(o => !o.IsDeleted && o.Id == productId)
+                                .Include(o => o.Reviews)
+                                .Include(o => o.OrderDetails)
+                                .Include(o => o.ProductPrices)
+                                .Include(o => o.AttributeSpecs)
+                                .FirstOrDefault();
             var products = GetProduct();
-            var temp = products.FirstOrDefault(o => o.Id == entityPro.Id);
-            temp!.Name = entityPro.Name;
-            temp.IsDeleted = entityPro.IsDeleted;
-            temp.Description = entityPro.Description;
-            temp.Price = entityPro.Price;
-            temp.Quantity = entityPro.Quantity;
-            products.Remove(products.FirstOrDefault(o => o.Id == entityPro.Id)!);
-            products.Add(temp);
+
+            products.Remove(products.FirstOrDefault(o => o.Id == productId)!);
+            if (product != null)
+                products.Add(product!);
             _cache.Set(ProductKey, products);
         }
     }
