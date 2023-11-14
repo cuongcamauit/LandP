@@ -48,6 +48,7 @@ namespace LandPApi.Service
         }
         public object GetAllAsync(SearchInfor searchInfor)
         {
+            searchInfor.Query = searchInfor.Query.ToLower();
             var products = _cacheService.GetProduct();
             var slugs = _cacheService.GetSlugs();
 
@@ -64,7 +65,7 @@ namespace LandPApi.Service
             #region Searching
             if (searchInfor.Query != "" && check)
             {
-                products = products!.Where(o => o.Name!.Contains(searchInfor.Query)).ToList();
+                products = products!.Where(o => o.Name!.ToLower().Contains(searchInfor.Query)).ToList();
             }
             #endregion
             #region Filtering

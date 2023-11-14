@@ -19,6 +19,7 @@ namespace LandPApi
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine(Math.Round((double)2528451 / 23000, 2).ToString());
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.

@@ -58,7 +58,8 @@ namespace LandPApi.Helper
 
             CreateMap<MenuView, Menu>();
             CreateMap<Menu, MenuDto>()
-                .ForMember(dest => dest.SlugName, act => act.MapFrom(scr => scr.Slug.Title));
+                .ForMember(dest => dest.SlugName, act => act.MapFrom(scr => scr.Slug.Title))
+                .ForMember(dest => dest.Image, act => act.MapFrom(scr => scr.Slug.Image));
 
             CreateMap<SlugView, Slug>();
             CreateMap<Slug, SlugDto>()
