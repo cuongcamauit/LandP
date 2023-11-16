@@ -226,7 +226,10 @@ namespace LandPApi.Service
                 _repoPro.Update(product);
             }
         }
-
+        public double exchangeCurrentcy(double money)
+        {
+            return Math.Round(money / exchangeRate, 2);
+        }
         public string PaypalCheckout(Guid orderId)
         {
             //var order = _repoOrder.ReadByCondition(o => o.Id == orderId).SingleOrDefault();
@@ -240,7 +243,10 @@ namespace LandPApi.Service
             var orderInfor = _repoOrder.ReadByCondition(o => o.Id == orderId).FirstOrDefault();
             if (orderInfor == null)
                 return "";
-            var total = orderInfor!.Total();
+            var total = exchangeCurrentcy(orderInfor!.Total());
+
+            var subtotal = 0.0;
+
 
             var apiContext = PaymentUtils.GetApiContext(_configuration);
 
@@ -257,13 +263,14 @@ namespace LandPApi.Service
                 {
                     name = item.Product!.Name,
                     currency = "USD",
-                    price = Math.Round((item.Price) / exchangeRate, 2).ToString(),
+                    price = exchangeCurrentcy(item.Price).ToString(),
                     quantity = item.Quantity.ToString(),
                     sku = "sku",
                     tax = "0"
                 });
+                subtotal += exchangeCurrentcy(item.Price) * item.Quantity;
             }
-
+            var shipping = Math.Round(total - subtotal, 2);
 
             // Create a new payment object
             var paypalOrderId = DateTime.Now.Ticks;
@@ -282,12 +289,12 @@ namespace LandPApi.Service
                             amount = new Amount
                             {
                                 currency = "USD",
-                                total = Math.Round(total / exchangeRate, 2).ToString(),
+                                total = total.ToString(),
                                 details = new Details
                                 {
                                     tax = "0",
-                                    shipping = Math.Round(orderInfor.ShippingFee / exchangeRate, 2).ToString(),
-                                    subtotal = Math.Round(orderInfor.SubTotal / exchangeRate, 2).ToString()
+                                    shipping = shipping.ToString(),
+                                    subtotal = subtotal.ToString()
                                 }
                             },
                             item_list = itemList,

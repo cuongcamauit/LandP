@@ -91,6 +91,20 @@ namespace LandPApi.Service
             if (product != null)
                 products.Add(product!);
             _cache.Set(ProductKey, products);
+            // update slug
+            var slugs = GetSlugs();
+            foreach (var slug in slugs)
+            {
+                if (slug.SlugProducts!.Where(o => o.ProductId == product!.Id).Count() > 0)
+                {
+                    foreach (var item in slug.SlugProducts!)
+                    {
+                        if (item.ProductId == product!.Id)
+                            item.Product = product;
+                    }
+                }
+            }
+            _cache.Set(SlugKey, slugs);
         }
     }
 }
