@@ -2,12 +2,13 @@
 using LandPApi.Dto;
 using LandPApi.IService;
 using LandPApi.Models;
+using LandPApi.Repository;
 using LandPApi.View;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 
@@ -20,18 +21,24 @@ namespace LandPApi.Service
         private readonly IConfiguration _configuration;
         private readonly IMailService _mailService;
         private readonly IMapper _mapper;
+        private readonly IRepository<Order> _repoOrder;
+        private readonly IRepository<OrderDetail> _repoDetail;
 
-        public UserService(UserManager<Customer> userManager, 
-            RoleManager<IdentityRole> roleManager, 
-            IConfiguration configuration, 
+        public UserService(UserManager<Customer> userManager,
+            RoleManager<IdentityRole> roleManager,
+            IConfiguration configuration,
             IMailService mailService,
-            IMapper mapper)
+            IMapper mapper,
+            IRepository<Order> repoOrder,
+            IRepository<OrderDetail> repoDetail)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
             _mailService = mailService;
             _mapper = mapper;
+            _repoOrder = repoOrder;
+            _repoDetail = repoDetail;
         }
         public async Task<Response> ConfirmEmailAsync(string userId, string token)
         {
@@ -150,6 +157,15 @@ namespace LandPApi.Service
                     Success = false,
                     StatusCode = 401
                 };
+            if (user.LockoutEnabled)
+            {
+                return new Response
+                {
+                    Message = "User is locked",
+                    Success = false,
+                    StatusCode = 400
+                };
+            }
 
             var claims = new List<Claim>()
             {
@@ -325,7 +341,7 @@ namespace LandPApi.Service
                 StatusCode = 400
             };
         }
-       
+
         public async Task<Response> UpdateProfile(string customerId, UpdateProfileView updateProfileView)
         {
 
@@ -380,5 +396,109 @@ namespace LandPApi.Service
             };
         }
 
+        public async Task<Response> GetUser()
+        {
+            var users = await _userManager.Users.Include(o => o.Orders).ToListAsync();
+            return new Response
+            {
+                Data = _mapper.Map<List<CustomerForAdminDto>>(users)
+            };
+        }
+
+        public async Task<Response> Disable(string userId)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(o => o.Id == userId);
+            if (user == null)
+            {
+                return new Response
+                {
+                    StatusCode = 404,
+                    Message = "Don't have any user with this id"
+                };
+            }
+            var lockkoutEndDate = DateTime.UtcNow.AddYears(100);
+
+            await _userManager.SetLockoutEnabledAsync(user, true);
+            await _userManager.SetLockoutEndDateAsync(user, lockkoutEndDate);
+            return new Response
+            {
+                Message = "Disable account successful"
+            };
+        }
+
+        public async Task<Response> Enable(string userId)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(o => o.Id == userId);
+            if (user == null)
+            {
+                return new Response
+                {
+                    StatusCode = 404,
+                    Message = "Don't have any user with this id"
+                };
+            }
+
+            user.LockoutEnabled = false;
+            user.LockoutEnd = null;
+            await _userManager.UpdateAsync(user);
+            return new Response
+            {
+                Message = "Enable account successful"
+            };
+        }
+
+        public async Task<Response> Statistics(DateTime fromDate, DateTime toDate)
+        {
+            var AllOrder = _repoOrder.ReadAll().Count();
+            var AllRevenue = _repoOrder.ReadByCondition(o => o.HistoryStatuses!
+                .FirstOrDefault(o => o.Status == Status.Delivered && o.Date >= fromDate && o.Date <= toDate) != null).Sum(o => o.SubTotal);
+
+
+            var OrderCreated = _repoOrder.ReadByCondition(o => o.HistoryStatuses!
+                .FirstOrDefault(o => o.Status == Status.New && o.Date >= fromDate && o.Date <= toDate) != null).Count();
+            var OrderProcessing = _repoOrder.ReadByCondition(o => o.HistoryStatuses!
+                .FirstOrDefault(o => o.Status == Status.Processing && o.Date >= fromDate && o.Date <= toDate) != null).Count();
+            var OrderCancel = _repoOrder.ReadByCondition(o => o.HistoryStatuses!
+                .FirstOrDefault(o => o.Status == Status.Canceled && o.Date >= fromDate && o.Date <= toDate) != null).Count();
+            var OrderShipping = _repoOrder.ReadByCondition(o => o.HistoryStatuses!
+                .FirstOrDefault(o => o.Status == Status.Shipping && o.Date >= fromDate && o.Date <= toDate) != null).Count();
+            var OrderDelivered = _repoOrder.ReadByCondition(o => o.HistoryStatuses!
+                .FirstOrDefault(o => o.Status == Status.Delivered && o.Date >= fromDate && o.Date <= toDate) != null).Count();
+
+            var amountProduct = _repoDetail.ReadAll().Sum(o => o.Quantity);
+            var amountGroupByBrand = _repoDetail.ReadAll().Include(o => o.Product).ThenInclude(o => o.Brand).GroupBy(o => o.Product!.Brand).Select(o => new
+            {
+                Name = o.Key!.Name,
+                Id = o.Key.Id,
+                Amount = o.Sum(p => p.Quantity)
+            }).ToList();
+            var amountGroupByCategory = _repoDetail.ReadAll().Include(o => o.Product).ThenInclude(o => o.Category).GroupBy(o => o.Product!.Category).Select(o => new
+            {
+                Name = o.Key!.Name,
+                Id = o.Key.Id,
+                Amount = o.Sum(p => p.Quantity)
+            }).ToList();
+
+            var data = new
+            {
+                amountOrder = AllOrder,
+                amountProduct = amountProduct,
+                amountRevenue = AllRevenue,
+                order = new
+                {
+                    create = OrderCreated,
+                    processing = OrderProcessing,
+                    cancel = OrderCancel,
+                    delivering = OrderShipping,
+                    delivered = OrderDelivered
+                },
+                amountGroupByBrand = amountGroupByBrand,
+                amountGroupByCategory = amountGroupByCategory
+            };
+            return new Response
+            {
+                Data = data
+            };
+        }
     }
 }

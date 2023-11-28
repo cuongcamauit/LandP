@@ -1,0 +1,13 @@
+version: '3'
+services:
+ ms-sql-server:
+  image: sqlserver:latest
+  environment: 
+    ACCEPT_EULA: "Y"
+    MSSQL_SA_PASSWORD: "Database2023"
+  ports:
+  - "1433:1433"
+ landp:
+  build: .
+  ports:
+  - "7051:7051"

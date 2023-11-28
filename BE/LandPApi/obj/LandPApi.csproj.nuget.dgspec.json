@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LandP\\BE\\LandPApi\\LandPApi.csproj": {}
+    "D:\\Shared\\LandP\\BE\\LandPApi\\LandPApi.csproj": {}
   },
   "projects": {
-    "D:\\LandP\\BE\\LandPApi\\LandPApi.csproj": {
+    "D:\\Shared\\LandP\\BE\\LandPApi\\LandPApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LandP\\BE\\LandPApi\\LandPApi.csproj",
+        "projectUniqueName": "D:\\Shared\\LandP\\BE\\LandPApi\\LandPApi.csproj",
         "projectName": "LandPApi",
-        "projectPath": "D:\\LandP\\BE\\LandPApi\\LandPApi.csproj",
+        "projectPath": "D:\\Shared\\LandP\\BE\\LandPApi\\LandPApi.csproj",
         "packagesPath": "C:\\Users\\cuong\\.nuget\\packages\\",
-        "outputPath": "D:\\LandP\\BE\\LandPApi\\obj\\",
+        "outputPath": "D:\\Shared\\LandP\\BE\\LandPApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,6 +85,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.3, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

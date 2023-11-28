@@ -1,17 +1,15 @@
 ﻿using LandPApi.Dto;
 using LandPApi.IService;
-using LandPApi.Models;
 using LandPApi.View;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http.Headers;
 using System.Security.Claims;
 
 namespace LandPApi
 {
     [Route("api/[controller]")]
     [ApiController]
-    
+
     public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -31,7 +29,7 @@ namespace LandPApi
             if (ModelState.IsValid)
             {
                 var result = await _userService.ResgisterUserAsync(registerViewModel);
-                
+
                 return Ok(result);
             }
 
@@ -94,7 +92,7 @@ namespace LandPApi
         [HttpGet("ConfirmEmail")]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
-            if ( string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
+            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
                 return NotFound();
             var result = await _userService.ConfirmEmailAsync(userId, token);
 
@@ -113,7 +111,7 @@ namespace LandPApi
                 return NotFound();
 
             var result = await _userService.ForgetPasswordAsync(email);
-        
+
             return Ok(result);
         }
         [HttpPut("Profile")]
@@ -136,7 +134,7 @@ namespace LandPApi
 
 
         [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordView resetPasswordViewModel)
+        public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordView resetPasswordViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -157,6 +155,39 @@ namespace LandPApi
                 Data = message,
                 StatusCode = 422
             });
+        }
+
+        // admin
+        [HttpGet("Admin/Users")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllUser()
+        {
+            var response = await _userService.GetUser();
+            return Ok(response);
+        }
+
+        [HttpPut("Admin/Disable/{userId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DisableUser(String userId)
+        {
+            var response = await _userService.Disable(userId);
+            return Ok(response);
+        }
+
+        [HttpPut("Admin/Enable/{userId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> EnableUser(String userId)
+        {
+            var response = await _userService.Enable(userId);
+            return Ok(response);
+        }
+
+        [HttpGet("Admin/Statistics")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Statistics(DateTime fromDate, DateTime toDate)
+        {
+            var response = await _userService.Statistics(fromDate, toDate);
+            return Ok(response);
         }
     }
 }

@@ -13,10 +13,12 @@ namespace LandPApi.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly ICacheService _cacheService;
 
-        public ProductsController(IProductService productService)
+        public ProductsController(IProductService productService, ICacheService cacheService)
         {
             _productService = productService;
+            _cacheService = cacheService;
         }
 
 
@@ -94,6 +96,8 @@ namespace LandPApi.Controllers
             }
 
             _productService.Update(product);
+            _cacheService.UpdateProduct(product.Id);
+
 
             return Ok(new Response
             {
@@ -138,6 +142,7 @@ namespace LandPApi.Controllers
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             await _productService.Delete(id);
+            _cacheService.UpdateProduct(id);
 
             return Ok(new Response
             {

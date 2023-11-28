@@ -71,6 +71,8 @@ namespace LandPApi.Helper
                 .ForMember(dest => dest.Name, act => act.MapFrom(scr => scr.Customer!.Name));
 
             CreateMap<Customer, CustomerDto>();
+            CreateMap<Customer, CustomerForAdminDto>()
+                .ForMember(dest => dest.AmountOrder, act => act.MapFrom(scr => scr.Orders!.Count));
         }
     }
 }

@@ -5,7 +5,6 @@ using LandPApi.Models;
 using LandPApi.Repository;
 using LandPApi.View;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Attribute = LandPApi.Models.Attribute;
 
 namespace LandPApi.Service
@@ -234,42 +233,42 @@ namespace LandPApi.Service
         }
         public object GetForyou(string userId, double rate = 50)
         {
-            var viewed = _repoView.ReadByCondition(o => o.CustomerId == userId).Include(o => o.Product);
-            var sorted = viewed.OrderByDescending(o => o.Quantity).Include(o => o.Product!.Reviews).Include(o => o.Product!.OrderDetails).Select(o => o.Product).ToList();
+            //var viewed = _repoView.ReadByCondition(o => o.CustomerId == userId).Include(o => o.Product);
+            //var sorted = viewed.OrderByDescending(o => o.Quantity).Include(o => o.Product!.Reviews).Include(o => o.Product!.OrderDetails).Select(o => o.Product).ToList();
 
 
 
-            //var listProduct = new HashSet<ProductDto>();   
-            //var categorys = new HashSet<Guid>();
+            var listProduct = new HashSet<ProductDto>();
+            var categorys = new HashSet<Guid>();
 
-            //var getProductViewed = _repoView.ReadByCondition(o => o.CustomerId == userId).Select(o => o.ProductId).ToList();
-            //foreach (var item in getProductViewed)
-            //{
-            //    var category = _repository.ReadByCondition(o => o.Id == item).FirstOrDefault()!.CategoryId;
-            //    categorys.Add(category);
-            //}
-            //var getUserId = _userManager.Users.Where(o => o.Id != userId).Select(o => o.Id).ToList();
+            var getProductViewed = _repoView.ReadByCondition(o => o.CustomerId == userId).Select(o => o.ProductId).ToList();
+            foreach (var item in getProductViewed)
+            {
+                var category = _repository.ReadByCondition(o => o.Id == item).FirstOrDefault()!.CategoryId;
+                categorys.Add(category);
+            }
+            var getUserId = _userManager.Users.Where(o => o.Id != userId).Select(o => o.Id).ToList();
 
-            //foreach (var id in getUserId)
-            //{
-            //    var views = _repoView.ReadByCondition(o => o.CustomerId == id).Select(o => o.ProductId);
-            //    var together = getProductViewed.Concat(views);
+            foreach (var id in getUserId)
+            {
+                var views = _repoView.ReadByCondition(o => o.CustomerId == id).Select(o => o.ProductId);
+                var together = getProductViewed.Concat(views);
 
-            //    if (((double)together.Count())/getProductViewed.Count()>=(rate/100.0))
-            //    {
-            //        var except = views.ToList().Except(getProductViewed);
-            //        foreach(var item in except)
-            //        {
-            //            var product = _repository.ReadByCondition(o => o.Id == item).FirstOrDefault();
-            //            if (categorys.Contains(product!.CategoryId))
-            //            {
-            //                listProduct.Add(_mapper.Map<ProductDto>(product!));
-            //            }
-            //        }
-            //    }
-            //}
+                if (((double)together.Count()) / getProductViewed.Count() >= (rate / 100.0))
+                {
+                    var except = views.ToList().Except(getProductViewed);
+                    foreach (var item in except)
+                    {
+                        var product = _repository.ReadByCondition(o => o.Id == item).FirstOrDefault();
+                        if (categorys.Contains(product!.CategoryId))
+                        {
+                            listProduct.Add(_mapper.Map<ProductDto>(product!));
+                        }
+                    }
+                }
+            }
 
-            return _mapper.Map<List<ProductDto>>(sorted);
+            return _mapper.Map<List<ProductDto>>(listProduct.Take(10));
         }
         public ProductDto GetProduct(Guid id)
         {

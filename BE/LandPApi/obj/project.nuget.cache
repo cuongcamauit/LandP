@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3NB+19+ttstOSW1Oa7lZI6cndvT6nNTZA96IJe/8yq1Yafwmpw8ZRi1QVU2OkbWqoMrXF4b4puWtb7pS11IvjQ==",
+  "dgSpecHash": "/eN66+L3LOXeOwq26tLqLe+rTCeHuBeN553Sr2Rl6TkHkAvVJao8DFwxJfuNItDj06+FxPjZ1DiAfCmLI77qog==",
   "success": true,
-  "projectFilePath": "D:\\LandP\\BE\\LandPApi\\LandPApi.csproj",
+  "projectFilePath": "D:\\Shared\\LandP\\BE\\LandPApi\\LandPApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cuong\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\cuong\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -92,6 +92,7 @@
     "C:\\Users\\cuong\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\cuong\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\cuong\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\cuong\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
     "C:\\Users\\cuong\\.nuget\\packages\\microsoft.visualstudio.debugger.contracts\\17.2.0\\microsoft.visualstudio.debugger.contracts.17.2.0.nupkg.sha512",
     "C:\\Users\\cuong\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.13\\microsoft.visualstudio.web.codegeneration.6.0.13.nupkg.sha512",
     "C:\\Users\\cuong\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.13\\microsoft.visualstudio.web.codegeneration.core.6.0.13.nupkg.sha512",
